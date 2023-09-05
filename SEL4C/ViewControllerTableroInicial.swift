@@ -14,6 +14,8 @@ class ViewControllerTableroInicial: UIViewController {
     @IBOutlet weak var btnEvaluaciones: UIButton!
     @IBOutlet weak var btnActividades: UIButton!
     
+    @IBOutlet weak var btnCompetencias: UIButton!
+    @IBOutlet weak var btnMetodologia: UIButton!
     @IBOutlet weak var btnEvaluacionFinal: UIButton!
     @IBOutlet weak var btnValorSocial: UIButton!
     @IBOutlet weak var btnAct2: UIButton!
@@ -28,6 +30,8 @@ class ViewControllerTableroInicial: UIViewController {
         btnEvaluacionFinal.isEnabled = false
         btnEmprendimiento.isEnabled = false
         btnValorSocial.isEnabled = false
+        btnMetodologia.isEnabled = false
+        btnCompetencias.isEnabled = false
         // Do any additional setup after loading the view.
     }
     
@@ -39,6 +43,8 @@ class ViewControllerTableroInicial: UIViewController {
         btnEvaluacionFinal.isEnabled = false
         btnEmprendimiento.isEnabled = false
         btnValorSocial.isEnabled = false
+        btnMetodologia.isEnabled = false
+        btnCompetencias.isEnabled = false
     }
         
     @IBAction func btn2Pressed(_ sender: UIButton) {
@@ -49,6 +55,8 @@ class ViewControllerTableroInicial: UIViewController {
         btnEvaluacionFinal.isEnabled = true
         btnEmprendimiento.isEnabled = false
         btnValorSocial.isEnabled = false
+        btnMetodologia.isEnabled = false
+        btnCompetencias.isEnabled = false
     }
     
     @IBAction func btn3Pressed(_ sender: UIButton) {
@@ -59,6 +67,8 @@ class ViewControllerTableroInicial: UIViewController {
         btnEvaluacionFinal.isEnabled = false
         btnEmprendimiento.isEnabled = true
         btnValorSocial.isEnabled = true
+        btnMetodologia.isEnabled = true
+        btnCompetencias.isEnabled = true
     }
     
     /*

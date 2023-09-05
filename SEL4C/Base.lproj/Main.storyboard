@@ -216,6 +216,50 @@
             </objects>
             <point key="canvasLocation" x="5315" y="216"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="pkb-zv-426">
+            <objects>
+                <viewController id="ikw-Vy-sJv" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z78-UQ-1Oc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="8.2 - competenciasR" translatesAutoresizingMaskIntoConstraints="NO" id="kSX-iD-fEX">
+                                <rect key="frame" x="0.0" y="19" width="393" height="833"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kpc-OM-Bqz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cQi-xG-jZj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iqO-R2-hwp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2573" y="-1682"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Hw4-1l-Tc1">
+            <objects>
+                <viewController id="cFQ-ht-6jc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="er3-w9-CYM">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="8.1 - metodologiaR" translatesAutoresizingMaskIntoConstraints="NO" id="G72-yL-Y6t">
+                                <rect key="frame" x="0.0" y="19" width="393" height="833"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GWf-gT-qBD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Fpq-sk-fEu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kwb-kE-h80" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3297" y="-1682"/>
+        </scene>
         <!--Item 1-->
         <scene sceneID="k92-iV-0jX">
             <objects>
@@ -309,6 +353,24 @@
                                     <segue destination="Dbg-RH-UXY" kind="show" id="jXL-CZ-CPB"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Orb-Wy-UPJ">
+                                <rect key="frame" x="40" y="428" width="130" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title=""/>
+                                <connections>
+                                    <segue destination="cFQ-ht-6jc" kind="show" id="yEB-jY-GgN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Bo-a1-bhO">
+                                <rect key="frame" x="226" y="428" width="130" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title=""/>
+                                <connections>
+                                    <segue destination="ikw-Vy-sJv" kind="show" id="R9D-Jb-X6J"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pGV-Gf-psS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -318,10 +380,12 @@
                         <outlet property="btnAct1" destination="FgA-h4-b1L" id="GDH-SB-uwc"/>
                         <outlet property="btnAct2" destination="Qyd-4q-Vrf" id="cMr-as-raS"/>
                         <outlet property="btnActividades" destination="6pg-pz-CnG" id="WxU-I4-zlX"/>
+                        <outlet property="btnCompetencias" destination="1Bo-a1-bhO" id="y9H-HW-wH9"/>
                         <outlet property="btnEmprendimiento" destination="fYe-FR-cTs" id="lZr-NM-HBF"/>
                         <outlet property="btnEvaluacionFinal" destination="mX0-ZE-aQf" id="A6X-6S-TTM"/>
                         <outlet property="btnEvaluacionInicial" destination="bYd-xw-Jzu" id="L51-Im-LRG"/>
                         <outlet property="btnEvaluaciones" destination="IMF-Zs-WtF" id="o76-mN-f3U"/>
+                        <outlet property="btnMetodologia" destination="Orb-Wy-UPJ" id="dlo-cT-2Nj"/>
                         <outlet property="btnRecursos" destination="WIh-Qp-8bC" id="pWR-hX-dBb"/>
                         <outlet property="btnValorSocial" destination="qDP-jf-gih" id="LlU-Ao-Mkc"/>
                         <outlet property="imageChange" destination="TaD-Gu-oOT" id="rvj-Cl-KJ8"/>
@@ -1310,6 +1374,8 @@
         <image name="7.8 - valorsocialR" width="286" height="504"/>
         <image name="7.9 - ResultadosEvFinal" width="287" height="500"/>
         <image name="8 - tableroPerfil" width="299" height="560"/>
+        <image name="8.1 - metodologiaR" width="285" height="508"/>
+        <image name="8.2 - competenciasR" width="285" height="504"/>
         <image name="item1" width="15" height="15"/>
         <image name="item2" width="15" height="15"/>
         <image name="item3" width="15" height="15"/>
