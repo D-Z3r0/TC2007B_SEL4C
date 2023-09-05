@@ -374,6 +374,15 @@
                                     <segue destination="kNJ-u7-XpT" kind="show" id="XXG-dy-eKY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7N-22-Yws">
+                                <rect key="frame" x="28" y="588" width="333" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <segue destination="xly-AQ-lHo" kind="show" id="rcL-pB-h3J"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tyR-eE-FUC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -405,6 +414,28 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W52-YD-myH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8465" y="-106"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="FeM-XF-BwV">
+            <objects>
+                <viewController id="xly-AQ-lHo" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0eE-OM-iK7">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="6.8 - Actividad2" translatesAutoresizingMaskIntoConstraints="NO" id="X6q-pA-QFk">
+                                <rect key="frame" x="0.0" y="19" width="393" height="833"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="spa-K3-UFA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="CtK-yb-snd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6RA-Yl-80m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8465" y="628"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="yY1-f4-tge">
@@ -1089,6 +1120,7 @@
         <image name="6.5 - Actividad1" width="187.5" height="406"/>
         <image name="6.6 - Actividad1" width="301" height="507"/>
         <image name="6.7 - Actividad2" width="298" height="510"/>
+        <image name="6.8 - Actividad2" width="187.5" height="406"/>
         <image name="7 - tableroProgeso" width="299" height="562"/>
         <image name="7.1 - Actividad3" width="187" height="322"/>
         <image name="7.2 - Actividad21" width="188" height="92"/>
