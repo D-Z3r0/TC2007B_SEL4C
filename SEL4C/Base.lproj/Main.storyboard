@@ -435,7 +435,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6RA-Yl-80m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8465" y="628"/>
+            <point key="canvasLocation" x="8465" y="630"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Ghs-rd-VHj">
+            <objects>
+                <viewController id="XDG-9e-fFO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tse-xw-QnL">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="6.8 - Actividad2" translatesAutoresizingMaskIntoConstraints="NO" id="XE5-Mb-Xmk">
+                                <rect key="frame" x="0.0" y="19" width="393" height="833"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2e7-EP-ezr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hES-gx-ddU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qm2-50-jIL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9292" y="630"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="yY1-f4-tge">
