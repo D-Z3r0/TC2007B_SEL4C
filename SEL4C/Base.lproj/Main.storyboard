@@ -680,6 +680,22 @@
             <point key="canvasLocation" x="9256" y="-1681"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="w8S-BO-eTD">
+            <objects>
+                <viewController id="aKE-Cb-Eln" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PeC-X6-YXK">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="f12-9c-dm3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LWA-2I-Ybc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ddk-1c-5Gn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6479" y="-2423"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="hp6-5D-pPe">
             <objects>
                 <viewController id="i4T-Wx-eDt" sceneMemberID="viewController">
@@ -691,6 +707,15 @@
                                 <rect key="frame" x="0.0" y="19" width="393" height="833"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHu-aR-ZiV">
+                                <rect key="frame" x="245" y="206" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <segue destination="aKE-Cb-Eln" kind="show" id="oDc-wq-Tu1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tnl-lh-v7o"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
