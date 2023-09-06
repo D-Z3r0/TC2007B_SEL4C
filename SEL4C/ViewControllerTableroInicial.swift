@@ -10,6 +10,7 @@ import UIKit
 class ViewControllerTableroInicial: UIViewController {
     @IBOutlet weak var imageChange: UIImageView!
     
+    @IBOutlet weak var btnManual: UIButton!
     @IBOutlet weak var btnRecursos: UIButton!
     @IBOutlet weak var btnEvaluaciones: UIButton!
     @IBOutlet weak var btnActividades: UIButton!
@@ -32,6 +33,7 @@ class ViewControllerTableroInicial: UIViewController {
         btnValorSocial.isEnabled = false
         btnMetodologia.isEnabled = false
         btnCompetencias.isEnabled = false
+        btnManual.isEnabled = false
         // Do any additional setup after loading the view.
     }
     
@@ -45,6 +47,7 @@ class ViewControllerTableroInicial: UIViewController {
         btnValorSocial.isEnabled = false
         btnMetodologia.isEnabled = false
         btnCompetencias.isEnabled = false
+        btnManual.isEnabled = false
     }
         
     @IBAction func btn2Pressed(_ sender: UIButton) {
@@ -57,6 +60,7 @@ class ViewControllerTableroInicial: UIViewController {
         btnValorSocial.isEnabled = false
         btnMetodologia.isEnabled = false
         btnCompetencias.isEnabled = false
+        btnManual.isEnabled = false
     }
     
     @IBAction func btn3Pressed(_ sender: UIButton) {
@@ -69,6 +73,7 @@ class ViewControllerTableroInicial: UIViewController {
         btnValorSocial.isEnabled = true
         btnMetodologia.isEnabled = true
         btnCompetencias.isEnabled = true
+        btnManual.isEnabled = true
     }
     
     /*

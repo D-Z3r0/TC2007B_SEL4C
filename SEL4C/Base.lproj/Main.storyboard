@@ -217,6 +217,28 @@
             <point key="canvasLocation" x="5315" y="216"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="60n-7l-xxd">
+            <objects>
+                <viewController id="TE0-ET-eyv" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AdP-6P-BsY">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="8.3 - manualR" translatesAutoresizingMaskIntoConstraints="NO" id="VcS-qQ-Jvf">
+                                <rect key="frame" x="0.0" y="19" width="393" height="833"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cYD-80-evG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="EdY-Dy-99e"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LQ8-pN-JRs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1798" y="-1682"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="pkb-zv-426">
             <objects>
                 <viewController id="ikw-Vy-sJv" sceneMemberID="viewController">
@@ -371,6 +393,15 @@
                                     <segue destination="ikw-Vy-sJv" kind="show" id="R9D-Jb-X6J"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HaT-XJ-pjr">
+                                <rect key="frame" x="40" y="549" width="316" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title=""/>
+                                <connections>
+                                    <segue destination="TE0-ET-eyv" kind="show" id="A9f-VM-rVF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pGV-Gf-psS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -386,6 +417,7 @@
                         <outlet property="btnEvaluacionFinal" destination="mX0-ZE-aQf" id="A6X-6S-TTM"/>
                         <outlet property="btnEvaluacionInicial" destination="bYd-xw-Jzu" id="L51-Im-LRG"/>
                         <outlet property="btnEvaluaciones" destination="IMF-Zs-WtF" id="o76-mN-f3U"/>
+                        <outlet property="btnManual" destination="HaT-XJ-pjr" id="MOD-VT-c7u"/>
                         <outlet property="btnMetodologia" destination="Orb-Wy-UPJ" id="dlo-cT-2Nj"/>
                         <outlet property="btnRecursos" destination="WIh-Qp-8bC" id="pWR-hX-dBb"/>
                         <outlet property="btnValorSocial" destination="qDP-jf-gih" id="LlU-Ao-Mkc"/>
@@ -921,22 +953,6 @@
             <point key="canvasLocation" x="9256" y="-1681"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="w8S-BO-eTD">
-            <objects>
-                <viewController id="aKE-Cb-Eln" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="PeC-X6-YXK">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="f12-9c-dm3"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="LWA-2I-Ybc"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ddk-1c-5Gn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7411" y="-2938"/>
-        </scene>
-        <!--View Controller-->
         <scene sceneID="hp6-5D-pPe">
             <objects>
                 <viewController id="i4T-Wx-eDt" sceneMemberID="viewController">
@@ -948,15 +964,6 @@
                                 <rect key="frame" x="0.0" y="19" width="393" height="833"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHu-aR-ZiV">
-                                <rect key="frame" x="245" y="206" width="75" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <segue destination="aKE-Cb-Eln" kind="show" id="oDc-wq-Tu1"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tnl-lh-v7o"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1483,7 +1490,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ErD-kz-ag9"/>
+        <segue reference="1ad-c8-tb6"/>
         <segue reference="J5T-pk-q6X"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -1528,6 +1535,7 @@
         <image name="8 - tableroPerfil" width="299" height="560"/>
         <image name="8.1 - metodologiaR" width="285" height="508"/>
         <image name="8.2 - competenciasR" width="285" height="504"/>
+        <image name="8.3 - manualR" width="277" height="486"/>
         <image name="item1" width="15" height="15"/>
         <image name="item2" width="15" height="15"/>
         <image name="item3" width="15" height="15"/>
