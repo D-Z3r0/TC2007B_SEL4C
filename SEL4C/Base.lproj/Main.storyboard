@@ -721,7 +721,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="6.14 - Actividad2" translatesAutoresizingMaskIntoConstraints="NO" id="dUn-jq-MuG">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <rect key="frame" x="0.0" y="53" width="393" height="799"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zuu-2K-1w5">
@@ -752,7 +752,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="6.5 - Actividad1" translatesAutoresizingMaskIntoConstraints="NO" id="wnN-Oy-eWS">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <rect key="frame" x="0.0" y="41" width="393" height="811"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLD-Ts-Rbm">
@@ -760,6 +760,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title=""/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6kA-gQ-mQu">
+                                <rect key="frame" x="289" y="108" width="88" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title=""/>
+                                <connections>
+                                    <segue destination="eO9-T9-ZHQ" kind="show" id="Z0O-kX-RQZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3KO-D4-LX3"/>
@@ -769,7 +778,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eah-PI-zUt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10790" y="-2378"/>
+            <point key="canvasLocation" x="10788.549618320611" y="-2378.1690140845071"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="5iw-c7-0pb">
@@ -847,7 +856,7 @@
             <objects>
                 <viewController id="eO9-T9-ZHQ" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5di-P4-9zO">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="6.6 - Actividad1" translatesAutoresizingMaskIntoConstraints="NO" id="k8c-uy-Lzw">
@@ -873,7 +882,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="6.12 - Actividad2" translatesAutoresizingMaskIntoConstraints="NO" id="zuw-Wf-fVI">
-                                <rect key="frame" x="0.0" y="10" width="393" height="833"/>
+                                <rect key="frame" x="0.0" y="46" width="393" height="797"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -884,7 +893,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ea9-q0-VYp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11578" y="-106"/>
+            <point key="canvasLocation" x="11577.862595419847" y="-106.33802816901409"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="zGy-UL-q26">
@@ -894,10 +903,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="6.16 - Actividad2" translatesAutoresizingMaskIntoConstraints="NO" id="xGU-NR-Dzb">
-                                <rect key="frame" x="-18" y="0.0" width="429" height="852"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qLe-gA-2f8">
                                 <rect key="frame" x="45" y="781" width="49" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -907,6 +912,10 @@
                                     <segue destination="hU5-zg-2kL" kind="show" id="J5T-pk-q6X"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="6.16 - Actividad2" translatesAutoresizingMaskIntoConstraints="NO" id="xGU-NR-Dzb">
+                                <rect key="frame" x="-9" y="62" width="411" height="790"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uNP-xs-6t8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1424,7 +1433,7 @@
                                                         <rect key="frame" x="72" y="366" width="260" height="42"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title=""/>
                                                         <connections>
                                                             <segue destination="RLm-Fc-CQk" kind="show" id="2ph-0q-iI8"/>
                                                         </connections>
@@ -1754,8 +1763,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="ADu-8W-OVH"/>
         <segue reference="J5T-pk-q6X"/>
-        <segue reference="mjA-IN-aMZ"/>
+        <segue reference="EdP-2c-X86"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="1 - Inicio" width="187.5" height="406"/>
@@ -1773,11 +1783,11 @@
         <image name="6.1 - Actividad1" width="300" height="529"/>
         <image name="6.10 - Actividad2" width="187.5" height="406"/>
         <image name="6.11 - Actividad2" width="187.5" height="406"/>
-        <image name="6.12 - Actividad2" width="187.5" height="406"/>
-        <image name="6.13 - Actividad2" width="187.5" height="307.5"/>
-        <image name="6.14 - Actividad2" width="187.5" height="406"/>
+        <image name="6.12 - Actividad2" width="277" height="493"/>
+        <image name="6.13 - Actividad2" width="278" height="409"/>
+        <image name="6.14 - Actividad2" width="277" height="486"/>
         <image name="6.15 - Actividad2" width="187.5" height="406"/>
-        <image name="6.16 - Actividad2" width="187.5" height="406"/>
+        <image name="6.16 - Actividad2" width="278" height="493"/>
         <image name="6.2 - Actividad1" width="300" height="511"/>
         <image name="6.3 - Actividad1" width="187.5" height="406"/>
         <image name="6.4 - Actividad1" width="187.5" height="406"/>
