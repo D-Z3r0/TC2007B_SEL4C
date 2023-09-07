@@ -14,6 +14,10 @@
 		8EEFF0022AA3D24700809FEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EEFF0002AA3D24700809FEE /* Main.storyboard */; };
 		8EEFF0042AA3D24900809FEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EEFF0032AA3D24900809FEE /* Assets.xcassets */; };
 		8EEFF0072AA3D24900809FEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EEFF0052AA3D24900809FEE /* LaunchScreen.storyboard */; };
+		F34360312AA9459200487D75 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34360302AA9459200487D75 /* LoginViewController.swift */; };
+		F34360402AA9501600487D75 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F343603D2AA9501500487D75 /* Poppins-Medium.ttf */; };
+		F34360412AA9501600487D75 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F343603E2AA9501500487D75 /* Poppins-Regular.ttf */; };
+		F34360432AA950E100487D75 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F34360422AA950E100487D75 /* Poppins-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		8EEFF0032AA3D24900809FEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8EEFF0062AA3D24900809FEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8EEFF0082AA3D24900809FEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F34360302AA9459200487D75 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F343603D2AA9501500487D75 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		F343603E2AA9501500487D75 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		F34360422AA950E100487D75 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +50,9 @@
 		8EEFEFEE2AA3D24700809FEE = {
 			isa = PBXGroup;
 			children = (
+				F34360422AA950E100487D75 /* Poppins-SemiBold.ttf */,
+				F343603D2AA9501500487D75 /* Poppins-Medium.ttf */,
+				F343603E2AA9501500487D75 /* Poppins-Regular.ttf */,
 				8EEFEFF92AA3D24700809FEE /* SEL4C */,
 				8EEFEFF82AA3D24700809FEE /* Products */,
 			);
@@ -62,6 +73,7 @@
 				8EEFEFFC2AA3D24700809FEE /* SceneDelegate.swift */,
 				8EEFEFFE2AA3D24700809FEE /* ViewController.swift */,
 				8EEFF0002AA3D24700809FEE /* Main.storyboard */,
+				F34360302AA9459200487D75 /* LoginViewController.swift */,
 				8EB0B7CA2AA557B9002E0849 /* ViewControllerTableroInicial.swift */,
 				8EEFF0032AA3D24900809FEE /* Assets.xcassets */,
 				8EEFF0052AA3D24900809FEE /* LaunchScreen.storyboard */,
@@ -130,7 +142,10 @@
 			files = (
 				8EEFF0072AA3D24900809FEE /* LaunchScreen.storyboard in Resources */,
 				8EEFF0042AA3D24900809FEE /* Assets.xcassets in Resources */,
+				F34360412AA9501600487D75 /* Poppins-Regular.ttf in Resources */,
+				F34360432AA950E100487D75 /* Poppins-SemiBold.ttf in Resources */,
 				8EEFF0022AA3D24700809FEE /* Main.storyboard in Resources */,
+				F34360402AA9501600487D75 /* Poppins-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +159,7 @@
 				8EEFEFFF2AA3D24700809FEE /* ViewController.swift in Sources */,
 				8EB0B7CB2AA557B9002E0849 /* ViewControllerTableroInicial.swift in Sources */,
 				8EEFEFFB2AA3D24700809FEE /* AppDelegate.swift in Sources */,
+				F34360312AA9459200487D75 /* LoginViewController.swift in Sources */,
 				8EEFEFFD2AA3D24700809FEE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
