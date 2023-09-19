@@ -18,6 +18,7 @@
 		F34360402AA9501600487D75 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F343603D2AA9501500487D75 /* Poppins-Medium.ttf */; };
 		F34360412AA9501600487D75 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F343603E2AA9501500487D75 /* Poppins-Regular.ttf */; };
 		F34360432AA950E100487D75 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F34360422AA950E100487D75 /* Poppins-SemiBold.ttf */; };
+		F34360452AB90AFC00487D75 /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F34360442AB90AFC00487D75 /* Poppins-ExtraBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		F343603D2AA9501500487D75 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		F343603E2AA9501500487D75 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		F34360422AA950E100487D75 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		F34360442AB90AFC00487D75 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 		8EEFEFEE2AA3D24700809FEE = {
 			isa = PBXGroup;
 			children = (
+				F34360442AB90AFC00487D75 /* Poppins-ExtraBold.ttf */,
 				F34360422AA950E100487D75 /* Poppins-SemiBold.ttf */,
 				F343603D2AA9501500487D75 /* Poppins-Medium.ttf */,
 				F343603E2AA9501500487D75 /* Poppins-Regular.ttf */,
@@ -143,6 +146,7 @@
 				8EEFF0072AA3D24900809FEE /* LaunchScreen.storyboard in Resources */,
 				8EEFF0042AA3D24900809FEE /* Assets.xcassets in Resources */,
 				F34360412AA9501600487D75 /* Poppins-Regular.ttf in Resources */,
+				F34360452AB90AFC00487D75 /* Poppins-ExtraBold.ttf in Resources */,
 				F34360432AA950E100487D75 /* Poppins-SemiBold.ttf in Resources */,
 				8EEFF0022AA3D24700809FEE /* Main.storyboard in Resources */,
 				F34360402AA9501600487D75 /* Poppins-Medium.ttf in Resources */,
