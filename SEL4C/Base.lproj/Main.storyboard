@@ -893,7 +893,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="6 - tableroEvaluaciones" translatesAutoresizingMaskIntoConstraints="NO" id="im6-gq-tzl">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="im6-gq-tzl">
                                 <rect key="frame" x="0.0" y="76" width="393" height="700"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -955,6 +955,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="btn_actividades" destination="9kY-hA-Lk2" id="xgi-qq-oIN"/>
+                        <outlet property="btn_evaluaciones" destination="G4W-RK-p9f" id="Ydp-4D-RwS"/>
                         <outlet property="label_tituloPrincipal" destination="dIb-mZ-Civ" id="nD7-Nz-Ki5"/>
                         <outlet property="view_actividades" destination="jbP-sO-l9P" id="WX5-bt-gnc"/>
                         <outlet property="view_evaluaciones" destination="rFZ-MI-WOE" id="Xpq-VO-6TN"/>
@@ -2090,10 +2092,10 @@
             </objects>
             <point key="canvasLocation" x="1858.7786259541983" y="-232.3943661971831"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller Actividades-->
         <scene sceneID="JHY-c6-gbO">
             <objects>
-                <viewController id="VTU-Zi-tct" sceneMemberID="viewController">
+                <viewController id="VTU-Zi-tct" customClass="ViewControllerActividades" customModule="SEL4C" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GZ0-Mp-791">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2277,6 +2279,16 @@
                             <constraint firstAttribute="trailing" secondItem="LhB-Wf-AbS" secondAttribute="trailing" id="sG5-BT-ZdP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btn_actividad1" destination="SPa-23-BlO" id="Sts-kx-DR3"/>
+                        <outlet property="btn_actividad2" destination="RCQ-Ns-Zqf" id="bFM-KY-OJi"/>
+                        <outlet property="btn_actividad3" destination="YgQ-L6-AZW" id="oWb-jr-R4o"/>
+                        <outlet property="btn_actividad4" destination="Htk-kY-Isn" id="K7v-ou-gPq"/>
+                        <outlet property="label_actividad1" destination="TWS-s2-4l8" id="EP4-aC-ESZ"/>
+                        <outlet property="label_actividad2" destination="NGl-Va-x3t" id="02d-og-hHo"/>
+                        <outlet property="label_actividad3" destination="jOz-bo-yBE" id="Qz8-z3-hcb"/>
+                        <outlet property="label_actividad4" destination="RCv-60-mgZ" id="96Q-ba-cww"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mXg-ET-0iR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
