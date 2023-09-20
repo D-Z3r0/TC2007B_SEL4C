@@ -11,6 +11,9 @@
         <array key="Poppins-Bold.ttf">
             <string>Poppins-Bold</string>
         </array>
+        <array key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
+        </array>
         <array key="Poppins-Regular.ttf">
             <string>Poppins-Regular</string>
         </array>
@@ -2265,6 +2268,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="P0H-2Y-BiK"/>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="JUY-Ff-6o3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="LhB-Wf-AbS" firstAttribute="top" secondItem="GZ0-Mp-791" secondAttribute="top" id="4pE-fo-rk7"/>
@@ -2319,6 +2323,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ie1-cd-nQ5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
