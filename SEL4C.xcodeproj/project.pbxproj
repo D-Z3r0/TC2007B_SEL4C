@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		8EB0B7CB2AA557B9002E0849 /* ViewControllerTableroInicial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB0B7CA2AA557B9002E0849 /* ViewControllerTableroInicial.swift */; };
+		8EE69E542ABA4420007436B5 /* ViewControllerEvaluaciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE69E532ABA4420007436B5 /* ViewControllerEvaluaciones.swift */; };
+		8EE69E562ABA44D1007436B5 /* ViewControllerTableroPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE69E552ABA44D1007436B5 /* ViewControllerTableroPrincipal.swift */; };
+		8EE69E582ABA4774007436B5 /* ViewControllerActividades.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE69E572ABA4774007436B5 /* ViewControllerActividades.swift */; };
+		8EE69E5A2ABA6192007436B5 /* ViewControllerActividadUno.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE69E592ABA6192007436B5 /* ViewControllerActividadUno.swift */; };
 		8EEFEFFB2AA3D24700809FEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEFEFFA2AA3D24700809FEE /* AppDelegate.swift */; };
 		8EEFEFFD2AA3D24700809FEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEFEFFC2AA3D24700809FEE /* SceneDelegate.swift */; };
 		8EEFEFFF2AA3D24700809FEE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEFEFFE2AA3D24700809FEE /* ViewController.swift */; };
@@ -23,6 +27,10 @@
 
 /* Begin PBXFileReference section */
 		8EB0B7CA2AA557B9002E0849 /* ViewControllerTableroInicial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTableroInicial.swift; sourceTree = "<group>"; };
+		8EE69E532ABA4420007436B5 /* ViewControllerEvaluaciones.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerEvaluaciones.swift; path = ../../../Downloads/ViewControllerEvaluaciones.swift; sourceTree = "<group>"; };
+		8EE69E552ABA44D1007436B5 /* ViewControllerTableroPrincipal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerTableroPrincipal.swift; path = ../../../Downloads/ViewControllerTableroPrincipal.swift; sourceTree = "<group>"; };
+		8EE69E572ABA4774007436B5 /* ViewControllerActividades.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerActividades.swift; sourceTree = "<group>"; };
+		8EE69E592ABA6192007436B5 /* ViewControllerActividadUno.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerActividadUno.swift; sourceTree = "<group>"; };
 		8EEFEFF72AA3D24700809FEE /* SEL4C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SEL4C.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EEFEFFA2AA3D24700809FEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EEFEFFC2AA3D24700809FEE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,8 +84,12 @@
 				8EEFEFFC2AA3D24700809FEE /* SceneDelegate.swift */,
 				8EEFEFFE2AA3D24700809FEE /* ViewController.swift */,
 				8EEFF0002AA3D24700809FEE /* Main.storyboard */,
+				8EE69E592ABA6192007436B5 /* ViewControllerActividadUno.swift */,
+				8EE69E572ABA4774007436B5 /* ViewControllerActividades.swift */,
 				F34360302AA9459200487D75 /* LoginViewController.swift */,
 				8EB0B7CA2AA557B9002E0849 /* ViewControllerTableroInicial.swift */,
+				8EE69E552ABA44D1007436B5 /* ViewControllerTableroPrincipal.swift */,
+				8EE69E532ABA4420007436B5 /* ViewControllerEvaluaciones.swift */,
 				8EEFF0032AA3D24900809FEE /* Assets.xcassets */,
 				8EEFF0052AA3D24900809FEE /* LaunchScreen.storyboard */,
 				8EEFF0082AA3D24900809FEE /* Info.plist */,
@@ -160,10 +172,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EE69E562ABA44D1007436B5 /* ViewControllerTableroPrincipal.swift in Sources */,
 				8EEFEFFF2AA3D24700809FEE /* ViewController.swift in Sources */,
+				8EE69E582ABA4774007436B5 /* ViewControllerActividades.swift in Sources */,
+				8EE69E5A2ABA6192007436B5 /* ViewControllerActividadUno.swift in Sources */,
 				8EB0B7CB2AA557B9002E0849 /* ViewControllerTableroInicial.swift in Sources */,
 				8EEFEFFB2AA3D24700809FEE /* AppDelegate.swift in Sources */,
 				F34360312AA9459200487D75 /* LoginViewController.swift in Sources */,
+				8EE69E542ABA4420007436B5 /* ViewControllerEvaluaciones.swift in Sources */,
 				8EEFEFFD2AA3D24700809FEE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
