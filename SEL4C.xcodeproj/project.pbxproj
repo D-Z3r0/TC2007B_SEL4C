@@ -19,6 +19,10 @@
 		F34360412AA9501600487D75 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F343603E2AA9501500487D75 /* Poppins-Regular.ttf */; };
 		F34360432AA950E100487D75 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F34360422AA950E100487D75 /* Poppins-SemiBold.ttf */; };
 		F34360452AB90AFC00487D75 /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F34360442AB90AFC00487D75 /* Poppins-ExtraBold.ttf */; };
+		F34360472AB935E600487D75 /* Login2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34360462AB935E600487D75 /* Login2ViewController.swift */; };
+		F34360492AB93D1B00487D75 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F34360482AB93D1B00487D75 /* Poppins-Bold.ttf */; };
+		F343604B2AB9430100487D75 /* LoginInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F343604A2AB9430100487D75 /* LoginInputViewController.swift */; };
+		F343604D2ABA5E1600487D75 /* RegisterInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F343604C2ABA5E1600487D75 /* RegisterInputViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		F343603E2AA9501500487D75 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		F34360422AA950E100487D75 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		F34360442AB90AFC00487D75 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
+		F34360462AB935E600487D75 /* Login2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login2ViewController.swift; sourceTree = "<group>"; };
+		F34360482AB93D1B00487D75 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		F343604A2AB9430100487D75 /* LoginInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInputViewController.swift; sourceTree = "<group>"; };
+		F343604C2ABA5E1600487D75 /* RegisterInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInputViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,7 @@
 				F34360422AA950E100487D75 /* Poppins-SemiBold.ttf */,
 				F343603D2AA9501500487D75 /* Poppins-Medium.ttf */,
 				F343603E2AA9501500487D75 /* Poppins-Regular.ttf */,
+				F34360482AB93D1B00487D75 /* Poppins-Bold.ttf */,
 				8EEFEFF92AA3D24700809FEE /* SEL4C */,
 				8EEFEFF82AA3D24700809FEE /* Products */,
 			);
@@ -72,11 +81,14 @@
 		8EEFEFF92AA3D24700809FEE /* SEL4C */ = {
 			isa = PBXGroup;
 			children = (
+				F343604C2ABA5E1600487D75 /* RegisterInputViewController.swift */,
+				F343604A2AB9430100487D75 /* LoginInputViewController.swift */,
 				8EEFEFFA2AA3D24700809FEE /* AppDelegate.swift */,
 				8EEFEFFC2AA3D24700809FEE /* SceneDelegate.swift */,
 				8EEFEFFE2AA3D24700809FEE /* ViewController.swift */,
 				8EEFF0002AA3D24700809FEE /* Main.storyboard */,
 				F34360302AA9459200487D75 /* LoginViewController.swift */,
+				F34360462AB935E600487D75 /* Login2ViewController.swift */,
 				8EB0B7CA2AA557B9002E0849 /* ViewControllerTableroInicial.swift */,
 				8EEFF0032AA3D24900809FEE /* Assets.xcassets */,
 				8EEFF0052AA3D24900809FEE /* LaunchScreen.storyboard */,
@@ -146,6 +158,7 @@
 				8EEFF0072AA3D24900809FEE /* LaunchScreen.storyboard in Resources */,
 				8EEFF0042AA3D24900809FEE /* Assets.xcassets in Resources */,
 				F34360412AA9501600487D75 /* Poppins-Regular.ttf in Resources */,
+				F34360492AB93D1B00487D75 /* Poppins-Bold.ttf in Resources */,
 				F34360452AB90AFC00487D75 /* Poppins-ExtraBold.ttf in Resources */,
 				F34360432AA950E100487D75 /* Poppins-SemiBold.ttf in Resources */,
 				8EEFF0022AA3D24700809FEE /* Main.storyboard in Resources */,
@@ -160,11 +173,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F343604D2ABA5E1600487D75 /* RegisterInputViewController.swift in Sources */,
 				8EEFEFFF2AA3D24700809FEE /* ViewController.swift in Sources */,
 				8EB0B7CB2AA557B9002E0849 /* ViewControllerTableroInicial.swift in Sources */,
 				8EEFEFFB2AA3D24700809FEE /* AppDelegate.swift in Sources */,
 				F34360312AA9459200487D75 /* LoginViewController.swift in Sources */,
 				8EEFEFFD2AA3D24700809FEE /* SceneDelegate.swift in Sources */,
+				F343604B2AB9430100487D75 /* LoginInputViewController.swift in Sources */,
+				F34360472AB935E600487D75 /* Login2ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
