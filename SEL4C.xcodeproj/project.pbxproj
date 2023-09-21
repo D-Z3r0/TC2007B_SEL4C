@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E304FA72ABBBF5B00BE0055 /* ViewControllerActividadUno.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E304FA62ABBBF5B00BE0055 /* ViewControllerActividadUno.swift */; };
 		8EB0B7CB2AA557B9002E0849 /* ViewControllerTableroInicial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB0B7CA2AA557B9002E0849 /* ViewControllerTableroInicial.swift */; };
 		8EE69E5C2ABAC72D007436B5 /* ViewControllerTableroPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE69E5B2ABAC72D007436B5 /* ViewControllerTableroPrincipal.swift */; };
 		8EE69E5E2ABAC737007436B5 /* ViewControllerEvaluaciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE69E5D2ABAC737007436B5 /* ViewControllerEvaluaciones.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E304FA62ABBBF5B00BE0055 /* ViewControllerActividadUno.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerActividadUno.swift; sourceTree = "<group>"; };
 		8EB0B7CA2AA557B9002E0849 /* ViewControllerTableroInicial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTableroInicial.swift; sourceTree = "<group>"; };
 		8EE69E5B2ABAC72D007436B5 /* ViewControllerTableroPrincipal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerTableroPrincipal.swift; sourceTree = "<group>"; };
 		8EE69E5D2ABAC737007436B5 /* ViewControllerEvaluaciones.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerEvaluaciones.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				8EEFEFFC2AA3D24700809FEE /* SceneDelegate.swift */,
 				8EEFEFFE2AA3D24700809FEE /* ViewController.swift */,
 				8EEFF0002AA3D24700809FEE /* Main.storyboard */,
+				8E304FA62ABBBF5B00BE0055 /* ViewControllerActividadUno.swift */,
 				8EE69E5F2ABAC9EF007436B5 /* ViewControllerActividades.swift */,
 				8EE69E5D2ABAC737007436B5 /* ViewControllerEvaluaciones.swift */,
 				8EE69E5B2ABAC72D007436B5 /* ViewControllerTableroPrincipal.swift */,
@@ -188,6 +191,7 @@
 				8EB0B7CB2AA557B9002E0849 /* ViewControllerTableroInicial.swift in Sources */,
 				8EEFEFFB2AA3D24700809FEE /* AppDelegate.swift in Sources */,
 				8EE69E602ABAC9EF007436B5 /* ViewControllerActividades.swift in Sources */,
+				8E304FA72ABBBF5B00BE0055 /* ViewControllerActividadUno.swift in Sources */,
 				F34360312AA9459200487D75 /* LoginViewController.swift in Sources */,
 				8EEFEFFD2AA3D24700809FEE /* SceneDelegate.swift in Sources */,
 				F343604B2AB9430100487D75 /* LoginInputViewController.swift in Sources */,
