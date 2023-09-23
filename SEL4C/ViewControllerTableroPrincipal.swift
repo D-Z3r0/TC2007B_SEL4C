@@ -15,6 +15,8 @@ class ViewControllerTableroPrincipal: UIViewController {
     
     @IBOutlet weak var view_evaluaciones: UIView!
     
+    @IBOutlet weak var view_actividadesmetodologia: UIView!
+    
     @IBOutlet weak var btn_actividades: UIButton!
     
     @IBOutlet weak var btn_evaluaciones: UIButton!
@@ -23,7 +25,7 @@ class ViewControllerTableroPrincipal: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        view_actividades.isHidden = false
+        view_actividadesmetodologia.isHidden = false
         view_evaluaciones.isHidden = true
         let bottomBorder = CALayer()
         bottomBorder.backgroundColor = UIColor.orange.cgColor // Cambia el color a naranja o el que desees
@@ -33,12 +35,12 @@ class ViewControllerTableroPrincipal: UIViewController {
     
     @IBAction func buttonPressed(_ sender: UIButton) {
         // Oculta todas las vistas
-        view_actividades.isHidden = true
+        view_actividadesmetodologia.isHidden = true
         view_evaluaciones.isHidden = true
 
         // Muestra la vista correspondiente al botón presionado
         if sender.tag == 1 {
-            view_actividades.isHidden = false
+            view_actividadesmetodologia.isHidden = false
             label_tituloPrincipal.text = "Actividades"
             let bottomBorder = CALayer()
             bottomBorder.backgroundColor = UIColor.orange.cgColor // Cambia el color a naranja o el que desees

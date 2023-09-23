@@ -9,6 +9,8 @@ import UIKit
 
 class ViewControllerActividades: UIViewController {
 
+    @IBOutlet weak var stack_view: UIStackView!
+    
     @IBOutlet weak var btn_actividad1: UIButton!
     @IBOutlet weak var label_actividad1: UILabel!
     
@@ -25,36 +27,45 @@ class ViewControllerActividades: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        applyShadow(to: btn_actividad1)
-        roundBottomCorners(of: label_actividad1)
+        configureButton(btn_actividad1)
+        configureLabel(label_actividad1)
         
-        applyShadow(to: btn_actividad2)
-        roundBottomCorners(of: label_actividad2)
+        configureButton(btn_actividad2)
+        configureLabel(label_actividad2)
         
-        applyShadow(to: btn_actividad3)
-        roundBottomCorners(of: label_actividad3)
+        configureButton(btn_actividad3)
+        configureLabel(label_actividad3)
         
-        applyShadow(to: btn_actividad4)
-        roundBottomCorners(of: label_actividad4)
+        configureButton(btn_actividad4)
+        configureLabel(label_actividad4)
     }
-    func applyShadow(to view: UIView) {
-            view.layer.shadowColor = UIColor.gray.cgColor
-            view.layer.shadowOpacity = 0.5
-            view.layer.shadowOffset = CGSize(width: 0, height: 2)
-            view.layer.shadowRadius = 4
-        }
-        
-    func roundBottomCorners(of view: UIView) {
+    
+    func configureButton(_ button: UIButton){
+        button.layer.shadowColor = UIColor.gray.cgColor
+        button.layer.shadowOpacity = 0.5
+        button.layer.shadowOffset = CGSize(width: 0, height: 2)
+        button.layer.shadowRadius = 4
+        button.widthAnchor.constraint(equalToConstant: 325).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 186).isActive = true
+    }
+    
+    func configureLabel(_ label: UILabel){
         let maskLayer = CAShapeLayer()
-        maskLayer.frame = view.bounds
+        maskLayer.frame = label.bounds
         maskLayer.path = UIBezierPath(
-            roundedRect: view.bounds,
+            roundedRect: label.bounds,
             byRoundingCorners: [.bottomLeft, .bottomRight],
             cornerRadii: CGSize(width: 10, height: 10)
         ).cgPath
-
-        view.layer.mask = maskLayer
+        
+        label.backgroundColor = UIColor.white
+        label.layer.mask = maskLayer
+        label.textColor = UIColor.black
+        label.font = UIFont(name: "Poppins-Medium", size: 17.0)
+        label.heightAnchor.constraint(equalToConstant: 41).isActive = true
+        label.widthAnchor.constraint(equalToConstant: 325).isActive = true
     }
+    
     /*
     // MARK: - Navigation
 
