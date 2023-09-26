@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E304FA72ABBBF5B00BE0055 /* ViewControllerActividadUno.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E304FA62ABBBF5B00BE0055 /* ViewControllerActividadUno.swift */; };
+		8E304FAB2ABCD90200BE0055 /* ViewControllerEv1Act1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E304FAA2ABCD90200BE0055 /* ViewControllerEv1Act1.swift */; };
+		8E304FAD2ABCD9F900BE0055 /* ViewControllerEvAct1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E304FAC2ABCD9F900BE0055 /* ViewControllerEvAct1.swift */; };
+		8E471C352ABF8EB900A6946D /* ViewControllerModulosIndividual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E471C342ABF8EB900A6946D /* ViewControllerModulosIndividual.swift */; };
+		8E471C372AC0B42D00A6946D /* ViewControllerEvidencias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E471C362AC0B42D00A6946D /* ViewControllerEvidencias.swift */; };
+		8E471C392AC0B9FB00A6946D /* ViewControllerEvidenciasIndividual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E471C382AC0B9FB00A6946D /* ViewControllerEvidenciasIndividual.swift */; };
+		8E655B522ABE77C300CF8E66 /* ViewControllerTableroActividades.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E655B512ABE77C300CF8E66 /* ViewControllerTableroActividades.swift */; };
+		8E655B562ABF73EE00CF8E66 /* ViewControllerModulos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E655B552ABF73EE00CF8E66 /* ViewControllerModulos.swift */; };
 		8EB0B7CB2AA557B9002E0849 /* ViewControllerTableroInicial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB0B7CA2AA557B9002E0849 /* ViewControllerTableroInicial.swift */; };
 		8EE69E5C2ABAC72D007436B5 /* ViewControllerTableroPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE69E5B2ABAC72D007436B5 /* ViewControllerTableroPrincipal.swift */; };
 		8EE69E5E2ABAC737007436B5 /* ViewControllerEvaluaciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE69E5D2ABAC737007436B5 /* ViewControllerEvaluaciones.swift */; };
@@ -18,6 +26,7 @@
 		8EEFF0042AA3D24900809FEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EEFF0032AA3D24900809FEE /* Assets.xcassets */; };
 		8EEFF0072AA3D24900809FEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EEFF0052AA3D24900809FEE /* LaunchScreen.storyboard */; };
 		F34360312AA9459200487D75 /* BeginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34360302AA9459200487D75 /* BeginViewController.swift */; };
+		8EFD190A2AC244D700241122 /* ViewControllerProgresoIndividual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD19092AC244D600241122 /* ViewControllerProgresoIndividual.swift */; };
 		F34360402AA9501600487D75 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F343603D2AA9501500487D75 /* Poppins-Medium.ttf */; };
 		F34360412AA9501600487D75 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F343603E2AA9501500487D75 /* Poppins-Regular.ttf */; };
 		F34360432AA950E100487D75 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F34360422AA950E100487D75 /* Poppins-SemiBold.ttf */; };
@@ -29,6 +38,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E304FA62ABBBF5B00BE0055 /* ViewControllerActividadUno.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerActividadUno.swift; sourceTree = "<group>"; };
+		8E304FAA2ABCD90200BE0055 /* ViewControllerEv1Act1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerEv1Act1.swift; sourceTree = "<group>"; };
+		8E304FAC2ABCD9F900BE0055 /* ViewControllerEvAct1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerEvAct1.swift; sourceTree = "<group>"; };
+		8E471C342ABF8EB900A6946D /* ViewControllerModulosIndividual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerModulosIndividual.swift; sourceTree = "<group>"; };
+		8E471C362AC0B42D00A6946D /* ViewControllerEvidencias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerEvidencias.swift; sourceTree = "<group>"; };
+		8E471C382AC0B9FB00A6946D /* ViewControllerEvidenciasIndividual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerEvidenciasIndividual.swift; sourceTree = "<group>"; };
+		8E655B512ABE77C300CF8E66 /* ViewControllerTableroActividades.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTableroActividades.swift; sourceTree = "<group>"; };
+		8E655B552ABF73EE00CF8E66 /* ViewControllerModulos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerModulos.swift; sourceTree = "<group>"; };
 		8EB0B7CA2AA557B9002E0849 /* ViewControllerTableroInicial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTableroInicial.swift; sourceTree = "<group>"; };
 		8EE69E5B2ABAC72D007436B5 /* ViewControllerTableroPrincipal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerTableroPrincipal.swift; sourceTree = "<group>"; };
 		8EE69E5D2ABAC737007436B5 /* ViewControllerEvaluaciones.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerEvaluaciones.swift; sourceTree = "<group>"; };
@@ -42,6 +59,7 @@
 		8EEFF0062AA3D24900809FEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8EEFF0082AA3D24900809FEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F34360302AA9459200487D75 /* BeginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginViewController.swift; sourceTree = "<group>"; };
+		8EFD19092AC244D600241122 /* ViewControllerProgresoIndividual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerProgresoIndividual.swift; sourceTree = "<group>"; };
 		F343603D2AA9501500487D75 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		F343603E2AA9501500487D75 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		F34360422AA950E100487D75 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -93,6 +111,15 @@
 				8EEFEFFC2AA3D24700809FEE /* SceneDelegate.swift */,
 				8EEFEFFE2AA3D24700809FEE /* ViewController.swift */,
 				8EEFF0002AA3D24700809FEE /* Main.storyboard */,
+				8EFD19092AC244D600241122 /* ViewControllerProgresoIndividual.swift */,
+				8E471C382AC0B9FB00A6946D /* ViewControllerEvidenciasIndividual.swift */,
+				8E471C362AC0B42D00A6946D /* ViewControllerEvidencias.swift */,
+				8E471C342ABF8EB900A6946D /* ViewControllerModulosIndividual.swift */,
+				8E655B552ABF73EE00CF8E66 /* ViewControllerModulos.swift */,
+				8E655B512ABE77C300CF8E66 /* ViewControllerTableroActividades.swift */,
+				8E304FAC2ABCD9F900BE0055 /* ViewControllerEvAct1.swift */,
+				8E304FAA2ABCD90200BE0055 /* ViewControllerEv1Act1.swift */,
+				8E304FA62ABBBF5B00BE0055 /* ViewControllerActividadUno.swift */,
 				8EE69E5F2ABAC9EF007436B5 /* ViewControllerActividades.swift */,
 				8EE69E5D2ABAC737007436B5 /* ViewControllerEvaluaciones.swift */,
 				8EE69E5B2ABAC72D007436B5 /* ViewControllerTableroPrincipal.swift */,
@@ -185,14 +212,23 @@
 				8EE69E5C2ABAC72D007436B5 /* ViewControllerTableroPrincipal.swift in Sources */,
 				F343604D2ABA5E1600487D75 /* RegisterInputViewController.swift in Sources */,
 				8EEFEFFF2AA3D24700809FEE /* ViewController.swift in Sources */,
+				8E471C392AC0B9FB00A6946D /* ViewControllerEvidenciasIndividual.swift in Sources */,
 				8EB0B7CB2AA557B9002E0849 /* ViewControllerTableroInicial.swift in Sources */,
+				8E304FAD2ABCD9F900BE0055 /* ViewControllerEvAct1.swift in Sources */,
+				8EFD190A2AC244D700241122 /* ViewControllerProgresoIndividual.swift in Sources */,
 				8EEFEFFB2AA3D24700809FEE /* AppDelegate.swift in Sources */,
+				8E655B522ABE77C300CF8E66 /* ViewControllerTableroActividades.swift in Sources */,
 				8EE69E602ABAC9EF007436B5 /* ViewControllerActividades.swift in Sources */,
 				F34360312AA9459200487D75 /* BeginViewController.swift in Sources */,
 				F3E0A7942ABCF2DE004DB845 /* RegisterInput2ViewController.swift in Sources */,
+				8E655B562ABF73EE00CF8E66 /* ViewControllerModulos.swift in Sources */,
+				8E304FAB2ABCD90200BE0055 /* ViewControllerEv1Act1.swift in Sources */,
+				8E304FA72ABBBF5B00BE0055 /* ViewControllerActividadUno.swift in Sources */,
 				8EEFEFFD2AA3D24700809FEE /* SceneDelegate.swift in Sources */,
 				8EE69E5E2ABAC737007436B5 /* ViewControllerEvaluaciones.swift in Sources */,
 				F34360472AB935E600487D75 /* LoginViewController.swift in Sources */,
+				8E471C372AC0B42D00A6946D /* ViewControllerEvidencias.swift in Sources */,
+				8E471C352ABF8EB900A6946D /* ViewControllerModulosIndividual.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +375,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4XRBL7AZMG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SEL4C/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -366,6 +403,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4XRBL7AZMG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SEL4C/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
