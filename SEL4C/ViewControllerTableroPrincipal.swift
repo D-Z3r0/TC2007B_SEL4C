@@ -85,7 +85,8 @@ class ViewControllerTableroPrincipal: UIViewController {
             }
         }
     }
-
+    
+    
     /*
     // MARK: - Navigation
 
