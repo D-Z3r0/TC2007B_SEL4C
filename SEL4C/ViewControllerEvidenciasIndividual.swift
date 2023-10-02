@@ -7,8 +7,9 @@
 
 import UIKit
 import MobileCoreServices
+import AVFoundation
 
-class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentPickerDelegate {
+class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentPickerDelegate,AVAudioRecorderDelegate {
     
     //Valores pasado de la información del modulo
     var titulo_modulo_resultado: String = ""
@@ -16,6 +17,7 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
     var instrucciones_actividad: String = ""
     var tipo_entrega_result: String = ""
     var modulo_evidencia: Int = 0
+    var actividad_modulo: Int = 0
     
     //Componente fijos con cambio de contenido
     @IBOutlet weak var titulo_evidencia: UILabel!
@@ -30,13 +32,32 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
     @IBOutlet weak var btn_imagen: UIButton!
     @IBOutlet weak var btn_audio: UIButton!
     
+    var selectedImage: UIImage?
+    var selectedVideoURL: URL?
+    var audioRecorder: AVAudioRecorder?
+    @IBOutlet weak var image_selected: UIImageView!
+    
+    var moduloIndividual: Modulo_individual?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        Task{
+            do {
+                moduloIndividual = try await Modulo.fetchModulosDetail(id_actividad: actividad_modulo, id_modulo: modulo_evidencia)
+                
+                if let modulo = moduloIndividual {
+                    print("Modulo cargado con éxito: \(modulo)")
+                    titulo_modulo.text = modulo.titulo_mod
+                    instrucciones.text = modulo.instrucciones
+                }
+            } catch {
+                print("Error al cargar la actividad: \(error)")
+            }
+        }
         //Mostrar información del modulo seleccionado
         titulo_evidencia.text = titulo_modulo_resultado
-        titulo_modulo.text = modulo_resultado
-        instrucciones.text = instrucciones_actividad
+        //titulo_modulo.text = modulo_resultado
+        //instrucciones.text = instrucciones_actividad
         print("Evidencia del modulo: \(modulo_evidencia)")
         
         //Hidden los tipos de entrega
@@ -146,10 +167,25 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
 
     
     // Función para grabar un video
-        func recordVideo() {
-            // Aquí puedes implementar la lógica para iniciar la grabación de video con la cámara
-            // Asegúrate de configurar y mostrar la interfaz de grabación según tus necesidades
-        }
+    func recordVideo() {
+         if UIImagePickerController.isSourceTypeAvailable(.camera) {
+             let imagePicker = UIImagePickerController()
+             imagePicker.delegate = self
+             imagePicker.sourceType = .camera
+             
+             // Configura para captura de video
+             imagePicker.mediaTypes = [kUTTypeMovie as String]
+             
+             // Puedes configurar otras propiedades aquí, como la calidad del video, la duración máxima, etc.
+             
+             // Presenta el controlador de captura de video
+             present(imagePicker, animated: true, completion: nil)
+         } else {
+             // La cámara no está disponible en este dispositivo
+             // Puedes mostrar un mensaje de error al usuario
+             print("La cámara no está disponible en este dispositivo.")
+         }
+    }
     
     // Función para tomar una foto
     func takePhoto() {
@@ -167,50 +203,118 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
             print("La cámara no está disponible en este dispositivo.")
         }
     }
+    
+    // UIImagePickerControllerDelegate method for handling the selected/taken image
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let mediaType = info[.mediaType] as? String {
+            if mediaType == kUTTypeImage as String {
+                // Se seleccionó una imagen
+                if let image = info[.originalImage] as? UIImage {
+                    selectedImage = image
+                    image_selected.image = selectedImage
+                    /*
+                    Task{
+                        do{
+                            let datos = try await MultipartRequest.sendEvidence(user: "usuario.prueba", activity: "activity1", evidenceName: "evidencia1", image: image_selected.image!)
+                            print("se hizo la llamada")
+                        }catch{
+                            print("falló la llamada")
+                        }
+                    }*/
+                }
+            } else if mediaType == kUTTypeMovie as String {
+                // Se seleccionó un video
+                if let videoURL = info[.mediaURL] as? URL {
+                    selectedVideoURL = videoURL
+                    print(videoURL)
+                    // Realiza la lógica necesaria para mostrar o procesar el video
+                }
+            }
+        }
+
+        // Cierra el controlador de selección de medios
+        picker.dismiss(animated: true, completion: nil)
+    }
 
     
     // Función para tomar una foto
-        func recordAudio() {
-            // Aquí puedes implementar la lógica para iniciar la grabación de video con la cámara
-            // Asegúrate de configurar y mostrar la interfaz de grabación según tus necesidades
-        }
-
+    func recordAudio() {
+        let audioSession = AVAudioSession.sharedInstance()
+                do {
+                    try audioSession.setCategory(.playAndRecord, options: .defaultToSpeaker)
+                    try audioSession.setActive(true)
+                    
+                    let audioSettings: [String: Any] = [
+                        AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+                        AVSampleRateKey: 44100.0,
+                        AVNumberOfChannelsKey: 2,
+                        AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+                    ]
+                    
+                    let audioFilename = getDocumentsDirectory().appendingPathComponent("audioRecording.m4a")
+                    audioRecorder = try AVAudioRecorder(url: audioFilename, settings: audioSettings)
+                    audioRecorder?.delegate = self
+                    audioRecorder?.record()
+                    
+                    // Iniciar la grabación de audio
+                } catch {
+                    // Manejar errores de grabación de audio
+                    print("Error al iniciar la grabación de audio: \(error.localizedDescription)")
+                }
+    }
     
-        // Función para seleccionar un video de la galería
-        func pickVideoFromLibrary() {
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = .photoLibrary
-            imagePicker.mediaTypes = [kUTTypeMovie as String] // Especifica que deseas seleccionar videos
-            present(imagePicker, animated: true, completion: nil)
+    // Función para detener la grabación de audio
+        func stopRecording() {
+            if let audioRecorder = self.audioRecorder {
+                if audioRecorder.isRecording {
+                    audioRecorder.stop()
+                    // Realiza cualquier lógica necesaria después de detener la grabación
+                }
+            }
         }
+        
+        // Obtiene el directorio de documentos
+        func getDocumentsDirectory() -> URL {
+            let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+            return paths[0]
+        }
+    
+    // Función para seleccionar un video de la galería
+    func pickVideoFromLibrary() {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.mediaTypes = ["public.movie"] // Especifica que deseas seleccionar videos
+        present(imagePicker, animated: true, completion: nil)
+    }
+
     
     // Función para seleccionar una imagen de la galería
     func pickImageFromLibrary() {
         let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
-        imagePicker.mediaTypes = [kUTTypeImage as String] // Especifica que deseas seleccionar imágenes
-        present(imagePicker, animated: true, completion: nil)
+            imagePicker.delegate = self
+            imagePicker.sourceType = .photoLibrary
+            imagePicker.mediaTypes = ["public.image"] // Especifica que deseas seleccionar imágenes
+            present(imagePicker, animated: true, completion: nil)
     }
     
     // Función para seleccionar un archivo de audio de la galería
-        func pickAudioFromLibrary() {
-            let documentPicker = UIDocumentPickerViewController(documentTypes: ["public.audio"], in: .import)
+    func pickAudioFromLibrary() {
+        let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [.audio], asCopy: true)
             documentPicker.delegate = self
             documentPicker.allowsMultipleSelection = false // Si solo se permite seleccionar un archivo
 
             present(documentPicker, animated: true, completion: nil)
-        }
+    }
 
-        // Delegate method for UIDocumentPickerViewController
-        func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-            if let audioURL = urls.first {
-                // Aquí puedes usar audioURL para acceder al archivo de audio seleccionado
-                // Por ejemplo, puedes copiarlo a una ubicación de tu aplicación o procesarlo de alguna otra manera
-                print("URL del archivo de audio seleccionado: \(audioURL)")
-            }
+    // Delegate method for UIDocumentPickerViewController
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        if let audioURL = urls.first {
+            // Aquí puedes usar audioURL para acceder al archivo de audio seleccionado
+            // Por ejemplo, puedes copiarlo a una ubicación de tu aplicación o procesarlo de alguna otra manera
+            print("URL del archivo de audio seleccionado: \(audioURL)")
         }
+    }
     /*
     // MARK: - Navigation
 

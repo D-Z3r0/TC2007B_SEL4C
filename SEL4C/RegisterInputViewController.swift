@@ -74,13 +74,14 @@ class RegisterInputViewController: UIViewController {
             self.navigationController?.pushViewController(destinationVC!, animated: true)
     }
     
+    /*
     func updateCheckboxImage() {
             let symbolName =  ? "checkmark.square.fill" : "square"
             let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 18)
             let image = UIImage(systemName: symbolName, withConfiguration: symbolConfiguration)
 
             tcCheckbox.setImage(image, for: .normal)
-    }
+    }*/
     
     /*
     // MARK: - Navigation

@@ -94,13 +94,114 @@ class ViewControllerModulosIndividual: UIViewController {
         ]
     ]
     
+    var actividadIndividual: Actividad_individual?
+    var modulos_json: [Modulo] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Task{
+            do {
+                actividadIndividual = try await Actividad.fetchActividadesDetail(id_actividad: activity_modules)
 
+                if let actividad = actividadIndividual {
+                    print("Actividad cargada con éxito: \(actividad)")
+                    titulo.text = actividad.titulo
+                    descripcion_acti.text = actividad.descripcion
+                    titulo_actividad.text = "FALTA"
+                }
+            } catch {
+                print("Error al cargar la actividad: \(error)")
+            }
+            
+            do {
+                modulos_json = try await Modulo.fetchModulos(id_actividad: activity_modules)
+                for actividad_json in modulos_json {
+                    print("ID modulo: \(actividad_json.id_modulo)")
+                    print("ID activodad del modulo: \(actividad_json.id_modulo)")
+                    print("Titulo modulo: \(actividad_json.titulo_mod)")
+                    print("Instrucciones modulo: \(actividad_json.id_actividad)")
+                    print(actividad_json.tipo_multimedia)
+                    if let imagen = actividad_json.imagen_mod {
+                        print("Imagen actividad: \(actividad_json)")
+                    } else {
+                        print("Imagen: No disponible")
+                    }
+                    //Creando una view para agregar al stack con los elementos del JSON
+                    let containerView = UIView()
+                    containerView.translatesAutoresizingMaskIntoConstraints = false
+                    containerView.widthAnchor.constraint(equalToConstant: 393).isActive = true
+                    containerView.heightAnchor.constraint(equalToConstant: 73).isActive = true
+                    
+                    // Crear el titutlo del modulo
+                    let label = UILabel()
+                    label.text = "   \(actividad_json.titulo_mod)"
+                    label.translatesAutoresizingMaskIntoConstraints = false
+                    configureTitulo(label)
+                    
+                    // Crear el button del modulo
+                    let nuevoBoton = UIButton()
+                    configureButton(nuevoBoton)
+                    
+                    //Crear el foco de estado del modulo
+                    let nuevo_foco = UIButton()
+                    nuevo_foco.backgroundColor = UIColor.blue
+                    configureEstadobtn(nuevo_foco)
+                    
+                    //Crear la image de flecha del modulo
+                    let nuevo_image = UIImageView()
+                    configureImagebtn(nuevo_image)
+                    
+                    //Añadir elementos a view
+                    containerView.addSubview(nuevoBoton)
+                    containerView.addSubview(label)
+                    containerView.addSubview(nuevo_foco)
+                    containerView.addSubview(nuevo_image)
+                    
+                    
+                    //Añadir view a stack
+                    stack_view.addArrangedSubview(containerView)
+                    
+                    //Constraints de elementos
+                    label.translatesAutoresizingMaskIntoConstraints = false
+                    nuevoBoton.translatesAutoresizingMaskIntoConstraints = false
+                    nuevo_foco.translatesAutoresizingMaskIntoConstraints = false
+                    nuevo_image.translatesAutoresizingMaskIntoConstraints = false
+                    NSLayoutConstraint.activate([
+                        label.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 25),
+                        label.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 72),
+                        label.trailingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: -89),
+                        label.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -24),
+                        
+                        nuevoBoton.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 6),
+                        nuevoBoton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 34),
+                        nuevoBoton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -34),
+                        nuevoBoton.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -6),
+                        
+                        nuevo_foco.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 29),
+                        nuevo_foco.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 52),
+                        nuevo_foco.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -329),
+                        nuevo_foco.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -32),
+                        
+                        nuevo_image.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 19),
+                        nuevo_image.leadingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: 312),
+                        nuevo_image.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -54),
+                        nuevo_image.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -21)
+                    ])
+                    
+                    // Configurar la acción de navegación para el botón
+                    nuevoBoton.tag = actividad_json.id_modulo // Asignar el ID de la actividad como tag
+                    nuevoBoton.addTarget(self, action: #selector(navegarAEvidencias(_:)), for: .touchUpInside)
+                }
+            } catch {
+                print("Error al cargar el modulo: \(error)")
+            }
+        }
+        
         //Mostrar información de la actividad seleccionada
-        titulo.text = titulo_actividad_resultado
-        titulo_actividad.text = actividad_resultado
-        descripcion_acti.text = description_actividad
+        //titulo.text = titulo_actividad_resultado
+        //titulo_actividad.text = actividad_resultado
+        //descripcion_acti.text = description_actividad
         
         print("Modulos de la actividad: \(activity_modules)")
         
@@ -204,6 +305,7 @@ class ViewControllerModulosIndividual: UIViewController {
             if let actividad1VC = self.storyboard?.instantiateViewController(withIdentifier: "Evidencias") as? ViewControllerEvidencias {
                 // Pasa el valor del tag al ViewController "Evidencias"
                 actividad1VC.show_module_results = show_module
+                actividad1VC.show_activity_module_results = activity_modules
                 
                 // Filtrar el arreglo para obtener actividades con id_actividad de la actividad seleccionada
                 let modulosFiltradas = modulos_actividades.filter { modulo in
