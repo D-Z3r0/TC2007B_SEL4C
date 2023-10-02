@@ -25,8 +25,8 @@
 		8EEFF0022AA3D24700809FEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EEFF0002AA3D24700809FEE /* Main.storyboard */; };
 		8EEFF0042AA3D24900809FEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EEFF0032AA3D24900809FEE /* Assets.xcassets */; };
 		8EEFF0072AA3D24900809FEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EEFF0052AA3D24900809FEE /* LaunchScreen.storyboard */; };
-		F34360312AA9459200487D75 /* BeginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34360302AA9459200487D75 /* BeginViewController.swift */; };
 		8EFD190A2AC244D700241122 /* ViewControllerProgresoIndividual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD19092AC244D600241122 /* ViewControllerProgresoIndividual.swift */; };
+		F34360312AA9459200487D75 /* BeginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34360302AA9459200487D75 /* BeginViewController.swift */; };
 		F34360402AA9501600487D75 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F343603D2AA9501500487D75 /* Poppins-Medium.ttf */; };
 		F34360412AA9501600487D75 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F343603E2AA9501500487D75 /* Poppins-Regular.ttf */; };
 		F34360432AA950E100487D75 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F34360422AA950E100487D75 /* Poppins-SemiBold.ttf */; };
@@ -34,6 +34,7 @@
 		F34360472AB935E600487D75 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34360462AB935E600487D75 /* LoginViewController.swift */; };
 		F34360492AB93D1B00487D75 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F34360482AB93D1B00487D75 /* Poppins-Bold.ttf */; };
 		F343604D2ABA5E1600487D75 /* RegisterInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F343604C2ABA5E1600487D75 /* RegisterInputViewController.swift */; };
+		F34B05352AC4ED9B001E741B /* WebViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34B05342AC4ED9B001E741B /* WebViewerViewController.swift */; };
 		F3E0A7942ABCF2DE004DB845 /* RegisterInput2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E0A7932ABCF2DE004DB845 /* RegisterInput2ViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,8 +59,8 @@
 		8EEFF0032AA3D24900809FEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8EEFF0062AA3D24900809FEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8EEFF0082AA3D24900809FEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F34360302AA9459200487D75 /* BeginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginViewController.swift; sourceTree = "<group>"; };
 		8EFD19092AC244D600241122 /* ViewControllerProgresoIndividual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerProgresoIndividual.swift; sourceTree = "<group>"; };
+		F34360302AA9459200487D75 /* BeginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginViewController.swift; sourceTree = "<group>"; };
 		F343603D2AA9501500487D75 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		F343603E2AA9501500487D75 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		F34360422AA950E100487D75 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -67,6 +68,7 @@
 		F34360462AB935E600487D75 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F34360482AB93D1B00487D75 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		F343604C2ABA5E1600487D75 /* RegisterInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInputViewController.swift; sourceTree = "<group>"; };
+		F34B05342AC4ED9B001E741B /* WebViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewerViewController.swift; sourceTree = "<group>"; };
 		F3E0A7932ABCF2DE004DB845 /* RegisterInput2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInput2ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +86,7 @@
 		8EEFEFEE2AA3D24700809FEE = {
 			isa = PBXGroup;
 			children = (
+				F34B05342AC4ED9B001E741B /* WebViewerViewController.swift */,
 				F34360442AB90AFC00487D75 /* Poppins-ExtraBold.ttf */,
 				F34360422AA950E100487D75 /* Poppins-SemiBold.ttf */,
 				F343603D2AA9501500487D75 /* Poppins-Medium.ttf */,
@@ -210,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EE69E5C2ABAC72D007436B5 /* ViewControllerTableroPrincipal.swift in Sources */,
+				F34B05352AC4ED9B001E741B /* WebViewerViewController.swift in Sources */,
 				F343604D2ABA5E1600487D75 /* RegisterInputViewController.swift in Sources */,
 				8EEFEFFF2AA3D24700809FEE /* ViewController.swift in Sources */,
 				8E471C392AC0B9FB00A6946D /* ViewControllerEvidenciasIndividual.swift in Sources */,
