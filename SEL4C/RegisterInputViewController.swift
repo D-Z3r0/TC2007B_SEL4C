@@ -114,6 +114,15 @@ class RegisterInputViewController: UIViewController {
     }
     
     /*
+    func updateCheckboxImage() {
+            let symbolName =  ? "checkmark.square.fill" : "square"
+            let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 18)
+            let image = UIImage(systemName: symbolName, withConfiguration: symbolConfiguration)
+
+            tcCheckbox.setImage(image, for: .normal)
+    }*/
+    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

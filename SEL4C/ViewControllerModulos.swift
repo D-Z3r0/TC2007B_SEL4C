@@ -26,6 +26,7 @@ class ViewControllerModulos: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Actividad mostrada: \(show_activity_results)")
+        
     }
     
     // MARK: - Navigation
@@ -33,14 +34,14 @@ class ViewControllerModulos: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Pasar a la vista de modulos la información de la actividad
-        let sigVista = segue.destination as? ViewControllerModulosIndividual
-        sigVista?.titulo_actividad_resultado = "Actividad \(show_activity_results)"
+        /*let sigVista = segue.destination as? ViewControllerModulosIndividual
+        sigVista?.titulo_actividad_resultado = "Actividad \(show_activity_results)"*/
         
         let sigVista2 = segue.destination as? ViewControllerModulosIndividual
         sigVista2?.actividad_resultado = titulo
         
-        let sigVista3 = segue.destination as? ViewControllerModulosIndividual
-        sigVista3?.description_actividad = desc
+        /*let sigVista3 = segue.destination as? ViewControllerModulosIndividual
+        sigVista3?.description_actividad = desc*/
         
         let sigVista4 = segue.destination as? ViewControllerModulosIndividual
         sigVista4?.activity_modules = show_activity_results
