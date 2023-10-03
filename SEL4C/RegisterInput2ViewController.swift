@@ -7,8 +7,9 @@
 
 import UIKit
 
-class RegisterInput2ViewController: UIViewController, UIPickerViewDelegate {
+class RegisterInput2ViewController: UIViewController, UIPickerViewDelegate{
 
+    @IBOutlet weak var disciplineInput: UIButton!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var tcButton: UIButton!
     @IBOutlet weak var tcCheckbox: UIButton!
@@ -18,11 +19,19 @@ class RegisterInput2ViewController: UIViewController, UIPickerViewDelegate {
     @IBOutlet weak var gradeInput: UIButton!
     @IBOutlet weak var institutionInput: UITextField!
     
-//    let checkedImage = UIImage(named: "checkmark.square.fill")! as UIImage
-//    let uncheckedImage = UIImage(named: "checkmark.square")! as UIImage
-    let grades = ["Primaria", "Secundaria", "Preparatoria", "Universidad"]
+    let customFont = UIFont(name: "Poppins-SemiBold", size: 14.0)
+    let customFont2 = UIFont(name: "Poppins-Regular", size: 15.0)
+    let grades = ["Elige una opción","Pregrado (licenciatura, profesional, universidad, grado)", "Posgrado (maestría, doctorado)", "Educación continua"]
+    let genders = ["Elige una opción", "Masculino", "Femenino", "No binario", "Prefiero no decir"]
+    let disciplines = ["Elige una opción", "Ingeniería y Ciencias", "Humanidades y educación", "Ciencias sociales", "Ciencias de la salud", "Arquitectura, arte y diseño", "Negocios"]
     var countries: [String] = []
+//    let gradeActions: [UIAction] = ["Elige una opción","Pregrado (licenciatura, profesional, universidad, grado)", "Posgrado (maestría, doctorado)", "Educación continua"].map { title in
+//        return createPaddedAction(title: title)
+//    }
+    
     var gradeActions: [UIAction] = []
+    var genderActions: [UIAction] = []
+    var disciplinesActions: [UIAction] = []
     var countryActions: [UIAction] = []
     var isChecked = false
 
@@ -30,22 +39,35 @@ class RegisterInput2ViewController: UIViewController, UIPickerViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         updateCheckboxImage()
-        tcCheckbox.addTarget(self, action: #selector(checkboxTapped), for: .touchUpInside)
+//        tcCheckbox.addTarget(self, action: #selector(checkboxTapped), for: .touchUpInside)
         inputDesign(institutionInput)
         inputDesign(ageInput)
+        buttonDesign(gradeInput)
+        buttonDesign(genderInput)
+        buttonDesign(countryInput)
+        buttonDesign(disciplineInput)
+//        applyTextStyle(gradeInput)
         setPlaceholder(institutionInput , text: "Tec de Monterrey", padding: 10)
         setPlaceholder(ageInput, text: "20", padding: 10)
-        createGradeList()
-        createCountryList()
+        gradeActionList()
+        disciplineActionList()
+        genderActionList()
+        countryActionList()
         gradeInput.showsMenuAsPrimaryAction = true
         gradeInput.changesSelectionAsPrimaryAction = true
-//        let optionClosure = {(action: UIAction) in
-//            self.update(number: action.title)
-//        }
         gradeInput.menu = UIMenu(children: gradeActions)
+        disciplineInput.showsMenuAsPrimaryAction = true
+        disciplineInput.changesSelectionAsPrimaryAction = true
+        disciplineInput.menu = UIMenu(children: disciplinesActions)
+        genderInput.showsMenuAsPrimaryAction = true
+        genderInput.changesSelectionAsPrimaryAction = true
+        genderInput.menu = UIMenu(children: genderActions)
         countryInput.showsMenuAsPrimaryAction = true
         countryInput.changesSelectionAsPrimaryAction = true
         countryInput.menu = UIMenu(children: countryActions)
+        let attributedText = NSMutableAttributedString(string: "Acepto términos y condiciones")
+        attributedText.addAttributes([NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue, NSAttributedString.Key.underlineColor: UIColor.white, NSAttributedString.Key.font: customFont!], range: NSMakeRange(0, attributedText.length))
+        tcButton.setAttributedTitle(attributedText, for: .normal)
     }
     
     @IBAction func checkboxTapped() {
@@ -53,39 +75,47 @@ class RegisterInput2ViewController: UIViewController, UIPickerViewDelegate {
         updateCheckboxImage()
     }
     
+//    @IBAction func handleGradeMenuSelection(_ sender: UIAction) {
+//            // Actualiza el título del botón con el texto seleccionado
+//            gradeInput.setTitle(sender.title, for: .normal)
+//    }
+    
     func updateCheckboxImage() {
-            let symbolName = isChecked ? "checkmark.square.fill" : "square"
-            let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 18)
-            let image = UIImage(systemName: symbolName, withConfiguration: symbolConfiguration)
-
-            tcCheckbox.setImage(image, for: .normal)
+        let symbolName = isChecked ? "checkmark.square.fill" : "checkmark.square"
+        let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 18)
+        let image = UIImage(systemName: symbolName, withConfiguration: symbolConfiguration)
+        tcCheckbox.setImage(image, for: .normal)
     }
     
     func inputDesign(_ textField: UITextField) {
-            textField.layer.cornerRadius = 18
-            textField.layer.borderWidth = 2
-            textField.layer.borderColor = UIColor.white.cgColor
-            textField.layer.masksToBounds = true
+        textField.layer.cornerRadius = 18
+        textField.layer.borderWidth = 2
+        textField.layer.borderColor = UIColor.white.cgColor
+        textField.layer.masksToBounds = true
     }
+    
+    func buttonDesign(_ button: UIButton) {
+        button.layer.cornerRadius = 18
+        button.layer.borderWidth = 2
+        button.layer.borderColor = UIColor.white.cgColor
+        button.layer.masksToBounds = true
+    }
+    
+//    func applyTextStyle(_ button: UIButton) {
+//        let attributedString = NSAttributedString(string: button.title(for: .normal) ?? "", attributes: [
+//            .font: customFont2!,
+//            .foregroundColor: UIColor.white,
+//            
+//        ])
+//        button.setAttributedTitle(attributedString, for: .normal)
+//        button.configuration?.titlePadding = 10
+//    }
     
     func setPlaceholder(_ textField: UITextField, text: String, padding: CGFloat) {
-            let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: padding, height: textField.frame.height))
-            textField.leftView = paddingView
-            textField.leftViewMode = .always
-            textField.attributedPlaceholder = NSAttributedString(string: text, attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
-    }
-    
-    func update(number:String) {
-        print(number)
-    }
-    
-    func createGradeList(){
-        for grade in grades {
-            let action = UIAction(title: grade) { [weak self] _ in
-                self?.update(number: grade)
-            }
-            gradeActions.append(action)
-        }
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: padding, height: textField.frame.height))
+        textField.leftView = paddingView
+        textField.leftViewMode = .always
+        textField.attributedPlaceholder = NSAttributedString(string: text, attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
     }
     
     func getCountries(){
@@ -95,16 +125,52 @@ class RegisterInput2ViewController: UIViewController, UIPickerViewDelegate {
             countries.append(name)
         }
     }
-
-    func createCountryList(){
+    
+    func updateGrade(grade: String) {
+        print(grade)
+    }
+    func updateDiscipline(discipline: String) {
+        print(discipline)
+    }
+    func updateGender(gender: String) {
+        print(gender)
+    }
+    func updateCountry(country: String) {
+        print(country)
+    }
+    
+    func gradeActionList(){
+        for grade in grades {
+            let action = UIAction(title: grade) { [weak self] _ in
+                self?.updateGrade(grade: grade)
+            }
+            gradeActions.append(action)
+        }
+    }
+    func disciplineActionList(){
+        for discipline in disciplines {
+            let action = UIAction(title: discipline) { [weak self] _ in
+                self?.updateDiscipline(discipline: discipline)
+            }
+            disciplinesActions.append(action)
+        }
+    }
+    func genderActionList(){
+        for gender in genders {
+            let action = UIAction(title: gender) { [weak self] _ in
+                self?.updateGender(gender: gender)
+            }
+            genderActions.append(action)
+        }
+    }
+    func countryActionList(){
         getCountries()
         for country in countries {
             let action = UIAction(title: country) { [weak self] _ in
-                self?.update(number: country)
+                self?.updateCountry(country: country)
             }
             countryActions.append(action)
         }
-
     }
     
     /*

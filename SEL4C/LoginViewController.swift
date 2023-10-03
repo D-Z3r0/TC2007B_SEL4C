@@ -7,14 +7,18 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController{
     
+    @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var showPassword: UIButton!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var inputPassword: UITextField!
     @IBOutlet weak var inputEmail: UITextField!
     
     let customFont = UIFont(name: "Poppins-Regular", size: 15.0)
+    var isPasswordVisible = false
+    var validEMail = false
+    var validPassword = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +30,7 @@ class LoginViewController: UIViewController {
         inputDesign(inputPassword)
         inputPassword.isSecureTextEntry = true
         let attributedText = NSMutableAttributedString(string: "Regístrate")
-        attributedText.addAttributes([NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue, NSAttributedString.Key.underlineColor: UIColor.blue, NSAttributedString.Key.font: customFont!], range: NSMakeRange(0, attributedText.length))
+        attributedText.addAttributes([NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue, NSAttributedString.Key.underlineColor: UIColor.link, NSAttributedString.Key.font: customFont!], range: NSMakeRange(0, attributedText.length))
         registerButton.setAttributedTitle(attributedText, for: .normal)
     }
     
@@ -44,7 +48,14 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func passwordVisibilty(){
-        inputPassword.isSecureTextEntry.toggle()
+        isPasswordVisible.toggle()
+        if isPasswordVisible {
+            showPassword.setImage(UIImage(systemName: "eye.fill"), for: .normal)
+            inputPassword.isSecureTextEntry = false
+        } else {
+            showPassword.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
+            inputPassword.isSecureTextEntry = true
+        }
     }
     
     @IBAction func registerButtonPressed() {
@@ -53,6 +64,24 @@ class LoginViewController: UIViewController {
 //        let destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginRegisterIdentifier") as? Login2ViewController
 //        present(destinationVC!, animated: true, completion: nil)
     }
+    
+    @IBAction func verifyInputs(_ button: UIButton) {
+        let emailText = inputEmail.text
+        let passwordText = inputPassword.text
+        if  emailText!.contains("@") && passwordText!.count > 1 {
+            
+        } else {
+            invalidInputsAlert()
+        }
+    }
+    
+    func invalidInputsAlert() {
+        let alertController = UIAlertController(title: "Datos inválidos", message: "Proporcione correctamente un correo y contraseña.", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
 
     // MARK: - Navigation
 
@@ -66,5 +95,5 @@ class LoginViewController: UIViewController {
 //        }
     }
     */
-
+    
 }

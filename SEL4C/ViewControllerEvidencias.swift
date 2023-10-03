@@ -12,6 +12,7 @@ class ViewControllerEvidencias: UIViewController {
     //Valor pasado del id de la actividad y modulo seleccionado
     var show_module_results: Int = 0
     var modulo_actual_results: Int = 0
+    var show_activity_module_results: Int = 0
     
     //Valores pasado de la información del modulo
     var titulo_res: String = ""
@@ -37,17 +38,20 @@ class ViewControllerEvidencias: UIViewController {
             let sigVista = segue.destination as? ViewControllerEvidenciasIndividual
             sigVista?.titulo_modulo_resultado = "Identificación"
             
-            let sigVista2 = segue.destination as? ViewControllerEvidenciasIndividual
-            sigVista2?.modulo_resultado = titulo_res
+           /* let sigVista2 = segue.destination as? ViewControllerEvidenciasIndividual
+            sigVista2?.modulo_resultado = titulo_res*/
             
-            let sigVista3 = segue.destination as? ViewControllerEvidenciasIndividual
-            sigVista3?.instrucciones_actividad = Instrucciones_res
+            /*let sigVista3 = segue.destination as? ViewControllerEvidenciasIndividual
+            sigVista3?.instrucciones_actividad = Instrucciones_res*/
             
             let sigVista5 = segue.destination as? ViewControllerEvidenciasIndividual
             sigVista5?.tipo_entrega_result = multimedia_res
             
             let sigVista4 = segue.destination as? ViewControllerEvidenciasIndividual
             sigVista4?.modulo_evidencia = show_module_results
+            
+            let sigVista6 = segue.destination as? ViewControllerEvidenciasIndividual
+            sigVista6?.actividad_modulo = show_activity_module_results
             
         }
     }

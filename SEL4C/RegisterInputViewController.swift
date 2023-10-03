@@ -19,6 +19,11 @@ class RegisterInputViewController: UIViewController {
     @IBOutlet weak var inputUsername: UITextField!
     
     let customFont = UIFont(name: "Poppins-Regular", size: 15.0)
+    let customFont2 = UIFont(name: "Poppins-Bold", size: 18.0)
+    let customFont3 = UIFont(name: "Poppins-Regular", size: 13.0)
+    
+    var isPasswordVisible1 = false
+    var isPasswordVisible2 = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,17 +40,37 @@ class RegisterInputViewController: UIViewController {
         inputPassword.isSecureTextEntry = true
         inputConfirmPassword.isSecureTextEntry = true
         let attributedText = NSMutableAttributedString(string: "Inicia Sesión")
-        attributedText.addAttributes([NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue, NSAttributedString.Key.underlineColor: UIColor.blue, NSAttributedString.Key.font: customFont!], range: NSMakeRange(0, attributedText.length))
+        attributedText.addAttributes([NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue, NSAttributedString.Key.underlineColor: UIColor.link, NSAttributedString.Key.font: customFont!], range: NSMakeRange(0, attributedText.length))
         loginButton.setAttributedTitle(attributedText, for: .normal)
         infoButton.addTarget(self, action: #selector(infoButtonTapped), for: .touchUpInside)
     }
     
     @IBAction func infoButtonTapped() {
-            // Puedes mostrar una alerta informativa aquí
-            let alertController = UIAlertController(title: "Requisitos de contraseña", message: "La contraseña debe tener al menos 8 caracteres.", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alertController.addAction(okAction)
-            present(alertController, animated: true, completion: nil)
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        let titleAttributes: [NSAttributedString.Key: Any] = [
+            .font: customFont2!, .foregroundColor: UIColor.black]
+        let attributedTitle = NSAttributedString(string: "Requisitos de la contraseña", attributes: titleAttributes)
+        let message = "La contraseña debe tener al menos:\n• 8 caracteres\n• Una letra mayúscula\n• Un número\nPuedes usar caractéres especiales."
+        let messageAttributes: [NSMutableAttributedString.Key: Any] = [
+            .font: customFont3!,
+            .foregroundColor: UIColor.black,
+            .paragraphStyle: {
+                let paragraphStyle = NSMutableParagraphStyle()
+                paragraphStyle.alignment = .center
+                paragraphStyle.lineSpacing = 5
+                return paragraphStyle
+            }(),
+        ]
+        let attributedMessage = NSMutableAttributedString(string: message, attributes: messageAttributes)
+        let paragraphStyleLeft = NSMutableParagraphStyle()
+        paragraphStyleLeft.alignment = .left
+        paragraphStyleLeft.lineSpacing = 5
+        attributedMessage.addAttribute(.paragraphStyle, value: paragraphStyleLeft, range: NSRange(location: 0, length: 84))
+        alertController.setValue(attributedTitle, forKey: "attributedTitle")
+        alertController.setValue(attributedMessage, forKey: "attributedMessage")
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
     }
     
     func inputDesign(_ textField: UITextField) {
@@ -62,11 +87,25 @@ class RegisterInputViewController: UIViewController {
     }
     
     @IBAction func passwordVisibiltyButton1(){
-        inputPassword.isSecureTextEntry.toggle()
-        
+        isPasswordVisible1.toggle()
+        if isPasswordVisible1 {
+            showPassword1.setImage(UIImage(systemName: "eye.fill"), for: .normal)
+            inputPassword.isSecureTextEntry = false
+        } else {
+            showPassword1.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
+            inputPassword.isSecureTextEntry = true
+        }
     }
+    
     @IBAction func passwordVisibiltyButton2(){
-        inputConfirmPassword.isSecureTextEntry.toggle()
+        isPasswordVisible2.toggle()
+        if isPasswordVisible2 {
+            showPassword2.setImage(UIImage(systemName: "eye.fill"), for: .normal)
+            inputConfirmPassword.isSecureTextEntry = false
+        } else {
+            showPassword2.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
+            inputConfirmPassword.isSecureTextEntry = true
+        }
     }
     
     @IBAction func registerButtonPressed() {
@@ -74,13 +113,14 @@ class RegisterInputViewController: UIViewController {
             self.navigationController?.pushViewController(destinationVC!, animated: true)
     }
     
+    /*
     func updateCheckboxImage() {
             let symbolName =  ? "checkmark.square.fill" : "square"
             let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 18)
             let image = UIImage(systemName: symbolName, withConfiguration: symbolConfiguration)
 
             tcCheckbox.setImage(image, for: .normal)
-    }
+    }*/
     
     /*
     // MARK: - Navigation
