@@ -1,14 +1,14 @@
 //
-//  SendImage.swift
+//  SendVideo.swift
 //  SEL4C
 //
-//  Created by Sofía Donlucas on 01/10/23.
+//  Created by Sofía Donlucas on 03/10/23.
 //
 
 import Foundation
 import UIKit
 
-public struct MultipartRequest {
+public struct MultipartRequestVideo {
     
     public let boundary: String
     
@@ -66,9 +66,9 @@ public struct MultipartRequest {
     }
 }
 
-extension MultipartRequest {
+extension MultipartRequestVideo {
     
-    static func sendEvidence(user:String, activity:String, evidence_name:String, idModulo: Int, imagen: UIImage) async throws -> Data {
+    static func sendEvidence(user: String, activity: String, evidenceName: String, idModulo: Int, videoPath: String) async throws -> Data {
         var multipart = MultipartRequest()
         
         // Convierte el ID del módulo a una cadena y agrégalo como campo
@@ -78,17 +78,20 @@ extension MultipartRequest {
         for field in [
             "user": user,
             "activity": activity,
-            "evidence_name": evidence_name
+            "evidence_name": evidenceName
         ] {
             multipart.add(key: field.key, value: field.value)
         }
         
-        multipart.add(
-            key: "archivo_res",
-            fileName: evidence_name+".png",
-            fileMimeType: "image/png",
-            fileData: imagen.pngData()!
-        )
+        if let videoData = FileManager.default.contents(atPath: videoPath) {
+            // Cambia "video/mp4" al tipo MIME adecuado para tu video si es diferente
+            multipart.add(
+                key: "archivo_res",
+                fileName: evidenceName + ".mp4", // Cambia la extensión del archivo si es necesario
+                fileMimeType: "video/mp4",
+                fileData: videoData
+            )
+        }
 
         let url = URL(string: "http://127.0.0.1:8000/api/user/evidences/")!
         var request = URLRequest(url: url)
@@ -103,5 +106,4 @@ extension MultipartRequest {
         return data
     }
 }
-
 

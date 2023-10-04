@@ -24,7 +24,7 @@ enum ActividadError: Error, LocalizedError{
 extension Actividad{
     
     static func fetchActividades() async throws->Actividades{
-        let baseString = "http://127.0.0.1:8000/api/admin/activities/all/"
+        let baseString = "http://3.81.160.222:8000/api/admin/activities/all/"
         let questionsURL = URL(string: baseString)!
         let (data, response) = try await URLSession.shared.data(from: questionsURL)
         guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
@@ -37,7 +37,7 @@ extension Actividad{
     }
     
     static func fetchActividadesDetail(id_actividad: Int) async throws -> Actividad_individual{
-        let baseString = "http://127.0.0.1:8000/api/admin/activities/\(id_actividad)/"
+        let baseString = "http://3.81.160.222:8000/api/admin/activities/\(id_actividad)/"
         let actividadURL = URL(string: baseString)!
         let (data, response) = try await URLSession.shared.data(from: actividadURL)
         

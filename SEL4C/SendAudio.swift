@@ -1,14 +1,15 @@
 //
-//  SendImage.swift
+//  SendAudio.swift
 //  SEL4C
 //
-//  Created by Sofía Donlucas on 01/10/23.
+//  Created by Sofía Donlucas on 03/10/23.
 //
 
 import Foundation
 import UIKit
+import AVFoundation
 
-public struct MultipartRequest {
+public struct MultipartRequestAudio {
     
     public let boundary: String
     
@@ -66,10 +67,10 @@ public struct MultipartRequest {
     }
 }
 
-extension MultipartRequest {
+extension MultipartRequestAudio {
     
-    static func sendEvidence(user:String, activity:String, evidence_name:String, idModulo: Int, imagen: UIImage) async throws -> Data {
-        var multipart = MultipartRequest()
+    static func sendAudioEvidence(user: String, activity: String, evidenceName: String, idModulo: Int, audioData: Data) async throws -> Data {
+        var multipart = MultipartRequestAudio()
         
         // Convierte el ID del módulo a una cadena y agrégalo como campo
         let idModuloString = String(idModulo)
@@ -78,16 +79,17 @@ extension MultipartRequest {
         for field in [
             "user": user,
             "activity": activity,
-            "evidence_name": evidence_name
+            "evidence_name": evidenceName
         ] {
             multipart.add(key: field.key, value: field.value)
         }
         
+        // Specify the appropriate audio MIME type and file name here
         multipart.add(
             key: "archivo_res",
-            fileName: evidence_name+".png",
-            fileMimeType: "image/png",
-            fileData: imagen.pngData()!
+            fileName: evidenceName + ".mp3", // Change the file extension if needed
+            fileMimeType: "audio/mp3",
+            fileData: audioData
         )
 
         let url = URL(string: "http://127.0.0.1:8000/api/user/evidences/")!
@@ -103,5 +105,3 @@ extension MultipartRequest {
         return data
     }
 }
-
-

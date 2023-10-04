@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IPw-oS-OVd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vq5-op-66W">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -1431,15 +1432,14 @@
                         <viewLayoutGuide key="safeArea" id="rv8-5X-sSh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="hys-Uh-TwD" firstAttribute="trailing" secondItem="rv8-5X-sSh" secondAttribute="trailing" id="3fl-m0-Qth"/>
-                            <constraint firstItem="UKz-T4-3at" firstAttribute="leading" secondItem="rv8-5X-sSh" secondAttribute="leading" id="4dn-sV-COD"/>
-                            <constraint firstItem="hys-Uh-TwD" firstAttribute="top" secondItem="rv8-5X-sSh" secondAttribute="top" constant="45" id="6TY-wh-eue"/>
-                            <constraint firstItem="UKz-T4-3at" firstAttribute="top" secondItem="hys-Uh-TwD" secondAttribute="bottom" constant="8" id="DbS-ov-6ei"/>
-                            <constraint firstItem="hys-Uh-TwD" firstAttribute="top" secondItem="rv8-5X-sSh" secondAttribute="top" constant="45" id="FlN-nV-w86"/>
-                            <constraint firstItem="UKz-T4-3at" firstAttribute="trailing" secondItem="rv8-5X-sSh" secondAttribute="trailing" id="e1x-4r-aas"/>
-                            <constraint firstAttribute="bottom" secondItem="UKz-T4-3at" secondAttribute="bottom" constant="115" id="rdS-LU-2Tb"/>
-                            <constraint firstItem="hys-Uh-TwD" firstAttribute="leading" secondItem="rv8-5X-sSh" secondAttribute="leading" id="teH-Bj-mk8"/>
-                            <constraint firstItem="UKz-T4-3at" firstAttribute="top" secondItem="hys-Uh-TwD" secondAttribute="bottom" constant="8" id="zS1-Et-Vei"/>
+                            <constraint firstItem="rv8-5X-sSh" firstAttribute="bottom" secondItem="UKz-T4-3at" secondAttribute="bottom" constant="81" id="2jf-1S-DYx"/>
+                            <constraint firstItem="UKz-T4-3at" firstAttribute="top" secondItem="hys-Uh-TwD" secondAttribute="bottom" constant="8" id="J57-H3-OWK"/>
+                            <constraint firstItem="hys-Uh-TwD" firstAttribute="top" secondItem="rv8-5X-sSh" secondAttribute="top" constant="45" id="Nah-E6-Jvz"/>
+                            <constraint firstItem="UKz-T4-3at" firstAttribute="top" secondItem="hys-Uh-TwD" secondAttribute="bottom" constant="8" id="QmV-3S-QYs"/>
+                            <constraint firstItem="hys-Uh-TwD" firstAttribute="trailing" secondItem="rv8-5X-sSh" secondAttribute="trailing" id="QzB-KB-2nS"/>
+                            <constraint firstItem="UKz-T4-3at" firstAttribute="leading" secondItem="rv8-5X-sSh" secondAttribute="leading" id="aLK-Jz-GFZ"/>
+                            <constraint firstItem="UKz-T4-3at" firstAttribute="trailing" secondItem="rv8-5X-sSh" secondAttribute="trailing" id="n4l-2r-Ll7"/>
+                            <constraint firstItem="hys-Uh-TwD" firstAttribute="leading" secondItem="rv8-5X-sSh" secondAttribute="leading" id="oxo-MF-qsK"/>
                         </constraints>
                     </view>
                     <connections>
@@ -2201,13 +2201,19 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="imagen_actividad1" translatesAutoresizingMaskIntoConstraints="NO" id="vGU-Fy-zVI">
-                                <rect key="frame" x="0.0" y="104" width="393" height="179"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagen_actividad1" translatesAutoresizingMaskIntoConstraints="NO" id="vGU-Fy-zVI">
+                                <rect key="frame" x="0.0" y="104" width="393" height="141"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="393" id="oiE-TG-OBB"/>
+                                    <constraint firstAttribute="height" constant="141" id="rkJ-CF-g9O"/>
+                                </constraints>
                             </imageView>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pe5-um-cwd">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pe5-um-cwd">
                                 <rect key="frame" x="0.0" y="253" width="393" height="484"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="484" id="2gR-Oz-brS"/>
+                                    <constraint firstAttribute="width" constant="393" id="5Wb-Ok-DZH"/>
+                                </constraints>
                                 <connections>
                                     <segue destination="I1M-aQ-g1k" kind="embed" id="xgG-rq-q5f"/>
                                 </connections>
@@ -2215,6 +2221,16 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zPN-YS-yf6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pe5-um-cwd" firstAttribute="trailing" secondItem="zPN-YS-yf6" secondAttribute="trailing" id="4XW-7u-yqO"/>
+                            <constraint firstItem="vGU-Fy-zVI" firstAttribute="leading" secondItem="zPN-YS-yf6" secondAttribute="leading" id="Mtc-gX-2WY"/>
+                            <constraint firstItem="pe5-um-cwd" firstAttribute="top" secondItem="vGU-Fy-zVI" secondAttribute="bottom" constant="8" id="XPl-L5-DbW"/>
+                            <constraint firstItem="pe5-um-cwd" firstAttribute="leading" secondItem="zPN-YS-yf6" secondAttribute="leading" id="ZBt-Em-fE6"/>
+                            <constraint firstItem="pe5-um-cwd" firstAttribute="top" secondItem="vGU-Fy-zVI" secondAttribute="bottom" constant="8" id="aTF-Iv-YBu"/>
+                            <constraint firstItem="zPN-YS-yf6" firstAttribute="bottom" secondItem="pe5-um-cwd" secondAttribute="bottom" constant="81" id="gzh-QZ-zwL"/>
+                            <constraint firstItem="vGU-Fy-zVI" firstAttribute="top" secondItem="zPN-YS-yf6" secondAttribute="top" constant="45" id="kvY-4A-aEd"/>
+                            <constraint firstItem="vGU-Fy-zVI" firstAttribute="trailing" secondItem="zPN-YS-yf6" secondAttribute="trailing" id="uES-7e-V6m"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="view_evidenciasind" destination="pe5-um-cwd" id="jFg-wt-jNs"/>
@@ -2222,7 +2238,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xXt-TN-4ci" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="17527" y="-2744"/>
+            <point key="canvasLocation" x="17525.954198473282" y="-2744.3661971830988"/>
         </scene>
         <!--View Controller Evidencias Individual-->
         <scene sceneID="q1F-1J-PKJ">
@@ -2236,7 +2252,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="484"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9hj-uS-4e3">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="2447"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="2687"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BD6-3I-JLn">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
@@ -2485,8 +2501,61 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                     <constraint firstAttribute="bottom" secondItem="cF3-9l-5VX" secondAttribute="bottom" constant="107" id="rRd-7e-ptJ"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d0s-tk-IBn">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2A9-Hy-y0n">
                                                 <rect key="frame" x="0.0" y="2207" width="393" height="240"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57p-8g-Fav">
+                                                        <rect key="frame" x="26" y="27" width="325" height="186"/>
+                                                        <color key="tintColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="">
+                                                            <backgroundConfiguration key="background">
+                                                                <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </backgroundConfiguration>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqq-xP-0HO">
+                                                        <rect key="frame" x="160" y="73" width="57" height="60"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="checkmark.circle.fill" catalog="system" title="">
+                                                            <backgroundConfiguration key="background" cornerRadius="50">
+                                                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                            </backgroundConfiguration>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDf-zg-dOE">
+                                                        <rect key="frame" x="102" y="141" width="172" height="24"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="¡Entregado exitosamente!">
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <font key="NSFont" metaFont="system"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="IDf-zg-dOE" firstAttribute="leading" secondItem="2A9-Hy-y0n" secondAttribute="leading" constant="102" id="48h-V8-XYM"/>
+                                                    <constraint firstAttribute="trailing" secondItem="eqq-xP-0HO" secondAttribute="trailing" constant="176" id="HzE-6X-bXw"/>
+                                                    <constraint firstItem="IDf-zg-dOE" firstAttribute="top" secondItem="2A9-Hy-y0n" secondAttribute="top" constant="141" id="JMC-vK-Tl4"/>
+                                                    <constraint firstItem="eqq-xP-0HO" firstAttribute="top" secondItem="2A9-Hy-y0n" secondAttribute="top" constant="73" id="NbW-VP-I2T"/>
+                                                    <constraint firstItem="57p-8g-Fav" firstAttribute="top" secondItem="2A9-Hy-y0n" secondAttribute="top" constant="27" id="QNq-dk-fmF"/>
+                                                    <constraint firstAttribute="bottom" secondItem="IDf-zg-dOE" secondAttribute="bottom" constant="75" id="Qhq-dq-0Lb"/>
+                                                    <constraint firstAttribute="bottom" secondItem="eqq-xP-0HO" secondAttribute="bottom" constant="107" id="WGH-EP-o8e"/>
+                                                    <constraint firstAttribute="trailing" secondItem="57p-8g-Fav" secondAttribute="trailing" constant="42" id="eSk-uf-E40"/>
+                                                    <constraint firstItem="57p-8g-Fav" firstAttribute="leading" secondItem="2A9-Hy-y0n" secondAttribute="leading" constant="26" id="gtg-Eg-kmh"/>
+                                                    <constraint firstAttribute="trailing" secondItem="IDf-zg-dOE" secondAttribute="trailing" constant="119" id="nbX-z0-B52"/>
+                                                    <constraint firstAttribute="bottom" secondItem="57p-8g-Fav" secondAttribute="bottom" constant="27" id="rL2-Dy-Qrv"/>
+                                                    <constraint firstItem="eqq-xP-0HO" firstAttribute="leading" secondItem="2A9-Hy-y0n" secondAttribute="leading" constant="160" id="tuj-g1-ZoL"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d0s-tk-IBn">
+                                                <rect key="frame" x="0.0" y="2447" width="393" height="240"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7K-Sf-zU7">
                                                         <rect key="frame" x="26" y="27" width="325" height="186"/>
@@ -2539,6 +2608,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                         <outlet property="btn_imagen" destination="Tps-Dc-yYM" id="WDR-Bb-tX9"/>
                         <outlet property="btn_video" destination="trA-02-gkd" id="10P-GV-kx8"/>
                         <outlet property="entrega_audio" destination="Lme-oa-OjM" id="nnJ-9O-gMc"/>
+                        <outlet property="entrega_exitosa" destination="2A9-Hy-y0n" id="9Lf-b5-GNx"/>
                         <outlet property="entrega_imagen" destination="hdW-82-5Jp" id="UsA-mz-BX6"/>
                         <outlet property="entrega_video" destination="yLC-Yz-2Go" id="Exb-o2-z3H"/>
                         <outlet property="image_selected" destination="qja-ba-25C" id="R3F-Sh-XNy"/>
@@ -4079,6 +4149,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
         <image name="8.9 - enfinal6" width="275" height="556"/>
         <image name="9 - finEvInicial" width="277" height="550"/>
         <image name="chart.bar.xaxis" catalog="system" width="128" height="99"/>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
         <image name="checkmark.seal.fill" catalog="system" width="128" height="124"/>
         <image name="checkmark.square" catalog="system" width="128" height="114"/>
         <image name="chevron.down" catalog="system" width="128" height="70"/>
@@ -4100,6 +4171,9 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

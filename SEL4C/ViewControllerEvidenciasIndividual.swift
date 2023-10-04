@@ -31,9 +31,13 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
     @IBOutlet weak var entrega_audio: UIView!
     @IBOutlet weak var btn_imagen: UIButton!
     @IBOutlet weak var btn_audio: UIButton!
+    @IBOutlet weak var entrega_exitosa: UIView!
     
     var selectedImage: UIImage?
     var selectedVideoURL: URL?
+    var selectedAudioData: Data?
+    var selectedAudioURL: URL?
+    
     var audioRecorder: AVAudioRecorder?
     @IBOutlet weak var image_selected: UIImageView!
     
@@ -41,14 +45,54 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Esto eliminará todos los valores almacenados en UserDefaults.standard
+        
+        //Hidden los tipos de entrega
+        /*entrega_video.isHidden = true
+        entrega_imagen.isHidden = true
+        entrega_audio.isHidden = true
+        entrega_exitosa.isHidden = true*/
+        
         Task{
             do {
                 moduloIndividual = try await Modulo.fetchModulosDetail(id_actividad: actividad_modulo, id_modulo: modulo_evidencia)
                 
                 if let modulo = moduloIndividual {
+                    let defaults = UserDefaults.standard
+                    let isUserLogged = defaults.bool(forKey: "actividad \(modulo.id_actividad) modulo \(modulo.id_modulo)")
                     print("Modulo cargado con éxito: \(modulo)")
                     titulo_modulo.text = modulo.titulo_mod
                     instrucciones.text = modulo.instrucciones
+                    tipo_entrega_result = modulo.tipo_multimedia
+                    if !(isUserLogged){
+                        if tipo_entrega_result == "video"{
+                            entrega_video.isHidden = false
+                            entrega_imagen.isHidden = true
+                            entrega_audio.isHidden = true
+                            entrega_exitosa.isHidden = true
+                            // Configurar el botón btn_video para mostrar el menú
+                            btn_video.addTarget(self, action: #selector(presentVideoOptions), for: .touchUpInside)
+                        }else if tipo_entrega_result == "imagen"{
+                            entrega_imagen.isHidden = false
+                            entrega_video.isHidden = true
+                            entrega_audio.isHidden = true
+                            entrega_exitosa.isHidden = true
+                            // Configurar el botón btn_video para mostrar el menú
+                            btn_imagen.addTarget(self, action: #selector(presentImageOptions), for: .touchUpInside)
+                        }else if tipo_entrega_result == "audio"{
+                            entrega_audio.isHidden=false
+                            entrega_imagen.isHidden = true
+                            entrega_video.isHidden = true
+                            entrega_exitosa.isHidden = true
+                            // Configurar el botón btn_video para mostrar el menú
+                            btn_audio.addTarget(self, action: #selector(presentAudioOptions), for: .touchUpInside)
+                        }
+                    }else{
+                        entrega_audio.isHidden=true
+                        entrega_imagen.isHidden = true
+                        entrega_video.isHidden = true
+                        entrega_exitosa.isHidden = false
+                    }
                 }
             } catch {
                 print("Error al cargar la actividad: \(error)")
@@ -59,32 +103,7 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
         //titulo_modulo.text = modulo_resultado
         //instrucciones.text = instrucciones_actividad
         print("Evidencia del modulo: \(modulo_evidencia)")
-        
-        //Hidden los tipos de entrega
-        entrega_video.isHidden = true
-        entrega_imagen.isHidden = true
-        entrega_audio.isHidden = true
-        
-        //Mostrar espacio de entrega dado el tipo de entrega
-        if tipo_entrega_result == "video"{
-            entrega_video.isHidden = false
-            entrega_imagen.isHidden = true
-            entrega_audio.isHidden = true
-            // Configurar el botón btn_video para mostrar el menú
-            btn_video.addTarget(self, action: #selector(presentVideoOptions), for: .touchUpInside)
-        }else if tipo_entrega_result == "imagen"{
-            entrega_imagen.isHidden = false
-            entrega_video.isHidden = true
-            entrega_audio.isHidden = true
-            // Configurar el botón btn_video para mostrar el menú
-            btn_imagen.addTarget(self, action: #selector(presentImageOptions), for: .touchUpInside)
-        }else if tipo_entrega_result == "audio"{
-            entrega_audio.isHidden=false
-            entrega_imagen.isHidden = true
-            entrega_video.isHidden = true
-            // Configurar el botón btn_video para mostrar el menú
-            btn_audio.addTarget(self, action: #selector(presentAudioOptions), for: .touchUpInside)
-        }
+    
     }
     
     // Función para mostrar el menú de opciones de video
@@ -204,6 +223,13 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
         }
     }
     
+    func showSuccessView() {
+        entrega_imagen.isHidden = true
+        entrega_video.isHidden = true
+        entrega_audio.isHidden = true
+        entrega_exitosa.isHidden = false
+    }
+    
     // UIImagePickerControllerDelegate method for handling the selected/taken image
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let mediaType = info[.mediaType] as? String {
@@ -212,22 +238,52 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                 if let image = info[.originalImage] as? UIImage {
                     selectedImage = image
                     image_selected.image = selectedImage
-                    /*
+            
                     Task{
                         do{
-                            let datos = try await MultipartRequest.sendEvidence(user: "usuario.prueba", activity: "activity1", evidenceName: "evidencia1", image: image_selected.image!)
-                            print("se hizo la llamada")
+                            let datos = try await MultipartRequest.sendEvidence(user: "prueba", activity: "actividad1", evidence_name: "Actividad: \(actividad_modulo) de modulo \(modulo_evidencia)", idModulo: modulo_evidencia, imagen: image_selected.image!)
+                            UserDefaults.standard.set(true, forKey: "actividad \(actividad_modulo) modulo \(modulo_evidencia)")
+                            print("Image upload completed successfully")
+                            showSuccessView()
                         }catch{
-                            print("falló la llamada")
+                            print("Error sending image: \(error.localizedDescription)")
                         }
-                    }*/
+                    }
                 }
             } else if mediaType == kUTTypeMovie as String {
                 // Se seleccionó un video
                 if let videoURL = info[.mediaURL] as? URL {
                     selectedVideoURL = videoURL
-                    print(videoURL)
-                    // Realiza la lógica necesaria para mostrar o procesar el video
+                    let videoPath = videoURL.path // Obtenemos la ruta del archivo desde la URL
+                    
+                    Task{
+                        do{
+                            let datos = try await MultipartRequestVideo.sendEvidence(user: "prueba", activity: "actividad1", evidenceName: "Actividad: \(actividad_modulo) de modulo \(modulo_evidencia)", idModulo: modulo_evidencia, videoPath: videoPath)
+                            UserDefaults.standard.set(true, forKey: "actividad \(actividad_modulo) modulo \(modulo_evidencia)")
+                            print("Video upload completed successfully")
+                            showSuccessView()
+
+                        }catch{
+                            print("Error sending video: \(error.localizedDescription)")
+                        }
+                    }
+                }
+            } else if mediaType == kUTTypeAudio as String {
+                // Handle selected audio
+                if let audioURL = info[.mediaURL] as? URL {
+                    // Send the selected audio as a multipart request
+                    Task {
+                        do {
+                            let audioData = try Data(contentsOf: audioURL)
+
+                            let datos = try await MultipartRequestAudio.sendAudioEvidence(user: "prueba", activity: "actividad1",evidenceName: "Actividad: \(actividad_modulo) de modulo \(modulo_evidencia)", idModulo: modulo_evidencia, audioData: audioData)
+                            UserDefaults.standard.set(true, forKey: "actividad \(actividad_modulo) modulo \(modulo_evidencia)")
+                            print("Audio upload completed successfully")
+                            showSuccessView()
+                        } catch {
+                            print("Error sending audio: \(error.localizedDescription)")
+                        }
+                    }
                 }
             }
         }
@@ -235,7 +291,6 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
         // Cierra el controlador de selección de medios
         picker.dismiss(animated: true, completion: nil)
     }
-
     
     // Función para tomar una foto
     func recordAudio() {
@@ -310,10 +365,37 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
     // Delegate method for UIDocumentPickerViewController
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         if let audioURL = urls.first {
-            // Aquí puedes usar audioURL para acceder al archivo de audio seleccionado
-            // Por ejemplo, puedes copiarlo a una ubicación de tu aplicación o procesarlo de alguna otra manera
-            print("URL del archivo de audio seleccionado: \(audioURL)")
-        }
+                // Aquí puedes usar audioURL para acceder al archivo de audio seleccionado
+                // Por ejemplo, puedes copiarlo a una ubicación de tu aplicación o procesarlo de alguna otra manera
+                do {
+                    // Leer el archivo de audio en un Data
+                    let audioData = try Data(contentsOf: audioURL)
+
+                    // Guardar el Data en una variable o en otro lugar según tus necesidades
+                    // En este ejemplo, lo guardamos en una propiedad selectedAudioData
+                    self.selectedAudioData = audioData
+
+                    // También puedes guardar la URL si la necesitas para reproducir o cargar el audio
+                    self.selectedAudioURL = audioURL
+
+                    // Send the selected audio data to your server using MultipartRequestAudio
+                    Task {
+                        do {
+                            // Specify the user, activity, evidenceName, and idModulo as needed
+                            let _ = try await MultipartRequestAudio.sendAudioEvidence(user: "prueba", activity: "actividad1", evidenceName: "evidencia1", idModulo: 5, audioData: audioData)
+                            print("Audio data sent successfully")
+                        } catch {
+                            print("Error sending audio data: \(error.localizedDescription)")
+                        }
+                    }
+
+                    print(audioURL)
+
+                    // Puedes realizar otras acciones necesarias aquí con el audio
+                } catch {
+                    print("Error al leer el archivo de audio: \(error.localizedDescription)")
+                }
+            }
     }
     /*
     // MARK: - Navigation
