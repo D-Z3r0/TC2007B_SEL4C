@@ -26,6 +26,7 @@ class ViewControllerEvidencias: UIViewController {
 
         // Do any additional setup after loading the view.
         print("Modulo mostrado: \(modulo_actual_results)")
+        print("Modulo de la actividad: \(show_activity_module_results)")
     }
 
     // MARK: - Navigation
@@ -44,8 +45,8 @@ class ViewControllerEvidencias: UIViewController {
             /*let sigVista3 = segue.destination as? ViewControllerEvidenciasIndividual
             sigVista3?.instrucciones_actividad = Instrucciones_res*/
             
-            let sigVista5 = segue.destination as? ViewControllerEvidenciasIndividual
-            sigVista5?.tipo_entrega_result = multimedia_res
+            /*let sigVista5 = segue.destination as? ViewControllerEvidenciasIndividual
+            sigVista5?.tipo_entrega_result = multimedia_res*/
             
             let sigVista4 = segue.destination as? ViewControllerEvidenciasIndividual
             sigVista4?.modulo_evidencia = show_module_results
