@@ -15,6 +15,9 @@ class LoginViewController: UIViewController{
     @IBOutlet weak var inputPassword: UITextField!
     @IBOutlet weak var inputEmail: UITextField!
     
+    var userLogin = UserLogin()
+    var loginController = LoginController()
+    
     let customFont = UIFont(name: "Poppins-Regular", size: 15.0)
     var isPasswordVisible = false
     var validEMail = false
@@ -68,11 +71,37 @@ class LoginViewController: UIViewController{
     @IBAction func verifyInputs(_ button: UIButton) {
         let emailText = inputEmail.text
         let passwordText = inputPassword.text
+        print(emailText!)
+        print(passwordText!)
         if  emailText!.contains("@") && passwordText!.count > 1 {
-            
-        } else {
+            userLogin.email = emailText!
+            userLogin.contrasena = passwordText!
+            print(userLogin)
+            Task{
+                do{
+                    try await loginController.userLogin(loginResponse: userLogin)
+                    evaluationNavigate()
+                    UserDefaults.standard.set(true, forKey: "LOGGEDIN")
+                }catch{
+                    displayErrorUserResponses(UserError.itemNotFound, title: "No se encontro el usuario.")
+                }
+            } 
+        }else {
             invalidInputsAlert()
         }
+    }
+    
+    func evaluationNavigate(){
+        let destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "InitialEvaluationIdentifier") as? InitialEvaluationViewController
+            self.navigationController?.pushViewController(destinationVC!, animated: true)
+    }
+        
+    func displayErrorUserResponses(_ error: Error, title: String) {
+            DispatchQueue.main.async {
+                let alert = UIAlertController(title: title, message: error.localizedDescription, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Continuar", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
     }
     
     func invalidInputsAlert() {
