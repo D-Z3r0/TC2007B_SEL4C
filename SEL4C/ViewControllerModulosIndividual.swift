@@ -41,6 +41,34 @@ class ViewControllerModulosIndividual: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        /*
+        let controller = UserProgressUpdateController()
+
+        let idUsuario = 1 // Reemplaza con el ID de usuario deseado
+        let activityData: [String: Any] = [
+            "id_progreso": 1,
+            "id_usuario": idUsuario,
+            "actividad1": false,
+            "actividad2": false,
+            "actividad3": false,
+            "actividad4": false
+        ]
+        
+        Task{
+            do {
+                try await controller.updateUserProgress(idUsuario: idUsuario, activityData: activityData)
+                print("Actualización exitosa")
+            } catch let error as UserProgressUpdateError {
+                switch error {
+                case .userNotFound:
+                    print("Usuario no encontrado")
+                case .missingActivityFields:
+                    print("Faltan campos de actividad")
+                }
+            } catch {
+                print("Error desconocido: \(error)")
+            }
+        }*/
         
         Task{
             do {
@@ -59,6 +87,24 @@ class ViewControllerModulosIndividual: UIViewController {
             do {
                 modulos_json = try await Modulo.fetchModulos(id_actividad: activity_modules)
                 for actividad_json in modulos_json {
+                    // Crear una instancia de UserProgressActivities
+                    let userProgress = UserProgressController()
+
+                    // Llamar a la función postProgressForUser con datos de ejemplo
+                    do {
+                        try await userProgress.postProgressForUser(
+                            idUsuario: 1,
+                            idActividad: actividad_json.id_actividad,
+                            idModulo: actividad_json.id_modulo,
+                            estadoActividad: false,
+                            estadoModulo: false
+                        )
+                        print("Solicitud exitosa") // Esto se imprimirá si la solicitud es exitosa
+                    } catch {
+                        print("Error al realizar la solicitud: \(error)") // Manejar errores si ocurren
+                    }
+                      
+                    
                     print("ID modulo: \(actividad_json.id_modulo)")
                     print("ID activodad del modulo: \(actividad_json.id_modulo)")
                     print("Titulo modulo: \(actividad_json.titulo_mod)")

@@ -58,6 +58,12 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                 moduloIndividual = try await Modulo.fetchModulosDetail(id_actividad: actividad_modulo, id_modulo: modulo_evidencia)
                 
                 if let modulo = moduloIndividual {
+                    /*
+                    // Eliminar todos los valores almacenados en UserDefaults.standard
+                    UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+
+                    // Sincronizar UserDefaults para asegurarse de que los cambios se apliquen de inmediato
+                    UserDefaults.standard.synchronize()*/
                     let defaults = UserDefaults.standard
                     let isUserLogged = defaults.bool(forKey: "actividad \(modulo.id_actividad) modulo \(modulo.id_modulo)")
                     print("Modulo cargado con éxito: \(modulo)")
@@ -245,6 +251,7 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                             UserDefaults.standard.set(true, forKey: "actividad \(actividad_modulo) modulo \(modulo_evidencia)")
                             print("Image upload completed successfully")
                             showSuccessView()
+                            
                         }catch{
                             print("Error sending image: \(error.localizedDescription)")
                         }
@@ -277,6 +284,8 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                             let audioData = try Data(contentsOf: audioURL)
 
                             let datos = try await MultipartRequestAudio.sendAudioEvidence(user: "prueba", activity: "actividad1",evidenceName: "Actividad: \(actividad_modulo) de modulo \(modulo_evidencia)", idModulo: modulo_evidencia, audioData: audioData)
+                            print("actividad_modulo: \(actividad_modulo)")
+                            print("modulo_evidencia: \(modulo_evidencia)")
                             UserDefaults.standard.set(true, forKey: "actividad \(actividad_modulo) modulo \(modulo_evidencia)")
                             print("Audio upload completed successfully")
                             showSuccessView()
@@ -294,45 +303,7 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
     
     // Función para tomar una foto
     func recordAudio() {
-        let audioSession = AVAudioSession.sharedInstance()
-                do {
-                    try audioSession.setCategory(.playAndRecord, options: .defaultToSpeaker)
-                    try audioSession.setActive(true)
-                    
-                    let audioSettings: [String: Any] = [
-                        AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
-                        AVSampleRateKey: 44100.0,
-                        AVNumberOfChannelsKey: 2,
-                        AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
-                    ]
-                    
-                    let audioFilename = getDocumentsDirectory().appendingPathComponent("audioRecording.m4a")
-                    audioRecorder = try AVAudioRecorder(url: audioFilename, settings: audioSettings)
-                    audioRecorder?.delegate = self
-                    audioRecorder?.record()
-                    
-                    // Iniciar la grabación de audio
-                } catch {
-                    // Manejar errores de grabación de audio
-                    print("Error al iniciar la grabación de audio: \(error.localizedDescription)")
-                }
     }
-    
-    // Función para detener la grabación de audio
-        func stopRecording() {
-            if let audioRecorder = self.audioRecorder {
-                if audioRecorder.isRecording {
-                    audioRecorder.stop()
-                    // Realiza cualquier lógica necesaria después de detener la grabación
-                }
-            }
-        }
-        
-        // Obtiene el directorio de documentos
-        func getDocumentsDirectory() -> URL {
-            let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-            return paths[0]
-        }
     
     // Función para seleccionar un video de la galería
     func pickVideoFromLibrary() {
@@ -382,8 +353,10 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                     Task {
                         do {
                             // Specify the user, activity, evidenceName, and idModulo as needed
-                            let _ = try await MultipartRequestAudio.sendAudioEvidence(user: "prueba", activity: "actividad1", evidenceName: "evidencia1", idModulo: 5, audioData: audioData)
-                            print("Audio data sent successfully")
+                            let _ = try await MultipartRequestAudio.sendAudioEvidence(user: "prueba", activity: "actividad1", evidenceName: "Actividad: \(actividad_modulo) de modulo \(modulo_evidencia)", idModulo: 5, audioData: audioData)
+                            print("Audio upload completed successfully")
+                            UserDefaults.standard.set(true, forKey: "actividad \(actividad_modulo) modulo \(modulo_evidencia)")
+                            showSuccessView()
                         } catch {
                             print("Error sending audio data: \(error.localizedDescription)")
                         }
@@ -397,7 +370,7 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                 }
             }
     }
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -405,6 +378,5 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
 
 }

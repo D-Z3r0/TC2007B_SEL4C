@@ -105,5 +105,46 @@ extension MultipartRequestVideo {
         print(String(data: data, encoding: .utf8)!)
         return data
     }
+    
+    static func sendEvidenceTestVideo(user: String, activity: String, evidenceName: String, idModulo: Int, videoPath: String) async throws -> Int {
+        var multipart = MultipartRequest()
+        
+        // Convierte el ID del módulo a una cadena y agrégalo como campo
+        let idModuloString = String(idModulo)
+        multipart.add(key: "id_modulo", value: idModuloString)
+        
+        for field in [
+            "user": user,
+            "activity": activity,
+            "evidence_name": evidenceName
+        ] {
+            multipart.add(key: field.key, value: field.value)
+        }
+        
+        if let videoData = FileManager.default.contents(atPath: videoPath) {
+            // Cambia "video/mp4" al tipo MIME adecuado para tu video si es diferente
+            multipart.add(
+                key: "archivo_res",
+                fileName: evidenceName + ".mp4", // Cambia la extensión del archivo si es necesario
+                fileMimeType: "video/mp4",
+                fileData: videoData
+            )
+        }
+
+        let url = URL(string: "http://127.0.0.1:8000/api/user/evidences/")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue(multipart.httpContentTypeHeaderValue, forHTTPHeaderField: "Content-Type")
+        request.httpBody = multipart.httpBody
+
+        let (data, response) = try await URLSession.shared.data(for: request)
+
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw NSError(domain: "HTTPErrorDomain", code: 0, userInfo: [NSLocalizedDescriptionKey: "Respuesta no válida del servidor"])
+        }
+        
+        return httpResponse.statusCode
+    }
+
 }
 

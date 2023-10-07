@@ -79,11 +79,11 @@ extension MultipartRequestAudio {
         for field in [
             "user": user,
             "activity": activity,
-            "evidence_name": evidenceName
+            "evidenceName": evidenceName
         ] {
             multipart.add(key: field.key, value: field.value)
         }
-        
+
         // Specify the appropriate audio MIME type and file name here
         multipart.add(
             key: "archivo_res",
@@ -104,4 +104,43 @@ extension MultipartRequestAudio {
         print(String(data: data, encoding: .utf8)!)
         return data
     }
+    
+    static func sendAudioEvidenceTest(user: String, activity: String, evidenceName: String, idModulo: Int, audioData: Data) async throws -> Int {
+        var multipart = MultipartRequestAudio()
+        
+        // Convierte el ID del módulo a una cadena y agrégalo como campo
+        let idModuloString = String(idModulo)
+        multipart.add(key: "id_modulo", value: idModuloString)
+        
+        for field in [
+            "user": user,
+            "activity": activity,
+            "evidenceName": evidenceName
+        ] {
+            multipart.add(key: field.key, value: field.value)
+        }
+
+        // Specify the appropriate audio MIME type and file name here
+        multipart.add(
+            key: "archivo_res",
+            fileName: evidenceName + ".mp3", // Change the file extension if needed
+            fileMimeType: "audio/mp3",
+            fileData: audioData
+        )
+
+        let url = URL(string: "http://127.0.0.1:8000/api/user/evidences/")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue(multipart.httpContentTypeHeaderValue, forHTTPHeaderField: "Content-Type")
+        request.httpBody = multipart.httpBody
+
+        let (data, response) = try await URLSession.shared.data(for: request)
+
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw NSError(domain: "HTTPErrorDomain", code: 0, userInfo: [NSLocalizedDescriptionKey: "Respuesta no válida del servidor"])
+        }
+        
+        return httpResponse.statusCode
+    }
+
 }

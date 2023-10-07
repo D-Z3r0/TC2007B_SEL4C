@@ -28,6 +28,23 @@ class ViewControllerTableroActividades: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Crear una instancia de UserProgressActivitiesController
+        let controller = UserProgressActivties()
+
+        let idUsuario = 1
+        let actividad1 = "Actividad 1"
+        let actividad2 = "Actividad 2"
+        let actividad3 = "Actividad 3"
+        let actividad4 = "Actividad 4"
+        
+        Task{
+            do {
+                try await controller.postProgressForUser(idUsuario: idUsuario, actividad1: actividad1, actividad2: actividad2, actividad3: actividad3, actividad4: actividad4)
+                print("Progreso de actividades actualizado exitosamente")
+            } catch {
+                print("Error al actualizar el progreso de actividades: \(error)")
+            }
+        }
         
         Task {
             do {
@@ -76,7 +93,7 @@ class ViewControllerTableroActividades: UIViewController {
                     let nuevo_foco = UIButton()
                     nuevo_foco.backgroundColor = UIColor.blue
                     configureEstadobtn(nuevo_foco)
-                    
+
                     //Añadir elementos a view
                     containerView.addSubview(nuevoBoton)
                     containerView.addSubview(label)
