@@ -9,6 +9,7 @@ import UIKit
 
 class RegisterInputViewController: UIViewController {
 
+    @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var showPassword2: UIButton!
     @IBOutlet weak var showPassword1: UIButton!
@@ -29,10 +30,15 @@ class RegisterInputViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         navigationItem.hidesBackButton = true
+        nextButton.isEnabled = false
         inputDesign(inputUsername)
         inputDesign(inputEmail)
         inputDesign(inputPassword)
         inputDesign(inputConfirmPassword)
+        inputEmail.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        inputPassword.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        inputUsername.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        inputConfirmPassword.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         setPlaceholder(inputUsername, text: "sel4c2023", padding: 10)
         setPlaceholder(inputEmail, text: "selac@example.com", padding: 10)
         setPlaceholder(inputPassword, text: "min. 8 caracteres", padding: 10)
@@ -113,6 +119,27 @@ class RegisterInputViewController: UIViewController {
             self.navigationController?.pushViewController(destinationVC!, animated: true)
     }
     
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        if let usernameText = inputUsername.text, let emailText = inputEmail.text, let passwordText = inputPassword.text, let passwordConfirmText = inputConfirmPassword.text {
+            // Verificar las condiciones, por ejemplo, longitud mayor a 5 caracteres
+            let isUsernameValid = usernameText.count > 1
+            let isEmailValid = isValidEmail(emailText)
+            let isPasswordValid = isValidPassword(passwordText)
+            let isPasswordConfirmationValid = passwordText == passwordConfirmText
+
+            // Habilitar el botón si todas las condiciones se cumplen
+            nextButton.isEnabled = isUsernameValid && isEmailValid && isPasswordValid && isPasswordConfirmationValid
+        }
+    }
+    
+    func isValidEmail(_ email: String) -> Bool {
+        return email.count > 1 && email.contains("@")
+    }
+
+    func isValidPassword(_ password: String) -> Bool {
+        return password.count >= 8 && password.rangeOfCharacter(from: .uppercaseLetters) != nil && password.rangeOfCharacter(from: .decimalDigits) != nil
+    }
+    
     /*
     func updateCheckboxImage() {
             let symbolName =  ? "checkmark.square.fill" : "square"
@@ -122,14 +149,15 @@ class RegisterInputViewController: UIViewController {
             tcCheckbox.setImage(image, for: .normal)
     }*/
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        let destinationVC = segue.destination as? RegisterInput2ViewController
+        destinationVC?.password = inputPassword.text!
+        destinationVC?.username = inputUsername.text!
+        destinationVC?.email = inputEmail.text!
     }
-    */
-
 }

@@ -14,7 +14,20 @@ class BeginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let defaults = UserDefaults.standard
+        let domain = Bundle.main.bundleIdentifier!
+        UserDefaults.standard.removePersistentDomain(forName: domain)
+        let isUserLogged = defaults.bool(forKey: "LOGGEDIN")
+        if (isUserLogged) {
+            //El usuario ya está logueado, navegar a home screen
+            goToHomeScreen()
+        }
         // Do any additional setup after loading the view.
+    }
+    
+    func goToHomeScreen() {
+        let destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeScreen") as! UITabBarController
+        self.navigationController?.pushViewController(destinationVC, animated: true)
     }
     
 //    @IBAction func loginButtonPressed() {
