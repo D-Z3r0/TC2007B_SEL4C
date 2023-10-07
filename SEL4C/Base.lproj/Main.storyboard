@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IPw-oS-OVd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vq5-op-66W">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -1102,15 +1102,14 @@
                         <viewLayoutGuide key="safeArea" id="rv8-5X-sSh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="hys-Uh-TwD" firstAttribute="trailing" secondItem="rv8-5X-sSh" secondAttribute="trailing" id="3fl-m0-Qth"/>
-                            <constraint firstItem="UKz-T4-3at" firstAttribute="leading" secondItem="rv8-5X-sSh" secondAttribute="leading" id="4dn-sV-COD"/>
-                            <constraint firstItem="hys-Uh-TwD" firstAttribute="top" secondItem="rv8-5X-sSh" secondAttribute="top" constant="45" id="6TY-wh-eue"/>
-                            <constraint firstItem="UKz-T4-3at" firstAttribute="top" secondItem="hys-Uh-TwD" secondAttribute="bottom" constant="8" id="DbS-ov-6ei"/>
-                            <constraint firstItem="hys-Uh-TwD" firstAttribute="top" secondItem="rv8-5X-sSh" secondAttribute="top" constant="45" id="FlN-nV-w86"/>
-                            <constraint firstItem="UKz-T4-3at" firstAttribute="trailing" secondItem="rv8-5X-sSh" secondAttribute="trailing" id="e1x-4r-aas"/>
-                            <constraint firstAttribute="bottom" secondItem="UKz-T4-3at" secondAttribute="bottom" constant="115" id="rdS-LU-2Tb"/>
-                            <constraint firstItem="hys-Uh-TwD" firstAttribute="leading" secondItem="rv8-5X-sSh" secondAttribute="leading" id="teH-Bj-mk8"/>
-                            <constraint firstItem="UKz-T4-3at" firstAttribute="top" secondItem="hys-Uh-TwD" secondAttribute="bottom" constant="8" id="zS1-Et-Vei"/>
+                            <constraint firstItem="rv8-5X-sSh" firstAttribute="bottom" secondItem="UKz-T4-3at" secondAttribute="bottom" constant="81" id="2jf-1S-DYx"/>
+                            <constraint firstItem="UKz-T4-3at" firstAttribute="top" secondItem="hys-Uh-TwD" secondAttribute="bottom" constant="8" id="J57-H3-OWK"/>
+                            <constraint firstItem="hys-Uh-TwD" firstAttribute="top" secondItem="rv8-5X-sSh" secondAttribute="top" constant="45" id="Nah-E6-Jvz"/>
+                            <constraint firstItem="UKz-T4-3at" firstAttribute="top" secondItem="hys-Uh-TwD" secondAttribute="bottom" constant="8" id="QmV-3S-QYs"/>
+                            <constraint firstItem="hys-Uh-TwD" firstAttribute="trailing" secondItem="rv8-5X-sSh" secondAttribute="trailing" id="QzB-KB-2nS"/>
+                            <constraint firstItem="UKz-T4-3at" firstAttribute="leading" secondItem="rv8-5X-sSh" secondAttribute="leading" id="aLK-Jz-GFZ"/>
+                            <constraint firstItem="UKz-T4-3at" firstAttribute="trailing" secondItem="rv8-5X-sSh" secondAttribute="trailing" id="n4l-2r-Ll7"/>
+                            <constraint firstItem="hys-Uh-TwD" firstAttribute="leading" secondItem="rv8-5X-sSh" secondAttribute="leading" id="oxo-MF-qsK"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1221,7 +1220,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Lx-7p-DCI">
-                                <rect key="frame" x="112" y="663" width="23" height="19"/>
+                                <rect key="frame" x="112" y="663" width="226" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
                                     <fragment content="10%">
@@ -1265,6 +1264,9 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="chartContainerView" destination="P2f-oo-r2c" id="xNW-zl-g2l"/>
+                        <outlet property="completadas" destination="HGv-Bj-UkG" id="P6j-p5-Dyn"/>
+                        <outlet property="faltantes" destination="c0X-Qq-FEi" id="dA8-la-7uZ"/>
+                        <outlet property="progreso" destination="4Lx-7p-DCI" id="O4f-Bf-xJq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UnY-xz-6WV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1501,6 +1503,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="">
                                     <backgroundConfiguration key="background" cornerRadius="20" image="image_evfinal"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="mr5-pp-aTV" kind="show" id="zFR-Dd-C47"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvZ-pK-WZW">
                                 <rect key="frame" x="34" y="232" width="325" height="186"/>
@@ -1913,13 +1918,19 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="imagen_actividad1" translatesAutoresizingMaskIntoConstraints="NO" id="vGU-Fy-zVI">
-                                <rect key="frame" x="0.0" y="104" width="393" height="179"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagen_actividad1" translatesAutoresizingMaskIntoConstraints="NO" id="vGU-Fy-zVI">
+                                <rect key="frame" x="0.0" y="104" width="393" height="141"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="393" id="oiE-TG-OBB"/>
+                                    <constraint firstAttribute="height" constant="141" id="rkJ-CF-g9O"/>
+                                </constraints>
                             </imageView>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pe5-um-cwd">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pe5-um-cwd">
                                 <rect key="frame" x="0.0" y="253" width="393" height="484"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="484" id="2gR-Oz-brS"/>
+                                    <constraint firstAttribute="width" constant="393" id="5Wb-Ok-DZH"/>
+                                </constraints>
                                 <connections>
                                     <segue destination="I1M-aQ-g1k" kind="embed" id="xgG-rq-q5f"/>
                                 </connections>
@@ -1927,6 +1938,16 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zPN-YS-yf6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pe5-um-cwd" firstAttribute="trailing" secondItem="zPN-YS-yf6" secondAttribute="trailing" id="4XW-7u-yqO"/>
+                            <constraint firstItem="vGU-Fy-zVI" firstAttribute="leading" secondItem="zPN-YS-yf6" secondAttribute="leading" id="Mtc-gX-2WY"/>
+                            <constraint firstItem="pe5-um-cwd" firstAttribute="top" secondItem="vGU-Fy-zVI" secondAttribute="bottom" constant="8" id="XPl-L5-DbW"/>
+                            <constraint firstItem="pe5-um-cwd" firstAttribute="leading" secondItem="zPN-YS-yf6" secondAttribute="leading" id="ZBt-Em-fE6"/>
+                            <constraint firstItem="pe5-um-cwd" firstAttribute="top" secondItem="vGU-Fy-zVI" secondAttribute="bottom" constant="8" id="aTF-Iv-YBu"/>
+                            <constraint firstItem="zPN-YS-yf6" firstAttribute="bottom" secondItem="pe5-um-cwd" secondAttribute="bottom" constant="81" id="gzh-QZ-zwL"/>
+                            <constraint firstItem="vGU-Fy-zVI" firstAttribute="top" secondItem="zPN-YS-yf6" secondAttribute="top" constant="45" id="kvY-4A-aEd"/>
+                            <constraint firstItem="vGU-Fy-zVI" firstAttribute="trailing" secondItem="zPN-YS-yf6" secondAttribute="trailing" id="uES-7e-V6m"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="view_evidenciasind" destination="pe5-um-cwd" id="jFg-wt-jNs"/>
@@ -1934,7 +1955,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xXt-TN-4ci" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="17527" y="-2744"/>
+            <point key="canvasLocation" x="17525.954198473282" y="-2744.3661971830988"/>
         </scene>
         <!--View Controller Evidencias Individual-->
         <scene sceneID="q1F-1J-PKJ">
@@ -1948,7 +1969,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="484"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9hj-uS-4e3">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="2447"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="2687"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BD6-3I-JLn">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
@@ -2197,8 +2218,61 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                     <constraint firstAttribute="bottom" secondItem="cF3-9l-5VX" secondAttribute="bottom" constant="107" id="rRd-7e-ptJ"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d0s-tk-IBn">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2A9-Hy-y0n">
                                                 <rect key="frame" x="0.0" y="2207" width="393" height="240"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57p-8g-Fav">
+                                                        <rect key="frame" x="26" y="27" width="325" height="186"/>
+                                                        <color key="tintColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="">
+                                                            <backgroundConfiguration key="background">
+                                                                <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </backgroundConfiguration>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqq-xP-0HO">
+                                                        <rect key="frame" x="160" y="73" width="57" height="60"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="checkmark.circle.fill" catalog="system" title="">
+                                                            <backgroundConfiguration key="background" cornerRadius="50">
+                                                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                            </backgroundConfiguration>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDf-zg-dOE">
+                                                        <rect key="frame" x="102" y="141" width="172" height="24"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="¡Entregado exitosamente!">
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <font key="NSFont" metaFont="system"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="IDf-zg-dOE" firstAttribute="leading" secondItem="2A9-Hy-y0n" secondAttribute="leading" constant="102" id="48h-V8-XYM"/>
+                                                    <constraint firstAttribute="trailing" secondItem="eqq-xP-0HO" secondAttribute="trailing" constant="176" id="HzE-6X-bXw"/>
+                                                    <constraint firstItem="IDf-zg-dOE" firstAttribute="top" secondItem="2A9-Hy-y0n" secondAttribute="top" constant="141" id="JMC-vK-Tl4"/>
+                                                    <constraint firstItem="eqq-xP-0HO" firstAttribute="top" secondItem="2A9-Hy-y0n" secondAttribute="top" constant="73" id="NbW-VP-I2T"/>
+                                                    <constraint firstItem="57p-8g-Fav" firstAttribute="top" secondItem="2A9-Hy-y0n" secondAttribute="top" constant="27" id="QNq-dk-fmF"/>
+                                                    <constraint firstAttribute="bottom" secondItem="IDf-zg-dOE" secondAttribute="bottom" constant="75" id="Qhq-dq-0Lb"/>
+                                                    <constraint firstAttribute="bottom" secondItem="eqq-xP-0HO" secondAttribute="bottom" constant="107" id="WGH-EP-o8e"/>
+                                                    <constraint firstAttribute="trailing" secondItem="57p-8g-Fav" secondAttribute="trailing" constant="42" id="eSk-uf-E40"/>
+                                                    <constraint firstItem="57p-8g-Fav" firstAttribute="leading" secondItem="2A9-Hy-y0n" secondAttribute="leading" constant="26" id="gtg-Eg-kmh"/>
+                                                    <constraint firstAttribute="trailing" secondItem="IDf-zg-dOE" secondAttribute="trailing" constant="119" id="nbX-z0-B52"/>
+                                                    <constraint firstAttribute="bottom" secondItem="57p-8g-Fav" secondAttribute="bottom" constant="27" id="rL2-Dy-Qrv"/>
+                                                    <constraint firstItem="eqq-xP-0HO" firstAttribute="leading" secondItem="2A9-Hy-y0n" secondAttribute="leading" constant="160" id="tuj-g1-ZoL"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d0s-tk-IBn">
+                                                <rect key="frame" x="0.0" y="2447" width="393" height="240"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7K-Sf-zU7">
                                                         <rect key="frame" x="26" y="27" width="325" height="186"/>
@@ -2251,6 +2325,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                         <outlet property="btn_imagen" destination="Tps-Dc-yYM" id="WDR-Bb-tX9"/>
                         <outlet property="btn_video" destination="trA-02-gkd" id="10P-GV-kx8"/>
                         <outlet property="entrega_audio" destination="Lme-oa-OjM" id="nnJ-9O-gMc"/>
+                        <outlet property="entrega_exitosa" destination="2A9-Hy-y0n" id="9Lf-b5-GNx"/>
                         <outlet property="entrega_imagen" destination="hdW-82-5Jp" id="UsA-mz-BX6"/>
                         <outlet property="entrega_video" destination="yLC-Yz-2Go" id="Exb-o2-z3H"/>
                         <outlet property="image_selected" destination="qja-ba-25C" id="R3F-Sh-XNy"/>
@@ -2295,14 +2370,14 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
             <objects>
                 <viewController id="mr5-pp-aTV" customClass="ViewControllerEvInicialResultados" customModule="SEL4C" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RAu-i5-SLq">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="544"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tSp-W9-3OG">
-                                <rect key="frame" x="0.0" y="97" width="393" height="666"/>
+                                <rect key="frame" x="0.0" y="38" width="393" height="451"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eyh-XN-N8a">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="682"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="662.66666666666663"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ng-yu-Q3P">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="143.33333333333334"/>
@@ -2320,7 +2395,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYG-es-4GV">
-                                                        <rect key="frame" x="34" y="77" width="351" height="63"/>
+                                                        <rect key="frame" x="34" y="66.666666666666671" width="351" height="52.666666666666671"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Inicial">
                                                                 <attributes>
@@ -2369,10 +2444,10 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vWG-jc-v5u">
-                                                <rect key="frame" x="0.0" y="217.66666666666669" width="393" height="70"/>
+                                                <rect key="frame" x="0.0" y="192.66666666666666" width="393" height="79.999999999999972"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFa-E3-aV8">
-                                                        <rect key="frame" x="34" y="0.0" width="325" height="70"/>
+                                                        <rect key="frame" x="34" y="5" width="325" height="70"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="70" id="2Ks-Ho-VM8"/>
                                                             <constraint firstAttribute="width" constant="325" id="p0f-Ir-j0X"/>
@@ -2383,7 +2458,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                         </buttonConfiguration>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0JT-KW-aao">
-                                                        <rect key="frame" x="51" y="10" width="50" height="50"/>
+                                                        <rect key="frame" x="51" y="15" width="50" height="50"/>
                                                         <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="a4j-Yq-cmr"/>
@@ -2391,7 +2466,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="externaldrive.badge.questionmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="S75-Mj-Ud8">
-                                                        <rect key="frame" x="58" y="20.333333333333332" width="36" height="36"/>
+                                                        <rect key="frame" x="59" y="25" width="35" height="35"/>
                                                         <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -2400,14 +2475,14 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                         </constraints>
                                                     </imageView>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1YU-sK-uIY">
-                                                        <rect key="frame" x="109" y="43" width="162" height="4"/>
+                                                        <rect key="frame" x="109" y="48.000000000000028" width="162" height="4"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="4" id="3Rm-ho-gi2"/>
                                                             <constraint firstAttribute="width" constant="162" id="NWV-Wk-WZA"/>
                                                         </constraints>
                                                     </progressView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3A-j0-4g3">
-                                                        <rect key="frame" x="109" y="16" width="220" height="16"/>
+                                                        <rect key="frame" x="109" y="21" width="220" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="220" id="WJV-au-oSO"/>
                                                             <constraint firstAttribute="height" constant="16" id="X63-af-1iY"/>
@@ -2422,7 +2497,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gs5-lv-17W">
-                                                        <rect key="frame" x="290" y="37" width="39" height="16"/>
+                                                        <rect key="frame" x="290" y="42.000000000000028" width="39" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="39" id="MGj-pC-dt1"/>
                                                             <constraint firstAttribute="height" constant="16" id="vkO-PD-aYD"/>
@@ -2439,34 +2514,34 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                     </label>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="B3A-j0-4g3" secondAttribute="trailing" constant="64" id="02D-vH-Dfu"/>
-                                                    <constraint firstAttribute="trailing" secondItem="gs5-lv-17W" secondAttribute="trailing" constant="64" id="3UV-xW-NDm"/>
-                                                    <constraint firstItem="1YU-sK-uIY" firstAttribute="leading" secondItem="0JT-KW-aao" secondAttribute="trailing" constant="8" id="5QT-Wf-E6J"/>
-                                                    <constraint firstItem="xFa-E3-aV8" firstAttribute="top" secondItem="vWG-jc-v5u" secondAttribute="top" id="6Fe-cy-VSf"/>
-                                                    <constraint firstItem="1YU-sK-uIY" firstAttribute="top" secondItem="B3A-j0-4g3" secondAttribute="bottom" constant="11" id="6Z1-aY-QXX"/>
-                                                    <constraint firstItem="B3A-j0-4g3" firstAttribute="top" secondItem="vWG-jc-v5u" secondAttribute="top" constant="16" id="BbY-qa-lUX"/>
-                                                    <constraint firstItem="1YU-sK-uIY" firstAttribute="leading" secondItem="0JT-KW-aao" secondAttribute="trailing" constant="8" id="DI6-Ec-zCk"/>
-                                                    <constraint firstItem="xFa-E3-aV8" firstAttribute="leading" secondItem="vWG-jc-v5u" secondAttribute="leading" constant="34" id="IhZ-kL-c60"/>
-                                                    <constraint firstAttribute="bottom" secondItem="1YU-sK-uIY" secondAttribute="bottom" constant="23" id="LOg-Bb-ZhX"/>
-                                                    <constraint firstItem="0JT-KW-aao" firstAttribute="top" secondItem="vWG-jc-v5u" secondAttribute="top" constant="10" id="LTy-ny-AOU"/>
-                                                    <constraint firstItem="gs5-lv-17W" firstAttribute="top" secondItem="B3A-j0-4g3" secondAttribute="bottom" constant="5" id="MFZ-Ty-WLE"/>
-                                                    <constraint firstAttribute="bottom" secondItem="0JT-KW-aao" secondAttribute="bottom" constant="10" id="RIz-Nt-hcr"/>
-                                                    <constraint firstAttribute="bottom" secondItem="gs5-lv-17W" secondAttribute="bottom" constant="17" id="RSh-pR-wSs"/>
-                                                    <constraint firstAttribute="bottom" secondItem="xFa-E3-aV8" secondAttribute="bottom" id="T8H-lT-BSL"/>
-                                                    <constraint firstAttribute="bottom" secondItem="S75-Mj-Ud8" secondAttribute="bottom" constant="14.33" id="UTA-B7-4GJ"/>
-                                                    <constraint firstItem="0JT-KW-aao" firstAttribute="leading" secondItem="vWG-jc-v5u" secondAttribute="leading" constant="51" id="ViG-YR-cjk"/>
-                                                    <constraint firstItem="gs5-lv-17W" firstAttribute="leading" secondItem="1YU-sK-uIY" secondAttribute="trailing" constant="19" id="Wm9-1e-k6Q"/>
-                                                    <constraint firstItem="1YU-sK-uIY" firstAttribute="top" secondItem="B3A-j0-4g3" secondAttribute="bottom" constant="11" id="Z1c-hb-j2Q"/>
-                                                    <constraint firstItem="S75-Mj-Ud8" firstAttribute="top" secondItem="vWG-jc-v5u" secondAttribute="top" constant="18" id="aoe-sP-41I"/>
-                                                    <constraint firstAttribute="trailing" secondItem="xFa-E3-aV8" secondAttribute="trailing" constant="34" id="dpC-JP-uE8"/>
-                                                    <constraint firstItem="gs5-lv-17W" firstAttribute="leading" secondItem="1YU-sK-uIY" secondAttribute="trailing" constant="19" id="fEi-s2-3Pc"/>
-                                                    <constraint firstItem="S75-Mj-Ud8" firstAttribute="leading" secondItem="vWG-jc-v5u" secondAttribute="leading" constant="60" id="gG1-ha-kbV"/>
-                                                    <constraint firstItem="1YU-sK-uIY" firstAttribute="leading" secondItem="S75-Mj-Ud8" secondAttribute="trailing" constant="15" id="pFb-OH-Ns5"/>
-                                                    <constraint firstItem="B3A-j0-4g3" firstAttribute="leading" secondItem="0JT-KW-aao" secondAttribute="trailing" constant="8" id="q6P-tv-H7p"/>
+                                                    <constraint firstItem="B3A-j0-4g3" firstAttribute="leading" secondItem="0JT-KW-aao" secondAttribute="trailing" constant="8" id="22k-sd-9rp"/>
+                                                    <constraint firstAttribute="bottom" secondItem="gs5-lv-17W" secondAttribute="bottom" constant="22" id="9vC-x8-df9"/>
+                                                    <constraint firstItem="B3A-j0-4g3" firstAttribute="top" secondItem="vWG-jc-v5u" secondAttribute="top" constant="21" id="CFV-SE-LnO"/>
+                                                    <constraint firstAttribute="bottom" secondItem="xFa-E3-aV8" secondAttribute="bottom" constant="5" id="Fy4-Zu-Ahd"/>
+                                                    <constraint firstAttribute="bottom" secondItem="1YU-sK-uIY" secondAttribute="bottom" constant="28" id="Jr2-ai-1RP"/>
+                                                    <constraint firstItem="0JT-KW-aao" firstAttribute="top" secondItem="vWG-jc-v5u" secondAttribute="top" constant="15" id="KJS-Gq-8M5"/>
+                                                    <constraint firstItem="gs5-lv-17W" firstAttribute="leading" secondItem="1YU-sK-uIY" secondAttribute="trailing" constant="19" id="Md9-tV-z3T"/>
+                                                    <constraint firstAttribute="bottom" secondItem="0JT-KW-aao" secondAttribute="bottom" constant="15" id="N4i-wB-x0w"/>
+                                                    <constraint firstItem="1YU-sK-uIY" firstAttribute="top" secondItem="B3A-j0-4g3" secondAttribute="bottom" constant="11" id="RHp-mb-I7N"/>
+                                                    <constraint firstItem="1YU-sK-uIY" firstAttribute="leading" secondItem="0JT-KW-aao" secondAttribute="trailing" constant="8" id="UzS-m1-KLT"/>
+                                                    <constraint firstItem="1YU-sK-uIY" firstAttribute="leading" secondItem="S75-Mj-Ud8" secondAttribute="trailing" constant="15" id="VEH-ph-2Nj"/>
+                                                    <constraint firstAttribute="trailing" secondItem="B3A-j0-4g3" secondAttribute="trailing" constant="64" id="Zff-iI-M33"/>
+                                                    <constraint firstItem="S75-Mj-Ud8" firstAttribute="leading" secondItem="vWG-jc-v5u" secondAttribute="leading" constant="60" id="awK-ka-lNx"/>
+                                                    <constraint firstItem="S75-Mj-Ud8" firstAttribute="top" secondItem="vWG-jc-v5u" secondAttribute="top" constant="23" id="jDr-Ks-0xU"/>
+                                                    <constraint firstAttribute="trailing" secondItem="gs5-lv-17W" secondAttribute="trailing" constant="64" id="jnf-TF-rua"/>
+                                                    <constraint firstItem="0JT-KW-aao" firstAttribute="leading" secondItem="vWG-jc-v5u" secondAttribute="leading" constant="51" id="kib-AF-DcD"/>
+                                                    <constraint firstAttribute="bottom" secondItem="S75-Mj-Ud8" secondAttribute="bottom" constant="19.329999999999998" id="nGp-M5-yjU"/>
+                                                    <constraint firstAttribute="trailing" secondItem="xFa-E3-aV8" secondAttribute="trailing" constant="34" id="pgZ-Fx-dxP"/>
+                                                    <constraint firstItem="xFa-E3-aV8" firstAttribute="leading" secondItem="vWG-jc-v5u" secondAttribute="leading" constant="34" id="wv7-4w-Sj8"/>
+                                                    <constraint firstItem="xFa-E3-aV8" firstAttribute="top" secondItem="vWG-jc-v5u" secondAttribute="top" constant="5" id="x3l-st-2t4"/>
+                                                    <constraint firstItem="1YU-sK-uIY" firstAttribute="top" secondItem="B3A-j0-4g3" secondAttribute="bottom" constant="11" id="xAg-OX-juG"/>
+                                                    <constraint firstItem="1YU-sK-uIY" firstAttribute="leading" secondItem="0JT-KW-aao" secondAttribute="trailing" constant="8" id="xEK-yG-i8O"/>
+                                                    <constraint firstItem="gs5-lv-17W" firstAttribute="top" secondItem="B3A-j0-4g3" secondAttribute="bottom" constant="5" id="y2M-Ru-4n4"/>
+                                                    <constraint firstItem="gs5-lv-17W" firstAttribute="leading" secondItem="1YU-sK-uIY" secondAttribute="trailing" constant="19" id="yV9-85-wof"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rhk-Vd-gOR">
-                                                <rect key="frame" x="0.0" y="287.66666666666669" width="393" height="74.333333333333314"/>
+                                                <rect key="frame" x="0.0" y="272.66666666666669" width="393" height="70"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGV-XP-bA5">
                                                         <rect key="frame" x="32" y="24" width="353" height="25.333333333333329"/>
@@ -2490,7 +2565,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SGj-xs-Slp">
-                                                <rect key="frame" x="0.0" y="362" width="393" height="80"/>
+                                                <rect key="frame" x="0.0" y="342.66666666666669" width="393" height="80"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mnq-WR-AUG">
                                                         <rect key="frame" x="34" y="5" width="325" height="70"/>
@@ -2587,7 +2662,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROY-N2-8rR">
-                                                <rect key="frame" x="0.0" y="442" width="393" height="80"/>
+                                                <rect key="frame" x="0.0" y="422.66666666666669" width="393" height="80"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dX8-uc-JNi">
                                                         <rect key="frame" x="34" y="5" width="325" height="70"/>
@@ -2609,7 +2684,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="externaldrive.badge.questionmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rq8-oa-RCt">
-                                                        <rect key="frame" x="58" y="25.333333333333332" width="36" height="36"/>
+                                                        <rect key="frame" x="59" y="25" width="35" height="35"/>
                                                         <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -2684,7 +2759,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b0Z-xE-ege">
-                                                <rect key="frame" x="0.0" y="522" width="393" height="80"/>
+                                                <rect key="frame" x="0.0" y="502.66666666666663" width="393" height="80"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E7X-HT-Hp1">
                                                         <rect key="frame" x="34" y="5" width="325" height="70"/>
@@ -2781,7 +2856,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ydi-z7-dUH">
-                                                <rect key="frame" x="0.0" y="602" width="393" height="80"/>
+                                                <rect key="frame" x="0.0" y="582.66666666666663" width="393" height="80"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RjH-mS-pnK">
                                                         <rect key="frame" x="34" y="5" width="325" height="70"/>
@@ -2907,6 +2982,16 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                         <outlet property="btn_sub2" destination="dX8-uc-JNi" id="vb9-Il-9DN"/>
                         <outlet property="btn_sub3" destination="E7X-HT-Hp1" id="QF7-cU-p1Q"/>
                         <outlet property="btn_sub4" destination="RjH-mS-pnK" id="cfU-1n-Qvk"/>
+                        <outlet property="progress_competencia" destination="1YU-sK-uIY" id="ty5-5O-nTz"/>
+                        <outlet property="progress_sub1" destination="R4w-Xg-8Dz" id="wZW-HS-PEx"/>
+                        <outlet property="progress_sub2" destination="HPD-L6-VN7" id="cmF-hP-8QB"/>
+                        <outlet property="progress_sub3" destination="IFO-Tz-CLd" id="hou-zn-TFb"/>
+                        <outlet property="progress_sub4" destination="6Kr-Ie-22n" id="kxK-ff-5Uf"/>
+                        <outlet property="resultado_competencia" destination="gs5-lv-17W" id="ydH-l9-BNG"/>
+                        <outlet property="resultado_sub1" destination="i28-it-mR1" id="uKx-Tj-HZY"/>
+                        <outlet property="resultado_sub2" destination="ioC-Ti-zEd" id="DGh-Jg-C9o"/>
+                        <outlet property="resultado_sub3" destination="hiN-fV-Ibg" id="3eW-uV-UV1"/>
+                        <outlet property="resultado_sub4" destination="Mt9-ao-Q5M" id="QT1-qp-4cv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6at-yx-gwL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -3939,6 +4024,9 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
         <image name="8.6 - enfinal3" width="277" height="122"/>
         <image name="8.7 - enfinal4" width="277" height="552"/>
         <image name="8.9 - enfinal6" width="275" height="556"/>
+        <image name="9 - finEvInicial" width="277" height="550"/>
+        <image name="chart.bar.xaxis" catalog="system" width="128" height="99"/>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
         <image name="chart.bar.xaxis" catalog="system" width="128" height="97"/>
         <image name="checkmark.seal.fill" catalog="system" width="128" height="124"/>
         <image name="checkmark.square" catalog="system" width="128" height="114"/>
@@ -3960,6 +4048,9 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
