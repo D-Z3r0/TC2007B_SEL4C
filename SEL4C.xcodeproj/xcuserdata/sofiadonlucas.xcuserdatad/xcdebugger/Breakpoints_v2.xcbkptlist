@@ -256,15 +256,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D082D42E-05FE-4F2D-9664-04A8B93ACD72"
+            uuid = "582E1E5F-3640-4FF0-8D8F-4A97CDD10CED"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SEL4C/ViewControllerTableroActividades.swift"
+            filePath = "SEL4C/ViewControllerEvInicialResultados.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -272,109 +272,333 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "582E1E5F-3640-4FF0-8D8F-4A97CDD10CED"
+            uuid = "9DC8B682-E70E-4F89-A0EF-D5B0E5C0349A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SEL4C/ViewControllerEvInicialResultados.swift"
+            filePath = "SEL4C/Data.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
             endingLineNumber = "21"
+            landmarkName = "Data"
+            landmarkType = "21">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F92D55BD-3E23-422F-860D-98A2A855D374"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SEL4C/ViewControllerModulosIndividual.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "582E1E5F-3640-4FF0-8D8F-4A97CDD10CED - afa18fa50a2f1d7d"
+                  uuid = "F92D55BD-3E23-422F-860D-98A2A855D374 - cde8fdde1d092c55"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "SEL4C.ViewControllerEvInicialResultados.resultado_sub3.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  symbolName = "(5) suspend resume partial function for closure #1 @Sendable () async -&gt; () in SEL4C.ViewControllerModulosIndividual.viewDidLoad() -&gt; ()"
                   moduleName = "SEL4C"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sofiadonlucas/Desktop/TC2007B_SEL4C/SEL4C/ViewControllerEvInicialResultados.swift"
+                  urlString = "file:///Users/sofiadonlucas/Desktop/TC2007B_SEL4C/SEL4C/ViewControllerModulosIndividual.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "2968">
+               </Location>
+               <Location
+                  uuid = "F92D55BD-3E23-422F-860D-98A2A855D374 - cde8fdde1d092c55"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for closure #1 @Sendable () async -&gt; () in SEL4C.ViewControllerModulosIndividual.viewDidLoad() -&gt; ()"
+                  moduleName = "SEL4C"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sofiadonlucas/Desktop/TC2007B_SEL4C/SEL4C/ViewControllerModulosIndividual.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "2988">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8F0ABD80-359E-4520-A208-FEDDFA3B9AF8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pruebasunitarias_RF021/pruebasunitarias_RF021.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "testSendEvidenceVideo()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8F0ABD80-359E-4520-A208-FEDDFA3B9AF8 - d08577085c2d69fa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "pruebasunitarias_RF021.pruebasunitarias_RF021.testSendEvidenceVideo() async throws -&gt; ()"
+                  moduleName = "pruebasunitarias_RF021"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sofiadonlucas/Desktop/TC2007B_SEL4C/pruebasunitarias_RF021/pruebasunitarias_RF021.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "8F0ABD80-359E-4520-A208-FEDDFA3B9AF8 - 898cebf48622b3f6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for pruebasunitarias_RF021.pruebasunitarias_RF021.testSendEvidenceVideo() async throws -&gt; ()"
+                  moduleName = "pruebasunitarias_RF021"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sofiadonlucas/Desktop/TC2007B_SEL4C/pruebasunitarias_RF021/pruebasunitarias_RF021.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "100">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FFC62C9F-DF48-474E-BC9A-B6DCD70DE1AF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pruebasunitarias_RF018/pruebasunitarias_RF018.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "pruebasunitarias_RF018"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B22FBCDF-3D08-4A62-8FBA-8C7F2ABBB3F0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SEL4C/ViewControllerTableroActividades.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "ViewControllerTableroActividades"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "B22FBCDF-3D08-4A62-8FBA-8C7F2ABBB3F0 - 628205fe4a78b0d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SEL4C.ViewControllerTableroActividades.actividades_json.getter : Swift.Array&lt;SEL4C.Actividad&gt;"
+                  moduleName = "SEL4C"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sofiadonlucas/Desktop/TC2007B_SEL4C/SEL4C/ViewControllerTableroActividades.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
                   offsetFromSymbolStart = "88">
                </Location>
                <Location
-                  uuid = "582E1E5F-3640-4FF0-8D8F-4A97CDD10CED - 49d24a11d205e089"
+                  uuid = "B22FBCDF-3D08-4A62-8FBA-8C7F2ABBB3F0 - f1a0a04051117b01"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "SEL4C.ViewControllerEvInicialResultados.resultado_sub3.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  symbolName = "SEL4C.ViewControllerTableroActividades.actividades_json.setter : Swift.Array&lt;SEL4C.Actividad&gt;"
                   moduleName = "SEL4C"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sofiadonlucas/Desktop/TC2007B_SEL4C/SEL4C/ViewControllerEvInicialResultados.swift"
+                  urlString = "file:///Users/sofiadonlucas/Desktop/TC2007B_SEL4C/SEL4C/ViewControllerTableroActividades.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "108">
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "112">
                </Location>
                <Location
-                  uuid = "582E1E5F-3640-4FF0-8D8F-4A97CDD10CED - 72265d218669e67a"
+                  uuid = "B22FBCDF-3D08-4A62-8FBA-8C7F2ABBB3F0 - 616270f57ace6f10"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "SEL4C.ViewControllerEvInicialResultados.resultado_sub3.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  symbolName = "SEL4C.ViewControllerTableroActividades.actividades_json.modify : Swift.Array&lt;SEL4C.Actividad&gt;"
                   moduleName = "SEL4C"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sofiadonlucas/Desktop/TC2007B_SEL4C/SEL4C/ViewControllerEvInicialResultados.swift"
+                  urlString = "file:///Users/sofiadonlucas/Desktop/TC2007B_SEL4C/SEL4C/ViewControllerTableroActividades.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
                   offsetFromSymbolStart = "0">
                </Location>
                <Location
-                  uuid = "582E1E5F-3640-4FF0-8D8F-4A97CDD10CED - 6992ab3275b529f2"
+                  uuid = "B22FBCDF-3D08-4A62-8FBA-8C7F2ABBB3F0 - 94d8f8f5dbbda3ed"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "SEL4C.ViewControllerEvInicialResultados.resultado_sub3.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  symbolName = "SEL4C.ViewControllerTableroActividades.actividades_json.modify : Swift.Array&lt;SEL4C.Actividad&gt; with unmangled suffix &quot;.resume.0&quot;"
                   moduleName = "SEL4C"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sofiadonlucas/Desktop/TC2007B_SEL4C/SEL4C/ViewControllerEvInicialResultados.swift"
+                  urlString = "file:///Users/sofiadonlucas/Desktop/TC2007B_SEL4C/SEL4C/ViewControllerTableroActividades.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "28">
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "16">
                </Location>
                <Location
-                  uuid = "582E1E5F-3640-4FF0-8D8F-4A97CDD10CED - 1cea0c500950dc79"
+                  uuid = "B22FBCDF-3D08-4A62-8FBA-8C7F2ABBB3F0 - db5a9990ad9eb81e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "SEL4C.ViewControllerEvInicialResultados.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; SEL4C.ViewControllerEvInicialResultados"
+                  symbolName = "SEL4C.ViewControllerTableroActividades.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; SEL4C.ViewControllerTableroActividades"
                   moduleName = "SEL4C"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sofiadonlucas/Desktop/TC2007B_SEL4C/SEL4C/ViewControllerEvInicialResultados.swift"
+                  urlString = "file:///Users/sofiadonlucas/Desktop/TC2007B_SEL4C/SEL4C/ViewControllerTableroActividades.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "568">
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "404">
                </Location>
                <Location
-                  uuid = "582E1E5F-3640-4FF0-8D8F-4A97CDD10CED - 399223898644ba17"
+                  uuid = "B22FBCDF-3D08-4A62-8FBA-8C7F2ABBB3F0 - 287f821a8b90aa25"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "SEL4C.ViewControllerEvInicialResultados.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;SEL4C.ViewControllerEvInicialResultados&gt;"
+                  symbolName = "SEL4C.ViewControllerTableroActividades.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;SEL4C.ViewControllerTableroActividades&gt;"
                   moduleName = "SEL4C"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sofiadonlucas/Desktop/TC2007B_SEL4C/SEL4C/ViewControllerEvInicialResultados.swift"
+                  urlString = "file:///Users/sofiadonlucas/Desktop/TC2007B_SEL4C/SEL4C/ViewControllerTableroActividades.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "544">
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "380">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F381152F-FC07-4AF5-B23B-08D6474A3614"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SEL4C/ViewControllerModulosIndividual.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F381152F-FC07-4AF5-B23B-08D6474A3614 - cde8fdde1d09151d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for closure #1 @Sendable () async -&gt; () in SEL4C.ViewControllerModulosIndividual.viewDidLoad() -&gt; ()"
+                  moduleName = "SEL4C"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sofiadonlucas/Desktop/TC2007B_SEL4C/SEL4C/ViewControllerModulosIndividual.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "3576">
+               </Location>
+               <Location
+                  uuid = "F381152F-FC07-4AF5-B23B-08D6474A3614 - 5e2e1d589e2bd71b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for closure #1 @Sendable () async -&gt; () in SEL4C.ViewControllerModulosIndividual.viewDidLoad() -&gt; ()"
+                  moduleName = "SEL4C"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sofiadonlucas/Desktop/TC2007B_SEL4C/SEL4C/ViewControllerModulosIndividual.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "3580">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0914F8FC-BCC9-4807-98B8-0AA849EE894F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SEL4C/ViewControllerModulosIndividual.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B3EDC979-0246-43E9-9961-14497190F3ED"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SEL4C/ViewControllerModulosIndividual.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BFDC374D-4F8A-4CF3-81E0-D2D36FED3BCB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SEL4C/ViewControllerEvidenciasIndividual.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "252"
+            endingLineNumber = "252"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

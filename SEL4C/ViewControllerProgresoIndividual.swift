@@ -14,9 +14,25 @@ class ViewControllerProgresoIndividual: UIViewController {
     // Valores de las barras
         let values: [CGFloat] = [50, 10, 100, 0]
 
+    var estadisticaIndividual: EstadisticaIndividual?
+    @IBOutlet weak var completadas: UILabel!
+    @IBOutlet weak var faltantes: UILabel!
+    @IBOutlet weak var progreso: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        Task {
+            do {
+                let estadisticaIndividual = try await Estadisticas.fetchEstadisticasDetail(idUsuario: 1)
+                print("Resultados cargados con éxito: \(estadisticaIndividual)")
+                completadas.text = "\(estadisticaIndividual.actividades) actividades"
+                faltantes.text = "\(estadisticaIndividual.evidencias) actividades"
+                progreso.text = "\(estadisticaIndividual.progreso)%"
+            } catch {
+                print("Error al cargar las estadisticas: \(error)")
+            }
+        }
         // Do any additional setup after loading the view.
         createStackedBarChart()
     }
