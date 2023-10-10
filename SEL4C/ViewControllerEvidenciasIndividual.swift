@@ -251,7 +251,8 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                             UserDefaults.standard.set(true, forKey: "actividad \(actividad_modulo) modulo \(modulo_evidencia)")
                             print("Image upload completed successfully")
                             showSuccessView()
-                            
+                            let controller = UserProgressUpdateController()
+                            try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: 1, idActividad: actividad_modulo, idModulo: modulo_evidencia)
                         }catch{
                             print("Error sending image: \(error.localizedDescription)")
                         }
@@ -269,7 +270,8 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                             UserDefaults.standard.set(true, forKey: "actividad \(actividad_modulo) modulo \(modulo_evidencia)")
                             print("Video upload completed successfully")
                             showSuccessView()
-
+                            let controller = UserProgressUpdateController()
+                            try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: 1, idActividad: actividad_modulo, idModulo: modulo_evidencia)
                         }catch{
                             print("Error sending video: \(error.localizedDescription)")
                         }
@@ -289,6 +291,8 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                             UserDefaults.standard.set(true, forKey: "actividad \(actividad_modulo) modulo \(modulo_evidencia)")
                             print("Audio upload completed successfully")
                             showSuccessView()
+                            let controller = UserProgressUpdateController()
+                            try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: 1, idActividad: actividad_modulo, idModulo: modulo_evidencia)
                         } catch {
                             print("Error sending audio: \(error.localizedDescription)")
                         }
@@ -357,6 +361,8 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                             print("Audio upload completed successfully")
                             UserDefaults.standard.set(true, forKey: "actividad \(actividad_modulo) modulo \(modulo_evidencia)")
                             showSuccessView()
+                            let controller = UserProgressUpdateController()
+                            try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: 1, idActividad: actividad_modulo, idModulo: modulo_evidencia)
                         } catch {
                             print("Error sending audio data: \(error.localizedDescription)")
                         }
