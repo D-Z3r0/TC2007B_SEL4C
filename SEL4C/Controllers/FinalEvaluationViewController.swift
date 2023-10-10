@@ -1,16 +1,17 @@
 //
-//  InitialEvaluationViewController.swift
+//  FinalEvaluationViewController.swift
 //  SEL4C
 //
-//  Created by Daniel Rong Chen on 02/10/23.
+//  Created by Daniel Rong Chen on 08/10/23.
 //
 
 import UIKit
 
-class InitialEvaluationViewController: UIViewController {
+class FinalEvaluationViewController: UIViewController {
     var collectedResponses: [(id: Int, value: Int)] = []
     var responseIDCounter = 0 // Un contador para asignar IDs únicos
     @IBOutlet weak var textQuestion: UILabel!
+    
     @IBOutlet weak var progressEcomplexity: UIProgressView!
     // Botones de Opciones
     @IBOutlet weak var buttonNadaAcuerdo: UIButton!
@@ -26,26 +27,18 @@ class InitialEvaluationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
-        // Do any additional setup after loading the view.
         textStyle(textQuestion)
-        let domain = Bundle.main.bundleIdentifier!
-        UserDefaults.standard.removePersistentDomain(forName: domain)
-        let defaults = UserDefaults.standard
-        let evaluationSolved = defaults.bool(forKey: "INEVSOLVED")
-        if (evaluationSolved) {
-            goToHomeScreen()
-        }else{
-            Task{
-                do{
-                    let questions = try await Question.fetchQuestions()
-                    updateUI(with: questions)
-                }catch{
-                    displayError(QuestionError.itemNotFound, title: "No se pudo accer a las preguntas")
-                }
+        // Do any additional setup after loading the view.
+        Task{
+            do{
+                let questions = try await Question.fetchQuestions()
+                updateUI(with: questions)
+            }catch{
+                displayError(QuestionError.itemNotFound, title: "No se pudo accer a las preguntas")
             }
         }
+        
     }
-    
     func updateUI(with questions:Questions){
         DispatchQueue.main.async {
             self.engine.initialize(q: questions)

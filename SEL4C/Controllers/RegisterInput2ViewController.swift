@@ -99,17 +99,19 @@ class RegisterInput2ViewController: UIViewController, UIPickerViewDelegate{
         users.username = username
         users.contrasena = password
         users.email = email
-        users.grado_ac = (gradeInput.titleLabel?.text)!
+        users.grado_ac = (gradeInput.titleLabel!.text)!
         users.institucion = institutionInput.text!
-        users.genero = (genderInput.titleLabel?.text)!
+        users.genero = (genderInput.titleLabel!.text)!
         users.edad = Int(ageInput.text!)!
-//        users.pais = (countryInput.titleLabel?.text)!
+//        users.pais = (countryInput.titleLabel!.text)!
         users.pais = "opcion1"
         Task{
             do{
-                try await signupController.userSignup(signupResponse:users)
+                let jsonResponse = try await signupController.userSignup(signupResponse:users)
+                let userID = jsonResponse!["id"] as? Int
+                UserDefaults.standard.set(userID, forKey: "ID")
                 evaluationNavigate()
-                UserDefaults.standard.set(true, forKey: "ISUSERLOGGEDIN")
+                UserDefaults.standard.set(true, forKey: "LOGGEDIN")
             }catch{
                 displayErrorUserResponses(UserSignUpError.itemNotFound, title: "No se encontro el usuario.")
             }

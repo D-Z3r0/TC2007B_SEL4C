@@ -2308,7 +2308,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="143.33333333333334"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sd1-LN-EAM">
-                                                        <rect key="frame" x="34" y="6" width="351" height="63"/>
+                                                        <rect key="frame" x="34" y="5.9999999999999964" width="351" height="52.666666666666657"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Evaluación">
                                                                 <attributes>
@@ -2320,7 +2320,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYG-es-4GV">
-                                                        <rect key="frame" x="34" y="77" width="351" height="63"/>
+                                                        <rect key="frame" x="34" y="66.666666666666657" width="351" height="73.333333333333343"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Inicial">
                                                                 <attributes>
@@ -3264,7 +3264,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="512"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="O54-G3-vUB">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="798.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="786.66666666666663"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7sE-hX-tT7">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="198"/>
@@ -3346,29 +3346,29 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfz-aP-78A">
-                                                <rect key="frame" x="0.0" y="302.33333333333331" width="393" height="72.333333333333314"/>
+                                                <rect key="frame" x="0.0" y="302.33333333333331" width="393" height="70"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2U-Z3-Lss">
-                                                        <rect key="frame" x="34" y="0.0" width="325" height="72.333333333333329"/>
+                                                        <rect key="frame" x="34" y="0.0" width="325" height="70"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="gray" title="">
                                                             <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h4Y-OX-k9y">
-                                                        <rect key="frame" x="51" y="10.000000000000004" width="50" height="52.333333333333343"/>
+                                                        <rect key="frame" x="51" y="10" width="50" height="50"/>
                                                         <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="externaldrive.badge.questionmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Kzc-WL-zaA">
-                                                        <rect key="frame" x="58" y="20.333333333333332" width="36" height="38.333333333333343"/>
+                                                        <rect key="frame" x="58" y="20.333333333333332" width="36" height="36"/>
                                                         <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zRb-0y-Xfv">
-                                                        <rect key="frame" x="109" y="43" width="162" height="6.3333333333333357"/>
+                                                        <rect key="frame" x="109" y="43" width="162" height="4"/>
                                                     </progressView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lgg-Ci-q8w">
-                                                        <rect key="frame" x="109" y="15.999999999999998" width="220" height="18.333333333333329"/>
+                                                        <rect key="frame" x="109" y="16" width="220" height="16"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Pensamiento crítico">
                                                                 <attributes>
@@ -3379,7 +3379,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kl1-of-jfW">
-                                                        <rect key="frame" x="290" y="37" width="39" height="18.333333333333329"/>
+                                                        <rect key="frame" x="290" y="37" width="39" height="16"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="000 %">
                                                                 <attributes>
@@ -3419,7 +3419,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lPA-eW-UZz">
-                                                <rect key="frame" x="0.0" y="374.66666666666669" width="393" height="54.333333333333314"/>
+                                                <rect key="frame" x="0.0" y="372.33333333333331" width="393" height="54.333333333333314"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWb-l3-wmk">
                                                         <rect key="frame" x="34" y="14.999999999999998" width="296" height="25.333333333333329"/>
@@ -3442,29 +3442,29 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2gO-ui-TsA">
-                                                <rect key="frame" x="0.0" y="429" width="393" height="92.333333333333371"/>
+                                                <rect key="frame" x="0.0" y="426.66666666666669" width="393" height="90.000000000000057"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6u-fV-bUc">
-                                                        <rect key="frame" x="34" y="10" width="325" height="72.333333333333329"/>
+                                                        <rect key="frame" x="34" y="10" width="325" height="70"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="gray" title="">
                                                             <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fcl-hj-vMx">
-                                                        <rect key="frame" x="51" y="20.000000000000004" width="50" height="52.333333333333343"/>
+                                                        <rect key="frame" x="51" y="20" width="50" height="50"/>
                                                         <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="externaldrive.badge.questionmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="aF7-x8-UCE">
-                                                        <rect key="frame" x="58" y="30.333333333333332" width="36" height="38.333333333333343"/>
+                                                        <rect key="frame" x="58" y="30.333333333333332" width="36" height="36"/>
                                                         <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="prQ-TJ-idb">
-                                                        <rect key="frame" x="109" y="53" width="162" height="6.3333333333333357"/>
+                                                        <rect key="frame" x="109" y="53" width="162" height="4"/>
                                                     </progressView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxu-4t-wpg">
-                                                        <rect key="frame" x="109" y="26" width="220" height="18.333333333333329"/>
+                                                        <rect key="frame" x="109" y="26" width="220" height="16"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Pensamiento crítico">
                                                                 <attributes>
@@ -3475,7 +3475,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g60-Mp-8GB">
-                                                        <rect key="frame" x="290" y="47" width="39" height="18.333333333333329"/>
+                                                        <rect key="frame" x="290" y="47" width="39" height="16"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="000 %">
                                                                 <attributes>
@@ -3515,29 +3515,29 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rwh-cy-Fpg">
-                                                <rect key="frame" x="0.0" y="521.33333333333337" width="393" height="92.333333333333371"/>
+                                                <rect key="frame" x="0.0" y="516.66666666666663" width="393" height="90"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Oc-eE-yaJ">
-                                                        <rect key="frame" x="34" y="10" width="325" height="72.333333333333329"/>
+                                                        <rect key="frame" x="34" y="10" width="325" height="70"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="gray" title="">
                                                             <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yi2-gM-bwu">
-                                                        <rect key="frame" x="51" y="20.000000000000004" width="50" height="52.333333333333343"/>
+                                                        <rect key="frame" x="51" y="20" width="50" height="50"/>
                                                         <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="externaldrive.badge.questionmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5VC-jj-2Ww">
-                                                        <rect key="frame" x="58" y="30.333333333333332" width="36" height="38.333333333333343"/>
+                                                        <rect key="frame" x="58" y="30.333333333333332" width="36" height="36"/>
                                                         <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KUz-xj-J24">
-                                                        <rect key="frame" x="109" y="53" width="162" height="6.3333333333333357"/>
+                                                        <rect key="frame" x="109" y="53" width="162" height="4"/>
                                                     </progressView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcS-YU-4Ys">
-                                                        <rect key="frame" x="109" y="26" width="220" height="18.333333333333329"/>
+                                                        <rect key="frame" x="109" y="26" width="220" height="16"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Pensamiento crítico">
                                                                 <attributes>
@@ -3548,7 +3548,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JtE-XW-q6m">
-                                                        <rect key="frame" x="290" y="47" width="39" height="18.333333333333329"/>
+                                                        <rect key="frame" x="290" y="47" width="39" height="16"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="000 %">
                                                                 <attributes>
@@ -3588,29 +3588,29 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ctc-Mz-kQ2">
-                                                <rect key="frame" x="0.0" y="613.66666666666663" width="393" height="92.333333333333371"/>
+                                                <rect key="frame" x="0.0" y="606.66666666666663" width="393" height="90"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPV-PH-zw0">
-                                                        <rect key="frame" x="34" y="10" width="325" height="72.333333333333329"/>
+                                                        <rect key="frame" x="34" y="10" width="325" height="70"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="gray" title="">
                                                             <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CXj-4e-vkz">
-                                                        <rect key="frame" x="51" y="20.000000000000004" width="50" height="52.333333333333343"/>
+                                                        <rect key="frame" x="51" y="20" width="50" height="50"/>
                                                         <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="externaldrive.badge.questionmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-YL-ggr">
-                                                        <rect key="frame" x="58" y="30.333333333333332" width="36" height="38.333333333333343"/>
+                                                        <rect key="frame" x="58" y="30.333333333333332" width="36" height="36"/>
                                                         <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="F9f-MU-TAo">
-                                                        <rect key="frame" x="109" y="53" width="162" height="6.3333333333333357"/>
+                                                        <rect key="frame" x="109" y="53" width="162" height="4"/>
                                                     </progressView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VUM-Sb-OB7">
-                                                        <rect key="frame" x="109" y="26" width="220" height="18.333333333333329"/>
+                                                        <rect key="frame" x="109" y="26" width="220" height="16"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Pensamiento crítico">
                                                                 <attributes>
@@ -3621,7 +3621,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EpS-cr-KB0">
-                                                        <rect key="frame" x="290" y="47" width="39" height="18.333333333333329"/>
+                                                        <rect key="frame" x="290" y="47" width="39" height="16"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="000 %">
                                                                 <attributes>
@@ -3661,29 +3661,29 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lx5-cX-a3n">
-                                                <rect key="frame" x="0.0" y="706" width="393" height="92.333333333333371"/>
+                                                <rect key="frame" x="0.0" y="696.66666666666663" width="393" height="90"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Gc-7o-6bX">
-                                                        <rect key="frame" x="34" y="10" width="325" height="72.333333333333329"/>
+                                                        <rect key="frame" x="34" y="10" width="325" height="70"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="gray" title="">
                                                             <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FMQ-zZ-ePB">
-                                                        <rect key="frame" x="51" y="20.000000000000004" width="50" height="52.333333333333343"/>
+                                                        <rect key="frame" x="51" y="20" width="50" height="50"/>
                                                         <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="externaldrive.badge.questionmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="XeD-Wl-0Ij">
-                                                        <rect key="frame" x="58" y="30.333333333333332" width="36" height="38.333333333333343"/>
+                                                        <rect key="frame" x="58" y="30.333333333333332" width="36" height="36"/>
                                                         <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Hk3-LW-eM4">
-                                                        <rect key="frame" x="109" y="53" width="162" height="6.3333333333333357"/>
+                                                        <rect key="frame" x="109" y="53" width="162" height="4"/>
                                                     </progressView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33u-iT-cTq">
-                                                        <rect key="frame" x="109" y="26" width="220" height="18.333333333333329"/>
+                                                        <rect key="frame" x="109" y="26" width="220" height="16"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Pensamiento crítico">
                                                                 <attributes>
@@ -3694,7 +3694,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOu-g7-gfW">
-                                                        <rect key="frame" x="290" y="47" width="39" height="18.333333333333329"/>
+                                                        <rect key="frame" x="290" y="47" width="39" height="16"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="000 %">
                                                                 <attributes>
@@ -3804,7 +3804,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="userAnswer:" destination="xni-gx-gcm" eventType="touchUpInside" id="sm2-TI-N3R"/>
+                                                    <action selector="userAnswer:" destination="xni-gx-gcm" eventType="touchUpInside" id="GPd-37-o3j"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXs-qU-nZe">
@@ -3818,7 +3818,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="userAnswer:" destination="xni-gx-gcm" eventType="touchUpInside" id="Jgg-HR-xrI"/>
+                                                    <action selector="userAnswer:" destination="xni-gx-gcm" eventType="touchUpInside" id="Q3x-9t-zhx"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6FT-JL-RL2">
@@ -3832,7 +3832,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="userAnswer:" destination="xni-gx-gcm" eventType="touchUpInside" id="ndh-vA-GuW"/>
+                                                    <action selector="userAnswer:" destination="xni-gx-gcm" eventType="touchUpInside" id="hId-57-z9T"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JFy-T8-NAB">
@@ -3846,7 +3846,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="userAnswer:" destination="xni-gx-gcm" eventType="touchUpInside" id="xYG-5f-IGg"/>
+                                                    <action selector="userAnswer:" destination="xni-gx-gcm" eventType="touchUpInside" id="K8i-Nk-ktC"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zYa-9Y-f1t">
@@ -3860,7 +3860,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="userAnswer:" destination="xni-gx-gcm" eventType="touchUpInside" id="NoO-f1-rKl"/>
+                                                    <action selector="userAnswer:" destination="xni-gx-gcm" eventType="touchUpInside" id="KZN-Iu-b4M"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -3907,18 +3907,173 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="buttonDeAcuerdo" destination="JFy-T8-NAB" id="sep-QH-Etr"/>
-                        <outlet property="buttonMuyAcuerdo" destination="zYa-9Y-f1t" id="FKj-k4-qMz"/>
-                        <outlet property="buttonNadaAcuerdo" destination="rr6-wv-lWV" id="b72-8t-IsL"/>
-                        <outlet property="buttonNiAcuerdo" destination="6FT-JL-RL2" id="IBx-y2-Ffh"/>
-                        <outlet property="buttonPocoAcuderdo" destination="ZXs-qU-nZe" id="SEz-dP-kHf"/>
-                        <outlet property="progressEcomplexity" destination="lbo-jV-XTd" id="LLF-Sd-5lt"/>
-                        <outlet property="textQuestion" destination="YN6-Zo-vex" id="JPb-Kx-qid"/>
+                        <outlet property="buttonDeAcuerdo" destination="JFy-T8-NAB" id="fuR-55-fYr"/>
+                        <outlet property="buttonMuyAcuerdo" destination="zYa-9Y-f1t" id="EPN-4a-xG0"/>
+                        <outlet property="buttonNadaAcuerdo" destination="rr6-wv-lWV" id="n93-Nz-BKD"/>
+                        <outlet property="buttonNiAcuerdo" destination="6FT-JL-RL2" id="sMm-xz-VLM"/>
+                        <outlet property="buttonPocoAcuderdo" destination="ZXs-qU-nZe" id="dVa-s3-uBC"/>
+                        <outlet property="progressEcomplexity" destination="lbo-jV-XTd" id="0H4-2E-W8Z"/>
+                        <outlet property="textQuestion" destination="YN6-Zo-vex" id="Jq3-vt-Fxh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EjL-v0-y5Q" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2836" y="-935"/>
+            <point key="canvasLocation" x="2869" y="-912"/>
+        </scene>
+        <!--Final Evaluation View Controller-->
+        <scene sceneID="5P5-Xn-IEM">
+            <objects>
+                <viewController id="sql-QU-0pZ" customClass="FinalEvaluationViewController" customModule="SEL4C" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ugb-Rj-4IL">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yzy-Hv-bDa">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="a6s-NN-cAa">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="300"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cnt-Eq-pZh">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="300"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="Ixs-EI-FeC"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="3Ha-IN-o2X">
+                                        <rect key="frame" x="31.666666666666657" y="343" width="330" height="303.66666666666674"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cI-HA-Ozy">
+                                                <rect key="frame" x="60" y="0.0" width="210" height="34.333333333333336"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="210" id="EJK-Yj-wQa"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.092843107879999998" green="0.1616334915" blue="0.54981178050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="☹️    Nada de acuerdo    " cornerStyle="capsule">
+                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="userAnswer:" destination="sql-QU-0pZ" eventType="touchUpInside" id="XIC-vX-8oR"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdK-in-bn4">
+                                                <rect key="frame" x="60" y="67.333333333333314" width="210" height="34.333333333333343"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="210" id="o4w-wQ-3Vc"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.092843107879999998" green="0.1616334915" blue="0.54981178050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="🙁    Poco de acuerdo    " cornerStyle="capsule">
+                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="userAnswer:" destination="sql-QU-0pZ" eventType="touchUpInside" id="ac1-Jk-alU"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZf-vo-Yyc">
+                                                <rect key="frame" x="60" y="134.66666666666663" width="210" height="34.333333333333343"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="210" id="6lP-lu-m1D"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.092843107879999998" green="0.1616334915" blue="0.54981178050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="😐            Neutral            " cornerStyle="capsule">
+                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="userAnswer:" destination="sql-QU-0pZ" eventType="touchUpInside" id="8x5-U4-JEU"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xao-1B-7NA">
+                                                <rect key="frame" x="60" y="202" width="210" height="34.333333333333343"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="210" id="lks-F2-wQu"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.092843107879999998" green="0.1616334915" blue="0.54981178050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="🙂        De acuerdo        " cornerStyle="capsule">
+                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="userAnswer:" destination="sql-QU-0pZ" eventType="touchUpInside" id="kZl-sa-pST"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Im5-j6-XhG">
+                                                <rect key="frame" x="60" y="269.33333333333337" width="210" height="34.333333333333314"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="210" id="hwT-bz-3ir"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.092843107879999998" green="0.1616334915" blue="0.54981178050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="😊    Muy de acuerdo    " cornerStyle="capsule">
+                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="userAnswer:" destination="sql-QU-0pZ" eventType="touchUpInside" id="T9n-Ff-HXi"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="330" id="Hid-Wk-M33"/>
+                                        </constraints>
+                                    </stackView>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hdD-iu-EaL">
+                                        <rect key="frame" x="20" y="696.66666666666663" width="353" height="4"/>
+                                        <color key="tintColor" systemColor="systemOrangeColor"/>
+                                    </progressView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="hdD-iu-EaL" firstAttribute="top" secondItem="3Ha-IN-o2X" secondAttribute="bottom" constant="50" id="1U1-JN-PAf"/>
+                                    <constraint firstItem="hdD-iu-EaL" firstAttribute="top" secondItem="3Ha-IN-o2X" secondAttribute="bottom" constant="50" id="29M-QU-Cuk"/>
+                                    <constraint firstItem="3Ha-IN-o2X" firstAttribute="top" secondItem="a6s-NN-cAa" secondAttribute="bottom" constant="43" id="6Mk-QG-aNY"/>
+                                    <constraint firstItem="a6s-NN-cAa" firstAttribute="leading" secondItem="7bR-Fz-a81" secondAttribute="leading" id="8yG-2C-vXX"/>
+                                    <constraint firstItem="G3V-VI-FF7" firstAttribute="trailing" secondItem="hdD-iu-EaL" secondAttribute="trailing" constant="20" id="DQG-fZ-5je"/>
+                                    <constraint firstItem="a6s-NN-cAa" firstAttribute="trailing" secondItem="7bR-Fz-a81" secondAttribute="trailing" constant="393" id="DZd-Lc-a5V"/>
+                                    <constraint firstItem="hdD-iu-EaL" firstAttribute="top" secondItem="3Ha-IN-o2X" secondAttribute="bottom" constant="50" id="HOA-xd-6IT"/>
+                                    <constraint firstItem="hdD-iu-EaL" firstAttribute="top" secondItem="3Ha-IN-o2X" secondAttribute="bottom" constant="50" id="J0R-aE-yhU"/>
+                                    <constraint firstItem="a6s-NN-cAa" firstAttribute="top" secondItem="7bR-Fz-a81" secondAttribute="top" id="PKO-O2-z3m"/>
+                                    <constraint firstItem="a6s-NN-cAa" firstAttribute="top" secondItem="Yzy-Hv-bDa" secondAttribute="top" id="Pml-qz-JQv"/>
+                                    <constraint firstItem="3Ha-IN-o2X" firstAttribute="top" secondItem="a6s-NN-cAa" secondAttribute="bottom" constant="43" id="VYt-3a-6T5"/>
+                                    <constraint firstItem="a6s-NN-cAa" firstAttribute="leading" secondItem="7bR-Fz-a81" secondAttribute="leading" id="bP7-es-3OF"/>
+                                    <constraint firstAttribute="bottom" secondItem="a6s-NN-cAa" secondAttribute="bottom" id="dAH-ms-y0O"/>
+                                    <constraint firstItem="a6s-NN-cAa" firstAttribute="leading" secondItem="Yzy-Hv-bDa" secondAttribute="leading" id="eYf-1A-03y"/>
+                                    <constraint firstItem="3Ha-IN-o2X" firstAttribute="centerX" secondItem="Yzy-Hv-bDa" secondAttribute="centerX" id="fkv-AL-aKs"/>
+                                    <constraint firstItem="hdD-iu-EaL" firstAttribute="leading" secondItem="G3V-VI-FF7" secondAttribute="leading" constant="20" id="gps-bN-IFa"/>
+                                    <constraint firstItem="a6s-NN-cAa" firstAttribute="leading" secondItem="7bR-Fz-a81" secondAttribute="leading" id="rna-TK-78v"/>
+                                    <constraint firstItem="a6s-NN-cAa" firstAttribute="width" secondItem="G3V-VI-FF7" secondAttribute="width" id="wFc-vJ-sI2"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="7bR-Fz-a81"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="G3V-VI-FF7"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uUv-0c-k0b"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Yzy-Hv-bDa" firstAttribute="trailing" secondItem="uUv-0c-k0b" secondAttribute="trailing" id="Fie-IM-RkF"/>
+                            <constraint firstItem="Yzy-Hv-bDa" firstAttribute="leading" secondItem="uUv-0c-k0b" secondAttribute="leading" id="Ko0-U8-JrR"/>
+                            <constraint firstItem="Yzy-Hv-bDa" firstAttribute="top" secondItem="uUv-0c-k0b" secondAttribute="top" id="RPQ-Qo-YRr"/>
+                            <constraint firstItem="Yzy-Hv-bDa" firstAttribute="bottom" secondItem="uUv-0c-k0b" secondAttribute="bottom" id="mpb-ml-uXf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonDeAcuerdo" destination="Xao-1B-7NA" id="VdW-Z1-N7m"/>
+                        <outlet property="buttonMuyAcuerdo" destination="Im5-j6-XhG" id="62m-Yp-0gr"/>
+                        <outlet property="buttonNadaAcuerdo" destination="1cI-HA-Ozy" id="dZU-IL-vWI"/>
+                        <outlet property="buttonNiAcuerdo" destination="BZf-vo-Yyc" id="rga-kl-rgE"/>
+                        <outlet property="buttonPocoAcuderdo" destination="pdK-in-bn4" id="0lv-vP-Tcj"/>
+                        <outlet property="progressEcomplexity" destination="hdD-iu-EaL" id="DKH-SI-bf8"/>
+                        <outlet property="textQuestion" destination="Cnt-Eq-pZh" id="HBc-G2-hke"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nB2-7z-wfb" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3752" y="-913"/>
         </scene>
     </scenes>
     <resources>
