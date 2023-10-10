@@ -171,8 +171,6 @@
 			children = (
 				F3D78A862AD0BAAE007E535F /* Controllers */,
 				8EEE1C3D2AC93C5500F15234 /* Model */,
-				F3E0A7932ABCF2DE004DB845 /* RegisterInput2ViewController.swift */,
-				F343604C2ABA5E1600487D75 /* RegisterInputViewController.swift */,
 				8EEFEFFA2AA3D24700809FEE /* AppDelegate.swift */,
 				8EEFEFFC2AA3D24700809FEE /* SceneDelegate.swift */,
 				8EEFEFFE2AA3D24700809FEE /* ViewController.swift */,
@@ -206,6 +204,8 @@
 		F3D78A862AD0BAAE007E535F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F3E0A7932ABCF2DE004DB845 /* RegisterInput2ViewController.swift */,
+				F343604C2ABA5E1600487D75 /* RegisterInputViewController.swift */,
 				F34B05342AC4ED9B001E741B /* WebViewerViewController.swift */,
 				F3D78A8B2AD27F7F007E535F /* FinalEvaluationViewController.swift */,
 			);
