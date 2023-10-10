@@ -25,9 +25,27 @@ class ViewControllerTableroActividades: UIViewController {
     var show_activity: Int = 0
     
     var actividades_json: [Actividad] = []
+    var modulos_json: [Modulo] = []
+    var progreso_json: ProgresoActividad?
     
+    /*
+     //Aquí
+     progreso_json = try await ProgresoActividad.fetchProgresoActividades(id_usuario: 1)
+     
+     if progreso_json.actividad1 == true && actividad_json.id_actividad == 1{
+         nuevo_foco.backgroundColor = UIColor.green
+     }
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let userDefaults = UserDefaults.standard
+
+        // Especifica el nombre del dominio (generalmente se usa el identificador del paquete de la app)
+        if let bundleIdentifier = Bundle.main.bundleIdentifier {
+            userDefaults.removePersistentDomain(forName: bundleIdentifier)
+        }
+        
         // Crear una instancia de UserProgressActivitiesController
         let controller = UserProgressActivties()
 
@@ -40,10 +58,52 @@ class ViewControllerTableroActividades: UIViewController {
         Task{
             do {
                 try await controller.postProgressForUser(idUsuario: idUsuario, actividad1: actividad1, actividad2: actividad2, actividad3: actividad3, actividad4: actividad4)
+                // Crear un conjunto de cadenas para realizar un seguimiento de las combinaciones únicas de id_actividad y id_modulo
+                var processedCombinations = Set<String>()
+                do {
+                    for i in 1..<4{
+                        modulos_json = try await Modulo.fetchModulos(id_actividad: i)
+                        for actividad_json in modulos_json {
+                            // Crear una cadena que representa la combinación de id_actividad y id_modulo
+                            let combinationString = "\(actividad_json.id_actividad)-\(actividad_json.id_modulo)"
+
+                            // Verificar si ya hemos procesado esta combinación
+                            if processedCombinations.contains(combinationString) {
+                                print("Esta combinación ya se ha procesado: \(combinationString)")
+                            } else {
+                                // Agregar la combinación al conjunto de combinaciones procesadas
+                                processedCombinations.insert(combinationString)
+
+                                // Crear una instancia de UserProgressActivities
+                                let userProgress = UserProgressController()
+
+                                // Llamar a la función postProgressForUser con datos de ejemplo
+                                do {
+                                    try await userProgress.postProgressForUser(
+                                        idUsuario: 1,
+                                        idActividad: actividad_json.id_actividad,
+                                        idModulo: actividad_json.id_modulo,
+                                        estadoActividad: false,
+                                        estadoModulo: false
+                                    )
+                                    print("Solicitud exitosa para la combinación: \(combinationString)")
+                                } catch {
+                                    print("Error al realizar la solicitud para la combinación \(combinationString): \(error)")
+                                }
+                            }
+                        }
+                    }
+                    
+                } catch {
+                    print("Error al obtener los módulos: \(error)")
+                }
                 print("Progreso de actividades actualizado exitosamente")
             } catch {
                 print("Error al actualizar el progreso de actividades: \(error)")
             }
+            
+            //Aquí
+            
         }
         
         Task {
@@ -93,6 +153,13 @@ class ViewControllerTableroActividades: UIViewController {
                     let nuevo_foco = UIButton()
                     nuevo_foco.backgroundColor = UIColor.blue
                     configureEstadobtn(nuevo_foco)
+                    
+                    /*
+                    progreso_json = try await ProgresoActividad.fetchProgresoActividades(id_usuario: 1)
+                    
+                    if progreso_json?.actividad1 == true && actividad_json.id_actividad == 2{
+                        nuevo_foco.backgroundColor = UIColor.green
+                    }*/
 
                     //Añadir elementos a view
                     containerView.addSubview(nuevoBoton)

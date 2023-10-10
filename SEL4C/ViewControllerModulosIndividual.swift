@@ -38,34 +38,20 @@ class ViewControllerModulosIndividual: UIViewController {
     
     var actividadIndividual: Actividad_individual?
     var modulos_json: [Modulo] = []
+    var processedCombinations = Set<String>()
+    var ProgresosUsuarios_json: [ProgresoUsuario] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         /*
-        let controller = UserProgressUpdateController()
-
-        let idUsuario = 1 // Reemplaza con el ID de usuario deseado
-        let activityData: [String: Any] = [
-            "id_progreso": 1,
-            "id_usuario": idUsuario,
-            "actividad1": false,
-            "actividad2": false,
-            "actividad3": false,
-            "actividad4": false
-        ]
+        let controller = UserProgressActivities()
         
         Task{
             do {
-                try await controller.updateUserProgress(idUsuario: idUsuario, activityData: activityData)
+                try await controller.putProgressForUser(idUsuario: 1, actividad1: false, actividad2: true, actividad3: false, actividad4: false)
                 print("Actualización exitosa")
-            } catch let error as UserProgressUpdateError {
-                switch error {
-                case .userNotFound:
-                    print("Usuario no encontrado")
-                case .missingActivityFields:
-                    print("Faltan campos de actividad")
-                }
-            } catch {
+            }catch {
                 print("Error desconocido: \(error)")
             }
         }*/
@@ -87,23 +73,24 @@ class ViewControllerModulosIndividual: UIViewController {
             do {
                 modulos_json = try await Modulo.fetchModulos(id_actividad: activity_modules)
                 for actividad_json in modulos_json {
-                    // Crear una instancia de UserProgressActivities
-                    let userProgress = UserProgressController()
-
-                    // Llamar a la función postProgressForUser con datos de ejemplo
-                    do {
-                        try await userProgress.postProgressForUser(
-                            idUsuario: 1,
-                            idActividad: actividad_json.id_actividad,
-                            idModulo: actividad_json.id_modulo,
-                            estadoActividad: false,
-                            estadoModulo: false
-                        )
-                        print("Solicitud exitosa") // Esto se imprimirá si la solicitud es exitosa
-                    } catch {
-                        print("Error al realizar la solicitud: \(error)") // Manejar errores si ocurren
-                    }
-                      
+                    /*
+                     // Crear una instancia de UserProgressActivities
+                     let userProgress = UserProgressController()
+                     
+                     // Llamar a la función postProgressForUser con datos de ejemplo
+                     do {
+                     try await userProgress.postProgressForUser(
+                     idUsuario: 1,
+                     idActividad: actividad_json.id_actividad,
+                     idModulo: actividad_json.id_modulo,
+                     estadoActividad: false,
+                     estadoModulo: false
+                     )
+                     print("Solicitud exitosa") // Esto se imprimirá si la solicitud es exitosa
+                     } catch {
+                     print("Error al realizar la solicitud: \(error)") // Manejar errores si ocurren
+                     }*/
+                    
                     
                     print("ID modulo: \(actividad_json.id_modulo)")
                     print("ID activodad del modulo: \(actividad_json.id_modulo)")
@@ -133,9 +120,50 @@ class ViewControllerModulosIndividual: UIViewController {
                     
                     //Crear el foco de estado del modulo
                     let nuevo_foco = UIButton()
-                    nuevo_foco.backgroundColor = UIColor.blue
                     configureEstadobtn(nuevo_foco)
                     
+                    ProgresosUsuarios_json = try await ProgresoUsuario.fetchProgresoUsuarios(id_usuario: 1)
+                    
+                    let progresosFiltrados = ProgresosUsuarios_json.filter { progreso in
+                        return progreso.id_actividad == actividad_json.id_actividad && progreso.estado_modulo == true
+                    }
+                    
+                    for filtrados in progresosFiltrados{
+                        if filtrados.id_modulo == actividad_json.id_modulo{
+                            nuevo_foco.backgroundColor = UIColor.green
+                        }
+                    }
+                    
+                    let progresosFil = ProgresosUsuarios_json.filter { progreso in
+                        return progreso.id_actividad == actividad_json.id_actividad
+                    }
+                    
+                    let todosTienenEstadoModuloTrue = progresosFil.allSatisfy { $0.estado_modulo == true }
+                    var progreso_json: ProgresoActividad?
+                    progreso_json = try await ProgresoActividad.fetchProgresoActividades(id_usuario: 1)
+                    
+                    if progreso_json?.actividad1 == true && actividad_json.id_actividad == 1{
+                        nuevo_foco.backgroundColor = UIColor.green
+                    }
+                    
+                    if todosTienenEstadoModuloTrue {
+                        if actividad_json.id_actividad == 2{
+                            let controller = UserProgressActivities()
+                            Task{
+                                do {
+                                    try await controller.putProgressForUser(idUsuario: 1, actividad1: false, actividad2: true, actividad3: false, actividad4: false)
+                                    print("Actualización exitosa")
+                                }catch {
+                                    print("Error desconocido: \(error)")
+                                }
+                            }
+                        }
+                        print("Todos los elementos tienen estado_modulo en true")
+                    } else {
+                        print("Al menos un elemento no tiene estado_modulo en true")
+                    }
+
+
                     //Crear la image de flecha del modulo
                     let nuevo_image = UIImageView()
                     configureImagebtn(nuevo_image)
