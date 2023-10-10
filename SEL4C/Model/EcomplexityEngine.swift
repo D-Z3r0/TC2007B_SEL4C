@@ -14,7 +14,7 @@ struct EcomplexityEngine{
         questions = q
     }
     func getTextQuestion()->String{
-        return questions[questionIndex].text
+        return questions[questionIndex].contenido
     }
     func getProgress()->Float{
         let progress = Float(questionIndex+1)/Float(questions.count)
@@ -31,4 +31,3 @@ struct EcomplexityEngine{
         }
     }
 }
-

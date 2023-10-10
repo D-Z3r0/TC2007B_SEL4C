@@ -79,7 +79,9 @@ class LoginViewController: UIViewController{
             print(userLogin)
             Task{
                 do{
-                    try await loginController.userLogin(loginResponse: userLogin)
+                    let jsonResponse = try await loginController.userLogin(loginResponse: userLogin)
+                    let userID = jsonResponse!["id"] as? Int
+                    UserDefaults.standard.set(userID, forKey: "ID")
                     evaluationNavigate()
                     UserDefaults.standard.set(true, forKey: "LOGGEDIN")
                 }catch{

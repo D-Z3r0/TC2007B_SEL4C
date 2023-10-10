@@ -12,7 +12,7 @@ enum UserError: Error, LocalizedError{
 }
 class LoginController{
     let baseString = "http://127.0.0.1:8000/api/user/login/"
-    func userLogin(loginResponse:UserLogin)async throws->Void{
+    func userLogin(loginResponse:UserLogin)async throws-> [String: Any]? {
         let insertURL = URL(string: baseString)!
         var request = URLRequest(url: insertURL)
         request.httpMethod = "POST"
@@ -23,8 +23,15 @@ class LoginController{
         print(jsonString!)
         request.httpBody = jsonData
         
-        let (_, response) = try await URLSession.shared.data(for: request)
+        let (data, response) = try await URLSession.shared.data(for: request)
         guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else { throw UserError.itemNotFound}
+        if let jsonObject = try? JSONSerialization.jsonObject(with: data) as? [String: Any] {
+            return jsonObject
+//            print(jsonObject)
+        } else {
+            return nil
+//            print("nada")
+        }
     }
     
 }
