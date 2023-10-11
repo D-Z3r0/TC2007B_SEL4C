@@ -247,8 +247,8 @@
             filePath = "SEL4C/ViewControllerTableroPrincipal.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -283,54 +283,6 @@
             endingLineNumber = "21"
             landmarkName = "Data"
             landmarkType = "21">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F92D55BD-3E23-422F-860D-98A2A855D374"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SEL4C/ViewControllerModulosIndividual.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F92D55BD-3E23-422F-860D-98A2A855D374 - cde8fdde1d092c55"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(5) suspend resume partial function for closure #1 @Sendable () async -&gt; () in SEL4C.ViewControllerModulosIndividual.viewDidLoad() -&gt; ()"
-                  moduleName = "SEL4C"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sofiadonlucas/Desktop/TC2007B_SEL4C/SEL4C/ViewControllerModulosIndividual.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "75"
-                  endingLineNumber = "75"
-                  offsetFromSymbolStart = "2968">
-               </Location>
-               <Location
-                  uuid = "F92D55BD-3E23-422F-860D-98A2A855D374 - cde8fdde1d092c55"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(5) suspend resume partial function for closure #1 @Sendable () async -&gt; () in SEL4C.ViewControllerModulosIndividual.viewDidLoad() -&gt; ()"
-                  moduleName = "SEL4C"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sofiadonlucas/Desktop/TC2007B_SEL4C/SEL4C/ViewControllerModulosIndividual.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "75"
-                  endingLineNumber = "75"
-                  offsetFromSymbolStart = "2988">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -391,8 +343,8 @@
             filePath = "pruebasunitarias_RF018/pruebasunitarias_RF018.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "pruebasunitarias_RF018"
             landmarkType = "3">
          </BreakpointContent>
@@ -508,86 +460,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F381152F-FC07-4AF5-B23B-08D6474A3614"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SEL4C/ViewControllerModulosIndividual.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F381152F-FC07-4AF5-B23B-08D6474A3614 - cde8fdde1d09151d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(5) suspend resume partial function for closure #1 @Sendable () async -&gt; () in SEL4C.ViewControllerModulosIndividual.viewDidLoad() -&gt; ()"
-                  moduleName = "SEL4C"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sofiadonlucas/Desktop/TC2007B_SEL4C/SEL4C/ViewControllerModulosIndividual.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "131"
-                  endingLineNumber = "131"
-                  offsetFromSymbolStart = "3576">
-               </Location>
-               <Location
-                  uuid = "F381152F-FC07-4AF5-B23B-08D6474A3614 - 5e2e1d589e2bd71b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(7) suspend resume partial function for closure #1 @Sendable () async -&gt; () in SEL4C.ViewControllerModulosIndividual.viewDidLoad() -&gt; ()"
-                  moduleName = "SEL4C"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sofiadonlucas/Desktop/TC2007B_SEL4C/SEL4C/ViewControllerModulosIndividual.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "131"
-                  endingLineNumber = "131"
-                  offsetFromSymbolStart = "3580">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0914F8FC-BCC9-4807-98B8-0AA849EE894F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SEL4C/ViewControllerModulosIndividual.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B3EDC979-0246-43E9-9961-14497190F3ED"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SEL4C/ViewControllerModulosIndividual.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "BFDC374D-4F8A-4CF3-81E0-D2D36FED3BCB"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -595,9 +467,89 @@
             filePath = "SEL4C/ViewControllerEvidenciasIndividual.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "252"
-            endingLineNumber = "252"
+            startingLineNumber = "255"
+            endingLineNumber = "255"
             landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "092FDCC7-4D5F-4ED6-8526-C433A3B2A78C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SEL4C/Model/ProgresoUsuarios.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "postProgressForUser(idUsuario:idActividad:idModulo:estadoActividad:estadoModulo:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "092FDCC7-4D5F-4ED6-8526-C433A3B2A78C - 2a550ceca0319281"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for SEL4C.UserProgressController.postProgressForUser(idUsuario: Swift.Int, idActividad: Swift.Int, idModulo: Swift.Int, estadoActividad: Swift.Bool, estadoModulo: Swift.Bool) async throws -&gt; ()"
+                  moduleName = "SEL4C"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sofiadonlucas/Desktop/TC2007B_SEL4C/SEL4C/Model/ProgresoUsuarios.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "240">
+               </Location>
+               <Location
+                  uuid = "092FDCC7-4D5F-4ED6-8526-C433A3B2A78C - 2a550ceca0319281"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for SEL4C.UserProgressController.postProgressForUser(idUsuario: Swift.Int, idActividad: Swift.Int, idModulo: Swift.Int, estadoActividad: Swift.Bool, estadoModulo: Swift.Bool) async throws -&gt; ()"
+                  moduleName = "SEL4C"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sofiadonlucas/Desktop/TC2007B_SEL4C/SEL4C/Model/ProgresoUsuarios.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "532">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "35105EED-A629-42A2-8B98-AB33C7353148"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pruebasunitarias_RF0017/pruebasunitarias_RF0017.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "testCompleteActivityInvalido()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A0E8187F-474F-4DB0-AABB-C13CB74A0398"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pruebasunitarias_RF018/pruebasunitarias_RF018.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "testRF018_EstadisticasInvalido()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

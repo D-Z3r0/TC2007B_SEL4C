@@ -27,85 +27,105 @@ class ViewControllerTableroActividades: UIViewController {
     var actividades_json: [Actividad] = []
     var modulos_json: [Modulo] = []
     var progreso_json: ProgresoActividad?
+    var processedCombinations = Set<String>()
+    var ProgresoActividades_json : ProgresoActividad?
+    var ProgresosUsuarios_json: [ProgresoUsuario] = []
     
-    /*
-     //Aquí
-     progreso_json = try await ProgresoActividad.fetchProgresoActividades(id_usuario: 1)
-     
-     if progreso_json.actividad1 == true && actividad_json.id_actividad == 1{
-         nuevo_foco.backgroundColor = UIColor.green
-     }
-     */
     override func viewDidLoad() {
         super.viewDidLoad()
+        /*
+        // Eliminar todos los valores almacenados en UserDefaults.standard
+        UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
 
-        let userDefaults = UserDefaults.standard
+        // Sincronizar UserDefaults para asegurarse de que los cambios se apliquen de inmediato
+        UserDefaults.standard.synchronize()*/
 
-        // Especifica el nombre del dominio (generalmente se usa el identificador del paquete de la app)
-        if let bundleIdentifier = Bundle.main.bundleIdentifier {
-            userDefaults.removePersistentDomain(forName: bundleIdentifier)
+        let userDefaults2 = UserDefaults.standard
+
+        // Verifica si la clave "firstRun" está presente en UserDefaults
+        if !userDefaults2.bool(forKey: "firstRun") {
+            // Si no está presente, ejecuta el código y establece la clave "firstRun" en true
+            if let bundleIdentifier = Bundle.main.bundleIdentifier {
+                userDefaults2.removePersistentDomain(forName: bundleIdentifier)
+                userDefaults2.set(true, forKey: "firstRun")
+            }
         }
         
-        // Crear una instancia de UserProgressActivitiesController
-        let controller = UserProgressActivties()
-
-        let idUsuario = 1
-        let actividad1 = "Actividad 1"
-        let actividad2 = "Actividad 2"
-        let actividad3 = "Actividad 3"
-        let actividad4 = "Actividad 4"
+        let userDefaults = UserDefaults.standard
+        let key = "realizado"
+        let hecho = userDefaults.bool(forKey: key)
         
-        Task{
-            do {
-                try await controller.postProgressForUser(idUsuario: idUsuario, actividad1: actividad1, actividad2: actividad2, actividad3: actividad3, actividad4: actividad4)
-                // Crear un conjunto de cadenas para realizar un seguimiento de las combinaciones únicas de id_actividad y id_modulo
-                var processedCombinations = Set<String>()
+        if !hecho {
+            // Crear una instancia de UserProgressActivitiesController
+            let controller = UserProgressActivties()
+            let controller2 = EstadisticasPost()
+            
+            let idUsuario = 1
+            let actividad1 = false
+            let actividad2 = false
+            let actividad3 = false
+            let actividad4 = false
+            
+            Task{
                 do {
-                    for i in 1..<4{
-                        modulos_json = try await Modulo.fetchModulos(id_actividad: i)
-                        for actividad_json in modulos_json {
-                            // Crear una cadena que representa la combinación de id_actividad y id_modulo
-                            let combinationString = "\(actividad_json.id_actividad)-\(actividad_json.id_modulo)"
-
-                            // Verificar si ya hemos procesado esta combinación
-                            if processedCombinations.contains(combinationString) {
-                                print("Esta combinación ya se ha procesado: \(combinationString)")
-                            } else {
-                                // Agregar la combinación al conjunto de combinaciones procesadas
-                                processedCombinations.insert(combinationString)
-
-                                // Crear una instancia de UserProgressActivities
-                                let userProgress = UserProgressController()
-
-                                // Llamar a la función postProgressForUser con datos de ejemplo
-                                do {
-                                    try await userProgress.postProgressForUser(
-                                        idUsuario: 1,
-                                        idActividad: actividad_json.id_actividad,
-                                        idModulo: actividad_json.id_modulo,
-                                        estadoActividad: false,
-                                        estadoModulo: false
-                                    )
-                                    print("Solicitud exitosa para la combinación: \(combinationString)")
-                                } catch {
-                                    print("Error al realizar la solicitud para la combinación \(combinationString): \(error)")
+                    try await controller.postProgressForUser(idUsuario: idUsuario, actividad1: actividad1, actividad2: actividad2, actividad3: actividad3, actividad4: actividad4)
+                    try await  controller2.postEstadisticasUser(idUsuario: idUsuario, actividades: 0, evidencias: 0, progreso: 0)
+                    // Crear un conjunto de cadenas para realizar un seguimiento de las combinaciones únicas de id_actividad y id_modulo
+                    do {
+                        for i in 1..<4{
+                            modulos_json = try await Modulo.fetchModulos(id_actividad: i)
+                            for actividad_json in modulos_json {
+                                // Crear una cadena que representa la combinación de id_actividad y id_modulo
+                                let combinationString = "\(actividad_json.id_actividad)-\(actividad_json.id_modulo)"
+                                
+                                // Verificar si ya hemos procesado esta combinación
+                                if processedCombinations.contains(combinationString) {
+                                    print("Esta combinación ya se ha procesado: \(combinationString)")
+                                } else {
+                                    // Agregar la combinación al conjunto de combinaciones procesadas
+                                    processedCombinations.insert(combinationString)
+                                    
+                                    // Crear una instancia de UserProgressActivities
+                                    let userProgress = UserProgressController()
+                                    
+                                    // Llamar a la función postProgressForUser con datos de ejemplo
+                                    do {
+                                        try await userProgress.postProgressForUser(
+                                            idUsuario: 1,
+                                            idActividad: actividad_json.id_actividad,
+                                            idModulo: actividad_json.id_modulo,
+                                            estadoActividad: false,
+                                            estadoModulo: false
+                                        )
+                                        print("Solicitud exitosa para la combinación: \(combinationString)")
+                                    } catch {
+                                        print("Error al realizar la solicitud para la combinación \(combinationString): \(error)")
+                                    }
                                 }
                             }
                         }
+                        
+                    } catch {
+                        print("Error al obtener los módulos: \(error)")
                     }
-                    
+                    print("Progreso de actividades actualizado exitosamente")
                 } catch {
-                    print("Error al obtener los módulos: \(error)")
+                    print("Error al actualizar el progreso de actividades: \(error)")
                 }
-                print("Progreso de actividades actualizado exitosamente")
-            } catch {
-                print("Error al actualizar el progreso de actividades: \(error)")
+                
+                //Aquí
+                
             }
-            
-            //Aquí
-            
+            userDefaults.set(true, forKey: key)
         }
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        for view in stack_view.arrangedSubviews where view.tag == 100 {
+                stack_view.removeArrangedSubview(view)
+                view.removeFromSuperview()
+            }
         Task {
             do {
                 actividades_json = try await Actividad.fetchActividades()
@@ -125,6 +145,7 @@ class ViewControllerTableroActividades: UIViewController {
                     containerView.translatesAutoresizingMaskIntoConstraints = false
                     containerView.widthAnchor.constraint(equalToConstant: 393).isActive = true
                     containerView.heightAnchor.constraint(equalToConstant: 213.67).isActive = true
+                    containerView.tag = 100
                     
                     // Crear el titutlo de la actividad
                     let label = UILabel()
@@ -145,22 +166,75 @@ class ViewControllerTableroActividades: UIViewController {
                     
                     //Crear el estado de la actividad
                     let nuevo_estado = UILabel()
-                    nuevo_estado.text = "En progreso"
+                    nuevo_estado.text = "Pendiente"
                     nuevo_estado.translatesAutoresizingMaskIntoConstraints = false
                     configureEstado(nuevo_estado)
                     
                     //Crear el foco de estado de la actividad
                     let nuevo_foco = UIButton()
-                    nuevo_foco.backgroundColor = UIColor.blue
+                    //nuevo_foco.backgroundColor = UIColor.blue
                     configureEstadobtn(nuevo_foco)
                     
-                    /*
-                    progreso_json = try await ProgresoActividad.fetchProgresoActividades(id_usuario: 1)
-                    
-                    if progreso_json?.actividad1 == true && actividad_json.id_actividad == 2{
-                        nuevo_foco.backgroundColor = UIColor.green
-                    }*/
-
+                    ProgresoActividades_json = try await ProgresoActividad.fetchProgresoActividades(id_usuario: 1)
+                
+                    if let progreso = ProgresoActividades_json {
+                        if actividad_json.id_actividad == 1 && progreso.actividad1 {
+                            nuevo_foco.backgroundColor = UIColor.green
+                            nuevo_estado.text = "Completado"
+                        } else if actividad_json.id_actividad == 1 {
+                            Task {
+                                do{
+                                    ProgresosUsuarios_json = try await ProgresoUsuario.fetchProgresoUsuarios(id_usuario: 1)
+                                    var countTrue = 0
+                                    var countFalse = 0
+                                    
+                                    for progresoUsuario in ProgresosUsuarios_json where progresoUsuario.id_actividad == 1 {
+                                        if progresoUsuario.estado_modulo {
+                                            countTrue += 1
+                                        } else {
+                                            countFalse += 1
+                                        }
+                                    }
+                                    
+                                    if countTrue >= 1{
+                                        nuevo_foco.backgroundColor = UIColor.orange
+                                        nuevo_estado.text = "En progreso"
+                                    }else{
+                                        nuevo_foco.backgroundColor = UIColor.gray
+                                        nuevo_estado.text = "Pendiente"
+                                    }
+                                }
+                            }
+                        } else if actividad_json.id_actividad == 2 && progreso.actividad2 {
+                            nuevo_foco.backgroundColor = UIColor.green
+                            nuevo_estado.text = "Completado"
+                        } else if actividad_json.id_actividad == 2 {
+                            Task {
+                                do{
+                                    ProgresosUsuarios_json = try await ProgresoUsuario.fetchProgresoUsuarios(id_usuario: 1)
+                                    var countTrue = 0
+                                    var countFalse = 0
+                                    
+                                    for progresoUsuario in ProgresosUsuarios_json where progresoUsuario.id_actividad == 2 {
+                                        if progresoUsuario.estado_modulo {
+                                            countTrue += 1
+                                        } else {
+                                            countFalse += 1
+                                        }
+                                    }
+                                    
+                                    if countTrue >= 1{
+                                        nuevo_foco.backgroundColor = UIColor.orange
+                                        nuevo_estado.text = "En progreso"
+                                    }else{
+                                        nuevo_foco.backgroundColor = UIColor.gray
+                                        nuevo_estado.text = "Pendiente"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                
                     //Añadir elementos a view
                     containerView.addSubview(nuevoBoton)
                     containerView.addSubview(label)
@@ -295,6 +369,7 @@ class ViewControllerTableroActividades: UIViewController {
         estadobtn.backgroundColor = UIColor.gray
         estadobtn.widthAnchor.constraint(equalToConstant: 12).isActive = true
         estadobtn.heightAnchor.constraint(equalToConstant: 12).isActive = true
+        estadobtn.layer.cornerRadius = 5
     }
     
     /*

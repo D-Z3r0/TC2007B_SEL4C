@@ -73,6 +73,17 @@
                ReferencedContainer = "container:SEL4C.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8EBFC32D2AD53D39008DC11C"
+               BuildableName = "pruebasunitarias_RF0017.xctest"
+               BlueprintName = "pruebasunitarias_RF0017"
+               ReferencedContainer = "container:SEL4C.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

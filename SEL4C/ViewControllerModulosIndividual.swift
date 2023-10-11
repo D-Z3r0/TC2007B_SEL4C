@@ -43,19 +43,10 @@ class ViewControllerModulosIndividual: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        /*
-        let controller = UserProgressActivities()
-        
-        Task{
-            do {
-                try await controller.putProgressForUser(idUsuario: 1, actividad1: false, actividad2: true, actividad3: false, actividad4: false)
-                print("Actualización exitosa")
-            }catch {
-                print("Error desconocido: \(error)")
-            }
-        }*/
-        
+        //Mostrar información de la actividad seleccionada
+        //titulo.text = titulo_actividad_resultado
+        //titulo_actividad.text = actividad_resultado
+        //descripcion_acti.text = description_actividad
         Task{
             do {
                 actividadIndividual = try await Actividad.fetchActividadesDetail(id_actividad: activity_modules)
@@ -69,29 +60,27 @@ class ViewControllerModulosIndividual: UIViewController {
             } catch {
                 print("Error al cargar la actividad: \(error)")
             }
-            
+        }
+        print("Modulos de la actividad: \(activity_modules)")
+        
+        //Vista de prueba
+        view_prueba.isHidden = true
+        configureButton(btn_ev1)
+        configureTitulo(label_btn_ev1)
+        configureEstadobtn(btn_estado_ev1)
+        configureImagebtn(image_row_ev1)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        for view in stack_view.arrangedSubviews where view.tag == 100 {
+                stack_view.removeArrangedSubview(view)
+                view.removeFromSuperview()
+            }
+        Task{
             do {
                 modulos_json = try await Modulo.fetchModulos(id_actividad: activity_modules)
                 for actividad_json in modulos_json {
-                    /*
-                     // Crear una instancia de UserProgressActivities
-                     let userProgress = UserProgressController()
-                     
-                     // Llamar a la función postProgressForUser con datos de ejemplo
-                     do {
-                     try await userProgress.postProgressForUser(
-                     idUsuario: 1,
-                     idActividad: actividad_json.id_actividad,
-                     idModulo: actividad_json.id_modulo,
-                     estadoActividad: false,
-                     estadoModulo: false
-                     )
-                     print("Solicitud exitosa") // Esto se imprimirá si la solicitud es exitosa
-                     } catch {
-                     print("Error al realizar la solicitud: \(error)") // Manejar errores si ocurren
-                     }*/
-                    
-                    
                     print("ID modulo: \(actividad_json.id_modulo)")
                     print("ID activodad del modulo: \(actividad_json.id_modulo)")
                     print("Titulo modulo: \(actividad_json.titulo_mod)")
@@ -107,6 +96,7 @@ class ViewControllerModulosIndividual: UIViewController {
                     containerView.translatesAutoresizingMaskIntoConstraints = false
                     containerView.widthAnchor.constraint(equalToConstant: 393).isActive = true
                     containerView.heightAnchor.constraint(equalToConstant: 73).isActive = true
+                    containerView.tag = 100
                     
                     // Crear el titutlo del modulo
                     let label = UILabel()
@@ -134,6 +124,7 @@ class ViewControllerModulosIndividual: UIViewController {
                         }
                     }
                     
+                    
                     let progresosFil = ProgresosUsuarios_json.filter { progreso in
                         return progreso.id_actividad == actividad_json.id_actividad
                     }
@@ -148,16 +139,90 @@ class ViewControllerModulosIndividual: UIViewController {
                     
                     if todosTienenEstadoModuloTrue {
                         if actividad_json.id_actividad == 2{
-                            let controller = UserProgressActivities()
                             Task{
                                 do {
-                                    try await controller.putProgressForUser(idUsuario: 1, actividad1: false, actividad2: true, actividad3: false, actividad4: false)
-                                    print("Actualización exitosa")
-                                }catch {
-                                    print("Error desconocido: \(error)")
+                                    let progresoActividades = try await updateProgressActivity(idUsuario: 1, activityName: "actividad2", newValue: true)
+                                    print("Successfully updated progress: \(progresoActividades)")
+                                } catch {
+                                    switch error {
+                                    case let updateError as UpdateProgressError:
+                                        switch updateError {
+                                        case .networkError(let networkError):
+                                            print("Network error: \(networkError)")
+                                        case .decodingError(let decodingError):
+                                            print("Decoding error: \(decodingError)")
+                                        case .apiError(let apiErrorMessage):
+                                            print("API error: \(apiErrorMessage)")
+                                        }
+                                    default:
+                                        print("Unknown error: \(error)")
+                                    }
                                 }
                             }
-                        }
+                        }else if actividad_json.id_actividad == 1{
+                             Task{
+                                 do {
+                                     let progresoActividades = try await updateProgressActivity(idUsuario: 1, activityName: "actividad1", newValue: true)
+                                     print("Successfully updated progress: \(progresoActividades)")
+                                 } catch {
+                                     switch error {
+                                     case let updateError as UpdateProgressError:
+                                         switch updateError {
+                                         case .networkError(let networkError):
+                                             print("Network error: \(networkError)")
+                                         case .decodingError(let decodingError):
+                                             print("Decoding error: \(decodingError)")
+                                         case .apiError(let apiErrorMessage):
+                                             print("API error: \(apiErrorMessage)")
+                                         }
+                                     default:
+                                         print("Unknown error: \(error)")
+                                     }
+                                 }
+                             }
+                         }else if actividad_json.id_actividad == 3{
+                              Task{
+                                  do {
+                                      let progresoActividades = try await updateProgressActivity(idUsuario: 1, activityName: "actividad3", newValue: true)
+                                      print("Successfully updated progress: \(progresoActividades)")
+                                  } catch {
+                                      switch error {
+                                      case let updateError as UpdateProgressError:
+                                          switch updateError {
+                                          case .networkError(let networkError):
+                                              print("Network error: \(networkError)")
+                                          case .decodingError(let decodingError):
+                                              print("Decoding error: \(decodingError)")
+                                          case .apiError(let apiErrorMessage):
+                                              print("API error: \(apiErrorMessage)")
+                                          }
+                                      default:
+                                          print("Unknown error: \(error)")
+                                      }
+                                  }
+                              }
+                          }else if actividad_json.id_actividad == 4{
+                               Task{
+                                   do {
+                                       let progresoActividades = try await updateProgressActivity(idUsuario: 1, activityName: "actividad4", newValue: true)
+                                       print("Successfully updated progress: \(progresoActividades)")
+                                   } catch {
+                                       switch error {
+                                       case let updateError as UpdateProgressError:
+                                           switch updateError {
+                                           case .networkError(let networkError):
+                                               print("Network error: \(networkError)")
+                                           case .decodingError(let decodingError):
+                                               print("Decoding error: \(decodingError)")
+                                           case .apiError(let apiErrorMessage):
+                                               print("API error: \(apiErrorMessage)")
+                                           }
+                                       default:
+                                           print("Unknown error: \(error)")
+                                       }
+                                   }
+                               }
+                           }
                         print("Todos los elementos tienen estado_modulo en true")
                     } else {
                         print("Al menos un elemento no tiene estado_modulo en true")
@@ -213,21 +278,8 @@ class ViewControllerModulosIndividual: UIViewController {
                 print("Error al cargar el modulo: \(error)")
             }
         }
-        
-        //Mostrar información de la actividad seleccionada
-        //titulo.text = titulo_actividad_resultado
-        //titulo_actividad.text = actividad_resultado
-        //descripcion_acti.text = description_actividad
-        
-        print("Modulos de la actividad: \(activity_modules)")
-        
-        //Vista de prueba
-        view_prueba.isHidden = true
-        configureButton(btn_ev1)
-        configureTitulo(label_btn_ev1)
-        configureEstadobtn(btn_estado_ev1)
-        configureImagebtn(image_row_ev1)
     }
+    
     
     //Funcion para hacer la navegación de los modulos a la vista de evidencias
     @objc func navegarAEvidencias(_ sender: UIButton) {
@@ -264,6 +316,7 @@ class ViewControllerModulosIndividual: UIViewController {
         estadobtn.backgroundColor = UIColor.gray
         estadobtn.widthAnchor.constraint(equalToConstant: 12).isActive = true
         estadobtn.heightAnchor.constraint(equalToConstant: 12).isActive = true
+        estadobtn.layer.cornerRadius = 5
     }
     
     //Estilos del btn del modulo

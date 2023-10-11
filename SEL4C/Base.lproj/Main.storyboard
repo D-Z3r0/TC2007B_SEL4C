@@ -260,7 +260,7 @@
             </objects>
             <point key="canvasLocation" x="11578" y="-2378"/>
         </scene>
-        <!--Item-->
+        <!--Tablero-->
         <scene sceneID="hvo-2r-aBK">
             <objects>
                 <viewController id="qvD-GT-Pdi" customClass="ViewControllerTableroPrincipal" customModule="SEL4C" customModuleProvider="target" sceneMemberID="viewController">
@@ -389,7 +389,9 @@
                             <constraint firstItem="F4Z-Za-o1S" firstAttribute="leading" secondItem="T2p-NX-CNY" secondAttribute="leading" constant="45" id="zeB-nQ-w37"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="MyB-AJ-Img"/>
+                    <tabBarItem key="tabBarItem" title="Tablero" image="house.fill" catalog="system" selectedImage="house.fill" id="MyB-AJ-Img">
+                        <color key="badgeColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="btn_actividades" destination="9kY-hA-Lk2" id="xgi-qq-oIN"/>
                         <outlet property="btn_evaluaciones" destination="G4W-RK-p9f" id="Ydp-4D-RwS"/>
@@ -1121,7 +1123,7 @@
             </objects>
             <point key="canvasLocation" x="15797.709923664121" y="-2744.3661971830988"/>
         </scene>
-        <!--Item-->
+        <!--Progreso-->
         <scene sceneID="Jv8-x7-Lkz">
             <objects>
                 <viewController id="efl-ec-phS" customClass="ViewControllerProgresoIndividual" customModule="SEL4C" customModuleProvider="target" sceneMemberID="viewController">
@@ -1136,11 +1138,6 @@
                                 <color key="textColor" red="0.0" green="0.18823529411764706" blue="0.52941176470588236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P2f-oo-r2c">
-                                <rect key="frame" x="97" y="218" width="241" height="178"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="45V-LD-TV9">
                                 <rect key="frame" x="44" y="537" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1256,11 +1253,18 @@
                                 <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P2f-oo-r2c">
+                                <rect key="frame" x="97" y="199" width="241" height="178"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2Hs-8m-lve"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="qKL-WA-7dO"/>
+                    <tabBarItem key="tabBarItem" title="Progreso" image="chart.bar.xaxis" catalog="system" selectedImage="chart.bar.xaxis" id="qKL-WA-7dO">
+                        <color key="badgeColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="chartContainerView" destination="P2f-oo-r2c" id="xNW-zl-g2l"/>
@@ -2609,7 +2613,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                             <constraint firstAttribute="height" constant="16" id="NUR-Na-B3a"/>
                                                         </constraints>
                                                         <attributedString key="attributedText">
-                                                            <fragment content="Pensamiento complejo">
+                                                            <fragment content="Pensamiento sistémico">
                                                                 <attributes>
                                                                     <font key="NSFont" size="13" name="Poppins-Medium"/>
                                                                 </attributes>
@@ -2706,7 +2710,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                             <constraint firstAttribute="width" constant="220" id="RnO-VK-H2A"/>
                                                         </constraints>
                                                         <attributedString key="attributedText">
-                                                            <fragment content="Pensamiento complejo">
+                                                            <fragment content="Pensamiento científico">
                                                                 <attributes>
                                                                     <font key="NSFont" size="13" name="Poppins-Medium"/>
                                                                 </attributes>
@@ -2803,7 +2807,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                             <constraint firstAttribute="width" constant="220" id="hne-4T-Kzn"/>
                                                         </constraints>
                                                         <attributedString key="attributedText">
-                                                            <fragment content="Pensamiento complejo">
+                                                            <fragment content="Pensamiento crítico">
                                                                 <attributes>
                                                                     <font key="NSFont" size="13" name="Poppins-Medium"/>
                                                                 </attributes>
@@ -2900,7 +2904,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                             <constraint firstAttribute="width" constant="220" id="oGw-z1-Eaf"/>
                                                         </constraints>
                                                         <attributedString key="attributedText">
-                                                            <fragment content="Pensamiento complejo">
+                                                            <fragment content="Pensamiento innovador">
                                                                 <attributes>
                                                                     <font key="NSFont" size="13" name="Poppins-Medium"/>
                                                                 </attributes>
@@ -4187,6 +4191,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
         <image name="chevron.right" catalog="system" width="97" height="128"/>
         <image name="externaldrive.badge.questionmark" catalog="system" width="128" height="91"/>
         <image name="eye.slash.fill" catalog="system" width="128" height="85"/>
+        <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="image_evfinal" width="379" height="165"/>
         <image name="image_evinicial" width="382" height="168"/>
         <image name="imagen_actividad1" width="386" height="168"/>
