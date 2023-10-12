@@ -50,15 +50,12 @@ final class pruebasunitarias_RF015: XCTestCase {
     }
     
     func testRF015_ActivitiesDetailInvaldo() async throws {
-        let actividades = try await Actividad.fetchActividades()
-        
-        for act in actividades {
-            let actividad = try await Actividad.fetchActividadesDetail(id_actividad: act.id_actividad)
-            
-            // Verificar si la actividad no existe
-            if actividad == nil {
-                XCTAssertFalse(false, "La actividad con id \(act.id_actividad) no existe")
-            }
+        let (statusCode, actividad) = try await Actividad.fetchActividadesDetailStatus(id_actividad: 5)
+
+        if statusCode == 200 {
+            XCTAssertNotNil(actividad, "Actividad cargada con éxito pero sin modulo valido")
+        } else {
+            XCTAssertNil(actividad, "Actividad cargada sin éxito")
         }
     }
     
@@ -95,17 +92,13 @@ final class pruebasunitarias_RF015: XCTestCase {
     }
     
     func testRF015_ModulesDetailInvalido() async throws{
-        let actividades = try await Actividad.fetchActividades()
-        for actividad in actividades{
-            let modulos = try await Modulo.fetchModulos(id_actividad: actividad.id_actividad)
-            for mod in modulos{
-                let modulo = try await Modulo.fetchModulosDetail(id_actividad: actividad.id_actividad, id_modulo: mod.id_modulo)
-                if modulo == nil {
-                    XCTAssertFalse(false, "El modulo con id \(mod.id_modulo) no existe")
-                }
+        let (statusCode, actividad) = try await Modulo.fetchModulosDetailStatus(id_actividad: 5, id_modulo: 5)
+
+            if statusCode == 200 {
+                XCTAssertNotNil(actividad, "Actividad cargada sin modulo valido")
+            } else {
+                XCTAssertNil(actividad, "Actividad cargada con modulo nulo")
             }
-        }
-//        XCTAssertNotNil(questions)
     }
 
     func testPerformanceExample() throws {

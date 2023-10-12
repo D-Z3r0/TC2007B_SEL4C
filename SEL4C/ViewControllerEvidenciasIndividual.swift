@@ -68,7 +68,10 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                     let isUserLogged = defaults.bool(forKey: "actividad \(modulo.id_actividad) modulo \(modulo.id_modulo)")
                     print("Modulo cargado con éxito: \(modulo)")
                     titulo_modulo.text = modulo.titulo_mod
-                    instrucciones.text = modulo.instrucciones
+                    if let data = modulo.instrucciones.data(using: .utf16),
+                       let attributedString = try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
+                        instrucciones.attributedText = attributedString
+                    }
                     tipo_entrega_result = modulo.tipo_multimedia
                     if !(isUserLogged){
                         if tipo_entrega_result == "video"{

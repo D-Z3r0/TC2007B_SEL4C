@@ -19,6 +19,7 @@ typealias Actividad_individual = Actividad
 
 enum ActividadError: Error, LocalizedError{
     case itemNotFound
+    case decodingError
 }
 
 extension Actividad{
@@ -47,5 +48,27 @@ extension Actividad{
         let jsonDecoder = JSONDecoder()
         let actividad = try? jsonDecoder.decode(Actividad_individual.self, from: data)
         return actividad!
+    }
+    
+    static func fetchActividadesDetailStatus(id_actividad: Int) async throws -> (statusCode: Int, actividad: Actividad_individual?) {
+        let baseString = "http://127.0.0.1:8000/api/admin/activities/\(id_actividad)/"
+        let actividadURL = URL(string: baseString)!
+        let (data, response) = try await URLSession.shared.data(from: actividadURL)
+
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw ActividadError.itemNotFound
+        }
+        
+        let statusCode = httpResponse.statusCode
+
+        if statusCode == 200 {
+            let jsonDecoder = JSONDecoder()
+            guard let actividad = try? jsonDecoder.decode(Actividad_individual.self, from: data) else {
+                throw ActividadError.decodingError
+            }
+            return (statusCode, actividad)
+        } else {
+            return (statusCode, nil)
+        }
     }
 }

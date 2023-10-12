@@ -21,6 +21,7 @@ typealias ResultadoIndividual = ResultadoEvaluaciones
 
 enum ResultadoError: Error, LocalizedError {
     case itemNotFound
+    case decodingFailed
 }
 
 extension ResultadoEvaluaciones {
@@ -38,6 +39,27 @@ extension ResultadoEvaluaciones {
         let resultado = try? jsonDecoder.decode(ResultadoIndividual.self, from: data)
         
         return resultado!
+    }
+    
+    static func fetchResultadoEvaluacionesDetailStatus(idUsuario: Int) async throws -> (statusCode: Int, resultado: ResultadoIndividual?){
+        let baseString = "http://127.0.0.1:8000/api/user/progress/initialEvaluation/\(idUsuario)/"
+        let resultadosURL = URL(string: baseString)!
+        let (data, response) = try await URLSession.shared.data(from: resultadosURL)
+        
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw ResultadoError.itemNotFound
+        }
+        
+        if httpResponse.statusCode == 200 {
+            let jsonDecoder = JSONDecoder()
+            if let resultado = try? jsonDecoder.decode(ResultadoIndividual.self, from: data) {
+                return (statusCode: httpResponse.statusCode, resultado: resultado)
+            } else {
+                throw ResultadoError.decodingFailed
+            }
+        } else {
+            return (statusCode: httpResponse.statusCode, resultado: nil)
+        }
     }
 }
 

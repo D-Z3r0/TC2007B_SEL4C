@@ -78,6 +78,9 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8EBFC32D2AD53D39008DC11C"
+               BuildableName = "pruebasunitarias_RF0017.xctest"
+               BlueprintName = "pruebasunitarias_RF0017"
                BlueprintIdentifier = "F3D647F42AD60C4900324AA9"
                BuildableName = "pruebasunitarias_RF011.xctest"
                BlueprintName = "pruebasunitarias_RF011"

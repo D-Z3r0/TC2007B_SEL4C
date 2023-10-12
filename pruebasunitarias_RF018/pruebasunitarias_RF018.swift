@@ -31,11 +31,15 @@ final class pruebasunitarias_RF018: XCTestCase {
         XCTAssertNotNil(estadisticas)
     }
     
-    func testRF018_EstadisticasInvalido() async throws{
-        let estadisticas = try await Estadisticas.fetchEstadisticasDetail(idUsuario: 1)
-        if estadisticas == nil {
-            XCTAssertFalse(false, "No hay estadisticas disponibles")
-        }
+    func testRF018_EstadisticasInvalido() async {
+        let controller = UserProgressStatusController.shared
+            do {
+                let statusCode = try await controller.updateProgressStatus(estadoActividad: true, estadoModulo: true, idUsuario: 2, idActividad: 1, idModulo: 4)
+                // Handle the status code (e.g., check if it's 200 for OK)
+                XCTAssertNotEqual(statusCode, 200)
+            } catch {
+                XCTFail("Error updating progress: \(error)")
+            }
     }
     
     func testRF018_Evaluaciones() async throws{
@@ -44,10 +48,8 @@ final class pruebasunitarias_RF018: XCTestCase {
     }
     
     func testRF018_EvaluacionesInvalido() async throws{
-        let resultadoIndividual = try await ResultadoEvaluaciones.fetchResultadoEvaluacionesDetail(idUsuario: 1)
-        if resultadoIndividual == nil {
-            XCTAssertFalse(false, "No hay resultados disponibles")
-        }
+        let (statusCode, _) = try await ResultadoEvaluaciones.fetchResultadoEvaluacionesDetailStatus(idUsuario: 2)
+            XCTAssertNotEqual(statusCode, 200, "Error \(statusCode).")
     }
 
     func testPerformanceExample() throws {

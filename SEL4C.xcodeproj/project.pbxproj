@@ -16,6 +16,7 @@
 		8E655B522ABE77C300CF8E66 /* ViewControllerTableroActividades.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E655B512ABE77C300CF8E66 /* ViewControllerTableroActividades.swift */; };
 		8E655B562ABF73EE00CF8E66 /* ViewControllerModulos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E655B552ABF73EE00CF8E66 /* ViewControllerModulos.swift */; };
 		8EB0B7CB2AA557B9002E0849 /* ViewControllerTableroInicial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB0B7CA2AA557B9002E0849 /* ViewControllerTableroInicial.swift */; };
+		8EBFC3312AD53D39008DC11C /* pruebasunitarias_RF0017.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBFC3302AD53D39008DC11C /* pruebasunitarias_RF0017.swift */; };
 		8ED0D2EC2ACBEE0200BC972B /* SendVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0D2EB2ACBEE0200BC972B /* SendVideo.swift */; };
 		8ED0D2EE2ACBF1FB00BC972B /* SendAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0D2ED2ACBF1FB00BC972B /* SendAudio.swift */; };
 		8ED0D2F02ACD37FC00BC972B /* ResultadoEvaluaciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0D2EF2ACD37FC00BC972B /* ResultadoEvaluaciones.swift */; };
@@ -72,6 +73,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8EBFC3322AD53D39008DC11C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8EEFEFEF2AA3D24700809FEE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8EEFEFF62AA3D24700809FEE;
+			remoteInfo = SEL4C;
+		};
 		8ED0D32C2ACF128700BC972B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8EEFEFEF2AA3D24700809FEE /* Project object */;
@@ -140,6 +148,8 @@
 		8E655B512ABE77C300CF8E66 /* ViewControllerTableroActividades.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTableroActividades.swift; sourceTree = "<group>"; };
 		8E655B552ABF73EE00CF8E66 /* ViewControllerModulos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerModulos.swift; sourceTree = "<group>"; };
 		8EB0B7CA2AA557B9002E0849 /* ViewControllerTableroInicial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTableroInicial.swift; sourceTree = "<group>"; };
+		8EBFC32E2AD53D39008DC11C /* pruebasunitarias_RF0017.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pruebasunitarias_RF0017.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EBFC3302AD53D39008DC11C /* pruebasunitarias_RF0017.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pruebasunitarias_RF0017.swift; sourceTree = "<group>"; };
 		8ED0D2EB2ACBEE0200BC972B /* SendVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendVideo.swift; sourceTree = "<group>"; };
 		8ED0D2ED2ACBF1FB00BC972B /* SendAudio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendAudio.swift; sourceTree = "<group>"; };
 		8ED0D2EF2ACD37FC00BC972B /* ResultadoEvaluaciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultadoEvaluaciones.swift; sourceTree = "<group>"; };
@@ -206,6 +216,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8EBFC32B2AD53D39008DC11C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8ED0D3252ACF128700BC972B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -272,6 +289,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8EBFC32F2AD53D39008DC11C /* pruebasunitarias_RF0017 */ = {
+			isa = PBXGroup;
+			children = (
+				8EBFC3302AD53D39008DC11C /* pruebasunitarias_RF0017.swift */,
+			);
+			path = pruebasunitarias_RF0017;
+			sourceTree = "<group>";
+		};
 		8ED0D3292ACF128700BC972B /* pruebasunitarias_RF015 */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,6 +359,7 @@
 				8ED0D3292ACF128700BC972B /* pruebasunitarias_RF015 */,
 				8ED0D3432ACF51C300BC972B /* pruebasunitarias_RF018 */,
 				8ED0D3502ACF541B00BC972B /* pruebasunitarias_RF021 */,
+				8EBFC32F2AD53D39008DC11C /* pruebasunitarias_RF0017 */,
 				F3D647F62AD60C4900324AA9 /* pruebasunitarias_RF11 */,
 				F3D648032AD6316E00324AA9 /* pruebasUnitarias_RF10 */,
 				F33D46572AD7453C005E577B /* pruebasUnitarias_RF12 */,
@@ -350,6 +376,7 @@
 				8ED0D3352ACF447000BC972B /* pruebasunitarias_RF017.xctest */,
 				8ED0D3422ACF51C300BC972B /* pruebasunitarias_RF018.xctest */,
 				8ED0D34F2ACF541B00BC972B /* pruebasunitarias_RF021.xctest */,
+				8EBFC32E2AD53D39008DC11C /* pruebasunitarias_RF0017.xctest */,
 				F3D647F52AD60C4900324AA9 /* pruebasunitarias_RF011.xctest */,
 				F3D648022AD6316E00324AA9 /* pruebasUnitarias_RF012.xctest */,
 				F33D46562AD7453C005E577B /* pruebasUnitarias_RF12.xctest */,
@@ -441,6 +468,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8EBFC32D2AD53D39008DC11C /* pruebasunitarias_RF0017 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EBFC3362AD53D39008DC11C /* Build configuration list for PBXNativeTarget "pruebasunitarias_RF0017" */;
+			buildPhases = (
+				8EBFC32A2AD53D39008DC11C /* Sources */,
+				8EBFC32B2AD53D39008DC11C /* Frameworks */,
+				8EBFC32C2AD53D39008DC11C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8EBFC3332AD53D39008DC11C /* PBXTargetDependency */,
+			);
+			name = pruebasunitarias_RF0017;
+			productName = pruebasunitarias_RF0017;
+			productReference = 8EBFC32E2AD53D39008DC11C /* pruebasunitarias_RF0017.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		8ED0D3272ACF128700BC972B /* pruebasunitarias_RF015 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8ED0D32E2ACF128700BC972B /* Build configuration list for PBXNativeTarget "pruebasunitarias_RF015" */;
@@ -612,6 +657,10 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					8EBFC32D2AD53D39008DC11C = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 8EEFEFF62AA3D24700809FEE;
+					};
 					8ED0D3272ACF128700BC972B = {
 						CreatedOnToolsVersion = 14.3.1;
 						TestTargetID = 8EEFEFF62AA3D24700809FEE;
@@ -667,6 +716,7 @@
 				8ED0D3342ACF447000BC972B /* pruebasunitarias_RF017 */,
 				8ED0D3412ACF51C300BC972B /* pruebasunitarias_RF018 */,
 				8ED0D34E2ACF541B00BC972B /* pruebasunitarias_RF021 */,
+				8EBFC32D2AD53D39008DC11C /* pruebasunitarias_RF0017 */,
 				F3D647F42AD60C4900324AA9 /* pruebasunitarias_RF011 */,
 				F3D648012AD6316E00324AA9 /* pruebasUnitarias_RF012 */,
 				F33D46552AD7453C005E577B /* pruebasUnitarias_RF12 */,
@@ -676,6 +726,13 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8EBFC32C2AD53D39008DC11C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8ED0D3262ACF128700BC972B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -750,6 +807,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8EBFC32A2AD53D39008DC11C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EBFC3312AD53D39008DC11C /* pruebasunitarias_RF0017.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8ED0D3242ACF128700BC972B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -870,6 +935,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8EBFC3332AD53D39008DC11C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8EEFEFF62AA3D24700809FEE /* SEL4C */;
+			targetProxy = 8EBFC3322AD53D39008DC11C /* PBXContainerItemProxy */;
+		};
 		8ED0D32D2ACF128700BC972B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8EEFEFF62AA3D24700809FEE /* SEL4C */;
@@ -932,6 +1002,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8EBFC3342AD53D39008DC11C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mx.Equipo8.pruebasunitarias-RF0017";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SEL4C.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SEL4C";
+			};
+			name = Debug;
+		};
+		8EBFC3352AD53D39008DC11C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mx.Equipo8.pruebasunitarias-RF0017";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SEL4C.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SEL4C";
+			};
+			name = Release;
+		};
 		8ED0D32F2ACF128700BC972B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1431,6 +1537,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8EBFC3362AD53D39008DC11C /* Build configuration list for PBXNativeTarget "pruebasunitarias_RF0017" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EBFC3342AD53D39008DC11C /* Debug */,
+				8EBFC3352AD53D39008DC11C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8ED0D32E2ACF128700BC972B /* Build configuration list for PBXNativeTarget "pruebasunitarias_RF015" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

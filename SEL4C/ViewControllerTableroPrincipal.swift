@@ -19,6 +19,7 @@ class ViewControllerTableroPrincipal: UIViewController {
     //Btns para vistas
     @IBOutlet weak var btn_actividades: UIButton!
     @IBOutlet weak var btn_evaluaciones: UIButton!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
