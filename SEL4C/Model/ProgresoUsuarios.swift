@@ -95,6 +95,7 @@ class UserProgressUpdateController {
     static let shared = UserProgressUpdateController()
         
         func updateProgress(estadoActividad: Bool, estadoModulo: Bool, idUsuario: Int, idActividad: Int, idModulo: Int) {
+            
             // Crear un diccionario con los datos a enviar
             let json: [String: Any] = [
                 "estado_actividad": estadoActividad,
@@ -144,4 +145,44 @@ class UserProgressUpdateController {
                 print("Error al serializar los datos JSON: \(error.localizedDescription)")
             }
         }
+}
+
+enum UserProgressStatusError: Error, LocalizedError {
+    case serverError(Error)
+    case invalidResponse
+}
+
+class UserProgressStatusController {
+    static let shared = UserProgressStatusController()
+        
+    func updateProgressStatus(estadoActividad: Bool, estadoModulo: Bool, idUsuario: Int, idActividad: Int, idModulo: Int) async throws -> Int {
+        let json: [String: Any] = [
+            "estado_actividad": estadoActividad,
+            "estado_modulo": estadoModulo,
+            "id_usuario": idUsuario,
+            "id_actividad": idActividad,
+            "id_modulo": idModulo
+        ]
+
+        let jsonData = try JSONSerialization.data(withJSONObject: json)
+        let url = URL(string: "http://127.0.0.1:8000/api/user/progress/user/\(idUsuario)/")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = jsonData
+
+        let (data, response) = try await URLSession.shared.data(for: request)
+                
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw UserProgressStatusError.invalidResponse
+        }
+
+        // Handle the server response using the data directly
+        let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+        if let responseJSON = responseJSON as? [String: Any] {
+            print("Server response: \(responseJSON)")
+        }
+
+        return httpResponse.statusCode
+    }
 }

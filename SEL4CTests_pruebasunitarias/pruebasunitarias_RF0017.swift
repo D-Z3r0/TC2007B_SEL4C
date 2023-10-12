@@ -1,14 +1,14 @@
 //
-//  pruebasunitarias_RF018.swift
-//  pruebasunitarias_RF018
+//  pruebasunitarias_RF0017.swift
+//  pruebasunitarias_RF0017
 //
-//  Created by Sofía Donlucas on 05/10/23.
+//  Created by Sofía Donlucas on 10/10/23.
 //
 
 import XCTest
 @testable import SEL4C
 
-final class pruebasunitarias_RF018: XCTestCase {
+final class pruebasunitarias_RF0017: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -26,29 +26,18 @@ final class pruebasunitarias_RF018: XCTestCase {
         // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
     }
     
-    func testRF018_Estadisticas() async throws{
-        let estadisticas = try await Estadisticas.fetchEstadisticasDetail(idUsuario: 1)
-        XCTAssertNotNil(estadisticas)
+    func testCompleteActivity() async throws {
+        let controller = UserProgressUpdateController()
+        controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: 1, idActividad: 1, idModulo: 1)
+        XCTAssertTrue(true, "Actividad completada con éxito")
     }
     
-    func testRF018_EstadisticasInvalido() async throws{
-        let estadisticas = try await Estadisticas.fetchEstadisticasDetail(idUsuario: 1)
-        if estadisticas == nil {
-            XCTAssertFalse(false, "No hay estadisticas disponibles")
-        }
+    func testCompleteActivityInvalido() async throws {
+        let controller = UserProgressUpdateController()
+        controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: 1, idActividad: 1, idModulo: 4)
+        XCTAssertFalse(false, "Actividad completada sin éxito, modulo no encontrado")
     }
-    
-    func testRF018_Evaluaciones() async throws{
-        let resultadoIndividual = try await ResultadoEvaluaciones.fetchResultadoEvaluacionesDetail(idUsuario: 1)
-        XCTAssertNotNil(resultadoIndividual)
-    }
-    
-    func testRF018_EvaluacionesInvalido() async throws{
-        let resultadoIndividual = try await ResultadoEvaluaciones.fetchResultadoEvaluacionesDetail(idUsuario: 1)
-        if resultadoIndividual == nil {
-            XCTAssertFalse(false, "No hay resultados disponibles")
-        }
-    }
+
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.

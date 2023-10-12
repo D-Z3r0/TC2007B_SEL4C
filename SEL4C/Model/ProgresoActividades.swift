@@ -40,7 +40,7 @@ extension ProgresoActividad{
 class UserProgressActivties {
     let baseString = "http://127.0.0.1:8000/api/user/progress/activities/"
 
-    func postProgressForUser(idUsuario: Int, actividad1: String, actividad2: String, actividad3: String, actividad4: String) async throws -> Void {
+    func postProgressForUser(idUsuario: Int, actividad1: Bool, actividad2: Bool, actividad3: Bool, actividad4: Bool) async throws -> Void {
         // Construir la URL con el ID de usuario
         let url = URL(string: "\(baseString)\(idUsuario)/")!
 
@@ -79,45 +79,41 @@ class UserProgressActivties {
     }
 }
 
-class UserProgressActivities {
-    let baseString = "http://127.0.0.1:8000/api/user/progress/activities/"
+enum UpdateProgressError: Error {
+    case networkError(Error)
+    case decodingError(Error)
+    case apiError(String)
+}
 
-    func putProgressForUser(idUsuario: Int, actividad1: Bool, actividad2: Bool, actividad3: Bool, actividad4: Bool) async throws -> Void {
-        // Construir la URL con el ID de usuario
-        let url = URL(string: "\(baseString)\(idUsuario)/")!
-
-        // Crear la solicitud HTTP PUT
-        var request = URLRequest(url: url)
-        request.httpMethod = "PUT"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-
-        // Crear el cuerpo de la solicitud como un diccionario JSON
-        let requestBody: [String: Any] = [
-            "actividad1": actividad1,
-            "actividad2": actividad2,
-            "actividad3": actividad3,
-            "actividad4": actividad4
-        ]
-
-        // Codificar el cuerpo de la solicitud en formato JSON
-        do {
-            let jsonData = try JSONSerialization.data(withJSONObject: requestBody)
-            request.httpBody = jsonData
-        } catch {
-            throw error
-        }
-
-        // Realizar la solicitud HTTP
-        do {
-            let (_, response) = try await URLSession.shared.data(for: request)
-
-            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode != 200 {
-                // Manejar el error de acuerdo a tu lógica de manejo de errores
-                // Por ejemplo, lanzar una excepción o realizar alguna otra acción
-            }
-        } catch {
-            throw error
-        }
+func updateProgressActivity(idUsuario: Int, activityName: String, newValue: Bool) async throws -> ProgresoActividades {
+    // Define the API endpoint URL
+    let apiUrl = URL(string: "http://127.0.0.1:8000/api/user/progress/brief/\(idUsuario)/")!
+    
+    // Create a dictionary with the request parameters
+    let requestData: [String: Any] = [
+        "activity_name": activityName,
+        "new_value": newValue
+    ]
+    
+    // Serialize the request data to JSON
+    let jsonData = try JSONSerialization.data(withJSONObject: requestData)
+    
+    // Create a URL request with the appropriate method and headers
+    var request = URLRequest(url: apiUrl)
+    request.httpMethod = "PUT"
+    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+    request.httpBody = jsonData
+    
+    // Use URLSession's data method to send the request and handle errors
+    do {
+        let (data, _) = try await URLSession.shared.data(for: request)
+        
+        // Deserialize the response JSON into a ProgresoActividades object
+        let decoder = JSONDecoder()
+        let progresoActividades = try decoder.decode(ProgresoActividades.self, from: data)
+        return progresoActividades
+    } catch {
+        throw UpdateProgressError.networkError(error)
     }
 }
 

@@ -41,7 +41,7 @@ extension Users{
         return users!
     }
     
-    static func putUser(user:Users)async throws-> Void {
+    static func putUser(user:Users)async throws {
         let defaults = UserDefaults.standard
         let userID = defaults.string(forKey: "ID")
         let baseString = "http://127.0.0.1:8000/api/user/profile/"+userID!+"/"

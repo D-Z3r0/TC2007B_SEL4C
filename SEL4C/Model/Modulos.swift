@@ -20,6 +20,8 @@ typealias Modulo_individual = Modulo
 
 enum ModuloError: Error, LocalizedError{
     case itemNotFound
+    case decodingError
+    case serverError(status: Int)
 }
 
 extension Modulo{
@@ -49,4 +51,20 @@ extension Modulo{
         let modulo = try? jsonDecoder.decode(Modulo_individual.self, from: data)
         return modulo!
     }
+    
+    static func fetchModulosDetailStatus(id_actividad: Int, id_modulo: Int) async throws -> (Int, Modulo_individual?) {
+        let baseString = "http://127.0.0.1:8000/api/admin/activity/\(id_actividad)/module/\(id_modulo)/"
+        let actividadURL = URL(string: baseString)!
+        let (data, response) = try await URLSession.shared.data(from: actividadURL)
+        
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw ModuloError.itemNotFound
+        }
+        
+        let jsonDecoder = JSONDecoder()
+        let modulo = try? jsonDecoder.decode(Modulo_individual.self, from: data)
+        
+        return (httpResponse.statusCode, modulo)
+    }
+
 }
