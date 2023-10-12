@@ -33,6 +33,10 @@ class ViewControllerTableroActividades: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UserDefaults.standard.set("1", forKey: "ID")
+        let defaults = UserDefaults.standard
+        let userID = defaults.integer(forKey: "ID")
+        
         /*
         // Eliminar todos los valores almacenados en UserDefaults.standard
         UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
@@ -60,7 +64,7 @@ class ViewControllerTableroActividades: UIViewController {
             let controller = UserProgressActivties()
             let controller2 = EstadisticasPost()
             
-            let idUsuario = 1
+            let idUsuario = userID
             let actividad1 = false
             let actividad2 = false
             let actividad3 = false
@@ -91,7 +95,7 @@ class ViewControllerTableroActividades: UIViewController {
                                     // Llamar a la función postProgressForUser con datos de ejemplo
                                     do {
                                         try await userProgress.postProgressForUser(
-                                            idUsuario: 1,
+                                            idUsuario: userID,
                                             idActividad: actividad_json.id_actividad,
                                             idModulo: actividad_json.id_modulo,
                                             estadoActividad: false,
