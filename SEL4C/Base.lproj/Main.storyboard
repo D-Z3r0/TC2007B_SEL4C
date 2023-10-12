@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vq5-op-66W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xni-gx-gcm">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -493,34 +492,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hUA-3e-S4Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4835.8778625954201" y="-2377.4647887323945"/>
-        </scene>
-        <!--Item 3-->
-        <scene sceneID="7HF-lY-gld">
-            <objects>
-                <viewController id="UI8-cB-05v" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Iv0-kg-FjJ">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="8 - tableroPerfil" translatesAutoresizingMaskIntoConstraints="NO" id="tMN-VV-38M">
-                                <rect key="frame" x="0.0" y="61" width="393" height="708"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHm-o7-cRZ">
-                                <rect key="frame" x="288" y="236" width="97" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title=""/>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Nds-hz-xx3"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 3" image="item3" id="c7f-GI-hl2"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pu9-qR-jJl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4490.8396946564881" y="522.53521126760563"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ESn-KP-swK">
@@ -2381,7 +2352,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                 <rect key="frame" x="0.0" y="38" width="393" height="451"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eyh-XN-N8a">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="687.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="692"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ng-yu-Q3P">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="143.33333333333334"/>
@@ -2545,10 +2516,10 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rhk-Vd-gOR">
-                                                <rect key="frame" x="0.0" y="297.66666666666669" width="393" height="70"/>
+                                                <rect key="frame" x="0.0" y="297.66666666666669" width="393" height="74.333333333333314"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGV-XP-bA5">
-                                                        <rect key="frame" x="32" y="24" width="353" height="21"/>
+                                                        <rect key="frame" x="32" y="24" width="353" height="25.333333333333329"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Subcompetencias">
                                                                 <attributes>
@@ -2569,7 +2540,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SGj-xs-Slp">
-                                                <rect key="frame" x="0.0" y="367.66666666666669" width="393" height="80"/>
+                                                <rect key="frame" x="0.0" y="372" width="393" height="80"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mnq-WR-AUG">
                                                         <rect key="frame" x="34" y="5" width="325" height="70"/>
@@ -2666,7 +2637,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROY-N2-8rR">
-                                                <rect key="frame" x="0.0" y="447.66666666666669" width="393" height="80.000000000000057"/>
+                                                <rect key="frame" x="0.0" y="452" width="393" height="80"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dX8-uc-JNi">
                                                         <rect key="frame" x="34" y="5" width="325" height="70"/>
@@ -2697,7 +2668,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                         </constraints>
                                                     </imageView>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HPD-L6-VN7">
-                                                        <rect key="frame" x="109" y="47.999999999999943" width="162" height="4"/>
+                                                        <rect key="frame" x="109" y="48" width="162" height="4"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="162" id="4qs-bh-E0k"/>
                                                             <constraint firstAttribute="height" constant="4" id="lUZ-9i-zWy"/>
@@ -2719,7 +2690,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ioC-Ti-zEd">
-                                                        <rect key="frame" x="290" y="41.999999999999943" width="39" height="16"/>
+                                                        <rect key="frame" x="290" y="42" width="39" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="39" id="ADr-CE-5Fy"/>
                                                             <constraint firstAttribute="height" constant="16" id="gBr-k1-ROf"/>
@@ -2763,7 +2734,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b0Z-xE-ege">
-                                                <rect key="frame" x="0.0" y="527.66666666666663" width="393" height="80"/>
+                                                <rect key="frame" x="0.0" y="532" width="393" height="80"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E7X-HT-Hp1">
                                                         <rect key="frame" x="34" y="5" width="325" height="70"/>
@@ -2860,7 +2831,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ydi-z7-dUH">
-                                                <rect key="frame" x="0.0" y="607.66666666666663" width="393" height="80"/>
+                                                <rect key="frame" x="0.0" y="612" width="393" height="80"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RjH-mS-pnK">
                                                         <rect key="frame" x="34" y="5" width="325" height="70"/>
@@ -4177,7 +4148,6 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
         <image name="6.8 - Actividad2" width="187.5" height="361"/>
         <image name="7.4 - Actividatab2" width="188" height="328"/>
         <image name="7.9 - ResultadosEvFinal" width="287" height="500"/>
-        <image name="8 - tableroPerfil" width="299" height="560"/>
         <image name="8.4 - evfinal" width="277" height="488"/>
         <image name="8.5 - enfinal2" width="280" height="546"/>
         <image name="8.6 - enfinal3" width="277" height="122"/>
@@ -4195,7 +4165,6 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
         <image name="image_evfinal" width="379" height="165"/>
         <image name="image_evinicial" width="382" height="168"/>
         <image name="imagen_actividad1" width="386" height="168"/>
-        <image name="item3" width="15" height="15"/>
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <image name="photo.fill" catalog="system" width="128" height="93"/>
         <image name="play.circle.fill" catalog="system" width="128" height="123"/>

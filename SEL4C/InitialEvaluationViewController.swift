@@ -32,6 +32,7 @@ class InitialEvaluationViewController: UIViewController {
         UserDefaults.standard.removePersistentDomain(forName: domain)
         let defaults = UserDefaults.standard
         let evaluationSolved = defaults.bool(forKey: "INEVSOLVED")
+//        UserDefaults.standard.set("1", forKey: "ID")
         if (evaluationSolved) {
             goToHomeScreen()
         }else{
@@ -53,6 +54,7 @@ class InitialEvaluationViewController: UIViewController {
             self.textQuestion.text = self.engine.getTextQuestion()
         }
     }
+    
     func displayError(_ error: Error, title: String) {
             DispatchQueue.main.async {
                 let alert = UIAlertController(title: title, message: error.localizedDescription, preferredStyle: .alert)
@@ -61,24 +63,27 @@ class InitialEvaluationViewController: UIViewController {
             }
         }
     
-    func convertToJSON() {
+    func sendAnswers() {
         var responsesDict: [[String: Any]] = []
-
-        for response in collectedResponses {
+        
+        for (index, response) in collectedResponses.enumerated() {
             let responseDict: [String: Any] = [
-                "id": response.id,
+                "id": index + 1,
                 "respuesta": response.value
             ]
             responsesDict.append(responseDict)
         }
-
-        do {
-            let jsonData = try JSONSerialization.data(withJSONObject: responsesDict, options: .prettyPrinted)
-            if let jsonString = String(data: jsonData, encoding: .utf8) {
-                print(jsonString) // Imprime el JSON en la consola
+        
+        Task{
+            do {
+//                let jsonData = try JSONSerialization.data(withJSONObject: responsesDict, options: .prettyPrinted)
+//                if let jsonString = String(data: jsonData, encoding: .utf8) {
+//                    print(jsonString) // Imprime el JSON en la consola
+//                }
+                try await Question.sendQuestions(questions: responsesDict, evalutaion_id: 1)
+            } catch {
+                print("Error al convertir a JSON: \(error)")
             }
-        } catch {
-            print("Error al convertir a JSON: \(error)")
         }
     }
     
@@ -127,7 +132,7 @@ class InitialEvaluationViewController: UIViewController {
             }
             alert.addAction(continueAction)
             present(alert,animated: true)
-            self.convertToJSON()
+            self.sendAnswers()
         }else{
             Timer.scheduledTimer(timeInterval: 0.25, target: self, selector: #selector(self.nextQuestion), userInfo: nil, repeats: false)
         }

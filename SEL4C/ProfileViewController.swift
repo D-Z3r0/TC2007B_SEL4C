@@ -45,7 +45,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
         // Do any additional setup after loading the view.
 // Ajusta el punto de tamaño según tus necesidades
-        UserDefaults.standard.set("1", forKey: "ID")
+//        UserDefaults.standard.set("1", forKey: "ID")
         
         let resizedSymbolImage = UIImage(systemName: "person.circle.fill", withConfiguration: symbolConfiguration)
         photoInput.setImage(resizedSymbolImage, for: .normal)
