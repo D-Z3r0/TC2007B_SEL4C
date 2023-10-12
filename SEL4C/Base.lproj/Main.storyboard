@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vq5-op-66W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xni-gx-gcm">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -491,34 +491,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hUA-3e-S4Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4835.8778625954201" y="-2377.4647887323945"/>
-        </scene>
-        <!--Item 3-->
-        <scene sceneID="7HF-lY-gld">
-            <objects>
-                <viewController id="UI8-cB-05v" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Iv0-kg-FjJ">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="8 - tableroPerfil" translatesAutoresizingMaskIntoConstraints="NO" id="tMN-VV-38M">
-                                <rect key="frame" x="0.0" y="61" width="393" height="708"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHm-o7-cRZ">
-                                <rect key="frame" x="288" y="236" width="97" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title=""/>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Nds-hz-xx3"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 3" image="item3" id="c7f-GI-hl2"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pu9-qR-jJl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4490.8396946564881" y="522.53521126760563"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ESn-KP-swK">
@@ -2377,13 +2349,13 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                 <rect key="frame" x="0.0" y="38" width="393" height="451"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eyh-XN-N8a">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="687.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="692"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ng-yu-Q3P">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="143.33333333333334"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sd1-LN-EAM">
-                                                        <rect key="frame" x="34" y="5.9999999999999964" width="351" height="52.666666666666657"/>
+                                                        <rect key="frame" x="34" y="6" width="351" height="63"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Evaluación">
                                                                 <attributes>
@@ -2395,7 +2367,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYG-es-4GV">
-                                                        <rect key="frame" x="34" y="66.666666666666686" width="351" height="73.333333333333314"/>
+                                                        <rect key="frame" x="34" y="77" width="351" height="63"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Inicial">
                                                                 <attributes>
@@ -2466,7 +2438,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="externaldrive.badge.questionmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="S75-Mj-Ud8">
-                                                        <rect key="frame" x="59" y="25.000000000000028" width="35" height="35"/>
+                                                        <rect key="frame" x="58" y="25.333333333333361" width="36" height="36"/>
                                                         <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -2541,10 +2513,10 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rhk-Vd-gOR">
-                                                <rect key="frame" x="0.0" y="297.66666666666669" width="393" height="70"/>
+                                                <rect key="frame" x="0.0" y="297.66666666666669" width="393" height="74.333333333333314"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGV-XP-bA5">
-                                                        <rect key="frame" x="32" y="24" width="353" height="21"/>
+                                                        <rect key="frame" x="32" y="24" width="353" height="25.333333333333329"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Subcompetencias">
                                                                 <attributes>
@@ -2565,7 +2537,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SGj-xs-Slp">
-                                                <rect key="frame" x="0.0" y="367.66666666666669" width="393" height="80"/>
+                                                <rect key="frame" x="0.0" y="372" width="393" height="80"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mnq-WR-AUG">
                                                         <rect key="frame" x="34" y="5" width="325" height="70"/>
@@ -2587,7 +2559,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="externaldrive.badge.questionmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="IT6-Mq-YU1">
-                                                        <rect key="frame" x="59" y="25" width="35" height="35"/>
+                                                        <rect key="frame" x="58" y="25.333333333333332" width="36" height="36"/>
                                                         <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -2662,7 +2634,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROY-N2-8rR">
-                                                <rect key="frame" x="0.0" y="447.66666666666669" width="393" height="80.000000000000057"/>
+                                                <rect key="frame" x="0.0" y="452" width="393" height="80"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dX8-uc-JNi">
                                                         <rect key="frame" x="34" y="5" width="325" height="70"/>
@@ -2684,7 +2656,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="externaldrive.badge.questionmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rq8-oa-RCt">
-                                                        <rect key="frame" x="59" y="25" width="35" height="35"/>
+                                                        <rect key="frame" x="58" y="25.333333333333332" width="36" height="36"/>
                                                         <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -2693,7 +2665,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                         </constraints>
                                                     </imageView>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HPD-L6-VN7">
-                                                        <rect key="frame" x="109" y="47.999999999999943" width="162" height="4"/>
+                                                        <rect key="frame" x="109" y="48" width="162" height="4"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="162" id="4qs-bh-E0k"/>
                                                             <constraint firstAttribute="height" constant="4" id="lUZ-9i-zWy"/>
@@ -2715,7 +2687,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ioC-Ti-zEd">
-                                                        <rect key="frame" x="290" y="41.999999999999943" width="39" height="16"/>
+                                                        <rect key="frame" x="290" y="42" width="39" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="39" id="ADr-CE-5Fy"/>
                                                             <constraint firstAttribute="height" constant="16" id="gBr-k1-ROf"/>
@@ -2759,7 +2731,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b0Z-xE-ege">
-                                                <rect key="frame" x="0.0" y="527.66666666666663" width="393" height="80"/>
+                                                <rect key="frame" x="0.0" y="532" width="393" height="80"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E7X-HT-Hp1">
                                                         <rect key="frame" x="34" y="5" width="325" height="70"/>
@@ -2781,7 +2753,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="externaldrive.badge.questionmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Hnx-c5-ZgS">
-                                                        <rect key="frame" x="59" y="25" width="35" height="35"/>
+                                                        <rect key="frame" x="58" y="25.333333333333332" width="36" height="36"/>
                                                         <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -2856,7 +2828,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ydi-z7-dUH">
-                                                <rect key="frame" x="0.0" y="607.66666666666663" width="393" height="80"/>
+                                                <rect key="frame" x="0.0" y="612" width="393" height="80"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RjH-mS-pnK">
                                                         <rect key="frame" x="34" y="5" width="325" height="70"/>
@@ -2878,7 +2850,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="externaldrive.badge.questionmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6Wz-Gu-xXi">
-                                                        <rect key="frame" x="59" y="25" width="35" height="35"/>
+                                                        <rect key="frame" x="58" y="25.333333333333332" width="36" height="36"/>
                                                         <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -3349,7 +3321,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="512"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="O54-G3-vUB">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="786.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="798.33333333333337"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7sE-hX-tT7">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="198"/>
@@ -3431,29 +3403,29 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfz-aP-78A">
-                                                <rect key="frame" x="0.0" y="302.33333333333331" width="393" height="70"/>
+                                                <rect key="frame" x="0.0" y="302.33333333333331" width="393" height="72.333333333333314"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2U-Z3-Lss">
-                                                        <rect key="frame" x="34" y="0.0" width="325" height="70"/>
+                                                        <rect key="frame" x="34" y="0.0" width="325" height="72.333333333333329"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="gray" title="">
                                                             <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h4Y-OX-k9y">
-                                                        <rect key="frame" x="51" y="10" width="50" height="50"/>
+                                                        <rect key="frame" x="51" y="10.000000000000004" width="50" height="52.333333333333343"/>
                                                         <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="externaldrive.badge.questionmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Kzc-WL-zaA">
-                                                        <rect key="frame" x="59" y="20" width="35" height="35"/>
+                                                        <rect key="frame" x="58" y="20.333333333333332" width="36" height="38.333333333333343"/>
                                                         <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zRb-0y-Xfv">
-                                                        <rect key="frame" x="109" y="43" width="162" height="4"/>
+                                                        <rect key="frame" x="109" y="43" width="162" height="6.3333333333333357"/>
                                                     </progressView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lgg-Ci-q8w">
-                                                        <rect key="frame" x="109" y="16" width="220" height="16"/>
+                                                        <rect key="frame" x="109" y="15.999999999999998" width="220" height="18.333333333333329"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Pensamiento crítico">
                                                                 <attributes>
@@ -3464,7 +3436,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kl1-of-jfW">
-                                                        <rect key="frame" x="290" y="37" width="39" height="16"/>
+                                                        <rect key="frame" x="290" y="37" width="39" height="18.333333333333329"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="000 %">
                                                                 <attributes>
@@ -3504,7 +3476,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lPA-eW-UZz">
-                                                <rect key="frame" x="0.0" y="372.33333333333331" width="393" height="54.333333333333314"/>
+                                                <rect key="frame" x="0.0" y="374.66666666666669" width="393" height="54.333333333333314"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWb-l3-wmk">
                                                         <rect key="frame" x="34" y="14.999999999999998" width="296" height="25.333333333333329"/>
@@ -3527,29 +3499,29 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2gO-ui-TsA">
-                                                <rect key="frame" x="0.0" y="426.66666666666669" width="393" height="90.000000000000057"/>
+                                                <rect key="frame" x="0.0" y="429" width="393" height="92.333333333333371"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6u-fV-bUc">
-                                                        <rect key="frame" x="34" y="10" width="325" height="70"/>
+                                                        <rect key="frame" x="34" y="10" width="325" height="72.333333333333329"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="gray" title="">
                                                             <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fcl-hj-vMx">
-                                                        <rect key="frame" x="51" y="20" width="50" height="50"/>
+                                                        <rect key="frame" x="51" y="20.000000000000004" width="50" height="52.333333333333343"/>
                                                         <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="externaldrive.badge.questionmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="aF7-x8-UCE">
-                                                        <rect key="frame" x="59" y="30" width="35" height="35"/>
+                                                        <rect key="frame" x="58" y="30.333333333333332" width="36" height="38.333333333333343"/>
                                                         <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="prQ-TJ-idb">
-                                                        <rect key="frame" x="109" y="53" width="162" height="4"/>
+                                                        <rect key="frame" x="109" y="53" width="162" height="6.3333333333333357"/>
                                                     </progressView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxu-4t-wpg">
-                                                        <rect key="frame" x="109" y="26" width="220" height="16"/>
+                                                        <rect key="frame" x="109" y="26" width="220" height="18.333333333333329"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Pensamiento crítico">
                                                                 <attributes>
@@ -3560,7 +3532,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g60-Mp-8GB">
-                                                        <rect key="frame" x="290" y="47" width="39" height="16"/>
+                                                        <rect key="frame" x="290" y="47" width="39" height="18.333333333333329"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="000 %">
                                                                 <attributes>
@@ -3600,29 +3572,29 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rwh-cy-Fpg">
-                                                <rect key="frame" x="0.0" y="516.66666666666663" width="393" height="90"/>
+                                                <rect key="frame" x="0.0" y="521.33333333333337" width="393" height="92.333333333333371"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Oc-eE-yaJ">
-                                                        <rect key="frame" x="34" y="10" width="325" height="70"/>
+                                                        <rect key="frame" x="34" y="10" width="325" height="72.333333333333329"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="gray" title="">
                                                             <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yi2-gM-bwu">
-                                                        <rect key="frame" x="51" y="20" width="50" height="50"/>
+                                                        <rect key="frame" x="51" y="20.000000000000004" width="50" height="52.333333333333343"/>
                                                         <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="externaldrive.badge.questionmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5VC-jj-2Ww">
-                                                        <rect key="frame" x="59" y="30" width="35" height="35"/>
+                                                        <rect key="frame" x="58" y="30.333333333333332" width="36" height="38.333333333333343"/>
                                                         <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KUz-xj-J24">
-                                                        <rect key="frame" x="109" y="53" width="162" height="4"/>
+                                                        <rect key="frame" x="109" y="53" width="162" height="6.3333333333333357"/>
                                                     </progressView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcS-YU-4Ys">
-                                                        <rect key="frame" x="109" y="26" width="220" height="16"/>
+                                                        <rect key="frame" x="109" y="26" width="220" height="18.333333333333329"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Pensamiento crítico">
                                                                 <attributes>
@@ -3633,7 +3605,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JtE-XW-q6m">
-                                                        <rect key="frame" x="290" y="47" width="39" height="16"/>
+                                                        <rect key="frame" x="290" y="47" width="39" height="18.333333333333329"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="000 %">
                                                                 <attributes>
@@ -3673,29 +3645,29 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ctc-Mz-kQ2">
-                                                <rect key="frame" x="0.0" y="606.66666666666663" width="393" height="90"/>
+                                                <rect key="frame" x="0.0" y="613.66666666666663" width="393" height="92.333333333333371"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPV-PH-zw0">
-                                                        <rect key="frame" x="34" y="10" width="325" height="70"/>
+                                                        <rect key="frame" x="34" y="10" width="325" height="72.333333333333329"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="gray" title="">
                                                             <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CXj-4e-vkz">
-                                                        <rect key="frame" x="51" y="20" width="50" height="50"/>
+                                                        <rect key="frame" x="51" y="20.000000000000004" width="50" height="52.333333333333343"/>
                                                         <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="externaldrive.badge.questionmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-YL-ggr">
-                                                        <rect key="frame" x="59" y="30" width="35" height="35"/>
+                                                        <rect key="frame" x="58" y="30.333333333333332" width="36" height="38.333333333333343"/>
                                                         <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="F9f-MU-TAo">
-                                                        <rect key="frame" x="109" y="53" width="162" height="4"/>
+                                                        <rect key="frame" x="109" y="53" width="162" height="6.3333333333333357"/>
                                                     </progressView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VUM-Sb-OB7">
-                                                        <rect key="frame" x="109" y="26" width="220" height="16"/>
+                                                        <rect key="frame" x="109" y="26" width="220" height="18.333333333333329"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Pensamiento crítico">
                                                                 <attributes>
@@ -3706,7 +3678,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EpS-cr-KB0">
-                                                        <rect key="frame" x="290" y="47" width="39" height="16"/>
+                                                        <rect key="frame" x="290" y="47" width="39" height="18.333333333333329"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="000 %">
                                                                 <attributes>
@@ -3746,29 +3718,29 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lx5-cX-a3n">
-                                                <rect key="frame" x="0.0" y="696.66666666666663" width="393" height="90"/>
+                                                <rect key="frame" x="0.0" y="706" width="393" height="92.333333333333371"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Gc-7o-6bX">
-                                                        <rect key="frame" x="34" y="10" width="325" height="70"/>
+                                                        <rect key="frame" x="34" y="10" width="325" height="72.333333333333329"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="gray" title="">
                                                             <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FMQ-zZ-ePB">
-                                                        <rect key="frame" x="51" y="20" width="50" height="50"/>
+                                                        <rect key="frame" x="51" y="20.000000000000004" width="50" height="52.333333333333343"/>
                                                         <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="externaldrive.badge.questionmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="XeD-Wl-0Ij">
-                                                        <rect key="frame" x="59" y="30" width="35" height="35"/>
+                                                        <rect key="frame" x="58" y="30.333333333333332" width="36" height="38.333333333333343"/>
                                                         <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Hk3-LW-eM4">
-                                                        <rect key="frame" x="109" y="53" width="162" height="4"/>
+                                                        <rect key="frame" x="109" y="53" width="162" height="6.3333333333333357"/>
                                                     </progressView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33u-iT-cTq">
-                                                        <rect key="frame" x="109" y="26" width="220" height="16"/>
+                                                        <rect key="frame" x="109" y="26" width="220" height="18.333333333333329"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Pensamiento crítico">
                                                                 <attributes>
@@ -3779,7 +3751,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOu-g7-gfW">
-                                                        <rect key="frame" x="290" y="47" width="39" height="16"/>
+                                                        <rect key="frame" x="290" y="47" width="39" height="18.333333333333329"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="000 %">
                                                                 <attributes>
@@ -4173,24 +4145,22 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
         <image name="6.8 - Actividad2" width="187.5" height="361"/>
         <image name="7.4 - Actividatab2" width="188" height="328"/>
         <image name="7.9 - ResultadosEvFinal" width="287" height="500"/>
-        <image name="8 - tableroPerfil" width="299" height="560"/>
         <image name="8.4 - evfinal" width="277" height="488"/>
         <image name="8.5 - enfinal2" width="280" height="546"/>
         <image name="8.6 - enfinal3" width="277" height="122"/>
         <image name="8.7 - enfinal4" width="277" height="552"/>
         <image name="8.9 - enfinal6" width="275" height="556"/>
-        <image name="chart.bar.xaxis" catalog="system" width="128" height="99"/>
+        <image name="chart.bar.xaxis" catalog="system" width="128" height="97"/>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
         <image name="checkmark.seal.fill" catalog="system" width="128" height="124"/>
         <image name="checkmark.square" catalog="system" width="128" height="114"/>
         <image name="chevron.down" catalog="system" width="128" height="70"/>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
         <image name="externaldrive.badge.questionmark" catalog="system" width="128" height="91"/>
-        <image name="eye.slash.fill" catalog="system" width="128" height="85"/>
+        <image name="eye.slash.fill" catalog="system" width="128" height="96"/>
         <image name="image_evfinal" width="379" height="165"/>
         <image name="image_evinicial" width="382" height="168"/>
         <image name="imagen_actividad1" width="386" height="168"/>
-        <image name="item3" width="15" height="15"/>
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <image name="photo.fill" catalog="system" width="128" height="93"/>
         <image name="play.circle.fill" catalog="system" width="128" height="123"/>
