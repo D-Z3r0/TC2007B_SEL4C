@@ -1,16 +1,17 @@
 //
-//  InitialEvaluationViewController.swift
+//  FinalEvaluationViewController.swift
 //  SEL4C
 //
-//  Created by Daniel Rong Chen on 02/10/23.
+//  Created by Daniel Rong Chen on 08/10/23.
 //
 
 import UIKit
 
-class InitialEvaluationViewController: UIViewController {
+class FinalEvaluationViewController: UIViewController {
     var collectedResponses: [(id: Int, value: Int)] = []
     var responseIDCounter = 0 // Un contador para asignar IDs únicos
     @IBOutlet weak var textQuestion: UILabel!
+    
     @IBOutlet weak var progressEcomplexity: UIProgressView!
     // Botones de Opciones
     @IBOutlet weak var buttonNadaAcuerdo: UIButton!
@@ -26,27 +27,18 @@ class InitialEvaluationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
-        // Do any additional setup after loading the view.
         textStyle(textQuestion)
-        let domain = Bundle.main.bundleIdentifier!
-        UserDefaults.standard.removePersistentDomain(forName: domain)
-        let defaults = UserDefaults.standard
-        let evaluationSolved = defaults.bool(forKey: "INEVSOLVED")
-//        UserDefaults.standard.set("1", forKey: "ID")
-        if (evaluationSolved) {
-            goToHomeScreen()
-        }else{
-            Task{
-                do{
-                    let questions = try await Question.fetchQuestions()
-                    updateUI(with: questions)
-                }catch{
-                    displayError(QuestionError.itemNotFound, title: "No se pudo accer a las preguntas")
-                }
+        // Do any additional setup after loading the view.
+        Task{
+            do{
+                let questions = try await Question.fetchQuestions()
+                updateUI(with: questions)
+            }catch{
+                displayError(QuestionError.itemNotFound, title: "No se pudo accer a las preguntas")
             }
         }
+        
     }
-    
     func updateUI(with questions:Questions){
         DispatchQueue.main.async {
             self.engine.initialize(q: questions)
@@ -54,7 +46,6 @@ class InitialEvaluationViewController: UIViewController {
             self.textQuestion.text = self.engine.getTextQuestion()
         }
     }
-    
     func displayError(_ error: Error, title: String) {
             DispatchQueue.main.async {
                 let alert = UIAlertController(title: title, message: error.localizedDescription, preferredStyle: .alert)
@@ -63,27 +54,24 @@ class InitialEvaluationViewController: UIViewController {
             }
         }
     
-    func sendAnswers() {
+    func convertToJSON() {
         var responsesDict: [[String: Any]] = []
-        
-        for (index, response) in collectedResponses.enumerated() {
+
+        for response in collectedResponses {
             let responseDict: [String: Any] = [
-                "id": index + 1,
+                "id": response.id,
                 "respuesta": response.value
             ]
             responsesDict.append(responseDict)
         }
-        
-        Task{
-            do {
-//                let jsonData = try JSONSerialization.data(withJSONObject: responsesDict, options: .prettyPrinted)
-//                if let jsonString = String(data: jsonData, encoding: .utf8) {
-//                    print(jsonString) // Imprime el JSON en la consola
-//                }
-                try await Question.sendQuestions(questions: responsesDict, evalutaion_id: 1)
-            } catch {
-                print("Error al convertir a JSON: \(error)")
+
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: responsesDict, options: .prettyPrinted)
+            if let jsonString = String(data: jsonData, encoding: .utf8) {
+                print(jsonString) // Imprime el JSON en la consola
             }
+        } catch {
+            print("Error al convertir a JSON: \(error)")
         }
     }
     
@@ -132,7 +120,7 @@ class InitialEvaluationViewController: UIViewController {
             }
             alert.addAction(continueAction)
             present(alert,animated: true)
-            self.sendAnswers()
+            self.convertToJSON()
         }else{
             Timer.scheduledTimer(timeInterval: 0.25, target: self, selector: #selector(self.nextQuestion), userInfo: nil, repeats: false)
         }

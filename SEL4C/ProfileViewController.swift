@@ -23,6 +23,10 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet var institutionInput: UITextField!
     @IBOutlet var emailInput: UITextField!
     
+    var users = Users()
+    var getUser = Users()
+//    var sendUser = SignupController()
+    
     let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 5)
     let symbolAfterConfiguration = UIImage.SymbolConfiguration(pointSize: 5)
     var selectedImage: UIImage?
@@ -30,8 +34,19 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Task{
+            do{
+                getUser = try await Users.getUser()
+//                print(getUser)
+                updateUI(user: getUser)
+            }catch{
+                displayError(GetUserError.itemNotFound, title: "No se pudo accer a las preguntas")
+            }
+        }
         // Do any additional setup after loading the view.
 // Ajusta el punto de tamaño según tus necesidades
+//        UserDefaults.standard.set("1", forKey: "ID")
+        
         let resizedSymbolImage = UIImage(systemName: "person.circle.fill", withConfiguration: symbolConfiguration)
         photoInput.setImage(resizedSymbolImage, for: .normal)
         
@@ -75,9 +90,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             editProfile.setTitle("Guardar", for: .normal)
         } else {
             // Guarda los cambios y deshabilita los campos y botones
+            updateUser()
             disableFieldsAndButtons()
             editProfile.setTitle("Editar", for: .normal)
-            
         }
     }
     
@@ -86,9 +101,52 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         self.navigationController?.popToRootViewController(animated: true)
     }
     
+    func updateUI(user:Users){
+        DispatchQueue.main.async {
+            self.usernameInput.text = user.username
+            self.emailInput.text = user.email
+            self.institutionInput.text = user.institucion
+            self.ageInput.text = String(user.edad)
+            self.gradeInput.setTitle(user.grado_ac, for: .normal)
+//            self.disciplineInput.setTitle(user., for: .normal)
+            self.genderInput.setTitle(user.genero, for: .normal)
+            self.countryInput.setTitle(user.pais, for: . normal)
+        }
+    }
+    
+    func displayError(_ error: Error, title: String) {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: title, message: error.localizedDescription, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Continuar", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func updateUser(){
+        users.id_usuario = getUser.id_usuario
+        users.contrasena = getUser.contrasena
+        users.email = emailInput.text!
+        users.username = usernameInput.text!
+        users.grado_ac = (gradeInput.titleLabel!.text)!
+        users.institucion = institutionInput.text!
+        users.genero = (genderInput.titleLabel!.text)!
+        users.edad = Int(ageInput.text!)!
+        users.pais = (countryInput.titleLabel!.text)!
+//        user.discipline = (disciplineInput.titleLabel!.text!)
+//        users.pais = "opcion1"
+        print(users)
+        Task{
+            do{
+                try await Users.putUser(user:users)
+            }catch{
+                displayError(GetUserError.itemNotFound, title: "No se encontro el usuario.")
+            }
+        }
+    }
+    
     func enableFieldsAndButtons() {
         usernameInput.isEnabled = true
-        emailInput.isEnabled = true
+//        emailInput.isEnabled = true
         institutionInput.isEnabled = true
         gradeInput.isEnabled = true
         disciplineInput.isEnabled = true
@@ -101,7 +159,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
 
     func disableFieldsAndButtons() {
         usernameInput.isEnabled = false
-        emailInput.isEnabled = false
+//        emailInput.isEnabled = false
         institutionInput.isEnabled = false
         gradeInput.isEnabled = false
         disciplineInput.isEnabled = false
@@ -126,9 +184,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         let isGenderValid = genderInput.title(for: .normal) != "Elige una opción"
         let isGradeValid = gradeInput.title(for: .normal) != "Elige una opción"
         let isCountryValid = countryInput.title(for: .normal) != "Elige una opción"
-        
         let isAllValid = isInstitutionValid && isAgeValid && isGenderValid && isGradeValid && isCountryValid
-        
     }
     
     @IBAction func presentImageOptions() {

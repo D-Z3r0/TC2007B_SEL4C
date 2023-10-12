@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1430"
+   LastUpgradeVersion = "1500"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -70,6 +70,50 @@
                BlueprintIdentifier = "8ED0D34E2ACF541B00BC972B"
                BuildableName = "pruebasunitarias_RF021.xctest"
                BlueprintName = "pruebasunitarias_RF021"
+               ReferencedContainer = "container:SEL4C.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F3D647F42AD60C4900324AA9"
+               BuildableName = "pruebasunitarias_RF011.xctest"
+               BlueprintName = "pruebasunitarias_RF011"
+               ReferencedContainer = "container:SEL4C.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F3D648012AD6316E00324AA9"
+               BuildableName = "pruebasUnitarias_RF012.xctest"
+               BlueprintName = "pruebasUnitarias_RF012"
+               ReferencedContainer = "container:SEL4C.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F33D46552AD7453C005E577B"
+               BuildableName = "pruebasUnitarias_RF12.xctest"
+               BlueprintName = "pruebasUnitarias_RF12"
+               ReferencedContainer = "container:SEL4C.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F33D46622AD74B00005E577B"
+               BuildableName = "pruebasUnitarias_RF13.xctest"
+               BlueprintName = "pruebasUnitarias_RF13"
                ReferencedContainer = "container:SEL4C.xcodeproj">
             </BuildableReference>
          </TestableReference>
