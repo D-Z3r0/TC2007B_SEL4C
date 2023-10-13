@@ -42,9 +42,12 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
     @IBOutlet weak var image_selected: UIImageView!
     
     var moduloIndividual: Modulo_individual?
-    
+    var idusar: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        let defaults = UserDefaults.standard
+        let userID = defaults.integer(forKey: "ID")
+        idusar = userID
         // Esto eliminará todos los valores almacenados en UserDefaults.standard
         
         //Hidden los tipos de entrega
@@ -255,7 +258,7 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                             print("Image upload completed successfully")
                             showSuccessView()
                             let controller = UserProgressUpdateController()
-                            try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: 1, idActividad: actividad_modulo, idModulo: modulo_evidencia)
+                            try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: idusar, idActividad: actividad_modulo, idModulo: modulo_evidencia)
                         }catch{
                             print("Error sending image: \(error.localizedDescription)")
                         }
@@ -274,7 +277,7 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                             print("Video upload completed successfully")
                             showSuccessView()
                             let controller = UserProgressUpdateController()
-                            try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: 1, idActividad: actividad_modulo, idModulo: modulo_evidencia)
+                            try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: idusar, idActividad: actividad_modulo, idModulo: modulo_evidencia)
                         }catch{
                             print("Error sending video: \(error.localizedDescription)")
                         }
@@ -295,7 +298,7 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                             print("Audio upload completed successfully")
                             showSuccessView()
                             let controller = UserProgressUpdateController()
-                            try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: 1, idActividad: actividad_modulo, idModulo: modulo_evidencia)
+                            try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: idusar, idActividad: actividad_modulo, idModulo: modulo_evidencia)
                         } catch {
                             print("Error sending audio: \(error.localizedDescription)")
                         }
@@ -365,7 +368,7 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                             UserDefaults.standard.set(true, forKey: "actividad \(actividad_modulo) modulo \(modulo_evidencia)")
                             showSuccessView()
                             let controller = UserProgressUpdateController()
-                            try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: 1, idActividad: actividad_modulo, idModulo: modulo_evidencia)
+                            try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: idusar, idActividad: actividad_modulo, idModulo: modulo_evidencia)
                         } catch {
                             print("Error sending audio data: \(error.localizedDescription)")
                         }

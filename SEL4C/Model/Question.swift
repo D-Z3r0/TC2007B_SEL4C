@@ -21,7 +21,7 @@ enum QuestionError: Error, LocalizedError{
 extension Question{
     
     static func fetchQuestions() async throws->Questions{
-        let baseString = "http://127.0.0.1:8000/api/preguntas/all/"
+        let baseString = "http://54.205.255.125:8000/api/preguntas/all/"
         let questionsURL = URL(string: baseString)!
         let (data, response) = try await URLSession.shared.data(from: questionsURL)
         guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
@@ -35,7 +35,7 @@ extension Question{
     static func sendQuestions(questions:[[String: Any]], evalutaion_id: Int)async throws-> Void {
         let defaults = UserDefaults.standard
         let userID = defaults.string(forKey: "ID")
-        let baseString = "http://127.0.0.1:8000/api/respuestas/\(userID!)/\(evalutaion_id)/"
+        let baseString = "http:/54.205.255.125:8000/api/respuestas/1/\(evalutaion_id)/"
         print(baseString)
         let insertURL = URL(string: baseString)!
         var request = URLRequest(url: insertURL)

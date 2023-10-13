@@ -24,7 +24,7 @@ enum EstadisticaError: Error, LocalizedError {
 extension Estadisticas {
     
     static func fetchEstadisticasDetail(idUsuario: Int) async throws -> Estadisticas {
-        let baseString = "http://127.0.0.1:8000/api/user/progress/bars/\(idUsuario)/"
+        let baseString = "http://54.205.255.125:8000/api/user/progress/bars/\(idUsuario)/"
         let estadisticasURL = URL(string: baseString)!
         let (data, response) = try await URLSession.shared.data(from: estadisticasURL)
         
@@ -40,7 +40,7 @@ extension Estadisticas {
 }
 
 class EstadisticasPost{
-    let baseString = "http://127.0.0.1:8000/api/admin/estadisticas/create/"
+    let baseString = "http://54.205.255.125:8000/api/admin/estadisticas/create/"
 
     func postEstadisticasUser(idUsuario: Int, actividades: Int, evidencias: Int, progreso: Int) async throws -> Void {
         // Construir la URL con el ID de usuario
@@ -82,7 +82,7 @@ class EstadisticasPost{
 }
 
 class EstadisticasPut {
-    let baseString = "http://127.0.0.1:8000/api/user/progress/bars/"
+    let baseString = "http://54.205.255.125:8000/api/user/progress/bars/"
 
     func putEstadisticasUser(idUsuario: Int, actividades: Int, evidencias: Int, progreso: Int) async throws -> Void {
         // Construir la URL con el ID de usuario

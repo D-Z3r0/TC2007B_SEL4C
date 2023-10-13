@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xni-gx-gcm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IPw-oS-OVd">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -864,6 +865,10 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.062745101750000004" green="0.1843137443" blue="0.50980395079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="JzK-pA-SEJ" appends="YES" id="MFu-nA-d24"/>
+                                </connections>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Rvd-Fk-qnJ"/>
@@ -879,6 +884,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RO1-e0-vhk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="JzK-pA-SEJ">
+                    <connections>
+                        <action selector="toqueEnPantalla:" destination="9SD-kY-3we" id="y4U-Af-AfP"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1052.6717557251909" y="-556.33802816901414"/>
         </scene>
@@ -1028,6 +1038,10 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="k3a-mZ-JES"/>
                         <color key="backgroundColor" red="0.062745101750000004" green="0.1843137443" blue="0.50980395079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="2lh-Yf-l2X" appends="YES" id="Qsd-aA-PXK"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="4LG-pe-ICb"/>
                     <connections>
@@ -1043,6 +1057,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Opp-hB-W3o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="2lh-Yf-l2X">
+                    <connections>
+                        <action selector="toqueEnPantalla:" destination="fEG-EO-r0q" id="bgw-Ob-Fek"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1855.7251908396945" y="-556.33802816901414"/>
         </scene>
@@ -3262,6 +3281,10 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="epb-pX-SpL"/>
                         <color key="backgroundColor" red="0.062745101750000004" green="0.1843137443" blue="0.50980395079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="gwo-Xj-E3y" appends="YES" id="pYd-wb-tZ0"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="8aI-os-oGZ"/>
                     <connections>
@@ -3277,6 +3300,11 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tal-hp-EQw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="gwo-Xj-E3y">
+                    <connections>
+                        <action selector="toqueEnPantalla:" destination="HcH-ho-Gi1" id="sfd-N9-CYb"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1855.7251908396945" y="132.3943661971831"/>
         </scene>

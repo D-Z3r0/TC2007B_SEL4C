@@ -15,8 +15,9 @@ class BeginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let defaults = UserDefaults.standard
+        /*
         let domain = Bundle.main.bundleIdentifier!
-        UserDefaults.standard.removePersistentDomain(forName: domain)
+        UserDefaults.standard.removePersistentDomain(forName: domain)*/
         let isUserLogged = defaults.bool(forKey: "LOGGEDIN")
         if (isUserLogged) {
             //El usuario ya está logueado, navegar a home screen

@@ -33,7 +33,7 @@ class ViewControllerTableroActividades: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UserDefaults.standard.set("1", forKey: "ID")
+        //UserDefaults.standard.set("1", forKey: "ID")
         let defaults = UserDefaults.standard
         let userID = defaults.integer(forKey: "ID")
         
@@ -42,7 +42,7 @@ class ViewControllerTableroActividades: UIViewController {
         UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
 
         // Sincronizar UserDefaults para asegurarse de que los cambios se apliquen de inmediato
-        UserDefaults.standard.synchronize()*/
+        UserDefaults.standard.synchronize()
 
         let userDefaults2 = UserDefaults.standard
 
@@ -53,7 +53,7 @@ class ViewControllerTableroActividades: UIViewController {
                 userDefaults2.removePersistentDomain(forName: bundleIdentifier)
                 userDefaults2.set(true, forKey: "firstRun")
             }
-        }
+        }*/
         
         let userDefaults = UserDefaults.standard
         let key = "realizado"

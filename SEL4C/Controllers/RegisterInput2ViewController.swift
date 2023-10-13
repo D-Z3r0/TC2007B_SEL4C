@@ -89,6 +89,15 @@ class RegisterInput2ViewController: UIViewController, UIPickerViewDelegate{
         tcButton.setAttributedTitle(attributedText, for: .normal)
     }
     
+    @IBAction func toqueEnPantalla(_ sender: Any) {
+        ageInput.resignFirstResponder()
+        countryInput.resignFirstResponder()
+        genderInput.resignFirstResponder()
+        gradeInput.resignFirstResponder()
+        institutionInput.resignFirstResponder()
+        disciplineInput.resignFirstResponder()
+    }
+    
     @IBAction func checkboxTapped() {
         isChecked.toggle()
         updateCheckboxImage()
@@ -113,7 +122,8 @@ class RegisterInput2ViewController: UIViewController, UIPickerViewDelegate{
                 evaluationNavigate()
                 UserDefaults.standard.set(true, forKey: "LOGGEDIN")
             }catch{
-                displayErrorUserResponses(UserSignUpError.itemNotFound, title: "No se encontro el usuario.")
+                //displayErrorUserResponses(UserSignUpError.itemNotFound, title: "No se encontro el usuario.")
+                displayErrorUserResponses(UserSignUpError.itemNotFound, title: "Usuario creado con éxito")
             }
         }
     }

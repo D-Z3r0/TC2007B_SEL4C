@@ -25,7 +25,7 @@ enum ProgresoUsuarioError: Error, LocalizedError{
 extension ProgresoUsuario{
     
     static func fetchProgresoUsuarios(id_usuario: Int) async throws->ProgresoUsuarios{
-        let baseString = "http://127.0.0.1:8000/api/user/progress/user/\(id_usuario)/"
+        let baseString = "http://54.205.255.125:8000/api/user/progress/user/\(id_usuario)/"
         let questionsURL = URL(string: baseString)!
         let (data, response) = try await URLSession.shared.data(from: questionsURL)
         guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
@@ -44,7 +44,7 @@ enum UserProgressError: Error, LocalizedError {
 }
 
 class UserProgressController {
-    let baseString = "http://127.0.0.1:8000/api/user/progress/user/"
+    let baseString = "http://54.205.255.125:8000/api/user/progress/user/"
     
         func postProgressForUser(idUsuario: Int, idActividad: Int, idModulo: Int, estadoActividad: Bool, estadoModulo: Bool) async throws -> Void {
             // Construir la URL con el ID de usuario
@@ -110,7 +110,7 @@ class UserProgressUpdateController {
                 let jsonData = try JSONSerialization.data(withJSONObject: json)
 
                 // Crear una URL para la solicitud PUT
-                let url = URL(string: "http://127.0.0.1:8000/api/user/progress/user/\(idUsuario)/")!
+                let url = URL(string: "http://54.205.255.125:8000/api/user/progress/user/\(idUsuario)/")!
 
                 // Crear una solicitud URLRequest
                 var request = URLRequest(url: url)
@@ -165,7 +165,7 @@ class UserProgressStatusController {
         ]
 
         let jsonData = try JSONSerialization.data(withJSONObject: json)
-        let url = URL(string: "http://127.0.0.1:8000/api/user/progress/user/\(idUsuario)/")!
+        let url = URL(string: "http://54.205.255.125:8000/api/user/progress/user/\(idUsuario)/")!
         var request = URLRequest(url: url)
         request.httpMethod = "PUT"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")

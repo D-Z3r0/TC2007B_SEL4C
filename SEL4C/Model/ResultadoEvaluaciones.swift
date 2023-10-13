@@ -27,7 +27,7 @@ enum ResultadoError: Error, LocalizedError {
 extension ResultadoEvaluaciones {
     
     static func fetchResultadoEvaluacionesDetail(idUsuario: Int) async throws -> ResultadoIndividual {
-        let baseString = "http://127.0.0.1:8000/api/user/progress/initialEvaluation/\(idUsuario)/"
+        let baseString = "http://54.205.255.125:8000/api/user/progress/initialEvaluation/\(idUsuario)/"
         let resultadosURL = URL(string: baseString)!
         let (data, response) = try await URLSession.shared.data(from: resultadosURL)
         
@@ -42,7 +42,7 @@ extension ResultadoEvaluaciones {
     }
     
     static func fetchResultadoEvaluacionesDetailStatus(idUsuario: Int) async throws -> (statusCode: Int, resultado: ResultadoIndividual?){
-        let baseString = "http://127.0.0.1:8000/api/user/progress/initialEvaluation/\(idUsuario)/"
+        let baseString = "http://54.205.255.125:8000/api/user/progress/initialEvaluation/\(idUsuario)/"
         let resultadosURL = URL(string: baseString)!
         let (data, response) = try await URLSession.shared.data(from: resultadosURL)
         

@@ -93,7 +93,7 @@ extension MultipartRequestVideo {
             )
         }
 
-        let url = URL(string: "http://127.0.0.1:8000/api/user/evidences/")!
+        let url = URL(string: "http://54.205.255.125:8000/api/user/evidences/")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue(multipart.httpContentTypeHeaderValue, forHTTPHeaderField: "Content-Type")
@@ -131,7 +131,7 @@ extension MultipartRequestVideo {
             )
         }
 
-        let url = URL(string: "http://127.0.0.1:8000/api/user/evidences/")!
+        let url = URL(string: "http://54.205.255.125:8000/api/user/evidences/")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue(multipart.httpContentTypeHeaderValue, forHTTPHeaderField: "Content-Type")
