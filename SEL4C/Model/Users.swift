@@ -31,7 +31,7 @@ extension Users{
     static func getUser() async throws->Users{
         let defaults = UserDefaults.standard
         let userID = defaults.string(forKey: "ID")
-        let baseString = "http://54.205.255.125:8000/api/user/profile/"+userID!
+        let baseString = "http://34.230.9.105:8000/api/user/profile/"+userID!
         print(baseString)
         let userURL = URL(string: baseString)!
         let (data, response) = try await URLSession.shared.data(from: userURL)
@@ -48,7 +48,7 @@ extension Users{
         guard let userID = defaults.string(forKey: "ID") else {
             throw GetUserError.unexpectedError
         }
-        let baseString = "http://54.205.255.125:8000/api/user/profile/\(userID)"
+        let baseString = "http://34.230.9.105:8000/api/user/profile/\(userID)"
         let userURL = URL(string: baseString)!
         let (data, response) = try await URLSession.shared.data(from: userURL)
         guard let httpResponse = response as? HTTPURLResponse else {
@@ -69,7 +69,7 @@ extension Users{
     static func putUser(user:Users)async throws {
         let defaults = UserDefaults.standard
         let userID = defaults.string(forKey: "ID")
-        let baseString = "http://54.205.255.125:8000/api/user/profile/"+userID!+"/"
+        let baseString = "http://34.230.9.105:8000/api/user/profile/"+userID!+"/"
         let insertURL = URL(string: baseString)!
         var request = URLRequest(url: insertURL)
         request.httpMethod = "PUT"
