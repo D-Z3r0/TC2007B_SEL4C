@@ -90,7 +90,7 @@ extension MultipartRequest {
             fileData: imagen.pngData()!
         )
 
-        let url = URL(string: "http://127.0.0.1:8000/api/user/evidences/")!
+        let url = URL(string: "http://34.230.9.105:8000/api/user/evidences/")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue(multipart.httpContentTypeHeaderValue, forHTTPHeaderField: "Content-Type")
@@ -125,7 +125,7 @@ extension MultipartRequest {
             fileData: imagen.pngData()!
         )
 
-        let url = URL(string: "http://127.0.0.1:8000/api/user/evidences/")!
+        let url = URL(string: "http://34.230.9.105:8000/api/user/evidences/")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue(multipart.httpContentTypeHeaderValue, forHTTPHeaderField: "Content-Type")

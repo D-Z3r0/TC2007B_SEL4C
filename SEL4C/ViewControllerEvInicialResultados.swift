@@ -37,10 +37,13 @@ class ViewControllerEvInicialResultados: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //UserDefaults.standard.set("1", forKey: "ID")
+        let defaults = UserDefaults.standard
+        let userID = defaults.integer(forKey: "ID")
         
         Task {
             do {
-                let resultadoIndividual = try await ResultadoEvaluaciones.fetchResultadoEvaluacionesDetail(idUsuario: 1)
+                let resultadoIndividual = try await ResultadoEvaluaciones.fetchResultadoEvaluacionesDetail(idUsuario: userID)
                 print("Resultados cargados con éxito: \(resultadoIndividual)")
                 resultado_competencia.text = "\(resultadoIndividual.competencia1)%"
                 resultado_sub1.text = "\(resultadoIndividual.competencia2)%"

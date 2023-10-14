@@ -81,6 +81,7 @@ class LoginViewController: UIViewController{
                 do{
                     let jsonResponse = try await loginController.userLogin(loginResponse: userLogin)
                     let userID = jsonResponse!["id"] as? Int
+                    print(userID!)
                     UserDefaults.standard.set(userID, forKey: "ID")
                     evaluationNavigate()
                     UserDefaults.standard.set(true, forKey: "LOGGEDIN")
@@ -92,6 +93,11 @@ class LoginViewController: UIViewController{
             invalidInputsAlert()
         }
     }
+    
+    @IBAction func toqueEnPantalla(_ sender: Any) {
+        inputPassword.resignFirstResponder()
+            inputEmail.resignFirstResponder()
+        }
     
     func evaluationNavigate(){
         let destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "InitialEvaluationIdentifier") as? InitialEvaluationViewController

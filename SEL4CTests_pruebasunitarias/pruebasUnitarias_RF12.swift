@@ -19,13 +19,18 @@ final class pruebasUnitarias_RF12: XCTestCase {
     }
     
     func testRF012_GetUser() async throws {
+        UserDefaults.standard.set("1", forKey: "ID")
+        let defaults = UserDefaults.standard
+        _ = defaults.integer(forKey: "ID")
         let getUser = try await Users.getUser()
         XCTAssertNotNil(getUser.username)
     }
     
     func testRF012_GetUserInvalid() async throws {
-        let getUser = try await Users.getUser()
-        XCTAssertNil(getUser)
+        UserDefaults.standard.set("3", forKey: "ID")
+       let result = try await Users.getUserStatus()
+       XCTAssertNil(result.user, "Expected user to be nil, but got a user.")
+       XCTAssertNotEqual(result.statusCode, 200, "Expected a non-200 status code, but got 200.")
     }
 
     func testExample() throws {

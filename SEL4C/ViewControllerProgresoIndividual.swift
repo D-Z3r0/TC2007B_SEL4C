@@ -22,12 +22,16 @@ class ViewControllerProgresoIndividual: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        //UserDefaults.standard.set("1", forKey: "ID")
+        let defaults = UserDefaults.standard
+        let userID = defaults.integer(forKey: "ID")
         let controller = EstadisticasPut()
         
         Task {
             
             do{
-                ProgresosUsuarios_json = try await ProgresoUsuario.fetchProgresoUsuarios(id_usuario: 1)
+                ProgresosUsuarios_json = try await ProgresoUsuario.fetchProgresoUsuarios(id_usuario: userID)
+                ProgresosUsuarios_json = try await ProgresoUsuario.fetchProgresoUsuarios(id_usuario: userID)
                 var countTrue = 0
                 var countFalse = 0
                 
@@ -40,11 +44,11 @@ class ViewControllerProgresoIndividual: UIViewController {
                 }
                 
                 let porcentaje = (countTrue*100)/(countTrue + countFalse)
-                try await  controller.putEstadisticasUser(idUsuario: 1, actividades: countTrue, evidencias: countFalse, progreso: porcentaje)
+                try await  controller.putEstadisticasUser(idUsuario: userID, actividades: countTrue, evidencias: countFalse, progreso: porcentaje)
             }
             
             do {
-                let estadisticaIndividual = try await Estadisticas.fetchEstadisticasDetail(idUsuario: 1)
+                let estadisticaIndividual = try await Estadisticas.fetchEstadisticasDetail(idUsuario: userID)
                 print("Resultados cargados con éxito: \(estadisticaIndividual)")
                 completadas.text = "\(estadisticaIndividual.actividades) actividades"
                 faltantes.text = "\(estadisticaIndividual.evidencias) actividades"
@@ -54,7 +58,7 @@ class ViewControllerProgresoIndividual: UIViewController {
             }
         }
         Task{
-            ProgresosUsuarios_json = try await ProgresoUsuario.fetchProgresoUsuarios(id_usuario: 1)
+            ProgresosUsuarios_json = try await ProgresoUsuario.fetchProgresoUsuarios(id_usuario: userID)
             // Supongamos que deseas contar cuántos tienen id_actividad = 1, 2, 3 y 4.
             let idActividadesAContar = [1, 2, 3, 4]
 

@@ -24,7 +24,7 @@ enum ProgresoActividadError: Error, LocalizedError{
 
 extension ProgresoActividad{
     static func fetchProgresoActividades(id_usuario: Int) async throws->ProgresoActividades{
-        let baseString = "http://127.0.0.1:8000/api/user/progress/brief/\(id_usuario)/"
+        let baseString = "http://34.230.9.105:8000/api/user/progress/brief/\(id_usuario)/"
         let questionsURL = URL(string: baseString)!
         let (data, response) = try await URLSession.shared.data(from: questionsURL)
         guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
@@ -38,7 +38,7 @@ extension ProgresoActividad{
 }
 
 class UserProgressActivties {
-    let baseString = "http://127.0.0.1:8000/api/user/progress/activities/"
+    let baseString = "http://34.230.9.105:8000/api/user/progress/activities/"
 
     func postProgressForUser(idUsuario: Int, actividad1: Bool, actividad2: Bool, actividad3: Bool, actividad4: Bool) async throws -> Void {
         // Construir la URL con el ID de usuario
@@ -87,7 +87,7 @@ enum UpdateProgressError: Error {
 
 func updateProgressActivity(idUsuario: Int, activityName: String, newValue: Bool) async throws -> ProgresoActividades {
     // Define the API endpoint URL
-    let apiUrl = URL(string: "http://127.0.0.1:8000/api/user/progress/brief/\(idUsuario)/")!
+    let apiUrl = URL(string: "http://34.230.9.105:8000/api/user/progress/brief/\(idUsuario)/")!
     
     // Create a dictionary with the request parameters
     let requestData: [String: Any] = [

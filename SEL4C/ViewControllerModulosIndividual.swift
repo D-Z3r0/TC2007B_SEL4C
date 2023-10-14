@@ -73,6 +73,8 @@ class ViewControllerModulosIndividual: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        let defaults = UserDefaults.standard
+        let userID = defaults.integer(forKey: "ID")
         for view in stack_view.arrangedSubviews where view.tag == 100 {
                 stack_view.removeArrangedSubview(view)
                 view.removeFromSuperview()
@@ -112,7 +114,7 @@ class ViewControllerModulosIndividual: UIViewController {
                     let nuevo_foco = UIButton()
                     configureEstadobtn(nuevo_foco)
                     
-                    ProgresosUsuarios_json = try await ProgresoUsuario.fetchProgresoUsuarios(id_usuario: 1)
+                    ProgresosUsuarios_json = try await ProgresoUsuario.fetchProgresoUsuarios(id_usuario: userID)
                     
                     let progresosFiltrados = ProgresosUsuarios_json.filter { progreso in
                         return progreso.id_actividad == actividad_json.id_actividad && progreso.estado_modulo == true
@@ -131,7 +133,7 @@ class ViewControllerModulosIndividual: UIViewController {
                     
                     let todosTienenEstadoModuloTrue = progresosFil.allSatisfy { $0.estado_modulo == true }
                     var progreso_json: ProgresoActividad?
-                    progreso_json = try await ProgresoActividad.fetchProgresoActividades(id_usuario: 1)
+                    progreso_json = try await ProgresoActividad.fetchProgresoActividades(id_usuario: userID)
                     
                     if progreso_json?.actividad1 == true && actividad_json.id_actividad == 1{
                         nuevo_foco.backgroundColor = UIColor.green
@@ -141,7 +143,7 @@ class ViewControllerModulosIndividual: UIViewController {
                         if actividad_json.id_actividad == 2{
                             Task{
                                 do {
-                                    let progresoActividades = try await updateProgressActivity(idUsuario: 1, activityName: "actividad2", newValue: true)
+                                    let progresoActividades = try await updateProgressActivity(idUsuario: userID, activityName: "actividad2", newValue: true)
                                     print("Successfully updated progress: \(progresoActividades)")
                                 } catch {
                                     switch error {
@@ -162,7 +164,7 @@ class ViewControllerModulosIndividual: UIViewController {
                         }else if actividad_json.id_actividad == 1{
                              Task{
                                  do {
-                                     let progresoActividades = try await updateProgressActivity(idUsuario: 1, activityName: "actividad1", newValue: true)
+                                     let progresoActividades = try await updateProgressActivity(idUsuario: userID, activityName: "actividad1", newValue: true)
                                      print("Successfully updated progress: \(progresoActividades)")
                                  } catch {
                                      switch error {
@@ -183,7 +185,7 @@ class ViewControllerModulosIndividual: UIViewController {
                          }else if actividad_json.id_actividad == 3{
                               Task{
                                   do {
-                                      let progresoActividades = try await updateProgressActivity(idUsuario: 1, activityName: "actividad3", newValue: true)
+                                      let progresoActividades = try await updateProgressActivity(idUsuario: userID, activityName: "actividad3", newValue: true)
                                       print("Successfully updated progress: \(progresoActividades)")
                                   } catch {
                                       switch error {
@@ -204,7 +206,7 @@ class ViewControllerModulosIndividual: UIViewController {
                           }else if actividad_json.id_actividad == 4{
                                Task{
                                    do {
-                                       let progresoActividades = try await updateProgressActivity(idUsuario: 1, activityName: "actividad4", newValue: true)
+                                       let progresoActividades = try await updateProgressActivity(idUsuario: userID, activityName: "actividad4", newValue: true)
                                        print("Successfully updated progress: \(progresoActividades)")
                                    } catch {
                                        switch error {

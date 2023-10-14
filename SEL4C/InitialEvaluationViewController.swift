@@ -28,11 +28,12 @@ class InitialEvaluationViewController: UIViewController {
         navigationItem.hidesBackButton = true
         // Do any additional setup after loading the view.
         textStyle(textQuestion)
+        /*
         let domain = Bundle.main.bundleIdentifier!
-        UserDefaults.standard.removePersistentDomain(forName: domain)
+        UserDefaults.standard.removePersistentDomain(forName: domain)*/
         let defaults = UserDefaults.standard
         let evaluationSolved = defaults.bool(forKey: "INEVSOLVED")
-//        UserDefaults.standard.set("1", forKey: "ID")
+        //UserDefaults.standard.set("1", forKey: "ID")
         if (evaluationSolved) {
             goToHomeScreen()
         }else{

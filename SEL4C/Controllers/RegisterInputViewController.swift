@@ -51,6 +51,13 @@ class RegisterInputViewController: UIViewController {
         infoButton.addTarget(self, action: #selector(infoButtonTapped), for: .touchUpInside)
     }
     
+    @IBAction func toqueEnPantalla(_ sender: Any) {
+        inputPassword.resignFirstResponder()
+        inputEmail.resignFirstResponder()
+        inputConfirmPassword.resignFirstResponder()
+        inputUsername.resignFirstResponder()
+    }
+    
     @IBAction func infoButtonTapped() {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
         let titleAttributes: [NSAttributedString.Key: Any] = [
