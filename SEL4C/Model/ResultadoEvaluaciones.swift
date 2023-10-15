@@ -41,6 +41,21 @@ extension ResultadoEvaluaciones {
         return resultado!
     }
     
+    static func fetchResultadoEvaluacionesFinalDetail(idUsuario: Int) async throws -> ResultadoIndividual {
+        let baseString = "http://34.230.9.105:8000/api/user/progress/finalEvaluation/\(idUsuario)/"
+        let resultadosURL = URL(string: baseString)!
+        let (data, response) = try await URLSession.shared.data(from: resultadosURL)
+        
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            throw ResultadoError.itemNotFound
+        }
+        
+        let jsonDecoder = JSONDecoder()
+        let resultado = try? jsonDecoder.decode(ResultadoIndividual.self, from: data)
+        
+        return resultado!
+    }
+    
     static func fetchResultadoEvaluacionesDetailStatus(idUsuario: Int) async throws -> (statusCode: Int, resultado: ResultadoIndividual?){
         let baseString = "http://34.230.9.105:8000/api/user/progress/initialEvaluation/\(idUsuario)/"
         let resultadosURL = URL(string: baseString)!

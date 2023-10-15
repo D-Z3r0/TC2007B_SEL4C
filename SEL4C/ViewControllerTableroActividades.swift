@@ -36,6 +36,8 @@ class ViewControllerTableroActividades: UIViewController {
         //UserDefaults.standard.set("1", forKey: "ID")
         let defaults = UserDefaults.standard
         let userID = defaults.integer(forKey: "ID")
+        UserDefaults.standard.set(userID, forKey: "ID")
+        UserDefaults.standard.set(true, forKey: "LOGGEDIN")
         
         /*
         // Eliminar todos los valores almacenados en UserDefaults.standard
