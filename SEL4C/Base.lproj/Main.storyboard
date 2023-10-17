@@ -383,7 +383,6 @@
         <!--View Controller-->
         <scene sceneID="l6f-5O-qct">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iF2-yw-Ang" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="oed-bB-qog" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SWH-99-Vrg">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
@@ -401,6 +400,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="k2X-24-Awx"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iF2-yw-Ang" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4026.7175572519081" y="-2377.4647887323945"/>
         </scene>
@@ -1054,7 +1054,7 @@
             </objects>
             <point key="canvasLocation" x="15797.709923664121" y="-2744.3661971830988"/>
         </scene>
-        <!--Item-->
+        <!--Perfil-->
         <scene sceneID="pdT-2F-vJs">
             <objects>
                 <viewController id="Ugg-E2-Sg7" customClass="ProfileViewController" customModule="SEL4C" customModuleProvider="target" sceneMemberID="viewController">
@@ -1249,7 +1249,9 @@
                         <viewLayoutGuide key="safeArea" id="a9x-MB-eD6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="6SI-VD-agP"/>
+                    <tabBarItem key="tabBarItem" title="Perfil" image="person.crop.circle.fill" catalog="system" selectedImage="person.crop.circle.fill" id="6SI-VD-agP">
+                        <color key="badgeColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="ageInput" destination="gJY-6V-B97" id="AMr-GP-cwv"/>
@@ -1904,7 +1906,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="565"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9hj-uS-4e3">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="3387"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="3607"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BD6-3I-JLn">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
@@ -2099,8 +2101,31 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                     <constraint firstAttribute="bottom" secondItem="cF3-9l-5VX" secondAttribute="bottom" constant="107" id="rRd-7e-ptJ"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V6Y-Kz-VdF">
+                                                <rect key="frame" x="0.0" y="1967" width="393" height="220"/>
+                                                <subviews>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Agrega tu nota" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Wrx-Vb-q6P">
+                                                        <rect key="frame" x="31" y="28" width="331" height="164"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.52941176469999995" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="164" id="ovA-Sb-4zh"/>
+                                                            <constraint firstAttribute="width" constant="331" id="vl8-5g-pNk"/>
+                                                        </constraints>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="Wrx-Vb-q6P" firstAttribute="top" secondItem="V6Y-Kz-VdF" secondAttribute="top" constant="28" id="C6w-tt-wKe"/>
+                                                    <constraint firstItem="Wrx-Vb-q6P" firstAttribute="leading" secondItem="V6Y-Kz-VdF" secondAttribute="leading" constant="31" id="Yfq-vF-GRt"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Wrx-Vb-q6P" secondAttribute="bottom" constant="28" id="fdC-Ah-5CL"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Wrx-Vb-q6P" secondAttribute="trailing" constant="31" id="rvc-Hx-zvA"/>
+                                                </constraints>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uzJ-oM-Qfx">
-                                                <rect key="frame" x="0.0" y="1967" width="393" height="700"/>
+                                                <rect key="frame" x="0.0" y="2187" width="393" height="700"/>
                                                 <subviews>
                                                     <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="0iE-2Y-3nt">
                                                         <rect key="frame" x="32" y="24" width="328" height="44"/>
@@ -2152,7 +2177,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hdW-82-5Jp">
-                                                <rect key="frame" x="0.0" y="2667" width="393" height="240"/>
+                                                <rect key="frame" x="0.0" y="2887" width="393" height="240"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tps-Dc-yYM">
                                                         <rect key="frame" x="26" y="27" width="325" height="186"/>
@@ -2206,7 +2231,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2A9-Hy-y0n">
-                                                <rect key="frame" x="0.0" y="2907" width="393" height="240"/>
+                                                <rect key="frame" x="0.0" y="3127" width="393" height="240"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57p-8g-Fav">
                                                         <rect key="frame" x="26" y="27" width="325" height="186"/>
@@ -2259,7 +2284,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d0s-tk-IBn">
-                                                <rect key="frame" x="0.0" y="3147" width="393" height="240"/>
+                                                <rect key="frame" x="0.0" y="3367" width="393" height="240"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7K-Sf-zU7">
                                                         <rect key="frame" x="26" y="27" width="325" height="186"/>
@@ -2318,9 +2343,11 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                         <outlet property="image_selected" destination="qja-ba-25C" id="R3F-Sh-XNy"/>
                         <outlet property="instrucciones" destination="mbs-E0-Lhu" id="jtd-9d-4rI"/>
                         <outlet property="search" destination="0iE-2Y-3nt" id="Ou3-ia-14L"/>
+                        <outlet property="subtitleTextField" destination="Wrx-Vb-q6P" id="JbE-99-f05"/>
                         <outlet property="titulo_evidencia" destination="pMj-0G-Bm5" id="Tiu-qS-L4e"/>
                         <outlet property="titulo_modulo" destination="ze5-7N-NUP" id="x6p-DN-E7a"/>
                         <outlet property="viewMap" destination="r7D-3l-z3f" id="Fhl-HK-zL1"/>
+                        <outlet property="view_descriptionmap" destination="V6Y-Kz-VdF" id="wNK-2p-2rR"/>
                         <outlet property="view_searchmap" destination="uzJ-oM-Qfx" id="M4g-D5-ALF"/>
                     </connections>
                 </viewController>
@@ -3682,7 +3709,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="143.33333333333334"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEp-jL-GNK">
-                                                        <rect key="frame" x="34" y="5.9999999999999964" width="351" height="52.666666666666657"/>
+                                                        <rect key="frame" x="34" y="6" width="351" height="73.333333333333329"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Evaluación">
                                                                 <attributes>
@@ -3694,7 +3721,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kq9-TD-uZJ">
-                                                        <rect key="frame" x="34" y="66.666666666666657" width="351" height="73.333333333333343"/>
+                                                        <rect key="frame" x="34" y="87.333333333333343" width="351" height="52.666666666666657"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="final">
                                                                 <attributes>
@@ -4768,6 +4795,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
         <image name="image_evfinal" width="379" height="165"/>
         <image name="imagen_actividad1" width="386" height="168"/>
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="person.crop.circle.fill" catalog="system" width="128" height="123"/>
         <image name="photo.fill" catalog="system" width="128" height="93"/>
         <image name="play.circle.fill" catalog="system" width="128" height="123"/>
         <image name="speaker.wave.2.fill" catalog="system" width="128" height="88"/>

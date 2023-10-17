@@ -47,12 +47,16 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
     var idusar: Int = 0
     let activityIndicator = UIActivityIndicatorView(style: .large)
     
+    @IBOutlet weak var subtitleTextField: UITextView!
+    
     @IBOutlet weak var search: UISearchBar!
     @IBOutlet weak var viewMap: MKMapView!
     var annotations: [MKPointAnnotation] = []
     var searchCompleter = MKLocalSearchCompleter()
     var searchResults = [MKLocalSearchCompletion]()
     @IBOutlet weak var view_searchmap: UIView!
+    @IBOutlet weak var view_descriptionmap: UIView!
+    var getUser = Users()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +67,10 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
         idusar = userID
         
         Task{
+            do{
+                getUser = try await Users.getUser()
+            }
+            
             do {
                 moduloIndividual = try await Modulo.fetchModulosDetail(id_actividad: actividad_modulo, id_modulo: modulo_evidencia)
                 
@@ -89,6 +97,7 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                             entrega_audio.isHidden = true
                             entrega_exitosa.isHidden = true
                             view_searchmap.isHidden = true
+                            view_descriptionmap.isHidden = true
                             // Configurar el botón btn_video para mostrar el menú
                             btn_video.addTarget(self, action: #selector(presentVideoOptions), for: .touchUpInside)
                         }else if tipo_entrega_result == "imagen"{
@@ -97,6 +106,7 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                             entrega_audio.isHidden = true
                             entrega_exitosa.isHidden = true
                             view_searchmap.isHidden = true
+                            view_descriptionmap.isHidden = true
                             // Configurar el botón btn_video para mostrar el menú
                             btn_imagen.addTarget(self, action: #selector(presentImageOptions), for: .touchUpInside)
                         }else if tipo_entrega_result == "audio"{
@@ -105,6 +115,7 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                             entrega_video.isHidden = true
                             entrega_exitosa.isHidden = true
                             view_searchmap.isHidden = true
+                            view_descriptionmap.isHidden = true
                             // Configurar el botón btn_video para mostrar el menú
                             btn_audio.addTarget(self, action: #selector(presentAudioOptions), for: .touchUpInside)
                         }
@@ -115,6 +126,7 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                             entrega_audio.isHidden = true
                             entrega_exitosa.isHidden = true
                             view_searchmap.isHidden = false
+                            view_descriptionmap.isHidden = false
                             // Configurar el botón btn_video para mostrar el menú
                             btn_imagen.addTarget(self, action: #selector(presentImageOptions), for: .touchUpInside)
                         }
@@ -125,6 +137,7 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                             entrega_audio.isHidden = true
                             entrega_exitosa.isHidden = true
                             view_searchmap.isHidden = false
+                            view_descriptionmap.isHidden = false
                             // Configurar el botón btn_video para mostrar el menú
                             btn_imagen.addTarget(self, action: #selector(presentImageOptions), for: .touchUpInside)
                         }
@@ -134,6 +147,7 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                         entrega_video.isHidden = true
                         entrega_exitosa.isHidden = false
                         view_searchmap.isHidden = true
+                        view_descriptionmap.isHidden = true
                     }
                 }
             } catch {
@@ -169,10 +183,8 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                     let annotation = MKPointAnnotation()
                     annotation.coordinate = CLLocationCoordinate2D(latitude: coordinates.latitude, longitude: coordinates.longitude)
                     annotation.title = "Ubicación personalizada"
-                    annotation.subtitle = "Coordenadas ingresadas por el usuario"
-                    
-                    // Agregar una descripción personalizada a la anotación
-                    annotation.subtitle = "Descripción del lugar aquí Descripción del lugar aquí Descripción del lugar aquí Descripción del lugar aquí Descripción del lugar aquí"
+                    // Asignar el subtítulo ingresado por el usuario
+                    annotation.subtitle = self.subtitleTextField.text
                     
                     // Agregar la nueva anotación al array de anotaciones
                     self.annotations.append(annotation)
@@ -353,6 +365,8 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
         entrega_video.isHidden = true
         entrega_audio.isHidden = true
         entrega_exitosa.isHidden = false
+        view_descriptionmap.isHidden = true
+        view_searchmap.isHidden = true
     }
     
     // UIImagePickerControllerDelegate method for handling the selected/taken image
@@ -376,7 +390,7 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
             
                     Task{
                         do{
-                            let datos = try await MultipartRequest.sendEvidence(user: "prueba", activity: "actividad1", evidence_name: "Actividad: \(actividad_modulo) de modulo \(modulo_evidencia)", idModulo: modulo_evidencia, imagen: image_selected.image!)
+                            let datos = try await MultipartRequest.sendEvidence(user: "prueba", activity: "actividad1", evidence_name: "Usuario \(getUser.email) Actividad: \(actividad_modulo) de modulo \(modulo_evidencia)", idModulo: modulo_evidencia, imagen: image_selected.image!)
                             UserDefaults.standard.set(true, forKey: "actividad \(actividad_modulo) modulo \(modulo_evidencia)")
                             print("Image upload completed successfully")
                             DispatchQueue.main.async {
@@ -399,7 +413,7 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                     
                     Task{
                         do{
-                            let datos = try await MultipartRequestVideo.sendEvidence(user: "prueba", activity: "actividad1", evidenceName: "Actividad: \(actividad_modulo) de modulo \(modulo_evidencia)", idModulo: modulo_evidencia, videoPath: videoPath)
+                            let datos = try await MultipartRequestVideo.sendEvidence(user: "prueba", activity: "actividad1", evidenceName: "Usuario \(getUser.email) Actividad: \(actividad_modulo) de modulo \(modulo_evidencia)", idModulo: modulo_evidencia, videoPath: videoPath)
                             UserDefaults.standard.set(true, forKey: "actividad \(actividad_modulo) modulo \(modulo_evidencia)")
                             print("Video upload completed successfully")
                             DispatchQueue.main.async {
@@ -424,7 +438,7 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                         // Envía el video a tu servidor utilizando MultipartRequestVideo u otra lógica que tengas
                         Task {
                             do {
-                                let datos = try await MultipartRequestVideo.sendEvidence(user: "prueba", activity: "actividad1", evidenceName: "Actividad: \(actividad_modulo) de modulo \(modulo_evidencia)", idModulo: modulo_evidencia, videoPath: videoPath)
+                                let datos = try await MultipartRequestVideo.sendEvidence(user: "prueba", activity: "actividad1", evidenceName: "Usuario \(getUser.email) Actividad: \(actividad_modulo) de modulo \(modulo_evidencia)", idModulo: modulo_evidencia, videoPath: videoPath)
                                 UserDefaults.standard.set(true, forKey: "actividad \(actividad_modulo) modulo \(modulo_evidencia)")
                                 print("Video upload completed successfully")
                                 DispatchQueue.main.async {
@@ -514,7 +528,7 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                         do {
                             let audioData = try Data(contentsOf: audioURL)
                             // Specify the user, activity, evidenceName, and idModulo as needed
-                            let datos = try await MultipartRequestAudio.sendAudioEvidence(user: "prueba", activity: "actividad1", evidenceName: "Actividad: \(actividad_modulo) de modulo \(modulo_evidencia)", idModulo: 5, audioData: audioData)
+                            let datos = try await MultipartRequestAudio.sendAudioEvidence(user: "prueba", activity: "actividad1", evidenceName: "Usuario \(getUser.email) Actividad: \(actividad_modulo) de modulo \(modulo_evidencia)", idModulo: 5, audioData: audioData)
                             print("Audio upload completed successfully")
                             DispatchQueue.main.async {
                                                     self.activityIndicator.stopAnimating()
