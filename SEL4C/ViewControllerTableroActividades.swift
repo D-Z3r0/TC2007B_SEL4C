@@ -30,13 +30,16 @@ class ViewControllerTableroActividades: UIViewController {
     var processedCombinations = Set<String>()
     var ProgresoActividades_json : ProgresoActividad?
     var ProgresosUsuarios_json: [ProgresoUsuario] = []
+    var user_usar: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //UserDefaults.standard.set("1", forKey: "ID")
         let defaults = UserDefaults.standard
         let userID = defaults.integer(forKey: "ID")
-        
+        UserDefaults.standard.set(userID, forKey: "ID")
+        UserDefaults.standard.set(true, forKey: "LOGGEDIN")
+        user_usar = userID
         /*
         // Eliminar todos los valores almacenados en UserDefaults.standard
         UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
@@ -159,9 +162,24 @@ class ViewControllerTableroActividades: UIViewController {
                     
                     //Crear el button de la actividad
                     let nuevoBoton = UIButton()
-                    if let backgroundImage = UIImage(named: "imagen_actividad1") {
-                        nuevoBoton.setBackgroundImage(backgroundImage, for: .normal)
+                    if actividad_json.id_actividad == 1{
+                        if let backgroundImage = UIImage(named: "animacionact1") {
+                            nuevoBoton.setBackgroundImage(backgroundImage, for: .normal)
+                        }
+                    }else if actividad_json.id_actividad == 2{
+                        if let backgroundImage = UIImage(named: "animacionact2") {
+                            nuevoBoton.setBackgroundImage(backgroundImage, for: .normal)
+                        }
+                    }else if actividad_json.id_actividad == 3{
+                        if let backgroundImage = UIImage(named: "animacionact3") {
+                            nuevoBoton.setBackgroundImage(backgroundImage, for: .normal)
+                        }
+                    }else if actividad_json.id_actividad == 4{
+                        if let backgroundImage = UIImage(named: "animacionact4") {
+                            nuevoBoton.setBackgroundImage(backgroundImage, for: .normal)
+                        }
                     }
+                    
                     configureButton(nuevoBoton)
                     
                     //Crear el button
@@ -179,7 +197,7 @@ class ViewControllerTableroActividades: UIViewController {
                     //nuevo_foco.backgroundColor = UIColor.blue
                     configureEstadobtn(nuevo_foco)
                     
-                    ProgresoActividades_json = try await ProgresoActividad.fetchProgresoActividades(id_usuario: 1)
+                    ProgresoActividades_json = try await ProgresoActividad.fetchProgresoActividades(id_usuario: user_usar)
                 
                     if let progreso = ProgresoActividades_json {
                         if actividad_json.id_actividad == 1 && progreso.actividad1 {
@@ -188,7 +206,7 @@ class ViewControllerTableroActividades: UIViewController {
                         } else if actividad_json.id_actividad == 1 {
                             Task {
                                 do{
-                                    ProgresosUsuarios_json = try await ProgresoUsuario.fetchProgresoUsuarios(id_usuario: 1)
+                                    ProgresosUsuarios_json = try await ProgresoUsuario.fetchProgresoUsuarios(id_usuario: user_usar)
                                     var countTrue = 0
                                     var countFalse = 0
                                     
@@ -215,7 +233,7 @@ class ViewControllerTableroActividades: UIViewController {
                         } else if actividad_json.id_actividad == 2 {
                             Task {
                                 do{
-                                    ProgresosUsuarios_json = try await ProgresoUsuario.fetchProgresoUsuarios(id_usuario: 1)
+                                    ProgresosUsuarios_json = try await ProgresoUsuario.fetchProgresoUsuarios(id_usuario: user_usar)
                                     var countTrue = 0
                                     var countFalse = 0
                                     

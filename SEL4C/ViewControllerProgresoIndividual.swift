@@ -106,19 +106,19 @@ class ViewControllerProgresoIndividual: UIViewController {
         // Crear y agregar las barras de fondo (que suman al 100%)
         for (index, value) in values.enumerated() {
             let backgroundBarView = UIView()
-            backgroundBarView.backgroundColor = UIColor.lightGray
-            let backgroundValue = totalValue // Calcular el valor de fondo
-            let backgroundHeight = (backgroundValue / totalValue) * chartContainerView.frame.height
-            backgroundBarView.frame = CGRect(x: xPosition, y: chartContainerView.frame.height - backgroundHeight, width: barWidth, height: backgroundHeight)
-            chartContainerView.addSubview(backgroundBarView)
+                backgroundBarView.backgroundColor = UIColor.lightGray
+                let backgroundValue = totalValue // Calcular el valor de fondo
+                let backgroundHeight = (backgroundValue / totalValue) * chartContainerView.frame.height
+                backgroundBarView.frame = CGRect(x: xPosition, y: chartContainerView.frame.height - backgroundHeight, width: barWidth, height: backgroundHeight)
+                chartContainerView.addSubview(backgroundBarView)
 
-            // Crear una etiqueta para el título
+                // Crear una etiqueta para el título
                 let titleLabel = UILabel()
                 titleLabel.text = titles[index]
                 titleLabel.textAlignment = .center
-                titleLabel.adjustsFontSizeToFitWidth = true // Para que el texto se ajuste si es demasiado largo
-                titleLabel.minimumScaleFactor = 0.5 // Ajusta según tus necesidades
-                titleLabel.frame = CGRect(x: xPosition, y: chartContainerView.frame.height, width: barWidth*4, height: 30) // Ajusta el ancho y la altura según tus necesidades
+                titleLabel.adjustsFontSizeToFitWidth = true
+                titleLabel.minimumScaleFactor = 0.5
+                titleLabel.frame = CGRect(x: xPosition, y: chartContainerView.frame.height - backgroundHeight - 30, width: barWidth * 4, height: 30)
                 chartContainerView.addSubview(titleLabel)
 
                 // Actualizar la posición X para la próxima barra
