@@ -23,6 +23,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet var institutionInput: UITextField!
     @IBOutlet var emailInput: UITextField!
     
+    let customFont = UIFont(name: "Poppins-SemiBold", size: 12.0)
     var users = Users()
     var getUser = Users()
 //    var sendUser = SignupController()
@@ -34,6 +35,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        UserDefaults.standard.set(1, forKey: "ID")
+        emailInput.isEnabled = false
+        countryInput.isEnabled = false
+        editProfile.contentHorizontalAlignment = .left
         Task{
             do{
                 getUser = try await Users.getUser()
@@ -43,10 +49,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 displayError(GetUserError.itemNotFound, title: "No se pudo accer a las preguntas")
             }
         }
-        // Do any additional setup after loading the view.
-// Ajusta el punto de tamaño según tus necesidades
-//        UserDefaults.standard.set("1", forKey: "ID")
-        
+
         let resizedSymbolImage = UIImage(systemName: "person.circle.fill", withConfiguration: symbolConfiguration)
         photoInput.setImage(resizedSymbolImage, for: .normal)
         
@@ -84,15 +87,22 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBAction func toggleEditing() {
         isEditable.toggle()
+        let attributes: [NSAttributedString.Key: Any] = [
+                .font: customFont!,
+                .foregroundColor: UIColor.white
+        ]
         if isEditable {
             // Habilita los campos y botones para editar
             enableFieldsAndButtons()
             editProfile.setTitle("Guardar", for: .normal)
+            let attributedTitle = NSAttributedString(string: "Guardar", attributes: attributes)
+                    editProfile.setAttributedTitle(attributedTitle, for: .normal)
         } else {
             // Guarda los cambios y deshabilita los campos y botones
             updateUser()
             disableFieldsAndButtons()
-            editProfile.setTitle("Editar", for: .normal)
+            let attributedTitle = NSAttributedString(string: "Editar información", attributes: attributes)
+                    editProfile.setAttributedTitle(attributedTitle, for: .normal)
         }
     }
     
@@ -108,7 +118,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             self.institutionInput.text = user.institucion
             self.ageInput.text = String(user.edad)
             self.gradeInput.setTitle(user.grado_ac, for: .normal)
-//            self.disciplineInput.setTitle(user., for: .normal)
+            self.disciplineInput.setTitle(user.disciplina, for: .normal)
             self.genderInput.setTitle(user.genero, for: .normal)
             self.countryInput.setTitle(user.pais, for: . normal)
         }
@@ -132,8 +142,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         users.genero = (genderInput.titleLabel!.text)!
         users.edad = Int(ageInput.text!)!
         users.pais = (countryInput.titleLabel!.text)!
-//        user.discipline = (disciplineInput.titleLabel!.text!)
-//        users.pais = "opcion1"
+        users.disciplina = (disciplineInput.titleLabel!.text!)
         print(users)
         Task{
             do{
@@ -152,7 +161,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         disciplineInput.isEnabled = true
         genderInput.isEnabled = true
         ageInput.isEnabled = true
-        countryInput.isEnabled = true
+//        countryInput.isEnabled = true
         photoInput.isEnabled = true
         // Habilita otros campos y botones según sea necesario
     }
@@ -165,7 +174,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         disciplineInput.isEnabled = false
         genderInput.isEnabled = false
         ageInput.isEnabled = false
-        countryInput.isEnabled = false
+//        countryInput.isEnabled = false
         photoInput.isEnabled = false
         // Deshabilita otros campos y botones según sea necesario
     }
@@ -185,6 +194,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         let isGradeValid = gradeInput.title(for: .normal) != "Elige una opción"
         let isCountryValid = countryInput.title(for: .normal) != "Elige una opción"
         let isAllValid = isInstitutionValid && isAgeValid && isGenderValid && isGradeValid && isCountryValid
+        editProfile.isEnabled = isAllValid
     }
     
     @IBAction func presentImageOptions() {
