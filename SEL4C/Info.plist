@@ -2,8 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key></key>
-	<string></string>
+	<key>CFBundleIdentifier</key>
+  <string></string>
+  <key>NSMicrophoneUsageDescription</key>
+  <string>Se solicita permiso de acceso al micrófono</string>
+  <key>NSCameraUsageDescription</key>
+  <string>Se solicita permiso de acceso a la cámara</string>
+  <key>NSPhotoLibraryAddUsageDescription</key>
+  <string>Explicación de por qué tu aplicación necesita acceso a la galería de fotos.</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>

@@ -8,8 +8,10 @@
 import UIKit
 import MobileCoreServices
 import AVFoundation
+import WebKit
+import MapKit
 
-class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentPickerDelegate,AVAudioRecorderDelegate {
+class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentPickerDelegate,AVAudioRecorderDelegate, UIGestureRecognizerDelegate, WKNavigationDelegate,UISearchBarDelegate, MKLocalSearchCompleterDelegate{
     
     //Valores pasado de la información del modulo
     var titulo_modulo_resultado: String = ""
@@ -43,20 +45,35 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
     
     var moduloIndividual: Modulo_individual?
     var idusar: Int = 0
+    let activityIndicator = UIActivityIndicatorView(style: .large)
+    
+    @IBOutlet weak var subtitleTextField: UITextView!
+    
+    @IBOutlet weak var search: UISearchBar!
+    @IBOutlet weak var viewMap: MKMapView!
+    var annotations: [MKPointAnnotation] = []
+    var searchCompleter = MKLocalSearchCompleter()
+    var searchResults = [MKLocalSearchCompletion]()
+    @IBOutlet weak var view_searchmap: UIView!
+    @IBOutlet weak var view_descriptionmap: UIView!
+    var getUser = Users()
+    var users = Users()
+    var id_del_usuario: Int = 0
+    var user_usar: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        search.delegate = self
+        searchCompleter.delegate = self
         let defaults = UserDefaults.standard
         let userID = defaults.integer(forKey: "ID")
         idusar = userID
-        // Esto eliminará todos los valores almacenados en UserDefaults.standard
-        
-        //Hidden los tipos de entrega
-        /*entrega_video.isHidden = true
-        entrega_imagen.isHidden = true
-        entrega_audio.isHidden = true
-        entrega_exitosa.isHidden = true*/
-        
         Task{
+            do{
+                getUser = try await Users.getUser()
+                id_del_usuario = users.id_usuario
+            }
+            
             do {
                 moduloIndividual = try await Modulo.fetchModulosDetail(id_actividad: actividad_modulo, id_modulo: modulo_evidencia)
                 
@@ -82,6 +99,8 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                             entrega_imagen.isHidden = true
                             entrega_audio.isHidden = true
                             entrega_exitosa.isHidden = true
+                            view_searchmap.isHidden = true
+                            view_descriptionmap.isHidden = true
                             // Configurar el botón btn_video para mostrar el menú
                             btn_video.addTarget(self, action: #selector(presentVideoOptions), for: .touchUpInside)
                         }else if tipo_entrega_result == "imagen"{
@@ -89,6 +108,8 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                             entrega_video.isHidden = true
                             entrega_audio.isHidden = true
                             entrega_exitosa.isHidden = true
+                            view_searchmap.isHidden = true
+                            view_descriptionmap.isHidden = true
                             // Configurar el botón btn_video para mostrar el menú
                             btn_imagen.addTarget(self, action: #selector(presentImageOptions), for: .touchUpInside)
                         }else if tipo_entrega_result == "audio"{
@@ -96,14 +117,40 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                             entrega_imagen.isHidden = true
                             entrega_video.isHidden = true
                             entrega_exitosa.isHidden = true
+                            view_searchmap.isHidden = true
+                            view_descriptionmap.isHidden = true
                             // Configurar el botón btn_video para mostrar el menú
                             btn_audio.addTarget(self, action: #selector(presentAudioOptions), for: .touchUpInside)
+                        }
+                        
+                        if modulo.id_modulo == 3 {
+                            entrega_imagen.isHidden = false
+                            entrega_video.isHidden = true
+                            entrega_audio.isHidden = true
+                            entrega_exitosa.isHidden = true
+                            view_searchmap.isHidden = false
+                            view_descriptionmap.isHidden = false
+                            // Configurar el botón btn_video para mostrar el menú
+                            btn_imagen.addTarget(self, action: #selector(presentImageOptions), for: .touchUpInside)
+                        }
+                        
+                        if modulo.id_modulo == 4{
+                            entrega_imagen.isHidden = false
+                            entrega_video.isHidden = true
+                            entrega_audio.isHidden = true
+                            entrega_exitosa.isHidden = true
+                            view_searchmap.isHidden = false
+                            view_descriptionmap.isHidden = false
+                            // Configurar el botón btn_video para mostrar el menú
+                            btn_imagen.addTarget(self, action: #selector(presentImageOptions), for: .touchUpInside)
                         }
                     }else{
                         entrega_audio.isHidden=true
                         entrega_imagen.isHidden = true
                         entrega_video.isHidden = true
                         entrega_exitosa.isHidden = false
+                        view_searchmap.isHidden = true
+                        view_descriptionmap.isHidden = true
                     }
                 }
             } catch {
@@ -112,11 +159,92 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
         }
         //Mostrar información del modulo seleccionado
         titulo_evidencia.text = titulo_modulo_resultado
-        //titulo_modulo.text = modulo_resultado
-        //instrucciones.text = instrucciones_actividad
         print("Evidencia del modulo: \(modulo_evidencia)")
     
     }
+    
+    // Método llamado cuando el usuario presiona el botón de búsqueda en el teclado virtual
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        // Cerrar el teclado virtual
+        searchBar.resignFirstResponder()
+        
+        // Comprobar si se seleccionó una sugerencia de autocompletado
+        if let selectedResult = searchResults.first {
+            // Crear una solicitud de búsqueda local con la sugerencia seleccionada
+            let request = MKLocalSearch.Request(completion: selectedResult)
+            let search = MKLocalSearch(request: request)
+            
+            // Realizar la búsqueda y manejar los resultados
+            search.start { (response, error) in
+                if let error = error {
+                    print("Error en la búsqueda: \(error.localizedDescription)")
+                } else if let mapItems = response?.mapItems, let firstItem = mapItems.first {
+                    // Obtener las coordenadas del lugar encontrado
+                    let coordinates = firstItem.placemark.coordinate
+                                        // Imprimir las coordenadas en la consola
+                                        print("Latitud: \(coordinates.latitude), Longitud: \(coordinates.longitude)")
+                    let annotation = MKPointAnnotation()
+                    annotation.coordinate = CLLocationCoordinate2D(latitude: coordinates.latitude, longitude: coordinates.longitude)
+                    annotation.title = "Ubicación personalizada"
+                    // Asignar el subtítulo ingresado por el usuario
+                    annotation.subtitle = self.subtitleTextField.text
+                    
+                    // Agregar la nueva anotación al array de anotaciones
+                    self.annotations.append(annotation)
+                    
+                    // Agregar todas las anotaciones al mapa
+                    self.viewMap.addAnnotations(self.annotations)
+                    
+                    // Establecer el nivel de zoom para mostrar todas las anotaciones
+                    self.viewMap.showAnnotations(self.annotations, animated: true)
+                    /*
+                    // Crear un marcador en el mapa
+                    let annotation = MKPointAnnotation()
+                    annotation.coordinate = coordinates
+                    annotation.title = firstItem.name
+                    
+                    // Borrar marcadores anteriores y agregar el nuevo
+                    self.viewMap.removeAnnotations(self.viewMap.annotations)
+                    self.viewMap.addAnnotation(annotation)
+                    
+                    // Ajustar el mapa para mostrar el marcador
+                    let region = MKCoordinateRegion(center: coordinates, latitudinalMeters: 1000, longitudinalMeters: 1000)
+                    self.viewMap.setRegion(region, animated: true)*/
+                }
+            }
+        }
+    }
+
+    // Método llamado cuando cambia el texto en el campo de búsqueda
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // Actualizar las sugerencias de autocompletado en función del texto actual
+        searchCompleter.queryFragment = searchText
+    }
+
+    // Método llamado cuando se obtienen resultados de autocompletado
+    func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
+        searchResults = completer.results
+    }
+
+// Método llamado cuando se presiona el botón para guardar la captura del mapa
+    @IBAction func saveMapScreenshot(_ sender: UIButton) {
+        // Crear un renderizador de gráficos
+        let renderer = UIGraphicsImageRenderer(size: viewMap.bounds.size)
+        
+        // Capturar el contenido del mapa como una imagen
+        let image = renderer.image { _ in
+            viewMap.drawHierarchy(in: viewMap.bounds, afterScreenUpdates: true)
+        }
+        
+        // Guardar la imagen en la galería de fotos (puedes cambiar esto según tus necesidades)
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        
+        // Añadir una alerta para informar al usuario que la captura se guardó con éxito
+        let alertController = UIAlertController(title: "Mapa guardado", message: "La captura del mapa se ha guardado en la galería de fotos.", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Entendido", style: .default, handler: nil))
+        present(alertController, animated: true, completion: nil)
+    }
+
     
     // Función para mostrar el menú de opciones de video
         @objc func presentVideoOptions() {
@@ -240,10 +368,22 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
         entrega_video.isHidden = true
         entrega_audio.isHidden = true
         entrega_exitosa.isHidden = false
+        view_descriptionmap.isHidden = true
+        view_searchmap.isHidden = true
     }
     
     // UIImagePickerControllerDelegate method for handling the selected/taken image
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        // Configurar el activityIndicator
+            activityIndicator.center = view.center
+            activityIndicator.hidesWhenStopped = true
+            activityIndicator.style = .large
+            activityIndicator.color = .blue
+            view.addSubview(activityIndicator)
+            
+            // Comenzar la animación del activityIndicator
+            activityIndicator.startAnimating()
+        
         if let mediaType = info[.mediaType] as? String {
             if mediaType == kUTTypeImage as String {
                 // Se seleccionó una imagen
@@ -253,12 +393,16 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
             
                     Task{
                         do{
-                            let datos = try await MultipartRequest.sendEvidence(user: "prueba", activity: "actividad1", evidence_name: "Actividad: \(actividad_modulo) de modulo \(modulo_evidencia)", idModulo: modulo_evidencia, imagen: image_selected.image!)
+                            let datos = try await MultipartRequest.sendEvidence(user: "prueba", activity: "actividad1", evidence_name: "Usuario \(getUser.email) Actividad: \(actividad_modulo) de modulo \(modulo_evidencia)", idModulo: modulo_evidencia, imagen: image_selected.image!)
                             UserDefaults.standard.set(true, forKey: "actividad \(actividad_modulo) modulo \(modulo_evidencia)")
                             print("Image upload completed successfully")
+                            DispatchQueue.main.async {
+                                                    self.activityIndicator.stopAnimating()
+                                                    self.activityIndicator.removeFromSuperview()
+                                                }
                             showSuccessView()
                             let controller = UserProgressUpdateController()
-                            try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: idusar, idActividad: actividad_modulo, idModulo: modulo_evidencia)
+                            try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: getUser.id_usuario, idActividad: actividad_modulo, idModulo: modulo_evidencia)
                         }catch{
                             print("Error sending image: \(error.localizedDescription)")
                         }
@@ -272,36 +416,50 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                     
                     Task{
                         do{
-                            let datos = try await MultipartRequestVideo.sendEvidence(user: "prueba", activity: "actividad1", evidenceName: "Actividad: \(actividad_modulo) de modulo \(modulo_evidencia)", idModulo: modulo_evidencia, videoPath: videoPath)
+                            let datos = try await MultipartRequestVideo.sendEvidence(user: "prueba", activity: "actividad1", evidenceName: "Usuario \(getUser.email) Actividad: \(actividad_modulo) de modulo \(modulo_evidencia)", idModulo: modulo_evidencia, videoPath: videoPath)
                             UserDefaults.standard.set(true, forKey: "actividad \(actividad_modulo) modulo \(modulo_evidencia)")
                             print("Video upload completed successfully")
+                            DispatchQueue.main.async {
+                                                    self.activityIndicator.stopAnimating()
+                                                    self.activityIndicator.removeFromSuperview()
+                                                }
                             showSuccessView()
                             let controller = UserProgressUpdateController()
-                            try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: idusar, idActividad: actividad_modulo, idModulo: modulo_evidencia)
+                            try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: getUser.id_usuario, idActividad: actividad_modulo, idModulo: modulo_evidencia)
                         }catch{
                             print("Error sending video: \(error.localizedDescription)")
                         }
                     }
                 }
-            } else if mediaType == kUTTypeAudio as String {
-                // Handle selected audio
-                if let audioURL = info[.mediaURL] as? URL {
-                    // Send the selected audio as a multipart request
-                    Task {
-                        do {
-                            let audioData = try Data(contentsOf: audioURL)
+            } else if mediaType == kUTTypeMovie as String {
+                if let videoURL = info[.mediaURL] as? URL {
+                    // Aquí puedes usar videoURL para acceder al video seleccionado
+                    // Por ejemplo, puedes cargarlo a tu servidor o realizar otras acciones necesarias
+                    do {
+                        let videoPath = videoURL.path // Obtenemos la ruta del archivo desde la URL
 
-                            let datos = try await MultipartRequestAudio.sendAudioEvidence(user: "prueba", activity: "actividad1",evidenceName: "Actividad: \(actividad_modulo) de modulo \(modulo_evidencia)", idModulo: modulo_evidencia, audioData: audioData)
-                            print("actividad_modulo: \(actividad_modulo)")
-                            print("modulo_evidencia: \(modulo_evidencia)")
-                            UserDefaults.standard.set(true, forKey: "actividad \(actividad_modulo) modulo \(modulo_evidencia)")
-                            print("Audio upload completed successfully")
-                            showSuccessView()
-                            let controller = UserProgressUpdateController()
-                            try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: idusar, idActividad: actividad_modulo, idModulo: modulo_evidencia)
-                        } catch {
-                            print("Error sending audio: \(error.localizedDescription)")
+                        // Envía el video a tu servidor utilizando MultipartRequestVideo u otra lógica que tengas
+                        Task {
+                            do {
+                                let datos = try await MultipartRequestVideo.sendEvidence(user: "prueba", activity: "actividad1", evidenceName: "Usuario \(getUser.email) Actividad: \(actividad_modulo) de modulo \(modulo_evidencia)", idModulo: modulo_evidencia, videoPath: videoPath)
+                                UserDefaults.standard.set(true, forKey: "actividad \(actividad_modulo) modulo \(modulo_evidencia)")
+                                print("Video upload completed successfully")
+                                DispatchQueue.main.async {
+                                                        self.activityIndicator.stopAnimating()
+                                                        self.activityIndicator.removeFromSuperview()
+                                                    }
+                                showSuccessView()
+                                let controller = UserProgressUpdateController()
+                                try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: getUser.id_usuario, idActividad: actividad_modulo, idModulo: modulo_evidencia)
+                            } catch {
+                                print("Error sending video: \(error.localizedDescription)")
+                            }
                         }
+
+                        // Realiza otras acciones necesarias con el video
+                        print(videoURL)
+                    } catch {
+                        print("Error al obtener la ruta del video: \(error.localizedDescription)")
                     }
                 }
             }
@@ -345,6 +503,15 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
 
     // Delegate method for UIDocumentPickerViewController
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        // Configurar el activityIndicator
+            activityIndicator.center = view.center
+            activityIndicator.hidesWhenStopped = true
+            activityIndicator.style = .large
+            view.addSubview(activityIndicator)
+            
+            // Comenzar la animación del activityIndicator
+            activityIndicator.startAnimating()
+        
         if let audioURL = urls.first {
                 // Aquí puedes usar audioURL para acceder al archivo de audio seleccionado
                 // Por ejemplo, puedes copiarlo a una ubicación de tu aplicación o procesarlo de alguna otra manera
@@ -362,13 +529,18 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                     // Send the selected audio data to your server using MultipartRequestAudio
                     Task {
                         do {
+                            let audioData = try Data(contentsOf: audioURL)
                             // Specify the user, activity, evidenceName, and idModulo as needed
-                            let _ = try await MultipartRequestAudio.sendAudioEvidence(user: "prueba", activity: "actividad1", evidenceName: "Actividad: \(actividad_modulo) de modulo \(modulo_evidencia)", idModulo: 5, audioData: audioData)
+                            let datos = try await MultipartRequestAudio.sendAudioEvidence(user: "prueba", activity: "actividad1", evidenceName: "Usuario \(getUser.email) Actividad: \(actividad_modulo) de modulo \(modulo_evidencia)", idModulo: 5, audioData: audioData)
                             print("Audio upload completed successfully")
+                            DispatchQueue.main.async {
+                                                    self.activityIndicator.stopAnimating()
+                                                    self.activityIndicator.removeFromSuperview()
+                                                }
                             UserDefaults.standard.set(true, forKey: "actividad \(actividad_modulo) modulo \(modulo_evidencia)")
                             showSuccessView()
                             let controller = UserProgressUpdateController()
-                            try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: idusar, idActividad: actividad_modulo, idModulo: modulo_evidencia)
+                            try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: getUser.id_usuario, idActividad: actividad_modulo, idModulo: modulo_evidencia)
                         } catch {
                             print("Error sending audio data: \(error.localizedDescription)")
                         }
