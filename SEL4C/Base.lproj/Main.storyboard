@@ -4793,7 +4793,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
         <image name="eye.slash.fill" catalog="system" width="128" height="85"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="image_evfinal" width="379" height="165"/>
-        <image name="imagen_actividad1" width="386" height="168"/>
+        <image name="imagen_actividad1" width="396" height="175"/>
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="123"/>
         <image name="photo.fill" catalog="system" width="128" height="93"/>

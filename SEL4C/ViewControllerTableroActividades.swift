@@ -162,9 +162,24 @@ class ViewControllerTableroActividades: UIViewController {
                     
                     //Crear el button de la actividad
                     let nuevoBoton = UIButton()
-                    if let backgroundImage = UIImage(named: "imagen_actividad1") {
-                        nuevoBoton.setBackgroundImage(backgroundImage, for: .normal)
+                    if actividad_json.id_actividad == 1{
+                        if let backgroundImage = UIImage(named: "animacionact1") {
+                            nuevoBoton.setBackgroundImage(backgroundImage, for: .normal)
+                        }
+                    }else if actividad_json.id_actividad == 2{
+                        if let backgroundImage = UIImage(named: "animacionact2") {
+                            nuevoBoton.setBackgroundImage(backgroundImage, for: .normal)
+                        }
+                    }else if actividad_json.id_actividad == 3{
+                        if let backgroundImage = UIImage(named: "animacionact3") {
+                            nuevoBoton.setBackgroundImage(backgroundImage, for: .normal)
+                        }
+                    }else if actividad_json.id_actividad == 4{
+                        if let backgroundImage = UIImage(named: "animacionact4") {
+                            nuevoBoton.setBackgroundImage(backgroundImage, for: .normal)
+                        }
                     }
+                    
                     configureButton(nuevoBoton)
                     
                     //Crear el button

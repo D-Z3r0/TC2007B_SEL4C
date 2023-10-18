@@ -57,6 +57,9 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
     @IBOutlet weak var view_searchmap: UIView!
     @IBOutlet weak var view_descriptionmap: UIView!
     var getUser = Users()
+    var users = Users()
+    var id_del_usuario: Int = 0
+    var user_usar: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,10 +68,10 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
         let defaults = UserDefaults.standard
         let userID = defaults.integer(forKey: "ID")
         idusar = userID
-        
         Task{
             do{
                 getUser = try await Users.getUser()
+                id_del_usuario = users.id_usuario
             }
             
             do {
@@ -399,7 +402,7 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                                                 }
                             showSuccessView()
                             let controller = UserProgressUpdateController()
-                            try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: idusar, idActividad: actividad_modulo, idModulo: modulo_evidencia)
+                            try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: getUser.id_usuario, idActividad: actividad_modulo, idModulo: modulo_evidencia)
                         }catch{
                             print("Error sending image: \(error.localizedDescription)")
                         }
@@ -422,7 +425,7 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                                                 }
                             showSuccessView()
                             let controller = UserProgressUpdateController()
-                            try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: idusar, idActividad: actividad_modulo, idModulo: modulo_evidencia)
+                            try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: getUser.id_usuario, idActividad: actividad_modulo, idModulo: modulo_evidencia)
                         }catch{
                             print("Error sending video: \(error.localizedDescription)")
                         }
@@ -447,7 +450,7 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                                                     }
                                 showSuccessView()
                                 let controller = UserProgressUpdateController()
-                                try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: idusar, idActividad: actividad_modulo, idModulo: modulo_evidencia)
+                                try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: getUser.id_usuario, idActividad: actividad_modulo, idModulo: modulo_evidencia)
                             } catch {
                                 print("Error sending video: \(error.localizedDescription)")
                             }
@@ -537,7 +540,7 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                             UserDefaults.standard.set(true, forKey: "actividad \(actividad_modulo) modulo \(modulo_evidencia)")
                             showSuccessView()
                             let controller = UserProgressUpdateController()
-                            try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: idusar, idActividad: actividad_modulo, idModulo: modulo_evidencia)
+                            try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: getUser.id_usuario, idActividad: actividad_modulo, idModulo: modulo_evidencia)
                         } catch {
                             print("Error sending audio data: \(error.localizedDescription)")
                         }
