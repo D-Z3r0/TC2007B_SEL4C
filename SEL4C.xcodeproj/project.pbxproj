@@ -648,6 +648,7 @@
 				INFOPLIST_FILE = SEL4C/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Se solicita permiso de acceso a la cámara";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Se solicita permiso de acceso al micrófono";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Explicación de por qué tu aplicación necesita acceso a la galería de fotos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -679,6 +680,7 @@
 				INFOPLIST_FILE = SEL4C/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Se solicita permiso de acceso a la cámara";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Se solicita permiso de acceso al micrófono";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Explicación de por qué tu aplicación necesita acceso a la galería de fotos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
