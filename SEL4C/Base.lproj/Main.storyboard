@@ -3862,23 +3862,20 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lbo-jV-XTd">
-                                <rect key="frame" x="20" y="460" width="353" height="4"/>
+                                <rect key="frame" x="20" y="759" width="353" height="4"/>
                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="lbo-jV-XTd" secondAttribute="height" multiplier="353:4" id="hYQ-YR-6nn"/>
                                 </constraints>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YN6-Zo-vex">
-                                <rect key="frame" x="20" y="58.999999999999993" width="353" height="21.666666666666664"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="YN6-Zo-vex" secondAttribute="height" multiplier="353:320" id="XHo-cZ-WHM"/>
-                                </constraints>
+                                <rect key="frame" x="20" y="59" width="353" height="320.66666666666669"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="SMu-oQ-jwe">
-                                <rect key="frame" x="90" y="115.66666666666669" width="213" height="303"/>
+                                <rect key="frame" x="90" y="414.66666666666674" width="213" height="303"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="254" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rr6-wv-lWV">
                                         <rect key="frame" x="0.0" y="0.0" width="213" height="33.666666666666664"/>
@@ -3892,7 +3889,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXs-qU-nZe">
-                                        <rect key="frame" x="0.0" y="66.666666666666686" width="213" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="66.666666666666629" width="213" height="34.333333333333343"/>
                                         <color key="tintColor" red="0.092843107879999998" green="0.1616334915" blue="0.54981178050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="🙁    Poco de acuerdo    " cornerStyle="capsule">
@@ -3903,7 +3900,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6FT-JL-RL2">
-                                        <rect key="frame" x="0.0" y="134" width="213" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="133.99999999999994" width="213" height="34.333333333333343"/>
                                         <color key="tintColor" red="0.092843107879999998" green="0.1616334915" blue="0.54981178050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="😐            Neutral            " cornerStyle="capsule">
@@ -3914,7 +3911,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JFy-T8-NAB">
-                                        <rect key="frame" x="0.0" y="201.33333333333337" width="213" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="201.33333333333331" width="213" height="34.333333333333343"/>
                                         <color key="tintColor" red="0.092843107879999998" green="0.1616334915" blue="0.54981178050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="🙂        De acuerdo        " cornerStyle="capsule">
@@ -3925,7 +3922,7 @@ Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptars
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zYa-9Y-f1t">
-                                        <rect key="frame" x="0.0" y="268.66666666666663" width="213" height="34.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="268.66666666666669" width="213" height="34.333333333333314"/>
                                         <color key="tintColor" red="0.092843107879999998" green="0.1616334915" blue="0.54981178050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="😊    Muy de acuerdo    " cornerStyle="capsule">
