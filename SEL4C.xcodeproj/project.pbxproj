@@ -41,7 +41,6 @@
 		8EEFEFFB2AA3D24700809FEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEFEFFA2AA3D24700809FEE /* AppDelegate.swift */; };
 		8EEFEFFD2AA3D24700809FEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEFEFFC2AA3D24700809FEE /* SceneDelegate.swift */; };
 		8EEFEFFF2AA3D24700809FEE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEFEFFE2AA3D24700809FEE /* ViewController.swift */; };
-		8EEFF0022AA3D24700809FEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EEFF0002AA3D24700809FEE /* Main.storyboard */; };
 		8EEFF0042AA3D24900809FEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EEFF0032AA3D24900809FEE /* Assets.xcassets */; };
 		8EEFF0072AA3D24900809FEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EEFF0052AA3D24900809FEE /* LaunchScreen.storyboard */; };
 		8EFD190A2AC244D700241122 /* ViewControllerProgresoIndividual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD19092AC244D600241122 /* ViewControllerProgresoIndividual.swift */; };
@@ -54,6 +53,7 @@
 		F34360492AB93D1B00487D75 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F34360482AB93D1B00487D75 /* Poppins-Bold.ttf */; };
 		F343604D2ABA5E1600487D75 /* RegisterInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F343604C2ABA5E1600487D75 /* RegisterInputViewController.swift */; };
 		F34B05352AC4ED9B001E741B /* WebViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34B05342AC4ED9B001E741B /* WebViewerViewController.swift */; };
+		F356D80A2ADE034C003665D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F356D80C2ADE034C003665D6 /* Main.storyboard */; };
 		F3D78A472ACB92AF007E535F /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D78A462ACB92AF007E535F /* LoginController.swift */; };
 		F3D78A492ACBA057007E535F /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D78A482ACBA057007E535F /* Users.swift */; };
 		F3D78A4B2ACBA1CB007E535F /* UserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D78A4A2ACBA1CB007E535F /* UserLogin.swift */; };
@@ -114,7 +114,6 @@
 		8EEFEFFA2AA3D24700809FEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EEFEFFC2AA3D24700809FEE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8EEFEFFE2AA3D24700809FEE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8EEFF0012AA3D24700809FEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8EEFF0032AA3D24900809FEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8EEFF0062AA3D24900809FEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8EEFF0082AA3D24900809FEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -130,6 +129,7 @@
 		F34360482AB93D1B00487D75 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		F343604C2ABA5E1600487D75 /* RegisterInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInputViewController.swift; sourceTree = "<group>"; };
 		F34B05342AC4ED9B001E741B /* WebViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewerViewController.swift; sourceTree = "<group>"; };
+		F356D80B2ADE034C003665D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F3D647F72AD60C4900324AA9 /* pruebasunitarias_RF11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pruebasunitarias_RF11.swift; sourceTree = "<group>"; };
 		F3D648042AD6316E00324AA9 /* pruebasUnitarias_RF10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pruebasUnitarias_RF10.swift; sourceTree = "<group>"; };
 		F3D78A462ACB92AF007E535F /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -240,7 +240,7 @@
 				8EEFEFFA2AA3D24700809FEE /* AppDelegate.swift */,
 				8EEFEFFC2AA3D24700809FEE /* SceneDelegate.swift */,
 				8EEFEFFE2AA3D24700809FEE /* ViewController.swift */,
-				8EEFF0002AA3D24700809FEE /* Main.storyboard */,
+				F356D80C2ADE034C003665D6 /* Main.storyboard */,
 				F3D78A502ACE40B0007E535F /* ProfileViewController.swift */,
 				F3D78A4C2ACBAEDE007E535F /* InitialEvaluationViewController.swift */,
 				8EEE1C3B2AC53E9200F15234 /* ViewControllerEvFinal.swift */,
@@ -372,7 +372,7 @@
 				F34360492AB93D1B00487D75 /* Poppins-Bold.ttf in Resources */,
 				F34360452AB90AFC00487D75 /* Poppins-ExtraBold.ttf in Resources */,
 				F34360432AA950E100487D75 /* Poppins-SemiBold.ttf in Resources */,
-				8EEFF0022AA3D24700809FEE /* Main.storyboard in Resources */,
+				F356D80A2ADE034C003665D6 /* Main.storyboard in Resources */,
 				F34360402AA9501600487D75 /* Poppins-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,20 +459,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8EEFF0002AA3D24700809FEE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8EEFF0012AA3D24700809FEE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8EEFF0052AA3D24900809FEE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				8EEFF0062AA3D24900809FEE /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F356D80C2ADE034C003665D6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F356D80B2ADE034C003665D6 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -638,6 +638,8 @@
 				DEVELOPMENT_TEAM = 4XRBL7AZMG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SEL4C/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Se solicita permiso de acceso a la cámara";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Se solicita permiso de acceso al micrófono";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -667,6 +669,8 @@
 				DEVELOPMENT_TEAM = 4XRBL7AZMG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SEL4C/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Se solicita permiso de acceso a la cámara";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Se solicita permiso de acceso al micrófono";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

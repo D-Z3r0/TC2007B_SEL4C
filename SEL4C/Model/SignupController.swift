@@ -11,7 +11,7 @@ enum UserSignUpError: Error, LocalizedError{
     case itemNotFound
 }
 class SignupController{
-    let baseString = "http://54.205.255.125:8000/api/user/signup/"
+    let baseString = "http://34.230.9.105:8000/api/user/signup/"
     
     func userSignup(signupResponse:Users)async throws-> [String: Any]? {
         let insertURL = URL(string: baseString)!

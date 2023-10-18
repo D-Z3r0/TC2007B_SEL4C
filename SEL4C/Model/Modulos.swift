@@ -27,7 +27,7 @@ enum ModuloError: Error, LocalizedError{
 extension Modulo{
     
     static func fetchModulos(id_actividad: Int) async throws->Modulos{
-        let baseString = "http://54.205.255.125:8000/api/admin/activity/\(id_actividad)/module/all/"
+        let baseString = "http://34.230.9.105:8000/api/admin/activity/\(id_actividad)/module/all/"
         let questionsURL = URL(string: baseString)!
         let (data, response) = try await URLSession.shared.data(from: questionsURL)
         guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
@@ -40,7 +40,7 @@ extension Modulo{
     }
     
     static func fetchModulosDetail(id_actividad: Int, id_modulo: Int) async throws -> Modulo_individual{
-        let baseString = "http://54.205.255.125:8000/api/admin/activity/\(id_actividad)/module/\(id_modulo)/"
+        let baseString = "http://34.230.9.105:8000/api/admin/activity/\(id_actividad)/module/\(id_modulo)/"
         let actividadURL = URL(string: baseString)!
         let (data, response) = try await URLSession.shared.data(from: actividadURL)
         
@@ -53,7 +53,7 @@ extension Modulo{
     }
     
     static func fetchModulosDetailStatus(id_actividad: Int, id_modulo: Int) async throws -> (Int, Modulo_individual?) {
-        let baseString = "http://54.205.255.125:8000/api/admin/activity/\(id_actividad)/module/\(id_modulo)/"
+        let baseString = "http://34.230.9.105:8000/api/admin/activity/\(id_actividad)/module/\(id_modulo)/"
         let actividadURL = URL(string: baseString)!
         let (data, response) = try await URLSession.shared.data(from: actividadURL)
         
