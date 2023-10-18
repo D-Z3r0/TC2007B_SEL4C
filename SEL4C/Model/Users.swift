@@ -14,6 +14,7 @@ struct Users: Codable {
     var contrasena: String = ""
     var photo: String? = nil
     var grado_ac: String = ""
+    var disciplina: String = ""
     var institucion: String = ""
     var genero: String = ""
     var edad: Int = 0

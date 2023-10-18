@@ -49,11 +49,25 @@ extension Question{
         request.httpBody = jsonData
         let (data, response) = try await URLSession.shared.data(for: request)
         guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 201 else { throw UserError.itemNotFound}
-        if let jsonObject = try? JSONSerialization.jsonObject(with: data) as? [String: Any] {
-            print(jsonObject)
-        } else {
-            print("nada")
-        }
+//        if let jsonObject = try? JSONSerialization.jsonObject(with: data) as? [String: Any] {
+//            print(jsonObject)
+//        } else {
+//            print("nada")
+//        }
+    }
+    
+    static func calculateEvaluation(evaluation:[String: Any])async throws-> Void {
+        let baseString = "http:/34.230.9.105:8000/api/user/evaluations/"
+        let insertURL = URL(string: baseString)!
+        var request = URLRequest(url: insertURL)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let jsonData = try? JSONSerialization.data(withJSONObject: evaluation)
+        let jsonString = String(data: jsonData!, encoding: .utf8)
+        print(jsonString!)
+        request.httpBody = jsonData
+        let (_, response) = try await URLSession.shared.data(for: request)
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 201 else { throw UserError.itemNotFound}
     }
 }
 

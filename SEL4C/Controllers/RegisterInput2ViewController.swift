@@ -58,6 +58,7 @@ class RegisterInput2ViewController: UIViewController, UIPickerViewDelegate{
 //        applyTextStyle(gradeInput)
         setPlaceholder(institutionInput , text: "Tec de Monterrey", padding: 10)
         setPlaceholder(ageInput, text: "20", padding: 10)
+        registerButton.isEnabled = false
 //        let gradeActions = GradeActions.createActions(handler: upgradeGrade)
 //        let genderActions = GenderActions.createActions(handler: upgradeGender)
 //        let disciplineActions = DisciplineActions.createActions(handler: upgradeDiscipline)
@@ -109,11 +110,12 @@ class RegisterInput2ViewController: UIViewController, UIPickerViewDelegate{
         users.contrasena = password
         users.email = email
         users.grado_ac = (gradeInput.titleLabel!.text)!
+        users.disciplina = (disciplineInput.titleLabel!.text!)
         users.institucion = institutionInput.text!
         users.genero = (genderInput.titleLabel!.text)!
         users.edad = Int(ageInput.text!)!
-//        users.pais = (countryInput.titleLabel!.text)!
-        users.pais = "opcion1"
+        users.pais = (countryInput.titleLabel!.text)!
+//        users.pais = "opcion1"
         Task{
             do{
                 let jsonResponse = try await signupController.userSignup(signupResponse:users)

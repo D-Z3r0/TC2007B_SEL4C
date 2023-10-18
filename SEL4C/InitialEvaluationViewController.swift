@@ -27,10 +27,10 @@ class InitialEvaluationViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
         // Do any additional setup after loading the view.
-        textStyle(textQuestion)
-        /*
-        let domain = Bundle.main.bundleIdentifier!
-        UserDefaults.standard.removePersistentDomain(forName: domain)*/
+        textQuestion.numberOfLines = 5
+        textQuestion.adjustsFontSizeToFitWidth = true
+//        let domain = Bundle.main.bundleIdentifier!
+//        UserDefaults.standard.removePersistentDomain(forName: domain)
         let defaults = UserDefaults.standard
         let evaluationSolved = defaults.bool(forKey: "INEVSOLVED")
         //UserDefaults.standard.set("1", forKey: "ID")
@@ -88,6 +88,22 @@ class InitialEvaluationViewController: UIViewController {
         }
     }
     
+    func calculateEvaluations() {
+        let defaults = UserDefaults.standard
+        let userID = defaults.string(forKey: "ID")
+        let evaluationDict: [String: Any] = [
+            "id_evaluacion": "1",
+            "id_usuario": userID!
+        ]
+        Task{
+            do {
+                try await Question.calculateEvaluation(evaluation: evaluationDict)
+            } catch {
+                print("Error al convertir a JSON: \(error)")
+            }
+        }
+    }
+    
     func goToHomeScreen() {
         print("siguiente")
         let destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeScreen") as! UITabBarController
@@ -129,6 +145,7 @@ class InitialEvaluationViewController: UIViewController {
             let alert = UIAlertController(title: "Fin del cuestionario", message: "Vamos a pasar a la siguiente etapa", preferredStyle: .alert)
             let continueAction = UIAlertAction(title: "Continuar", style: .default) { [weak self] _ in
                 self?.goToHomeScreen()
+                self?.calculateEvaluations()
                 UserDefaults.standard.set(true, forKey: "INEVSOLVED")
             }
             alert.addAction(continueAction)
