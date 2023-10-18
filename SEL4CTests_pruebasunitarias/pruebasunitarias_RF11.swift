@@ -29,24 +29,24 @@ final class pruebasunitarias_RF11: XCTestCase {
         user.contrasena = "Test12345"
         user.photo = nil
         user.grado_ac = "licenciatura"
+        user.disciplina = "Ingenieria"
         user.institucion = "Tec de Monterrey"
         user.genero = "Prefiero no decir"
         user.edad = 21
         user.pais = "Mexico"
         let signupController = SignupController()
         let (response, statusCode) = try await signupController.userSignupStatus(signupResponse: user)
-
-                XCTAssertNotNil(response, "Expected a valid JSON response, but got nil.")
-                XCTAssertEqual(statusCode, 201, "Expected a 201 status code, but got \(statusCode).")
+        XCTAssertNotNil(response, "Expected a valid JSON response, but got nil.")
+        XCTAssertEqual(statusCode, 201, "Expected a 201 status code, but got \(statusCode).")
     }
     
     func testRF011_SingupInvalid() async throws {
-            invalidUser.email = "testtest.com"
-            // ... (other invalidUser properties)
+        invalidUser.email = "testtest.com"
+        // ... (other invalidUser properties)
 
-            let (response, statusCode) = try await signupController.userSignupStatus(signupResponse: invalidUser)
+        let (response, statusCode) = try await signupController.userSignupStatus(signupResponse: invalidUser)
 
-            XCTAssertNotEqual(statusCode, 201, "Expected a non-201 status code, but got 201.")
+        XCTAssertNotEqual(statusCode, 201, "Expected a non-201 status code, but got 201.")
         }
 
     func testExample() throws {

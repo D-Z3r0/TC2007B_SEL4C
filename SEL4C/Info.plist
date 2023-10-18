@@ -4,6 +4,11 @@
 <dict>
     <key>CFBundleIdentifier</key>
     <string></string>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+      <key>NSAllowsArbitraryLoads</key>
+      <true/>
+    </dict>
     <key>NSMicrophoneUsageDescription</key>
     <string>Se solicita permiso de acceso al micrófono</string>
     <key>NSCameraUsageDescription</key>
