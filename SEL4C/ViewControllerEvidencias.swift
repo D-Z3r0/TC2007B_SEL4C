@@ -21,12 +21,31 @@ class ViewControllerEvidencias: UIViewController {
     
     @IBOutlet weak var view_evidenciasind: UIView!
     
+    @IBOutlet weak var image_modulo: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         print("Modulo mostrado: \(modulo_actual_results)")
         print("Modulo de la actividad: \(show_activity_module_results)")
+        if (show_activity_module_results == 1){
+            if let image = UIImage(named: "animacionact1") {
+                image_modulo.image = image
+            }
+        }else if (show_activity_module_results == 2){
+            if let image = UIImage(named: "animacionact2") {
+                image_modulo.image = image
+            }
+        }else if (show_activity_module_results == 3){
+            if let image = UIImage(named: "animacionact3") {
+                image_modulo.image = image
+            }
+        }else if (show_activity_module_results == 4){
+            if let image = UIImage(named: "animacionact4") {
+                image_modulo.image = image
+            }
+        }
     }
 
     // MARK: - Navigation

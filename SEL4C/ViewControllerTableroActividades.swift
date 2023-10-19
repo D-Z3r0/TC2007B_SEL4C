@@ -40,23 +40,6 @@ class ViewControllerTableroActividades: UIViewController {
         UserDefaults.standard.set(userID, forKey: "ID")
         UserDefaults.standard.set(true, forKey: "LOGGEDIN")
         user_usar = userID
-        /*
-        // Eliminar todos los valores almacenados en UserDefaults.standard
-        UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
-
-        // Sincronizar UserDefaults para asegurarse de que los cambios se apliquen de inmediato
-        UserDefaults.standard.synchronize()
-
-        let userDefaults2 = UserDefaults.standard
-
-        // Verifica si la clave "firstRun" está presente en UserDefaults
-        if !userDefaults2.bool(forKey: "firstRun") {
-            // Si no está presente, ejecuta el código y establece la clave "firstRun" en true
-            if let bundleIdentifier = Bundle.main.bundleIdentifier {
-                userDefaults2.removePersistentDomain(forName: bundleIdentifier)
-                userDefaults2.set(true, forKey: "firstRun")
-            }
-        }*/
         
         let userDefaults = UserDefaults.standard
         let key = "realizado"
@@ -359,16 +342,6 @@ class ViewControllerTableroActividades: UIViewController {
         label.layer.shadowOpacity = 0.5
         label.layer.shadowOffset = CGSize(width: 0, height: 2)
         label.layer.shadowRadius = 4
-        /*
-        let maskLayer = CAShapeLayer()
-        maskLayer.frame = label.bounds
-        maskLayer.path = UIBezierPath(
-            roundedRect: label.bounds,
-            byRoundingCorners: [.bottomLeft, .bottomRight],
-            cornerRadii: CGSize(width: 10, height: 10)
-        ).cgPath
-        label.layer.mask = maskLayer*/
-        
         label.backgroundColor = UIColor.white
         label.textColor = UIColor.black
         label.font = UIFont(name: "Poppins-Medium", size: 17.0)
