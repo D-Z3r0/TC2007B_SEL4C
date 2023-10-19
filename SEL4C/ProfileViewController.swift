@@ -36,7 +36,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        UserDefaults.standard.set(1, forKey: "ID")
+//        UserDefaults.standard.set(1, forKey: "ID")
         emailInput.isEnabled = false
         countryInput.isEnabled = false
         editProfile.contentHorizontalAlignment = .left
