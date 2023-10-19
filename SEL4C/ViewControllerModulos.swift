@@ -26,7 +26,23 @@ class ViewControllerModulos: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Actividad mostrada: \(show_activity_results)")
-        
+        if (show_activity_results == 1){
+            if let image = UIImage(named: "animacionact1") {
+                image_activity.image = image
+            }
+        }else if (show_activity_results == 2){
+            if let image = UIImage(named: "animacionact2") {
+                image_activity.image = image
+            }
+        }else if (show_activity_results == 3){
+            if let image = UIImage(named: "animacionact3") {
+                image_activity.image = image
+            }
+        }else if (show_activity_results == 4){
+            if let image = UIImage(named: "animacionact4") {
+                image_activity.image = image
+            }
+        }
     }
     
     // MARK: - Navigation

@@ -69,7 +69,7 @@ public struct MultipartRequestVideo {
 extension MultipartRequestVideo {
     
     static func sendEvidence(user: String, activity: String, evidenceName: String, idModulo: Int, videoPath: String) async throws -> Data {
-        var multipart = MultipartRequest()
+        var multipart = MultipartRequestVideo()
         
         // Convierte el ID del módulo a una cadena y agrégalo como campo
         let idModuloString = String(idModulo)
@@ -93,7 +93,7 @@ extension MultipartRequestVideo {
             )
         }
 
-        let url = URL(string: "http://34.230.9.105:8000/api/user/evidences/")!
+        let url = URL(string: "http://sel4c.online/api/user/evidences/")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue(multipart.httpContentTypeHeaderValue, forHTTPHeaderField: "Content-Type")
