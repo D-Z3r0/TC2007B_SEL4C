@@ -100,7 +100,7 @@ class LoginViewController: UIViewController{
         }
     
     func evaluationNavigate(){
-        let destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "InitialEvaluationIdentifier") as? InitialEvaluationViewController
+        let destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "EvaluationDescriptionIdentifier") as? EvaluationDescriptionViewController
             self.navigationController?.pushViewController(destinationVC!, animated: true)
     }
         

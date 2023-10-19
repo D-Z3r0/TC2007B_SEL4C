@@ -26,8 +26,8 @@ class FinalEvaluationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.hidesBackButton = true
-        textStyle(textQuestion)
+//        navigationItem.hidesBackButton = true
+//        textStyle(textQuestion)
         // Do any additional setup after loading the view.
         Task{
             do{
@@ -72,6 +72,22 @@ class FinalEvaluationViewController: UIViewController {
             }
         } catch {
             print("Error al convertir a JSON: \(error)")
+        }
+    }
+    
+    func calculateEvaluations() {
+        let defaults = UserDefaults.standard
+        let userID = defaults.string(forKey: "ID")
+        let evaluationDict: [String: Any] = [
+            "id_evaluacion": 2,
+            "id_usuario": Int(userID!)!
+        ]
+        Task{
+            do {
+                try await Question.calculateEvaluation(evaluation: evaluationDict)
+            } catch {
+                print("Error al calcular resultados: \(error)")
+            }
         }
     }
     

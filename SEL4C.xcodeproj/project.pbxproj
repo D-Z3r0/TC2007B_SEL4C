@@ -56,6 +56,8 @@
 		F343604D2ABA5E1600487D75 /* RegisterInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F343604C2ABA5E1600487D75 /* RegisterInputViewController.swift */; };
 		F34B05352AC4ED9B001E741B /* WebViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34B05342AC4ED9B001E741B /* WebViewerViewController.swift */; };
 		F356D80A2ADE034C003665D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F356D80C2ADE034C003665D6 /* Main.storyboard */; };
+		F356D8332AE1A663003665D6 /* EvaluationDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F356D8322AE1A663003665D6 /* EvaluationDescriptionViewController.swift */; };
+		F356D8352AE1B0CC003665D6 /* FinalEvalutationDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F356D8342AE1B0CC003665D6 /* FinalEvalutationDescriptionViewController.swift */; };
 		F3D78A472ACB92AF007E535F /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D78A462ACB92AF007E535F /* LoginController.swift */; };
 		F3D78A492ACBA057007E535F /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D78A482ACBA057007E535F /* Users.swift */; };
 		F3D78A4B2ACBA1CB007E535F /* UserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D78A4A2ACBA1CB007E535F /* UserLogin.swift */; };
@@ -134,6 +136,8 @@
 		F343604C2ABA5E1600487D75 /* RegisterInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInputViewController.swift; sourceTree = "<group>"; };
 		F34B05342AC4ED9B001E741B /* WebViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewerViewController.swift; sourceTree = "<group>"; };
 		F356D80B2ADE034C003665D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F356D8322AE1A663003665D6 /* EvaluationDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluationDescriptionViewController.swift; sourceTree = "<group>"; };
+		F356D8342AE1B0CC003665D6 /* FinalEvalutationDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalEvalutationDescriptionViewController.swift; sourceTree = "<group>"; };
 		F3D647F72AD60C4900324AA9 /* pruebasunitarias_RF11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pruebasunitarias_RF11.swift; sourceTree = "<group>"; };
 		F3D648042AD6316E00324AA9 /* pruebasUnitarias_RF10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pruebasUnitarias_RF10.swift; sourceTree = "<group>"; };
 		F3D78A462ACB92AF007E535F /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -280,6 +284,8 @@
 				F343604C2ABA5E1600487D75 /* RegisterInputViewController.swift */,
 				F34B05342AC4ED9B001E741B /* WebViewerViewController.swift */,
 				F3D78A8B2AD27F7F007E535F /* FinalEvaluationViewController.swift */,
+				F356D8322AE1A663003665D6 /* EvaluationDescriptionViewController.swift */,
+				F356D8342AE1B0CC003665D6 /* FinalEvalutationDescriptionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -420,6 +426,7 @@
 				8EB0B7CB2AA557B9002E0849 /* ViewControllerTableroInicial.swift in Sources */,
 				8E304FAD2ABCD9F900BE0055 /* ViewControllerEvAct1.swift in Sources */,
 				8EFD190A2AC244D700241122 /* ViewControllerProgresoIndividual.swift in Sources */,
+				F356D8352AE1B0CC003665D6 /* FinalEvalutationDescriptionViewController.swift in Sources */,
 				8EEFEFFB2AA3D24700809FEE /* AppDelegate.swift in Sources */,
 				F3D78A8A2AD0F389007E535F /* Question.swift in Sources */,
 				8E655B522ABE77C300CF8E66 /* ViewControllerTableroActividades.swift in Sources */,
@@ -453,6 +460,7 @@
 				F3D78A7F2AD0A3BA007E535F /* GradeActions.swift in Sources */,
 				F3D78A882AD0F360007E535F /* EcomplexityEngine.swift in Sources */,
 				8E132BCD2ADBA87F00F8E3A6 /* ViewControllerEvFinalFaltante.swift in Sources */,
+				F356D8332AE1A663003665D6 /* EvaluationDescriptionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,7 +25,7 @@ class InitialEvaluationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.hidesBackButton = true
+//        navigationItem.hidesBackButton = true
         // Do any additional setup after loading the view.
         textQuestion.numberOfLines = 5
         textQuestion.adjustsFontSizeToFitWidth = true
@@ -33,17 +33,13 @@ class InitialEvaluationViewController: UIViewController {
 //        UserDefaults.standard.removePersistentDomain(forName: domain)
         let defaults = UserDefaults.standard
         let evaluationSolved = defaults.bool(forKey: "INEVSOLVED")
-        //UserDefaults.standard.set("1", forKey: "ID")
-        if (evaluationSolved) {
-            goToHomeScreen()
-        }else{
-            Task{
-                do{
-                    let questions = try await Question.fetchQuestions()
-                    updateUI(with: questions)
-                }catch{
-                    displayError(QuestionError.itemNotFound, title: "No se pudo accer a las preguntas")
-                }
+//        UserDefaults.standard.set("14", forKey: "ID")
+        Task{
+            do{
+                let questions = try await Question.fetchQuestions()
+                updateUI(with: questions)
+            }catch{
+                displayError(QuestionError.itemNotFound, title: "No se pudo accer a las preguntas")
             }
         }
     }
@@ -92,14 +88,14 @@ class InitialEvaluationViewController: UIViewController {
         let defaults = UserDefaults.standard
         let userID = defaults.string(forKey: "ID")
         let evaluationDict: [String: Any] = [
-            "id_evaluacion": "1",
-            "id_usuario": userID!
+            "id_evaluacion": 1,
+            "id_usuario": Int(userID!)!
         ]
         Task{
             do {
                 try await Question.calculateEvaluation(evaluation: evaluationDict)
             } catch {
-                print("Error al convertir a JSON: \(error)")
+                print("Error al calcular resultados: \(error)")
             }
         }
     }

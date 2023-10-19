@@ -35,6 +35,7 @@ extension Question{
     static func sendQuestions(questions:[[String: Any]], evalutaion_id: Int)async throws-> Void {
         let defaults = UserDefaults.standard
         let userID = defaults.string(forKey: "ID")
+        print(userID!)
         let baseString = "http:/34.230.9.105:8000/api/respuestas/\(userID!)/\(evalutaion_id)/"
         print(baseString)
         let insertURL = URL(string: baseString)!

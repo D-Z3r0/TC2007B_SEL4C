@@ -120,6 +120,7 @@ class RegisterInput2ViewController: UIViewController, UIPickerViewDelegate{
             do{
                 let jsonResponse = try await signupController.userSignup(signupResponse:users)
                 let userID = jsonResponse!["id"] as? Int
+                print(userID!)
                 UserDefaults.standard.set(userID, forKey: "ID")
                 evaluationNavigate()
                 UserDefaults.standard.set(true, forKey: "LOGGEDIN")
@@ -131,7 +132,7 @@ class RegisterInput2ViewController: UIViewController, UIPickerViewDelegate{
     }
     
     func evaluationNavigate(){
-        let destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "InitialEvaluationIdentifier") as? InitialEvaluationViewController
+        let destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "EvaluationDescriptionIdentifier") as? EvaluationDescriptionViewController
             self.navigationController?.pushViewController(destinationVC!, animated: true)
     }
     
