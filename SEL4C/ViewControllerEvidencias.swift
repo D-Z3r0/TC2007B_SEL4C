@@ -45,6 +45,14 @@ class ViewControllerEvidencias: UIViewController {
             if let image = UIImage(named: "animacionact4") {
                 image_modulo.image = image
             }
+        }else if (show_activity_module_results == 5){
+            if let image = UIImage(named: "animacionact5") {
+                image_modulo.image = image
+            }
+        }else {
+            if let image = UIImage(named: "animacionact") {
+                image_modulo.image = image
+            }
         }
     }
 

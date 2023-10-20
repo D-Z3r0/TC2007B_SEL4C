@@ -22,7 +22,7 @@ class ViewControllerEvFinal: UIViewController {
         Task{
             do{
                 ProgresoActividades_json = try await ProgresoActividad.fetchProgresoActividades(id_usuario: userID)
-                if(ProgresoActividades_json?.actividad1 == false || ProgresoActividades_json?.actividad2 == false || ProgresoActividades_json?.actividad3 == false || ProgresoActividades_json?.actividad4 == false){
+                if(ProgresoActividades_json?.actividad1 == false || ProgresoActividades_json?.actividad2 == false){
                     view_evFaltante.isHidden = false
                     view_evCompleta.isHidden = true
                 }else{

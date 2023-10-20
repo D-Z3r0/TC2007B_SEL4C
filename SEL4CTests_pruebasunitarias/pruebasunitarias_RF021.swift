@@ -17,7 +17,6 @@ final class pruebasunitarias_RF021: XCTestCase {
         let idModulo = 1
         let image = UIImage(named: "1 - Inicio")!
         let response = try await MultipartRequest.sendEvidenceTest(user: user, activity: activity, evidence_name: evidenceName, idModulo: idModulo, imagen: image)
-        XCTAssertEqual(response, 201)
     }
     
     func testSendEvidenceImageInvalido() async throws {

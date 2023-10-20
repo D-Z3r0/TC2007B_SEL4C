@@ -93,8 +93,8 @@ class FinalEvaluationViewController: UIViewController {
     
     func goToHomeScreen() {
         print("siguiente")
-        let destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeScreen") as! UITabBarController
-        self.navigationController?.pushViewController(destinationVC, animated: true)
+        let destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "EvsPreguntas")
+        self.navigationController?.pushViewController(destinationVC!, animated: true)
         print("listo")
     }
 

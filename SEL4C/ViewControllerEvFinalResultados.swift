@@ -46,7 +46,7 @@ class ViewControllerEvFinalResultados: UIViewController {
         let userID = defaults.integer(forKey: "ID")
         Task {
             do {
-                let resultadoIndividual = try await ResultadoEvaluaciones.fetchResultadoEvaluacionesFinalDetail(idUsuario: userID)
+                let resultadoIndividual = try await ResultadoEvaluaciones.fetchResultadoEvaluacionesFinalDetail(idUsuario: 23)
                 let resultadoIndividualinicial = try await ResultadoEvaluaciones.fetchResultadoEvaluacionesDetail(idUsuario: userID)
                 print("Resultados cargados con éxito: \(resultadoIndividual)")
                 resultado_competencia.text = "\(resultadoIndividual.competencia1)%"

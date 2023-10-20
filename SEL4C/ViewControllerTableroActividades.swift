@@ -161,6 +161,15 @@ class ViewControllerTableroActividades: UIViewController {
                         if let backgroundImage = UIImage(named: "animacionact4") {
                             nuevoBoton.setBackgroundImage(backgroundImage, for: .normal)
                         }
+                    }else if actividad_json.id_actividad == 5{
+                        if let backgroundImage = UIImage(named: "animacionact5") {
+                            nuevoBoton.setBackgroundImage(backgroundImage, for: .normal)
+                        }
+                    }
+                    else{
+                        if let backgroundImage = UIImage(named: "animacionact") {
+                            nuevoBoton.setBackgroundImage(backgroundImage, for: .normal)
+                        }
                     }
                     
                     configureButton(nuevoBoton)
@@ -221,6 +230,33 @@ class ViewControllerTableroActividades: UIViewController {
                                     var countFalse = 0
                                     
                                     for progresoUsuario in ProgresosUsuarios_json where progresoUsuario.id_actividad == 2 {
+                                        if progresoUsuario.estado_modulo {
+                                            countTrue += 1
+                                        } else {
+                                            countFalse += 1
+                                        }
+                                    }
+                                    
+                                    if countTrue >= 1{
+                                        nuevo_foco.backgroundColor = UIColor.orange
+                                        nuevo_estado.text = "En progreso"
+                                    }else{
+                                        nuevo_foco.backgroundColor = UIColor.gray
+                                        nuevo_estado.text = "Pendiente"
+                                    }
+                                }
+                            }
+                        } else if actividad_json.id_actividad == 3 && progreso.actividad3 {
+                            nuevo_foco.backgroundColor = UIColor.green
+                            nuevo_estado.text = "Completado"
+                        } else if actividad_json.id_actividad == 3 {
+                            Task {
+                                do{
+                                    ProgresosUsuarios_json = try await ProgresoUsuario.fetchProgresoUsuarios(id_usuario: user_usar)
+                                    var countTrue = 0
+                                    var countFalse = 0
+                                    
+                                    for progresoUsuario in ProgresosUsuarios_json where progresoUsuario.id_actividad == 3 {
                                         if progresoUsuario.estado_modulo {
                                             countTrue += 1
                                         } else {

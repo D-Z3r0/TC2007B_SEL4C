@@ -60,6 +60,7 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
     var users = Users()
     var id_del_usuario: Int = 0
     var user_usar: Int = 0
+    var modulo_cargado: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +69,7 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
         let defaults = UserDefaults.standard
         let userID = defaults.integer(forKey: "ID")
         idusar = userID
+        
         Task{
             do{
                 getUser = try await Users.getUser()
@@ -86,7 +88,9 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                     UserDefaults.standard.synchronize()*/
                     let defaults = UserDefaults.standard
                     let isUserLogged = defaults.bool(forKey: "actividad \(modulo.id_actividad) modulo \(modulo.id_modulo)")
-                    print("Modulo cargado con éxito: \(modulo)")
+                    modulo_cargado = Int(modulo.id_modulo)
+                    print("Modulo cargado con éxito: \(modulo_cargado)")
+                    
                     titulo_modulo.text = modulo.titulo_mod
                     if let data = modulo.instrucciones.data(using: .utf16),
                        let attributedString = try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
@@ -393,8 +397,8 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
             
                     Task{
                         do{
-                            let datos = try await MultipartRequest.sendEvidence(user: "prueba", activity: "actividad1", evidence_name: "Usuario \(getUser.email) Actividad: \(actividad_modulo) de modulo \(modulo_evidencia)", idModulo: modulo_evidencia, imagen: image_selected.image!)
-                            UserDefaults.standard.set(true, forKey: "actividad \(actividad_modulo) modulo \(modulo_evidencia)")
+                            let datos = try await MultipartRequest.sendEvidence(user: "prueba", activity: "actividad1", evidence_name: "Usuario \(getUser.email) Actividad: \(actividad_modulo) de modulo \(modulo_cargado)", idModulo: modulo_cargado, imagen: image_selected.image!)
+                            UserDefaults.standard.set(true, forKey: "actividad \(actividad_modulo) modulo \(modulo_cargado)")
                             print("Image upload completed successfully")
                             DispatchQueue.main.async {
                                                     self.activityIndicator.stopAnimating()
@@ -402,7 +406,7 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                                                 }
                             showSuccessView()
                             let controller = UserProgressUpdateController()
-                            try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: getUser.id_usuario, idActividad: actividad_modulo, idModulo: modulo_evidencia)
+                            try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: getUser.id_usuario, idActividad: actividad_modulo, idModulo: modulo_cargado)
                         }catch{
                             print("Error sending image: \(error.localizedDescription)")
                         }
@@ -416,8 +420,8 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                     
                     Task{
                         do{
-                            let datos = try await MultipartRequestVideo.sendEvidence(user: "prueba", activity: "actividad1", evidenceName: "Usuario \(getUser.email) Actividad: \(actividad_modulo) de modulo \(modulo_evidencia)", idModulo: modulo_evidencia, videoPath: videoPath)
-                            UserDefaults.standard.set(true, forKey: "actividad \(actividad_modulo) modulo \(modulo_evidencia)")
+                            let datos = try await MultipartRequestVideo.sendEvidence(user: "prueba", activity: "actividad1", evidenceName: "Usuario \(getUser.email) Actividad: \(actividad_modulo) de modulo \(modulo_cargado)", idModulo: modulo_cargado, videoPath: videoPath)
+                            UserDefaults.standard.set(true, forKey: "actividad \(actividad_modulo) modulo \(modulo_cargado)")
                             print("Video upload completed successfully")
                             DispatchQueue.main.async {
                                                     self.activityIndicator.stopAnimating()
@@ -425,7 +429,7 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                                                 }
                             showSuccessView()
                             let controller = UserProgressUpdateController()
-                            try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: getUser.id_usuario, idActividad: actividad_modulo, idModulo: modulo_evidencia)
+                            try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: getUser.id_usuario, idActividad: actividad_modulo, idModulo: modulo_cargado)
                         }catch{
                             print("Error sending video: \(error.localizedDescription)")
                         }
@@ -441,8 +445,8 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                         // Envía el video a tu servidor utilizando MultipartRequestVideo u otra lógica que tengas
                         Task {
                             do {
-                                let datos = try await MultipartRequestVideo.sendEvidence(user: "prueba", activity: "actividad1", evidenceName: "Usuario \(getUser.email) Actividad: \(actividad_modulo) de modulo \(modulo_evidencia)", idModulo: modulo_evidencia, videoPath: videoPath)
-                                UserDefaults.standard.set(true, forKey: "actividad \(actividad_modulo) modulo \(modulo_evidencia)")
+                                let datos = try await MultipartRequestVideo.sendEvidence(user: "prueba", activity: "actividad1", evidenceName: "Usuario \(getUser.email) Actividad: \(actividad_modulo) de modulo \(modulo_cargado)", idModulo: modulo_cargado, videoPath: videoPath)
+                                UserDefaults.standard.set(true, forKey: "actividad \(actividad_modulo) modulo \(modulo_cargado)")
                                 print("Video upload completed successfully")
                                 DispatchQueue.main.async {
                                                         self.activityIndicator.stopAnimating()
@@ -450,7 +454,7 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                                                     }
                                 showSuccessView()
                                 let controller = UserProgressUpdateController()
-                                try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: getUser.id_usuario, idActividad: actividad_modulo, idModulo: modulo_evidencia)
+                                try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: getUser.id_usuario, idActividad: actividad_modulo, idModulo: modulo_cargado)
                             } catch {
                                 print("Error sending video: \(error.localizedDescription)")
                             }
@@ -531,16 +535,16 @@ class ViewControllerEvidenciasIndividual: UIViewController, UIImagePickerControl
                         do {
                             let audioData = try Data(contentsOf: audioURL)
                             // Specify the user, activity, evidenceName, and idModulo as needed
-                            let datos = try await MultipartRequestAudio.sendAudioEvidence(user: "prueba", activity: "actividad1", evidenceName: "Usuario \(getUser.email) Actividad: \(actividad_modulo) de modulo \(modulo_evidencia)", idModulo: 5, audioData: audioData)
+                            let datos = try await MultipartRequestAudio.sendAudioEvidence(user: "prueba", activity: "actividad1", evidenceName: "Usuario \(getUser.email) Actividad: \(actividad_modulo) de modulo \(modulo_cargado)", idModulo: modulo_cargado, audioData: audioData)
                             print("Audio upload completed successfully")
                             DispatchQueue.main.async {
                                                     self.activityIndicator.stopAnimating()
                                                     self.activityIndicator.removeFromSuperview()
                                                 }
-                            UserDefaults.standard.set(true, forKey: "actividad \(actividad_modulo) modulo \(modulo_evidencia)")
+                            UserDefaults.standard.set(true, forKey: "actividad \(actividad_modulo) modulo \(modulo_cargado)")
                             showSuccessView()
                             let controller = UserProgressUpdateController()
-                            try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: getUser.id_usuario, idActividad: actividad_modulo, idModulo: modulo_evidencia)
+                            try await controller.updateProgress(estadoActividad: false, estadoModulo: true, idUsuario: getUser.id_usuario, idActividad: actividad_modulo, idModulo: modulo_cargado)
                         } catch {
                             print("Error sending audio data: \(error.localizedDescription)")
                         }
